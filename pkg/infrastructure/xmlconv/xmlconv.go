@@ -5,9 +5,15 @@ import (
 	"fmt"
 )
 
+type Property struct {
+	Name string `xml:"name,attr"`
+}
+
 type AntModel struct {
-	XMLName xml.Name `xml:"project"`
-	Name    string   `xml:"name,attr"`
+	XMLName     xml.Name   `xml:"project"`
+	Name        string     `xml:"name,attr"`
+	Description string     `xml:"description"`
+	Property    []Property `xml:"property"`
 }
 
 func XmlConvert(str string) AntModel {
@@ -16,5 +22,6 @@ func XmlConvert(str string) AntModel {
 	if err != nil {
 		fmt.Print(err)
 	}
+	fmt.Println(model)
 	return model
 }
