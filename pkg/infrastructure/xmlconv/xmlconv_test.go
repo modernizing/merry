@@ -21,6 +21,8 @@ func TestShouldGetProjectName(t *testing.T) {
 
 	result := XmlConvert(xml)
 	g.Expect(result.Name).To(Equal(`MyProject`))
+	g.Expect(result.Default).To(Equal(`dist`))
+	g.Expect(result.BaseDir).To(Equal(`.`))
 }
 
 func TestShouldGetPropertyName(t *testing.T) {
@@ -41,4 +43,5 @@ func TestShouldGetPropertyName(t *testing.T) {
 	g.Expect(result.Property[0].Name).To(Equal(`src`))
 	g.Expect(result.Property[1].Name).To(Equal(`build`))
 	g.Expect(result.Property[2].Name).To(Equal(`dist`))
+	g.Expect(result.Property[2].Location).To(Equal(`dist`))
 }
