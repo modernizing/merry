@@ -2,6 +2,8 @@
 
 > a legacy system migration tools for OSGI based architecture Java applications.
 
+![Go](https://github.com/phodal/igso/workflows/Go/badge.svg)
+
 Todo:
 
  - [ ] Ant to Maven
