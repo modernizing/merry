@@ -12,6 +12,9 @@ Todo:
  - [ ] Manifest convert
     - [ ] to BND
  - [ ] Microservices
+ - [ ] bundle to Maven
+    - [ ] Checksum File
+    - [ ] Unzip file
 
 License
 ---
