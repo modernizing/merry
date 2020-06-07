@@ -45,3 +45,19 @@ func TestShouldGetPropertyName(t *testing.T) {
 	g.Expect(result.Property[2].Name).To(Equal(`dist`))
 	g.Expect(result.Property[2].Location).To(Equal(`dist`))
 }
+
+func TestShouldGetTargetInfo(t *testing.T) {
+	g := NewGomegaWithT(t)
+	xml := `
+<project name="testing.example" default="dist">
+  <target name="test.management" depends="dist">
+    <launch target="management"/>
+  </target>
+</project>
+`
+
+	result := XmlConvert(xml)
+	g.Expect(result.Target[0].Name).To(Equal(`test.management`))
+	g.Expect(result.Target[0].Depends).To(Equal(`dist`))
+	g.Expect(result.Target[0].Launch.Target).To(Equal(`management`))
+}
