@@ -11,7 +11,7 @@ func TestShouldGetPropertyName(t *testing.T) {
 <project name="testing.example" default="dist">
   <target name="test.management" depends="dist">
     <path id="classpath">
-       <pathelement path ="../../../_fixtures/jar/sample/annotations-13.0.jar"
+       <pathelement path="../../../_fixtures/jar/sample/annotations-13.0.jar" />
     </path>
   </target>
 </project>

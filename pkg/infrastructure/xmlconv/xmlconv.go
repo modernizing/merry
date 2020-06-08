@@ -10,6 +10,15 @@ type Property struct {
 	Location string `xml:"location,attr"`
 }
 
+type PathElement struct {
+	Path string `xml:"path,attr"`
+}
+
+type Path struct {
+	Id           string        `xml:"id,attr"`
+	PathElements []PathElement `xml:"pathelement"`
+}
+
 type Launch struct {
 	Target string `xml:"target,attr"`
 }
@@ -18,6 +27,7 @@ type Target struct {
 	Name    string `xml:"name,attr"`
 	Depends string `xml:"depends,attr"`
 	Launch  Launch `xml:"launch"`
+	Path    Path   `xml:"path"`
 }
 
 type AntModel struct {
