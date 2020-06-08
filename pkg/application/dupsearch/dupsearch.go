@@ -1,17 +1,30 @@
 package dupsearch
 
 import (
+	. "github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/igso/pkg/infrastructure/properties"
 	"os"
 	"path/filepath"
 	"strings"
 )
 
-func DupSearch(root string) {
+func DupSearch(root string) []MavenDependency {
+	var results []MavenDependency
 	var jarFileFilter = func(path string) bool {
 		return strings.HasSuffix(path, ".jar")
 	}
 
-	GetFilesByFilter(root, jarFileFilter)
+	jarPaths := GetFilesByFilter(root, jarFileFilter)
+	for _, path := range jarPaths {
+		props, _ := properties.ReadPropertiesFromZip(path)
+		results = append(results, MavenDependency{
+			Version:    props["version"],
+			GroupId:    props["groupId"],
+			ArtifactId: props["artifactId"],
+		})
+	}
+
+	return results
 }
 
 func GetFilesByFilter(root string, filter func(path string) bool) []string {

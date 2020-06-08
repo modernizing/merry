@@ -6,12 +6,17 @@ func FromAntToXml(content string, isExtract bool) string {
 	newAntModel := FromAnt(content, isExtract)
 	deps := newAntModel.Dependencies
 
-	results := buildDepStr(deps)
-	withPom := buildFinaly(newAntModel, results)
+	withPom := BuildByDeps(deps, newAntModel)
 	return withPom
 }
 
-func buildFinaly(newAntModel dependency.MavenProject, results string) string {
+func BuildByDeps(deps []dependency.MavenDependency, newAntModel dependency.MavenProject) string {
+	results := buildDepStr(deps)
+	withPom := buildFinal(newAntModel, results)
+	return withPom
+}
+
+func buildFinal(newAntModel dependency.MavenProject, results string) string {
 	var withPom = `<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 

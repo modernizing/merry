@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/phodal/igso/pkg/application/dupsearch"
 	"github.com/phodal/igso/pkg/application/maven"
+	dependency "github.com/phodal/igso/pkg/domain"
 	"github.com/urfave/cli/v2"
 	"io/ioutil"
 	"log"
@@ -48,8 +49,10 @@ func main() {
 					path = c.String("path")
 				}
 
-				dupsearch.DupSearch(path)
+				deps := dupsearch.DupSearch(path)
+				result := maven.BuildByDeps(deps, dependency.MavenProject{"0.0.1", "com.igso", "test", "test", nil})
 
+				_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(result), os.ModePerm)
 				return nil
 			},
 		},
