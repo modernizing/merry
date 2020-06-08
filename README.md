@@ -14,7 +14,8 @@ Todo:
  - [ ] Microservices
  - [ ] bundle to Maven
     - [ ] Checksum File
-    - [ ] Unzip file
+    - [x] Unzip file
+    - [ ] Parse Manifest
 
 License
 ---
