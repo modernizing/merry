@@ -16,6 +16,10 @@ func TestShouldGetPropertyName(t *testing.T) {
   </target>
 </project>
 `)
+
 	g.Expect(len(result)).To(Equal(1))
+	g.Expect(result[0].ArtifactId).To(Equal("annotations"))
+	g.Expect(result[0].GroupId).To(Equal("org.jetbrains"))
+	g.Expect(result[0].Version).To(Equal("13.0"))
 }
 
