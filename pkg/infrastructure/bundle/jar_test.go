@@ -35,10 +35,24 @@ func TestShouldReadZipList(t *testing.T) {
 	}))
 }
 
-func TestShouldUnzipJar(t *testing.T) {
+func TestShouldUnzipBundle(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	path := `../../../_fixtures/bundle/sample/felix-tut-8-1.0-SNAPSHOT.jar`
+	absPath := filepath.FromSlash(path)
+	err := Unzip(absPath, filepath.FromSlash("./tmp"))
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	_, e := os.Stat(filepath.FromSlash("./tmp/META-INF/MANIFEST.MF"))
+	g.Expect(e).To(BeNil())
+}
+
+func TestShouldUnzipJar(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	path := `../../../_fixtures/jar/sample/annotations-13.0.jar`
 	absPath := filepath.FromSlash(path)
 	err := Unzip(absPath, filepath.FromSlash("./tmp"))
 	if err != nil {
