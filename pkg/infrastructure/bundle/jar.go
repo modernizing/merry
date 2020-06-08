@@ -52,10 +52,11 @@ func ListJarFiles(path string) []zip.File {
 }
 
 // https://stackoverflow.com/questions/20357223/easy-way-to-unzip-file-with-golang
-func Unzip(src, dest string) error {
+func Unzip(src, dest string) ([]string, error) {
+	var fileNames []string
 	r, err := zip.OpenReader(src)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	defer func() {
 		if err := r.Close(); err != nil {
@@ -97,6 +98,7 @@ func Unzip(src, dest string) error {
 			if err != nil {
 				return err
 			}
+			fileNames = append(fileNames, f.Name())
 		}
 		return nil
 	}
@@ -104,9 +106,9 @@ func Unzip(src, dest string) error {
 	for _, f := range r.File {
 		err := extractAndWriteFile(f)
 		if err != nil {
-			return err
+			return nil, err
 		}
 	}
 
-	return nil
+	return fileNames, nil
 }
