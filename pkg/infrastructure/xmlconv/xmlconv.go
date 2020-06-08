@@ -31,13 +31,17 @@ type Target struct {
 }
 
 type AntModel struct {
-	XMLName     xml.Name   `xml:"project"`
-	Name        string     `xml:"name,attr"`
-	Default     string     `xml:"default,attr"`
-	BaseDir     string     `xml:"basedir,attr"`
-	Description string     `xml:"description"`
-	Property    []Property `xml:"property"`
-	Target      []Target   `xml:"target"`
+	XMLName      xml.Name   `xml:"project"`
+	ModelVersion string     `xml:"modelVersion"`
+	ArtifactId   string     `xml:"artifactId"`
+	GroupId      string     `xml:"groupId"`
+	Version      string     `xml:"version"`
+	Name         string     `xml:"name,attr"`
+	Default      string     `xml:"default,attr"`
+	BaseDir      string     `xml:"basedir,attr"`
+	Description  string     `xml:"description"`
+	Property     []Property `xml:"property"`
+	Target       []Target   `xml:"target"`
 }
 
 func XmlConvert(str string) AntModel {

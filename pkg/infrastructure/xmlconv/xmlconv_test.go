@@ -61,3 +61,21 @@ func TestShouldGetTargetInfo(t *testing.T) {
 	g.Expect(result.Target[0].Depends).To(Equal(`dist`))
 	g.Expect(result.Target[0].Launch.Target).To(Equal(`management`))
 }
+
+func TestShouldIdentifyPackageInfo(t *testing.T) {
+	g := NewGomegaWithT(t)
+	xml := `
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>my-test-app</artifactId>
+  <groupId>my-test-group</groupId>
+  <version>1.0-SNAPSHOT</version>
+</project>
+`
+
+	result := XmlConvert(xml)
+	g.Expect(result.ModelVersion).To(Equal(`4.0.0`))
+	g.Expect(result.ArtifactId).To(Equal(`my-test-app`))
+	g.Expect(result.GroupId).To(Equal(`my-test-group`))
+	g.Expect(result.Version).To(Equal(`1.0-SNAPSHOT`))
+}
