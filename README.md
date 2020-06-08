@@ -23,7 +23,9 @@ Feature lists:
 COMMANDS:
    boom       build maven dep from build.xml
    dupsearch  search unkonw jar source
+   checksum   checksum file
    help, h    Shows a list of commands or help for one command
+
 ```
 
 ## Usage

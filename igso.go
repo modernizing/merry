@@ -5,6 +5,7 @@ import (
 	"github.com/phodal/igso/pkg/application/dupsearch"
 	"github.com/phodal/igso/pkg/application/maven"
 	dependency "github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/igso/pkg/infrastructure/bundle"
 	"github.com/urfave/cli/v2"
 	"io/ioutil"
 	"log"
@@ -54,6 +55,27 @@ func main() {
 				result := maven.BuildByDeps(deps, dependency.MavenProject{"0.0.1", "com.igso", "test", "4.0.0", nil})
 
 				_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(result), os.ModePerm)
+				return nil
+			},
+		},
+		{
+			Name:  "checksum",
+			Usage: "checksum file",
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name: "path", Aliases: []string{"p"},
+				},
+			},
+			Action: func(c *cli.Context) error {
+				var path = "."
+				if c.String("path") != "" {
+					path = c.String("path")
+				}
+				result, err := bundle.HashFileMD5(path)
+				fmt.Println(result)
+				if err != nil {
+					fmt.Println(err)
+				}
 				return nil
 			},
 		},
