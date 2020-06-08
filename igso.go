@@ -61,7 +61,7 @@ func outputResult(c *cli.Context) (error, bool) {
 		return nil, true
 	}
 
-	withPom := maven.ToMavenXml(contents, isExtract)
+	withPom := maven.FromAntToXml(string(contents), isExtract)
 
 	_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(withPom), os.ModePerm)
 	return nil, false

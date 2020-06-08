@@ -7,7 +7,7 @@ import (
 
 func Test_ShouldConvertToMavenXml(t *testing.T) {
 	g := NewGomegaWithT(t)
-	result := ToMavenXml([]byte(`
+	result := FromAntToXml(`
 <project name="testing.example" default="dist">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>my-test-app</artifactId>
@@ -20,7 +20,7 @@ func Test_ShouldConvertToMavenXml(t *testing.T) {
         </path>
     </target>
 </project>
-`), false)
+`, false)
 
 	g.Expect(result).To(Equal(`<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">

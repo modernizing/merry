@@ -2,8 +2,8 @@ package maven
 
 import "github.com/phodal/igso/pkg/domain"
 
-func ToMavenXml(contents []byte, isExtract bool) string {
-	newAntModel := FromAnt(string(contents), isExtract)
+func FromAntToXml(content string, isExtract bool) string {
+	newAntModel := FromAnt(content, isExtract)
 	deps := newAntModel.Dependencies
 
 	results := buildDepStr(deps)
