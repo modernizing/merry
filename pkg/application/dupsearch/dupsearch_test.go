@@ -1,7 +1,6 @@
 package dupsearch
 
 import (
-	"fmt"
 	. "github.com/onsi/gomega"
 	"strings"
 	"testing"
@@ -14,7 +13,7 @@ func TestShouldGetPropertyName(t *testing.T) {
 		return strings.HasSuffix(path, ".jar")
 	}
 
-	files := GetFilesByFilter("../../../_fixtures", jarFileFilter)
+	files := GetFilesByFilter("../../../_fixtures/bundle/sample", jarFileFilter)
 
 	g.Expect(len(files)).To(Equal(2))
 }
@@ -23,6 +22,6 @@ func TestShouldGetByPath(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 
-	files := DupSearch("../../../_fixtures")
+	files := DupSearch("../../../_fixtures/bundle/sample")
 	g.Expect(len(files)).To(Equal(2))
 }
