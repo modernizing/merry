@@ -72,3 +72,4 @@ coverage.txt
 gen/
 tmp/
 build.xml
+pom.xml
