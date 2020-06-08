@@ -1,16 +1,12 @@
 package dependency
 
 import (
+	. "github.com/phodal/igso/pkg/domain"
 	"regexp"
 )
 
-type Dependency struct {
-	Version    string
-	ArtifactId string
-}
-
-func ByFileName(s string) Dependency {
-	var dependency Dependency
+func ByFileName(s string) MavenDependency {
+	var dependency MavenDependency
 	reg := regexp.MustCompile("([a-z][a-z0-9_-]*)-([.a-z0-9_]+[.0-9a-z_]*).jar")
 	result := reg.FindStringSubmatch(s)
 	if len(result) >= 2 {
