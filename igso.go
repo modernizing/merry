@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/phodal/igso/pkg/application/dupsearch"
 	"github.com/phodal/igso/pkg/application/maven"
 	"github.com/urfave/cli/v2"
 	"io/ioutil"
@@ -30,6 +31,25 @@ func main() {
 				if done {
 					return err
 				}
+				return nil
+			},
+		},
+		{
+			Name:  "dupsearch",
+			Usage: "search unkonw jar source",
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name: "path", Aliases: []string{"p"},
+				},
+			},
+			Action: func(c *cli.Context) error {
+				var path = "."
+				if c.String("path") != "" {
+					path = c.String("path")
+				}
+
+				dupsearch.DupSearch(path)
+
 				return nil
 			},
 		},
@@ -66,4 +86,3 @@ func outputResult(c *cli.Context) (error, bool) {
 	_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(withPom), os.ModePerm)
 	return nil, false
 }
-
