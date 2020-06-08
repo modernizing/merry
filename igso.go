@@ -51,7 +51,7 @@ func main() {
 
 				deps := dupsearch.DupSearch(path)
 				deps = dependency.RemoveDuplicate(deps)
-				result := maven.BuildByDeps(deps, dependency.MavenProject{"0.0.1", "com.igso", "test", "test", nil})
+				result := maven.BuildByDeps(deps, dependency.MavenProject{"0.0.1", "com.igso", "test", "4.0.0", nil})
 
 				_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(result), os.ModePerm)
 				return nil

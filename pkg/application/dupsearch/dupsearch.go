@@ -16,12 +16,14 @@ func DupSearch(root string) []MavenDependency {
 
 	jarPaths := GetFilesByFilter(root, jarFileFilter)
 	for _, path := range jarPaths {
-		props, _ := properties.ReadPropertiesFromZip(path)
-		results = append(results, MavenDependency{
-			Version:    props["version"],
-			GroupId:    props["groupId"],
-			ArtifactId: props["artifactId"],
-		})
+		props, err := properties.ReadPropertiesFromZip(path)
+		if (err != nil) && props["groupId"] != "" {
+			results = append(results, MavenDependency{
+				Version:    props["version"],
+				GroupId:    props["groupId"],
+				ArtifactId: props["artifactId"],
+			})
+		}
 	}
 
 	return results
