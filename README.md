@@ -6,8 +6,8 @@
 
 Todo:
 
- - [ ] Ant to Maven
-    - [ ] dependencies convert
+ - [x] Ant to Maven
+    - [x] dependencies convert
     - [ ] tasks convert
  - [ ] Manifest convert
     - [ ] to BND
