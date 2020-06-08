@@ -3,6 +3,7 @@ package bundle
 import (
 	"fmt"
 	. "github.com/onsi/gomega"
+	"os"
 	"path/filepath"
 	"testing"
 )
@@ -44,5 +45,6 @@ func TestShouldUnzipJar(t *testing.T) {
 		fmt.Println(err)
 	}
 
-	g.Expect(".").To(Equal((".")))
+	_, e := os.Stat(filepath.FromSlash("./tmp/META-INF/MANIFEST.MF"))
+	g.Expect(e).To(BeNil())
 }
