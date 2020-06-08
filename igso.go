@@ -18,7 +18,7 @@ func main() {
 	app.Commands = []*cli.Command{
 		{
 			Name:  "boom",
-			Usage: "make an explosive entrance",
+			Usage: "build maven dep from build.xml",
 			Flags: []cli.Flag{
 				&cli.StringFlag{
 					Name: "path", Aliases: []string{"p"},
