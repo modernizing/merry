@@ -12,34 +12,27 @@ import (
 )
 
 func main() {
-	app := &cli.App{
-		Name:  "boom",
-		Usage: "make an explosive entrance",
-		Action: func(c *cli.Context) error {
-			var contents []byte
-			var err error
-			var path = "."
-			if c.Args().Len() > 1 {
-				path = c.Args().Get(1)
-				contents, err = ioutil.ReadFile(filepath.FromSlash(path + "/" + "build.xml"))
-			} else {
-				contents, err = ioutil.ReadFile("build.xml")
-			}
-			if err != nil {
-				fmt.Println(err)
-				_ = fmt.Errorf("Failed read file: %s ", err)
+	app := &cli.App{}
+	app.UseShortOptionHandling = true
+	app.Commands = []*cli.Command{
+		{
+			Name:  "boom",
+			Usage: "make an explosive entrance",
+			Flags: []cli.Flag{
+				&cli.StringFlag{
+					Name: "path", Aliases: []string{"p"},
+				},
+				&cli.BoolFlag{
+					Name: "extract", Aliases: []string{"x"},
+				},
+			},
+			Action: func(c *cli.Context) error {
+				err, done := outputResult(c)
+				if done {
+					return err
+				}
 				return nil
-			}
-
-			newAntModel := maven.FromAnt(string(contents))
-			deps := newAntModel.Dependencies
-
-			results := buildDepStr(deps)
-			withPom := buildFinaly(newAntModel, results)
-
-			fmt.Println(withPom)
-			_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(withPom), os.ModePerm)
-			return nil
+			},
 		},
 	}
 
@@ -47,6 +40,36 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func outputResult(c *cli.Context) (error, bool) {
+	var contents []byte
+	var err error
+	var path = "."
+	if c.String("path") != "" {
+		path = c.String("path")
+	}
+
+	isExtract := c.Bool("extract")
+	if c.Args().Len() > 1 {
+		contents, err = ioutil.ReadFile(filepath.FromSlash(path + "/" + "build.xml"))
+	} else {
+		contents, err = ioutil.ReadFile("build.xml")
+	}
+	if err != nil {
+		fmt.Println(err)
+		_ = fmt.Errorf("Failed read file: %s ", err)
+		return nil, true
+	}
+
+	newAntModel := maven.FromAnt(string(contents), isExtract)
+	deps := newAntModel.Dependencies
+
+	results := buildDepStr(deps)
+	withPom := buildFinaly(newAntModel, results)
+
+	_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(withPom), os.ModePerm)
+	return nil, false
 }
 
 func buildFinaly(newAntModel dependency.MavenProject, results string) string {

@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func FromAnt(str string) MavenProject {
+func FromAnt(str string, extract bool) MavenProject {
 	antModel := xmlconv.XmlConvert(str)
 
 	project := &MavenProject{
@@ -17,17 +17,26 @@ func FromAnt(str string) MavenProject {
 		GroupId:      antModel.GroupId,
 		ModelVersion: antModel.ModelVersion,
 	}
-	project.Dependencies = BuildDependencies(antModel)
 
+	project.Dependencies = BuildDependencies(antModel, extract)
 	return *project
 }
 
-func BuildDependencies(antModel xmlconv.AntModel) []MavenDependency {
+func BuildDependencies(antModel xmlconv.AntModel, extract bool) []MavenDependency {
 	var results []MavenDependency
 	for _, target := range antModel.Target {
 		if target.Path.PathElements != nil {
 			for _, pathElement := range target.Path.PathElements {
-				results = readWithUnzip(pathElement, results)
+				if extract {
+					results = readWithUnzip(pathElement, results)
+				} else {
+					props, _ := properties.ReadPropertiesFromZip(pathElement.Path)
+					results = append(results, MavenDependency{
+						Version:    props["version"],
+						GroupId:    props["groupId"],
+						ArtifactId: props["artifactId"],
+					})
+				}
 			}
 		}
 	}
