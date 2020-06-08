@@ -58,10 +58,7 @@ func buildFinaly(newAntModel dependency.MavenProject, results string) string {
 	<artifactId>` + newAntModel.ArtifactId + `</artifactId>
 	<version>` + newAntModel.Version + `</version>
 
-    <artifactId></artifactId>
-
-    <dependencies>` + results + `   
-    </dependencies>
+    <dependencies>` + results + `</dependencies>
 
 </project>
 `
