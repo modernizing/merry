@@ -11,6 +11,7 @@ Todo:
     - [x] Checksum File
     - [x] Unzip file
     - [ ] Parse Manifest
+ - [ ] Ant to Gradle
  - [ ] Manifest convert
     - [ ] to BND
  - [ ] Microservices
