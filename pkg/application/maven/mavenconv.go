@@ -27,20 +27,25 @@ func BuildDependencies(antModel xmlconv.AntModel) []MavenDependency {
 	for _, target := range antModel.Target {
 		if target.Path.PathElements != nil {
 			for _, pathElement := range target.Path.PathElements {
-				filenames, _ := bundle.Unzip(pathElement.Path, "tmp")
-				for _, filename := range filenames {
-					if strings.HasSuffix(filename, "pom.properties") {
-						props, _ := properties.ReadPropertiesFile(filename)
-						results = append(results, MavenDependency{
-							Version:    props["version"],
-							GroupId:    props["groupId"],
-							ArtifactId: props["artifactId"],
-						})
-					}
-				}
+				results = readWithUnzip(pathElement, results)
 			}
 		}
 	}
 
+	return results
+}
+
+func readWithUnzip(pathElement xmlconv.PathElement, results []MavenDependency) []MavenDependency {
+	filenames, _ := bundle.Unzip(pathElement.Path, "tmp")
+	for _, filename := range filenames {
+		if strings.HasSuffix(filename, "pom.properties") {
+			props, _ := properties.ReadPropertiesFile(filename)
+			results = append(results, MavenDependency{
+				Version:    props["version"],
+				GroupId:    props["groupId"],
+				ArtifactId: props["artifactId"],
+			})
+		}
+	}
 	return results
 }
