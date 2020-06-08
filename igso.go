@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/phodal/igso/pkg/application/maven"
+	dependency "github.com/phodal/igso/pkg/domain"
 	"github.com/urfave/cli/v2"
 	"io/ioutil"
 	"log"
@@ -30,38 +31,12 @@ func main() {
 				return nil
 			}
 
-			deps := maven.FromAnt(string(contents))
+			newAntModel := maven.FromAnt(string(contents))
+			deps := newAntModel.Dependencies
 
-			var results = ""
-			for _, dep := range deps {
-				var tmpl = `
-      <dependency>
-          <groupId>` + dep.GroupId + `</groupId>
-          <artifactId>` + dep.ArtifactId + `</artifactId>
-          <version>` + dep.Version + `</version>
-      </dependency>
-`
-				results += tmpl
-			}
+			results := buildDepStr(deps)
+			withPom := buildFinaly(newAntModel, results)
 
-			var withPom = `<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId></groupId>        
-        <artifactId></artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-
-    <artifactId></artifactId>
-
-    <dependencies>` + results + `   
-</dependencies>
-
-</project>
-`
 			fmt.Println(withPom)
 			_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(withPom), os.ModePerm)
 			return nil
@@ -72,4 +47,38 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func buildFinaly(newAntModel dependency.MavenProject, results string) string {
+	var withPom = `<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>` + newAntModel.ModelVersion + `</modelVersion>
+	<groupId>` + newAntModel.GroupId + `</groupId>        
+	<artifactId>` + newAntModel.ArtifactId + `</artifactId>
+	<version>` + newAntModel.Version + `</version>
+
+    <artifactId></artifactId>
+
+    <dependencies>` + results + `   
+    </dependencies>
+
+</project>
+`
+	return withPom
+}
+
+func buildDepStr(deps []dependency.MavenDependency) string {
+	var results = ""
+	for _, dep := range deps {
+		var tmpl = `
+      <dependency>
+          <groupId>` + dep.GroupId + `</groupId>
+          <artifactId>` + dep.ArtifactId + `</artifactId>
+          <version>` + dep.Version + `</version>
+      </dependency>
+`
+		results += tmpl
+	}
+	return results
 }

@@ -6,3 +6,10 @@ type MavenDependency struct {
 	ArtifactId string
 }
 
+type MavenProject struct {
+	Version      string
+	GroupId      string
+	ArtifactId   string
+	ModelVersion string
+	Dependencies []MavenDependency
+}

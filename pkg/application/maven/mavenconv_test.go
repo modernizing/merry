@@ -7,7 +7,7 @@ import (
 
 func TestShouldGetPropertyName(t *testing.T) {
 	g := NewGomegaWithT(t)
-	result := FromAnt(`
+	ant := FromAnt(`
 <project name="testing.example" default="dist">
   <target name="test.management" depends="dist">
     <path id="classpath">
@@ -16,6 +16,7 @@ func TestShouldGetPropertyName(t *testing.T) {
   </target>
 </project>
 `)
+	result := ant.Dependencies
 
 	g.Expect(len(result)).To(Equal(1))
 	g.Expect(result[0].ArtifactId).To(Equal("annotations"))
