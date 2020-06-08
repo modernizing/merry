@@ -39,7 +39,7 @@ func check(e error) {
 	}
 }
 
-func GetJarFiles(path string) []zip.File {
+func ListJarFiles(path string) []zip.File {
 	zf, err := zip.OpenReader(path)
 	check(err)
 	defer closeFile(zf)

@@ -13,7 +13,7 @@ func TestShouldReadZipList(t *testing.T) {
 	path := `../../../_fixtures/bundle/sample/felix-tut-8-1.0-SNAPSHOT.jar`
 	absPath := filepath.FromSlash(path)
 
-	result := GetJarFiles(absPath)
+	result := ListJarFiles(absPath)
 	g.Expect(len(result)).To(Equal(11))
 
 	var names []string
