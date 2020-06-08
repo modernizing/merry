@@ -8,14 +8,13 @@ Todo:
 
  - [x] Ant to Maven
     - [x] dependencies convert
-    - [ ] tasks convert
+    - [x] Checksum File
+    - [x] Unzip file
+    - [ ] Parse Manifest
  - [ ] Manifest convert
     - [ ] to BND
  - [ ] Microservices
- - [ ] bundle to Maven
-    - [ ] Checksum File
-    - [x] Unzip file
-    - [ ] Parse Manifest
+ - [x] Dup Search. search all jars and find not in nexus package
 
 License
 ---
