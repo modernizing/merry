@@ -31,7 +31,7 @@ func BuildDependencies(antModel xmlconv.AntModel, extract bool) []MavenDependenc
 					results = readWithUnzip(pathElement, results)
 				} else {
 					props, err := properties.ReadPropertiesFromZip(pathElement.Path)
-					if (err != nil) && props["groupId"] != "" {
+					if (err == nil) && props["groupId"] != "" {
 						results = append(results, MavenDependency{
 							Version:    props["version"],
 							GroupId:    props["groupId"],
