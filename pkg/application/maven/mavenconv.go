@@ -1,6 +1,7 @@
 package maven
 
 import (
+	"fmt"
 	. "github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
 	"github.com/phodal/igso/pkg/infrastructure/properties"
@@ -37,6 +38,8 @@ func BuildDependencies(antModel xmlconv.AntModel, extract bool) []MavenDependenc
 							GroupId:    props["groupId"],
 							ArtifactId: props["artifactId"],
 						})
+					} else {
+						fmt.Println("lost properties file: " + pathElement.Path)
 					}
 				}
 			}

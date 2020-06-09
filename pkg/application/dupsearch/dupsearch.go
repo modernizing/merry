@@ -1,6 +1,7 @@
 package dupsearch
 
 import (
+	"fmt"
 	. "github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure/properties"
 	"os"
@@ -23,6 +24,8 @@ func DupSearch(root string) []MavenDependency {
 				GroupId:    props["groupId"],
 				ArtifactId: props["artifactId"],
 			})
+		} else {
+			fmt.Println("lost properties file: " + path)
 		}
 	}
 
