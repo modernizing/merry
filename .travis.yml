@@ -1,0 +1,50 @@
+language: go
+
+go:
+  - 1.13.x
+
+os:
+  - linux
+  - osx
+  - windows
+
+jobs:
+  include:
+    - go: 1.12.x
+      os: linux
+    - go: tip
+      os: linux
+
+env:
+  global:
+    - GO111MODULE=on
+    - PATH=${TRAVIS_BUILD_DIR}/bin:${PATH}
+#
+#addons:
+#  apt:
+#    packages:
+#      - graphviz
+
+before_script:
+#  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew update          ; fi
+#  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then brew install graphviz; fi
+  - go get github.com/onsi/gomega
+  - go get github.com/onsi/ginkgo/ginkgo
+  - go get github.com/modocache/gover
+  - go get github.com/mattn/goveralls
+
+git:
+  depth: 1
+
+install: true
+
+before_install:
+#  - go build -buildmode=plugin -o plugins/dep.so core/context/deps/*.go
+  - go get -t -v  $(go list ./... | grep -v /languages/)
+
+script:
+#  - go build -buildmode=plugin -o plugins/dep.so core/context/deps/*.go
+  - go test -v  $(go list ./... | grep -v /languages/) -coverprofile=coverage.txt -covermode=atomic -coverpkg=./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
