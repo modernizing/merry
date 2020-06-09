@@ -74,3 +74,4 @@ tmp/
 build.xml
 pom.xml
 !_fixtures/multiple/maven
+!cmd/testdata/build.xml

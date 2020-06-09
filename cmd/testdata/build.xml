@@ -1,0 +1,14 @@
+<project name="testing.example" default="dist">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>my-test-app</artifactId>
+    <groupId>my-test-group</groupId>
+    <version>1.0-SNAPSHOT</version>
+
+    <target name="test.management" depends="dist">
+        <path id="classpatsh">
+            <pathelement path="../../_fixtures/bundle/sample/felix-duplicate.jar" />
+            <pathelement path="../../_fixtures/jar/sample/annotations-13.0.jar" />
+            <pathelement path="../../_fixtures/jar/kotlinjar/chapi-tbs-0.0.5.jar" />
+        </path>
+    </target>
+</project>
