@@ -6,6 +6,8 @@
 
 2020-06-07 提议
 
+2020-06-09 已弃用
+
 ## 背景
 
 根据 ArtifactID 查询包依赖信息：
@@ -25,4 +27,4 @@ You need an old Luke version using an old Lucene version, since Maven Indexer 5.
 
 ## 后果
 
-在这里记录结果...
+通过生成 `pom.xml`，结合 `mvn install` 来完成基本的依赖转换。
