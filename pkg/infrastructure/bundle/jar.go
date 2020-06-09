@@ -2,6 +2,7 @@ package bundle
 
 import (
 	"archive/zip"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
@@ -70,6 +71,7 @@ func Unzip(src, dest string) ([]string, error) {
 	extractAndWriteFile := func(f *zip.File) error {
 		rc, err := f.Open()
 		if err != nil {
+			fmt.Println(err)
 			return err
 		}
 		defer func() {
@@ -86,6 +88,7 @@ func Unzip(src, dest string) ([]string, error) {
 			os.MkdirAll(filepath.Dir(path), 0755)
 			f, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
 			if err != nil {
+				fmt.Println(err)
 				return err
 			}
 			defer func() {
@@ -96,6 +99,7 @@ func Unzip(src, dest string) ([]string, error) {
 
 			_, err = io.Copy(f, rc)
 			if err != nil {
+				fmt.Println(err)
 				return err
 			}
 			fileNames = append(fileNames, f.Name())
@@ -106,6 +110,7 @@ func Unzip(src, dest string) ([]string, error) {
 	for _, f := range r.File {
 		err := extractAndWriteFile(f)
 		if err != nil {
+			fmt.Println(err)
 			return nil, err
 		}
 	}
