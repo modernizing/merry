@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	. "github.com/phodal/igso/cmd"
 	"github.com/phodal/igso/pkg/application/dupsearch"
 	"github.com/phodal/igso/pkg/application/maven"
 	dependency "github.com/phodal/igso/pkg/domain"
@@ -14,6 +15,12 @@ import (
 )
 
 func main() {
+	output := os.Stdout
+	rootCmd := NewRootCmd(output)
+	_ = rootCmd.Execute()
+}
+
+func main2() {
 	app := &cli.App{}
 	app.UseShortOptionHandling = true
 	app.Commands = []*cli.Command{
