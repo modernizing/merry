@@ -9,7 +9,6 @@ require (
 	github.com/pkg/errors v0.8.1
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/spf13/cobra v1.0.0
-	github.com/urfave/cli/v2 v2.2.0
 	github.com/yudai/gojsondiff v1.0.0
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
 	golang.org/x/net v0.0.0-20200602114024-627f9648deb9 // indirect
