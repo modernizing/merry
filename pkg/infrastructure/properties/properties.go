@@ -49,8 +49,10 @@ func ReadPropertiesFromZip(zipFile string) (AppConfigProperties, error) {
 	check(err)
 	defer closeFile(zf)
 
+	var hasProperties = false
 	for _, file := range zf.File {
 		if strings.HasSuffix(file.Name, "pom.properties") {
+			hasProperties = true
 			all := readAll(file)
 			content := string(all)
 			lines := strings.Split(content, "\n")
@@ -58,6 +60,10 @@ func ReadPropertiesFromZip(zipFile string) (AppConfigProperties, error) {
 				buildConfigByLine(line, config)
 			}
 		}
+	}
+
+	if !hasProperties {
+		return nil, err
 	}
 
 	return config, err

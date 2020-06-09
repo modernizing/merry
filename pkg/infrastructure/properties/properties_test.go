@@ -1,7 +1,6 @@
 package properties
 
 import (
-	"fmt"
 	. "github.com/onsi/gomega"
 	"path/filepath"
 	"testing"
@@ -24,8 +23,16 @@ func TestShouldGetPropertyFromZip(t *testing.T) {
 	absPath := filepath.FromSlash(path)
 
 	result, _ := ReadPropertiesFromZip(absPath)
-	fmt.Println(result)
 	g.Expect(result["version"]).To(Equal("13.0"))
 	g.Expect(result["groupId"]).To(Equal("org.jetbrains"))
 	g.Expect(result["artifactId"]).To(Equal("annotations"))
+}
+
+func TestShouldGetEmptyPropertyFromKotlinJar(t *testing.T) {
+	g := NewGomegaWithT(t)
+	path := `../../../_fixtures/jar/kotlinjar/chapi-tbs-0.0.5.jar`
+	absPath := filepath.FromSlash(path)
+
+	result, _ := ReadPropertiesFromZip(absPath)
+	g.Expect(result).To(BeNil())
 }
