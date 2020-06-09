@@ -48,7 +48,7 @@ func TestShouldUnzipBundle(t *testing.T) {
 	_, e := os.Stat(filepath.FromSlash("./tmp/META-INF/MANIFEST.MF"))
 	g.Expect(e).To(BeNil())
 	g.Expect(len(filenames)).To(Equal(5))
-	g.Expect(filenames[0]).To(Equal("tmp/META-INF/MANIFEST.MF"))
+	g.Expect(filenames[0]).To(Equal(filepath.FromSlash("tmp/META-INF/MANIFEST.MF")))
 }
 
 func TestShouldUnzipJar(t *testing.T) {
