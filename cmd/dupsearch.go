@@ -1,0 +1,45 @@
+package cmd
+
+import (
+	"github.com/phodal/igso/pkg/application/dupsearch"
+	"github.com/phodal/igso/pkg/application/maven"
+	dependency "github.com/phodal/igso/pkg/domain"
+	"github.com/spf13/cobra"
+	"io/ioutil"
+	"os"
+	"path/filepath"
+)
+
+type DupSearchConfig struct {
+	Path string
+}
+
+var (
+	dupSearchConfig DupSearchConfig
+)
+
+func init() {
+	dupSearch.SetOut(output)
+
+	dupSearch.PersistentFlags().StringVarP(&dupSearchConfig.Path, "path", "p", "", "path")
+
+	rootCmd.AddCommand(dupSearch)
+}
+
+var dupSearch = &cobra.Command{
+	Use:   "dupsearch",
+	Short: "d",
+	Run: func(cmd *cobra.Command, args []string) {
+		path := cmd.Flag("path").Value.String()
+		deps := dupsearch.DupSearch(path)
+		deps = dependency.RemoveDuplicate(deps)
+		result := maven.BuildByDeps(deps, dependency.MavenProject{
+			Version:      "0.0.1",
+			GroupId:      "com.igso",
+			ArtifactId:   "test",
+			ModelVersion: "4.0.0",
+		})
+
+		_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(result), os.ModePerm)
+	},
+}
