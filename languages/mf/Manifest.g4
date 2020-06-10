@@ -90,7 +90,7 @@ Uppercase:          [A-Z];
 
 //LINE_COMMENT :       ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
 SPACE:               [ \t];
-NL :                 '\r'? '\n' -> skip;
+NL :                 ('\r'? '\n' ' '? ) -> skip;
 
 STRING_LITERAL:     '"' (~["\\\r\n] | EscapeSequence)* '"';
 IDENTIFIER: Letter LetterOrDigit*;
