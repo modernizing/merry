@@ -39,6 +39,12 @@ func (s *BaseManifestListener) EnterValue(ctx *ValueContext) {}
 // ExitValue is called when production value is exited.
 func (s *BaseManifestListener) ExitValue(ctx *ValueContext) {}
 
+// EnterPkg is called when production pkg is entered.
+func (s *BaseManifestListener) EnterPkg(ctx *PkgContext) {}
+
+// ExitPkg is called when production pkg is exited.
+func (s *BaseManifestListener) ExitPkg(ctx *PkgContext) {}
+
 // EnterConfigAssign is called when production configAssign is entered.
 func (s *BaseManifestListener) EnterConfigAssign(ctx *ConfigAssignContext) {}
 

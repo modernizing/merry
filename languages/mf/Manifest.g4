@@ -7,12 +7,14 @@ section
   ;
 
 value
- : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)? (SEMI configAssign)*
+ : pkg (SEMI pkg)*
  ;
 
-configAssign
-  : assignKey SEQUAL assignValue
+pkg
+  : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)? (SEMI configAssign)*
   ;
+
+configAssign: assignKey SEQUAL assignValue;
 
 assignKey: OTHERS;
 assignValue: OTHERS;

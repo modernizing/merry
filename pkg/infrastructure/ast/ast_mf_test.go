@@ -18,8 +18,7 @@ func Test_ShouldGetManifestProperty(t *testing.T) {
 
 func Test_ShouldParseImportPackage(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `Import-Package: org.osgi.framework;
-version="[1.3,2.0)"
+	code := `Import-Package: org.osgi.framework;version="[1.3,2.0)"
 
 `
 	results := Analysis(code, "hello.mf").KeyValues
@@ -50,8 +49,7 @@ Bundle-ManifestVersion: 2
 
 func Test_ShouldGetImportPackage(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `Import-Package: org.osgi.framework;
-version="[1.3,2.0)"
+	code := `Import-Package: org.osgi.framework;version="[1.3,2.0)"
 
 `
 	results := Analysis(code, "hello.mf")

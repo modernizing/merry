@@ -17,6 +17,9 @@ type ManifestListener interface {
 	// EnterValue is called when entering the value production.
 	EnterValue(c *ValueContext)
 
+	// EnterPkg is called when entering the pkg production.
+	EnterPkg(c *PkgContext)
+
 	// EnterConfigAssign is called when entering the configAssign production.
 	EnterConfigAssign(c *ConfigAssignContext)
 
@@ -34,6 +37,9 @@ type ManifestListener interface {
 
 	// ExitValue is called when exiting the value production.
 	ExitValue(c *ValueContext)
+
+	// ExitPkg is called when exiting the pkg production.
+	ExitPkg(c *PkgContext)
 
 	// ExitConfigAssign is called when exiting the configAssign production.
 	ExitConfigAssign(c *ConfigAssignContext)

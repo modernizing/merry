@@ -71,27 +71,31 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		Value: ctx.GetText(),
 	})
 
-	if ctx.VERSION() != nil {
-		versionText := ctx.STRING_LITERAL().GetText()
-		versionInfo := versionText[2 : len(versionText)-2]
-		split := strings.Split(versionInfo, ",")
-		javaPackage := JavaPackage{
-			Name:         ctx.OTHERS().GetText(),
-			VersionInfo:  versionInfo,
-			StartVersion: split[0],
-			EndVersion:   split[1],
-		}
-		if len(ctx.AllConfigAssign()) > 0 {
-			for _, config := range ctx.AllConfigAssign() {
-				configAssign := (config).(*parser.ConfigAssignContext)
-				javaPackage.Config = append(javaPackage.Config, KeyValue{
-					Key: configAssign.AssignKey().GetText(),
-					Value: configAssign.AssignValue().GetText(),
-				})
+	for _, pkg := range ctx.AllPkg() {
+		pkgContext := (pkg).(*parser.PkgContext)
+		if pkgContext.VERSION() != nil {
+			versionText := pkgContext.STRING_LITERAL().GetText()
+			versionInfo := versionText[2 : len(versionText)-2]
+			split := strings.Split(versionInfo, ",")
+			javaPackage := JavaPackage{
+				Name:         pkgContext.OTHERS().GetText(),
+				VersionInfo:  versionInfo,
+				StartVersion: split[0],
+				EndVersion:   split[1],
 			}
+			if len(pkgContext.AllConfigAssign()) > 0 {
+				for _, config := range pkgContext.AllConfigAssign() {
+					configAssign := (config).(*parser.ConfigAssignContext)
+					javaPackage.Config = append(javaPackage.Config, KeyValue{
+						Key: configAssign.AssignKey().GetText(),
+						Value: configAssign.AssignValue().GetText(),
+					})
+				}
+			}
+
+			s.manifest.Package = append(s.manifest.Package, javaPackage)
 		}
 
-		s.manifest.Package = append(s.manifest.Package, javaPackage)
 	}
 }
 
