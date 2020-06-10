@@ -1,6 +1,10 @@
-Value=1
-Key=2
-Colon=3
-LINE_COMMENT=4
-WS=5
-':'=3
+Key=1
+ValueText=2
+Uppercase=3
+Lowercase=4
+Symbol=5
+Colon=6
+LINE_COMMENT=7
+Space=8
+NewLine=9
+':'=6

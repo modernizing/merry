@@ -2,19 +2,32 @@ grammar Manifest;
 
 mf: (LINE_COMMENT | section)* EOF;
 
-section: Key Colon value;
+section: Key Colon Space? value;
 
-value
-  : Value
+value: ValueText (ValueText | Space)*;
+
+Key: Uppercase (Letter | Symbol)*;
+
+ValueText
+  : LetterOrDigit
+  | Symbol
   ;
 
-Value : ([a-z] | [A-Z] | [0-9] | '(' | ')' | '.' | '*')+;
+fragment Letter: [a-zA-Z];
+fragment LetterOrDigit
+    : Letter
+    | [0-9]
+    ;
 
-Key: [A-Z] ([a-z] | '-' | [A-Z])+;
+Uppercase: [A-Z];
+Lowercase: [a-z];
+
+Symbol: '(' | ')' | '.' | '-';
 
 Colon: ':';
 
 LINE_COMMENT : ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
 
-WS  :   (('\r')? '\n' |  ' ' | '\t')+  -> skip;
+Space:  [ \t];
 
+NewLine : '\r'? '\n' -> skip;

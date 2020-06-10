@@ -48,12 +48,10 @@ func (s *MfIdentListener) EnterSection(ctx *parser.SectionContext) {
 }
 
 func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
-	if ctx.Value() != nil {
-		s.manifest = append(s.manifest, Manifest{
-			Key:   s.currentKey,
-			Value: ctx.Value().GetText(),
-		})
-	}
+	s.manifest = append(s.manifest, Manifest{
+		Key:   s.currentKey,
+		Value: ctx.GetText(),
+	})
 }
 
 func (s *MfIdentListener) GetResult() []Manifest {

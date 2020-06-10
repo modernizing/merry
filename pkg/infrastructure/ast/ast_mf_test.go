@@ -7,8 +7,7 @@ import (
 
 func Test_ShouldGetManifestProperty(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `
-Manifest-Version: 1.0
+	code := `Manifest-Version: 1.0
 
 `
 	results := Analysis(code, "hello.mf")
