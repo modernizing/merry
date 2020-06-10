@@ -16,21 +16,25 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 46, 36, 4,
-	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 3, 2, 3, 2, 7, 2, 11, 10, 2, 12, 2, 14,
-	2, 14, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3,
-	4, 3, 4, 3, 4, 5, 4, 28, 10, 4, 3, 4, 3, 4, 3, 4, 3, 4, 5, 4, 34, 10, 4,
-	3, 4, 2, 2, 5, 2, 4, 6, 2, 2, 2, 36, 2, 12, 3, 2, 2, 2, 4, 17, 3, 2, 2,
-	2, 6, 22, 3, 2, 2, 2, 8, 11, 7, 42, 2, 2, 9, 11, 5, 4, 3, 2, 10, 8, 3,
-	2, 2, 2, 10, 9, 3, 2, 2, 2, 11, 14, 3, 2, 2, 2, 12, 10, 3, 2, 2, 2, 12,
-	13, 3, 2, 2, 2, 13, 15, 3, 2, 2, 2, 14, 12, 3, 2, 2, 2, 15, 16, 7, 2, 2,
-	3, 16, 3, 3, 2, 2, 2, 17, 18, 7, 4, 2, 2, 18, 19, 7, 7, 2, 2, 19, 20, 7,
-	43, 2, 2, 20, 21, 5, 6, 4, 2, 21, 5, 3, 2, 2, 2, 22, 27, 7, 5, 2, 2, 23,
-	24, 7, 14, 2, 2, 24, 25, 7, 3, 2, 2, 25, 26, 7, 17, 2, 2, 26, 28, 7, 45,
-	2, 2, 27, 23, 3, 2, 2, 2, 27, 28, 3, 2, 2, 2, 28, 33, 3, 2, 2, 2, 29, 30,
-	7, 14, 2, 2, 30, 31, 7, 46, 2, 2, 31, 32, 7, 40, 2, 2, 32, 34, 7, 46, 2,
-	2, 33, 29, 3, 2, 2, 2, 33, 34, 3, 2, 2, 2, 34, 7, 3, 2, 2, 2, 6, 10, 12,
-	27, 33,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 45, 50, 4,
+	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 3,
+	2, 7, 2, 16, 10, 2, 12, 2, 14, 2, 19, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 5, 4, 33, 10, 4, 3, 4, 3,
+	4, 7, 4, 37, 10, 4, 12, 4, 14, 4, 40, 11, 4, 3, 5, 3, 5, 3, 5, 3, 5, 3,
+	6, 3, 6, 3, 7, 3, 7, 3, 7, 2, 2, 8, 2, 4, 6, 8, 10, 12, 2, 2, 2, 46, 2,
+	17, 3, 2, 2, 2, 4, 22, 3, 2, 2, 2, 6, 27, 3, 2, 2, 2, 8, 41, 3, 2, 2, 2,
+	10, 45, 3, 2, 2, 2, 12, 47, 3, 2, 2, 2, 14, 16, 5, 4, 3, 2, 15, 14, 3,
+	2, 2, 2, 16, 19, 3, 2, 2, 2, 17, 15, 3, 2, 2, 2, 17, 18, 3, 2, 2, 2, 18,
+	20, 3, 2, 2, 2, 19, 17, 3, 2, 2, 2, 20, 21, 7, 2, 2, 3, 21, 3, 3, 2, 2,
+	2, 22, 23, 7, 4, 2, 2, 23, 24, 7, 7, 2, 2, 24, 25, 7, 42, 2, 2, 25, 26,
+	5, 6, 4, 2, 26, 5, 3, 2, 2, 2, 27, 32, 7, 5, 2, 2, 28, 29, 7, 14, 2, 2,
+	29, 30, 7, 3, 2, 2, 30, 31, 7, 17, 2, 2, 31, 33, 7, 44, 2, 2, 32, 28, 3,
+	2, 2, 2, 32, 33, 3, 2, 2, 2, 33, 38, 3, 2, 2, 2, 34, 35, 7, 14, 2, 2, 35,
+	37, 5, 8, 5, 2, 36, 34, 3, 2, 2, 2, 37, 40, 3, 2, 2, 2, 38, 36, 3, 2, 2,
+	2, 38, 39, 3, 2, 2, 2, 39, 7, 3, 2, 2, 2, 40, 38, 3, 2, 2, 2, 41, 42, 5,
+	10, 6, 2, 42, 43, 7, 40, 2, 2, 43, 44, 5, 12, 7, 2, 44, 9, 3, 2, 2, 2,
+	45, 46, 7, 45, 2, 2, 46, 11, 3, 2, 2, 2, 47, 48, 7, 45, 2, 2, 48, 13, 3,
+	2, 2, 2, 5, 17, 32, 38,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
@@ -46,12 +50,12 @@ var symbolicNames = []string{
 	"LBRACE", "RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN",
 	"GT", "LT", "BANG", "TILDE", "QUESTION", "EQUAL", "LE", "GE", "NOTEQUAL",
 	"AND", "OR", "INC", "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR",
-	"CARET", "MOD", "DQUOTE", "SEQUAL", "Uppercase", "LINE_COMMENT", "SPACE",
-	"NL", "STRING_LITERAL", "IDENTIFIER",
+	"CARET", "MOD", "DQUOTE", "SEQUAL", "Uppercase", "SPACE", "NL", "STRING_LITERAL",
+	"IDENTIFIER",
 }
 
 var ruleNames = []string{
-	"mf", "section", "value",
+	"mf", "section", "value", "configAssign", "assignKey", "assignValue",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -121,18 +125,20 @@ const (
 	ManifestParserDQUOTE         = 37
 	ManifestParserSEQUAL         = 38
 	ManifestParserUppercase      = 39
-	ManifestParserLINE_COMMENT   = 40
-	ManifestParserSPACE          = 41
-	ManifestParserNL             = 42
-	ManifestParserSTRING_LITERAL = 43
-	ManifestParserIDENTIFIER     = 44
+	ManifestParserSPACE          = 40
+	ManifestParserNL             = 41
+	ManifestParserSTRING_LITERAL = 42
+	ManifestParserIDENTIFIER     = 43
 )
 
 // ManifestParser rules.
 const (
-	ManifestParserRULE_mf      = 0
-	ManifestParserRULE_section = 1
-	ManifestParserRULE_value   = 2
+	ManifestParserRULE_mf           = 0
+	ManifestParserRULE_section      = 1
+	ManifestParserRULE_value        = 2
+	ManifestParserRULE_configAssign = 3
+	ManifestParserRULE_assignKey    = 4
+	ManifestParserRULE_assignValue  = 5
 )
 
 // IMfContext is an interface to support dynamic dispatch.
@@ -175,14 +181,6 @@ func (s *MfContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *MfContext) EOF() antlr.TerminalNode {
 	return s.GetToken(ManifestParserEOF, 0)
-}
-
-func (s *MfContext) AllLINE_COMMENT() []antlr.TerminalNode {
-	return s.GetTokens(ManifestParserLINE_COMMENT)
-}
-
-func (s *MfContext) LINE_COMMENT(i int) antlr.TerminalNode {
-	return s.GetToken(ManifestParserLINE_COMMENT, i)
 }
 
 func (s *MfContext) AllSection() []ISectionContext {
@@ -250,37 +248,22 @@ func (p *ManifestParser) Mf() (localctx IMfContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(10)
+	p.SetState(15)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == ManifestParserKey || _la == ManifestParserLINE_COMMENT {
-		p.SetState(8)
-		p.GetErrorHandler().Sync(p)
-
-		switch p.GetTokenStream().LA(1) {
-		case ManifestParserLINE_COMMENT:
-			{
-				p.SetState(6)
-				p.Match(ManifestParserLINE_COMMENT)
-			}
-
-		case ManifestParserKey:
-			{
-				p.SetState(7)
-				p.Section()
-			}
-
-		default:
-			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	for _la == ManifestParserKey {
+		{
+			p.SetState(12)
+			p.Section()
 		}
 
-		p.SetState(12)
+		p.SetState(17)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(13)
+		p.SetState(18)
 		p.Match(ManifestParserEOF)
 	}
 
@@ -389,19 +372,19 @@ func (p *ManifestParser) Section() (localctx ISectionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(15)
+		p.SetState(20)
 		p.Match(ManifestParserKey)
 	}
 	{
-		p.SetState(16)
+		p.SetState(21)
 		p.Match(ManifestParserCOLON)
 	}
 	{
-		p.SetState(17)
+		p.SetState(22)
 		p.Match(ManifestParserSPACE)
 	}
 	{
-		p.SetState(18)
+		p.SetState(23)
 		p.Value()
 	}
 
@@ -470,16 +453,27 @@ func (s *ValueContext) STRING_LITERAL() antlr.TerminalNode {
 	return s.GetToken(ManifestParserSTRING_LITERAL, 0)
 }
 
-func (s *ValueContext) AllIDENTIFIER() []antlr.TerminalNode {
-	return s.GetTokens(ManifestParserIDENTIFIER)
+func (s *ValueContext) AllConfigAssign() []IConfigAssignContext {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IConfigAssignContext)(nil)).Elem())
+	var tst = make([]IConfigAssignContext, len(ts))
+
+	for i, t := range ts {
+		if t != nil {
+			tst[i] = t.(IConfigAssignContext)
+		}
+	}
+
+	return tst
 }
 
-func (s *ValueContext) IDENTIFIER(i int) antlr.TerminalNode {
-	return s.GetToken(ManifestParserIDENTIFIER, i)
-}
+func (s *ValueContext) ConfigAssign(i int) IConfigAssignContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IConfigAssignContext)(nil)).Elem(), i)
 
-func (s *ValueContext) SEQUAL() antlr.TerminalNode {
-	return s.GetToken(ManifestParserSEQUAL, 0)
+	if t == nil {
+		return nil
+	}
+
+	return t.(IConfigAssignContext)
 }
 
 func (s *ValueContext) GetRuleContext() antlr.RuleContext {
@@ -525,53 +519,349 @@ func (p *ManifestParser) Value() (localctx IValueContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(20)
+		p.SetState(25)
 		p.Match(ManifestParserOTHERS)
 	}
-	p.SetState(25)
+	p.SetState(30)
 	p.GetErrorHandler().Sync(p)
 
-	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext()) == 1 {
+	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext()) == 1 {
 		{
-			p.SetState(21)
+			p.SetState(26)
 			p.Match(ManifestParserSEMI)
 		}
 		{
-			p.SetState(22)
+			p.SetState(27)
 			p.Match(ManifestParserVERSION)
 		}
 		{
-			p.SetState(23)
+			p.SetState(28)
 			p.Match(ManifestParserASSIGN)
 		}
 		{
-			p.SetState(24)
+			p.SetState(29)
 			p.Match(ManifestParserSTRING_LITERAL)
 		}
 
 	}
-	p.SetState(31)
+	p.SetState(36)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == ManifestParserSEMI {
+	for _la == ManifestParserSEMI {
 		{
-			p.SetState(27)
+			p.SetState(32)
 			p.Match(ManifestParserSEMI)
 		}
 		{
-			p.SetState(28)
-			p.Match(ManifestParserIDENTIFIER)
-		}
-		{
-			p.SetState(29)
-			p.Match(ManifestParserSEQUAL)
-		}
-		{
-			p.SetState(30)
-			p.Match(ManifestParserIDENTIFIER)
+			p.SetState(33)
+			p.ConfigAssign()
 		}
 
+		p.SetState(38)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+	}
+
+	return localctx
+}
+
+// IConfigAssignContext is an interface to support dynamic dispatch.
+type IConfigAssignContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsConfigAssignContext differentiates from other interfaces.
+	IsConfigAssignContext()
+}
+
+type ConfigAssignContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyConfigAssignContext() *ConfigAssignContext {
+	var p = new(ConfigAssignContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ManifestParserRULE_configAssign
+	return p
+}
+
+func (*ConfigAssignContext) IsConfigAssignContext() {}
+
+func NewConfigAssignContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ConfigAssignContext {
+	var p = new(ConfigAssignContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ManifestParserRULE_configAssign
+
+	return p
+}
+
+func (s *ConfigAssignContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ConfigAssignContext) AssignKey() IAssignKeyContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignKeyContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IAssignKeyContext)
+}
+
+func (s *ConfigAssignContext) SEQUAL() antlr.TerminalNode {
+	return s.GetToken(ManifestParserSEQUAL, 0)
+}
+
+func (s *ConfigAssignContext) AssignValue() IAssignValueContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAssignValueContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IAssignValueContext)
+}
+
+func (s *ConfigAssignContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *ConfigAssignContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *ConfigAssignContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ManifestListener); ok {
+		listenerT.EnterConfigAssign(s)
+	}
+}
+
+func (s *ConfigAssignContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ManifestListener); ok {
+		listenerT.ExitConfigAssign(s)
+	}
+}
+
+func (p *ManifestParser) ConfigAssign() (localctx IConfigAssignContext) {
+	localctx = NewConfigAssignContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, ManifestParserRULE_configAssign)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(39)
+		p.AssignKey()
+	}
+	{
+		p.SetState(40)
+		p.Match(ManifestParserSEQUAL)
+	}
+	{
+		p.SetState(41)
+		p.AssignValue()
+	}
+
+	return localctx
+}
+
+// IAssignKeyContext is an interface to support dynamic dispatch.
+type IAssignKeyContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsAssignKeyContext differentiates from other interfaces.
+	IsAssignKeyContext()
+}
+
+type AssignKeyContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyAssignKeyContext() *AssignKeyContext {
+	var p = new(AssignKeyContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ManifestParserRULE_assignKey
+	return p
+}
+
+func (*AssignKeyContext) IsAssignKeyContext() {}
+
+func NewAssignKeyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AssignKeyContext {
+	var p = new(AssignKeyContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ManifestParserRULE_assignKey
+
+	return p
+}
+
+func (s *AssignKeyContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *AssignKeyContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(ManifestParserIDENTIFIER, 0)
+}
+
+func (s *AssignKeyContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *AssignKeyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *AssignKeyContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ManifestListener); ok {
+		listenerT.EnterAssignKey(s)
+	}
+}
+
+func (s *AssignKeyContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ManifestListener); ok {
+		listenerT.ExitAssignKey(s)
+	}
+}
+
+func (p *ManifestParser) AssignKey() (localctx IAssignKeyContext) {
+	localctx = NewAssignKeyContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 8, ManifestParserRULE_assignKey)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(43)
+		p.Match(ManifestParserIDENTIFIER)
+	}
+
+	return localctx
+}
+
+// IAssignValueContext is an interface to support dynamic dispatch.
+type IAssignValueContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsAssignValueContext differentiates from other interfaces.
+	IsAssignValueContext()
+}
+
+type AssignValueContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyAssignValueContext() *AssignValueContext {
+	var p = new(AssignValueContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = ManifestParserRULE_assignValue
+	return p
+}
+
+func (*AssignValueContext) IsAssignValueContext() {}
+
+func NewAssignValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *AssignValueContext {
+	var p = new(AssignValueContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = ManifestParserRULE_assignValue
+
+	return p
+}
+
+func (s *AssignValueContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *AssignValueContext) IDENTIFIER() antlr.TerminalNode {
+	return s.GetToken(ManifestParserIDENTIFIER, 0)
+}
+
+func (s *AssignValueContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *AssignValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *AssignValueContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ManifestListener); ok {
+		listenerT.EnterAssignValue(s)
+	}
+}
+
+func (s *AssignValueContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(ManifestListener); ok {
+		listenerT.ExitAssignValue(s)
+	}
+}
+
+func (p *ManifestParser) AssignValue() (localctx IAssignValueContext) {
+	localctx = NewAssignValueContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, ManifestParserRULE_assignValue)
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(45)
+		p.Match(ManifestParserIDENTIFIER)
 	}
 
 	return localctx

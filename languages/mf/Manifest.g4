@@ -1,20 +1,21 @@
 grammar Manifest;
 
-mf: (LINE_COMMENT | section)* EOF;
+mf: (section)* EOF;
 
 section
   : Key COLON SPACE value
   ;
 
 value
- : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)? (SEMI IDENTIFIER SEQUAL IDENTIFIER)?
+ : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)? (SEMI configAssign)*
  ;
 
-//SEMI? ConfigAssign?
-//
-//ConfigAssign
-//  : IDENTIFIER SEQUAL IDENTIFIER
-//  ;
+configAssign
+  : assignKey SEQUAL assignValue
+  ;
+
+assignKey: IDENTIFIER;
+assignValue: IDENTIFIER;
 
 VERSION: 'version';
 
@@ -37,7 +38,7 @@ Key: 'Manifest-Version'
   | Uppercase Letter* '-' Uppercase Letter*
   ;
 
-OTHERS:  ValueText (ValueText | SPACE)*;
+OTHERS:  ValueText (SPACE? ValueText)*;
 ValueText
   : ('(' | '.' |')' | '-'| LetterOrDigit+)+
 //  | Version
@@ -87,7 +88,7 @@ SEQUAL:             ':=';
 
 Uppercase:          [A-Z];
 
-LINE_COMMENT :       ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
+//LINE_COMMENT :       ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
 SPACE:               [ \t];
 NL :                 '\r'? '\n' -> skip;
 

@@ -17,6 +17,15 @@ type ManifestListener interface {
 	// EnterValue is called when entering the value production.
 	EnterValue(c *ValueContext)
 
+	// EnterConfigAssign is called when entering the configAssign production.
+	EnterConfigAssign(c *ConfigAssignContext)
+
+	// EnterAssignKey is called when entering the assignKey production.
+	EnterAssignKey(c *AssignKeyContext)
+
+	// EnterAssignValue is called when entering the assignValue production.
+	EnterAssignValue(c *AssignValueContext)
+
 	// ExitMf is called when exiting the mf production.
 	ExitMf(c *MfContext)
 
@@ -25,4 +34,13 @@ type ManifestListener interface {
 
 	// ExitValue is called when exiting the value production.
 	ExitValue(c *ValueContext)
+
+	// ExitConfigAssign is called when exiting the configAssign production.
+	ExitConfigAssign(c *ConfigAssignContext)
+
+	// ExitAssignKey is called when exiting the assignKey production.
+	ExitAssignKey(c *AssignKeyContext)
+
+	// ExitAssignValue is called when exiting the assignValue production.
+	ExitAssignValue(c *AssignValueContext)
 }

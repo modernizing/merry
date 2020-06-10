@@ -38,3 +38,21 @@ func (s *BaseManifestListener) EnterValue(ctx *ValueContext) {}
 
 // ExitValue is called when production value is exited.
 func (s *BaseManifestListener) ExitValue(ctx *ValueContext) {}
+
+// EnterConfigAssign is called when production configAssign is entered.
+func (s *BaseManifestListener) EnterConfigAssign(ctx *ConfigAssignContext) {}
+
+// ExitConfigAssign is called when production configAssign is exited.
+func (s *BaseManifestListener) ExitConfigAssign(ctx *ConfigAssignContext) {}
+
+// EnterAssignKey is called when production assignKey is entered.
+func (s *BaseManifestListener) EnterAssignKey(ctx *AssignKeyContext) {}
+
+// ExitAssignKey is called when production assignKey is exited.
+func (s *BaseManifestListener) ExitAssignKey(ctx *AssignKeyContext) {}
+
+// EnterAssignValue is called when production assignValue is entered.
+func (s *BaseManifestListener) EnterAssignValue(ctx *AssignValueContext) {}
+
+// ExitAssignValue is called when production assignValue is exited.
+func (s *BaseManifestListener) ExitAssignValue(ctx *AssignValueContext) {}

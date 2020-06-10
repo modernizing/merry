@@ -1,7 +1,6 @@
 package ast
 
 import (
-	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
 	"strings"
@@ -17,6 +16,7 @@ type JavaPackage struct {
 	VersionInfo  string
 	StartVersion string
 	EndVersion   string
+	Config       []KeyValue
 }
 
 type IgsoManifest struct {
@@ -81,11 +81,17 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			StartVersion: split[0],
 			EndVersion:   split[1],
 		}
-		s.manifest.Package = append(s.manifest.Package, javaPackage)
-	}
+		if len(ctx.AllConfigAssign()) > 0 {
+			for _, config := range ctx.AllConfigAssign() {
+				configAssign := (config).(*parser.ConfigAssignContext)
+				javaPackage.Config = append(javaPackage.Config, KeyValue{
+					Key: configAssign.AssignKey().GetText(),
+					Value: configAssign.AssignValue().GetText(),
+				})
+			}
+		}
 
-	if ctx.SEQUAL() != nil {
-		fmt.Println(ctx.IDENTIFIER(0).GetText())
+		s.manifest.Package = append(s.manifest.Package, javaPackage)
 	}
 }
 
