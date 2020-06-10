@@ -11,7 +11,8 @@ type KeyValue struct {
 }
 
 type JavaPackage struct {
-	Name string
+	Name        string
+	VersionInfo string
 }
 
 type IgsoManifest struct {
@@ -68,9 +69,12 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 	})
 
 	if ctx.VERSION() != nil {
-		s.manifest.Package = append(s.manifest.Package, JavaPackage{
-			Name: ctx.OTHERS().GetText(),
-		})
+		versionInfo := ctx.STRING_LITERAL().GetText()
+		javaPackage := JavaPackage{
+			Name:        ctx.OTHERS().GetText(),
+			VersionInfo: versionInfo[2:len(versionInfo)-2],
+		}
+		s.manifest.Package = append(s.manifest.Package, javaPackage)
 	}
 }
 

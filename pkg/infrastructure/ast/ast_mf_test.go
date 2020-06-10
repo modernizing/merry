@@ -56,4 +56,5 @@ version="[1.3,2.0)"
 `
 	results := Analysis(code, "hello.mf")
 	g.Expect(results.Package[0].Name).To(Equal(`org.osgi.framework`))
+	g.Expect(results.Package[0].VersionInfo).To(Equal(`1.3,2.0`))
 }
