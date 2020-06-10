@@ -5,14 +5,25 @@ import (
 	parser "github.com/phodal/igso/languages/manifest"
 )
 
-type Manifest struct {
+type KeyValue struct {
 	Key   string
 	Value string
 }
 
+type JavaPackage struct {
+
+}
+
+type IgsoManifest struct {
+	ExportPackage []JavaPackage
+	Package       []JavaPackage
+	KeyValues     []KeyValue
+}
+
 type MfIdentListener struct {
 	currentKey string
-	manifest   []Manifest
+	manifest   IgsoManifest
+
 
 	parser.BaseManifestListener
 }
@@ -28,7 +39,7 @@ func ProcessTsString(code string) *parser.ManifestParser {
 	return processStream(is)
 }
 
-func Analysis(code string, fileName string) []Manifest {
+func Analysis(code string, fileName string) IgsoManifest {
 	scriptParser := ProcessTsString(code)
 	context := scriptParser.Mf()
 
@@ -40,6 +51,7 @@ func Analysis(code string, fileName string) []Manifest {
 
 func NewMfIdentListener(fileName string) *MfIdentListener {
 	listener := &MfIdentListener{}
+	listener.manifest = IgsoManifest{}
 	return listener
 }
 
@@ -48,12 +60,12 @@ func (s *MfIdentListener) EnterSection(ctx *parser.SectionContext) {
 }
 
 func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
-	s.manifest = append(s.manifest, Manifest{
+	s.manifest.KeyValues = append(s.manifest.KeyValues, KeyValue{
 		Key:   s.currentKey,
 		Value: ctx.GetText(),
 	})
 }
 
-func (s *MfIdentListener) GetResult() []Manifest {
+func (s *MfIdentListener) GetResult() IgsoManifest {
 	return s.manifest
 }

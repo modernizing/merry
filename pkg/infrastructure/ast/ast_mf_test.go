@@ -7,12 +7,12 @@ import (
 
 func Test_ShouldGetManifestProperty(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `Manifest-Version: 1.0
+	code := `KeyValue-Version: 1.0
 
 `
-	results := Analysis(code, "hello.mf")
+	results := Analysis(code, "hello.mf").KeyValues
 	g.Expect(len(results)).To(Equal(1))
-	g.Expect(results[0].Key).To(Equal("Manifest-Version"))
+	g.Expect(results[0].Key).To(Equal("KeyValue-Version"))
 	g.Expect(results[0].Value).To(Equal("1.0"))
 }
 
@@ -30,7 +30,7 @@ Bundle-Version: 2.5.6.SEC01
 Bundle-ManifestVersion: 2
 
 `
-	results := Analysis(code, "hello.mf")
+	results := Analysis(code, "hello.mf").KeyValues
 	g.Expect(len(results)).To(Equal(9))
 	g.Expect(results[2].Value).To(Equal("2.5.6.SEC01"))
 	g.Expect(results[4].Value).To(Equal("10.0-b23 (Sun Microsystems Inc.)"))
