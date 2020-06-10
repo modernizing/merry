@@ -64,7 +64,9 @@ version="[1.3,2.0)"
 
 func Test_ShouldGetCompileSuccessForMorePackageInfo(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `Import-Package: javax.persistence.spi;version="[1.0.0,2.0.0)"
+	code := `Import-Package: javax.persistence.spi;
+version="[1.0.0,2.0.0)";resolution:=optional
+
 `
 	results := Analysis(code, "hello.mf")
 	fmt.Println(results.Package)

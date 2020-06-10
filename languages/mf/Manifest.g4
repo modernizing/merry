@@ -7,12 +7,14 @@ section
   ;
 
 value
- : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL SEMI? ConfigAssign?)?
+ : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)? (SEMI IDENTIFIER SEQUAL IDENTIFIER)?
  ;
 
-ConfigAssign
-  : IDENTIFIER SEQUAL IDENTIFIER
-  ;
+//SEMI? ConfigAssign?
+//
+//ConfigAssign
+//  : IDENTIFIER SEQUAL IDENTIFIER
+//  ;
 
 VERSION: 'version';
 
@@ -45,7 +47,6 @@ ValueText
 //  : Digits ('.' LetterOrDigit)+
 //  ;
 
-IDENTIFIER: Letter LetterOrDigit*;
 
 // Separators
 
@@ -91,6 +92,7 @@ SPACE:               [ \t];
 NL :                 '\r'? '\n' -> skip;
 
 STRING_LITERAL:     '"' (~["\\\r\n] | EscapeSequence)* '"';
+IDENTIFIER: Letter LetterOrDigit*;
 
 fragment EscapeSequence
     : '\\' [btnfr"'\\]

@@ -1,6 +1,7 @@
 package ast
 
 import (
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
 	"strings"
@@ -81,6 +82,10 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			EndVersion:   split[1],
 		}
 		s.manifest.Package = append(s.manifest.Package, javaPackage)
+	}
+
+	if ctx.SEQUAL() != nil {
+		fmt.Println(ctx.IDENTIFIER(0).GetText())
 	}
 }
 
