@@ -2,7 +2,12 @@ grammar Manifest;
 
 mf: (LINE_COMMENT | section)* EOF;
 
-section: Key Colon Space? value;
+section
+  : isImport Colon Space? value
+  | Key Colon Space? value
+  ;
+
+isImport: 'Import-Package';
 
 value: ValueText (ValueText | Space)*;
 

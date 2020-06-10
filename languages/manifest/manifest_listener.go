@@ -14,6 +14,9 @@ type ManifestListener interface {
 	// EnterSection is called when entering the section production.
 	EnterSection(c *SectionContext)
 
+	// EnterIsImport is called when entering the isImport production.
+	EnterIsImport(c *IsImportContext)
+
 	// EnterValue is called when entering the value production.
 	EnterValue(c *ValueContext)
 
@@ -22,6 +25,9 @@ type ManifestListener interface {
 
 	// ExitSection is called when exiting the section production.
 	ExitSection(c *SectionContext)
+
+	// ExitIsImport is called when exiting the isImport production.
+	ExitIsImport(c *IsImportContext)
 
 	// ExitValue is called when exiting the value production.
 	ExitValue(c *ValueContext)
