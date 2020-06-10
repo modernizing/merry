@@ -16,18 +16,18 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 45, 32, 4,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 46, 32, 4,
 	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 3, 2, 3, 2, 7, 2, 11, 10, 2, 12, 2, 14,
 	2, 14, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 5, 3, 21, 10, 3, 3, 3, 3, 3,
 	3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 5, 4, 30, 10, 4, 3, 4, 2, 2, 5, 2, 4, 6,
 	2, 2, 2, 32, 2, 12, 3, 2, 2, 2, 4, 17, 3, 2, 2, 2, 6, 24, 3, 2, 2, 2, 8,
-	11, 7, 42, 2, 2, 9, 11, 5, 4, 3, 2, 10, 8, 3, 2, 2, 2, 10, 9, 3, 2, 2,
+	11, 7, 43, 2, 2, 9, 11, 5, 4, 3, 2, 10, 8, 3, 2, 2, 2, 10, 9, 3, 2, 2,
 	2, 11, 14, 3, 2, 2, 2, 12, 10, 3, 2, 2, 2, 12, 13, 3, 2, 2, 2, 13, 15,
 	3, 2, 2, 2, 14, 12, 3, 2, 2, 2, 15, 16, 7, 2, 2, 3, 16, 3, 3, 2, 2, 2,
-	17, 18, 7, 4, 2, 2, 18, 20, 7, 9, 2, 2, 19, 21, 7, 43, 2, 2, 20, 19, 3,
+	17, 18, 7, 4, 2, 2, 18, 20, 7, 9, 2, 2, 19, 21, 7, 44, 2, 2, 20, 19, 3,
 	2, 2, 2, 20, 21, 3, 2, 2, 2, 21, 22, 3, 2, 2, 2, 22, 23, 5, 6, 4, 2, 23,
 	5, 3, 2, 2, 2, 24, 29, 7, 5, 2, 2, 25, 26, 7, 16, 2, 2, 26, 27, 7, 3, 2,
-	2, 27, 28, 7, 19, 2, 2, 28, 30, 7, 45, 2, 2, 29, 25, 3, 2, 2, 2, 29, 30,
+	2, 27, 28, 7, 19, 2, 2, 28, 30, 7, 46, 2, 2, 29, 25, 3, 2, 2, 2, 29, 30,
 	3, 2, 2, 2, 30, 7, 3, 2, 2, 2, 6, 10, 12, 20, 29,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
@@ -37,15 +37,15 @@ var literalNames = []string{
 	"", "'version'", "", "", "", "", "", "':'", "'('", "')'", "'{'", "'}'",
 	"'['", "']'", "';'", "','", "'.'", "'='", "'>'", "'<'", "'!'", "'~'", "'?'",
 	"'=='", "'<='", "'>='", "'!='", "'&&'", "'||'", "'++'", "'--'", "'+'",
-	"'-'", "'*'", "'/'", "'&'", "'|'", "'^'", "'%'",
+	"'-'", "'*'", "'/'", "'&'", "'|'", "'^'", "'%'", "'\"'",
 }
 var symbolicNames = []string{
-	"", "", "Key", "OTHERS", "ValueText", "Version", "IDENTIFIER", "COLON",
+	"", "VERSION", "Key", "OTHERS", "ValueText", "Version", "IDENTIFIER", "COLON",
 	"LPAREN", "RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA",
 	"DOT", "ASSIGN", "GT", "LT", "BANG", "TILDE", "QUESTION", "EQUAL", "LE",
 	"GE", "NOTEQUAL", "AND", "OR", "INC", "DEC", "ADD", "SUB", "MUL", "DIV",
-	"BITAND", "BITOR", "CARET", "MOD", "Uppercase", "LINE_COMMENT", "SPACE",
-	"NL", "STRING_LITERAL",
+	"BITAND", "BITOR", "CARET", "MOD", "DQUOTE", "Uppercase", "LINE_COMMENT",
+	"SPACE", "NL", "STRING_LITERAL",
 }
 
 var ruleNames = []string{
@@ -80,7 +80,7 @@ func NewManifestParser(input antlr.TokenStream) *ManifestParser {
 // ManifestParser tokens.
 const (
 	ManifestParserEOF            = antlr.TokenEOF
-	ManifestParserT__0           = 1
+	ManifestParserVERSION        = 1
 	ManifestParserKey            = 2
 	ManifestParserOTHERS         = 3
 	ManifestParserValueText      = 4
@@ -118,11 +118,12 @@ const (
 	ManifestParserBITOR          = 36
 	ManifestParserCARET          = 37
 	ManifestParserMOD            = 38
-	ManifestParserUppercase      = 39
-	ManifestParserLINE_COMMENT   = 40
-	ManifestParserSPACE          = 41
-	ManifestParserNL             = 42
-	ManifestParserSTRING_LITERAL = 43
+	ManifestParserDQUOTE         = 39
+	ManifestParserUppercase      = 40
+	ManifestParserLINE_COMMENT   = 41
+	ManifestParserSPACE          = 42
+	ManifestParserNL             = 43
+	ManifestParserSTRING_LITERAL = 44
 )
 
 // ManifestParser rules.
@@ -459,6 +460,10 @@ func (s *ValueContext) SEMI() antlr.TerminalNode {
 	return s.GetToken(ManifestParserSEMI, 0)
 }
 
+func (s *ValueContext) VERSION() antlr.TerminalNode {
+	return s.GetToken(ManifestParserVERSION, 0)
+}
+
 func (s *ValueContext) ASSIGN() antlr.TerminalNode {
 	return s.GetToken(ManifestParserASSIGN, 0)
 }
@@ -524,7 +529,7 @@ func (p *ManifestParser) Value() (localctx IValueContext) {
 		}
 		{
 			p.SetState(24)
-			p.Match(ManifestParserT__0)
+			p.Match(ManifestParserVERSION)
 		}
 		{
 			p.SetState(25)

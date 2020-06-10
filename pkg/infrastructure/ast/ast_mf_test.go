@@ -16,7 +16,7 @@ func Test_ShouldGetManifestProperty(t *testing.T) {
 	g.Expect(results[0].Value).To(Equal("1.0"))
 }
 
-func Test_ShouldGetImportPackage(t *testing.T) {
+func Test_ShouldParseImportPackage(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `Import-Package: org.osgi.framework;
 version="[1.3,2.0)"
@@ -48,3 +48,12 @@ Bundle-ManifestVersion: 2
 	g.Expect(results[4].Value).To(Equal("10.0-b23 (Sun Microsystems Inc.)"))
 }
 
+func Test_ShouldGetImportPackage(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Import-Package: org.osgi.framework;
+version="[1.3,2.0)"
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.Package[0].Name).To(Equal(`org.osgi.framework`))
+}

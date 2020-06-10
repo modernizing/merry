@@ -11,7 +11,7 @@ type KeyValue struct {
 }
 
 type JavaPackage struct {
-
+	Name string
 }
 
 type IgsoManifest struct {
@@ -66,6 +66,12 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		Key:   s.currentKey,
 		Value: ctx.GetText(),
 	})
+
+	if ctx.VERSION() != nil {
+		s.manifest.Package = append(s.manifest.Package, JavaPackage{
+			Name: ctx.OTHERS().GetText(),
+		})
+	}
 }
 
 func (s *MfIdentListener) GetResult() IgsoManifest {

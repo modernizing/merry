@@ -7,8 +7,10 @@ section
   ;
 
 value
- : OTHERS (SEMI 'version' ASSIGN STRING_LITERAL)?
+ : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)?
  ;
+
+VERSION: 'version';
 
 Key: 'Manifest-Version'
   | 'Bundle-Activator'
@@ -75,6 +77,7 @@ BITAND:             '&';
 BITOR:              '|';
 CARET:              '^';
 MOD:                '%';
+DQUOTE:             '"';
 
 Uppercase:          [A-Z];
 
