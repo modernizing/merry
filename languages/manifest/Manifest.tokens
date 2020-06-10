@@ -1,7 +1,6 @@
-Version=1
-START_HEAD=2
-HEAD_TEXT=3
-Colon=4
-LINE_COMMENT=5
-WS=6
-':'=4
+Value=1
+Key=2
+Colon=3
+LINE_COMMENT=4
+WS=5
+':'=3

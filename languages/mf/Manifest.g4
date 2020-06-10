@@ -2,17 +2,15 @@ grammar Manifest;
 
 mf: (LINE_COMMENT | section)* EOF;
 
-section: START_HEAD Colon key_values;
+section: Key Colon value;
 
-key_values
-  : Version
+value
+  : Value
   ;
 
-Version : [0-9]+ ('.' | [0-9]+)+;
+Value : ([a-z] | [A-Z] | [0-9] | '(' | ')' | '.' | '*')+;
 
-START_HEAD: [A-Z] ([a-z] | '-' | [A-Z])+;
-
-HEAD_TEXT: 'a' .. 'z' | '-';
+Key: [A-Z] ([a-z] | '-' | [A-Z])+;
 
 Colon: ':';
 

@@ -14,8 +14,8 @@ type ManifestListener interface {
 	// EnterSection is called when entering the section production.
 	EnterSection(c *SectionContext)
 
-	// EnterKey_values is called when entering the key_values production.
-	EnterKey_values(c *Key_valuesContext)
+	// EnterValue is called when entering the value production.
+	EnterValue(c *ValueContext)
 
 	// ExitMf is called when exiting the mf production.
 	ExitMf(c *MfContext)
@@ -23,6 +23,6 @@ type ManifestListener interface {
 	// ExitSection is called when exiting the section production.
 	ExitSection(c *SectionContext)
 
-	// ExitKey_values is called when exiting the key_values production.
-	ExitKey_values(c *Key_valuesContext)
+	// ExitValue is called when exiting the value production.
+	ExitValue(c *ValueContext)
 }

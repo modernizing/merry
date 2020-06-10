@@ -33,8 +33,8 @@ func (s *BaseManifestListener) EnterSection(ctx *SectionContext) {}
 // ExitSection is called when production section is exited.
 func (s *BaseManifestListener) ExitSection(ctx *SectionContext) {}
 
-// EnterKey_values is called when production key_values is entered.
-func (s *BaseManifestListener) EnterKey_values(ctx *Key_valuesContext) {}
+// EnterValue is called when production value is entered.
+func (s *BaseManifestListener) EnterValue(ctx *ValueContext) {}
 
-// ExitKey_values is called when production key_values is exited.
-func (s *BaseManifestListener) ExitKey_values(ctx *Key_valuesContext) {}
+// ExitValue is called when production value is exited.
+func (s *BaseManifestListener) ExitValue(ctx *ValueContext) {}

@@ -1,7 +1,6 @@
 package ast
 
 import (
-	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
 )
@@ -45,15 +44,14 @@ func NewMfIdentListener(fileName string) *MfIdentListener {
 }
 
 func (s *MfIdentListener) EnterSection(ctx *parser.SectionContext) {
-	s.currentKey = ctx.START_HEAD().GetText()
+	s.currentKey = ctx.Key().GetText()
 }
 
-func (s *MfIdentListener) EnterKey_values(ctx *parser.Key_valuesContext) {
-	fmt.Println(ctx.Version())
-	if ctx.Version() != nil {
+func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
+	if ctx.Value() != nil {
 		s.manifest = append(s.manifest, Manifest{
 			Key:   s.currentKey,
-			Value: ctx.Version().GetText(),
+			Value: ctx.Value().GetText(),
 		})
 	}
 }
