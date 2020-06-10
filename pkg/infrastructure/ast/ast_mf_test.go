@@ -16,7 +16,7 @@ func Test_ShouldGetManifestProperty(t *testing.T) {
 	g.Expect(results[0].Value).To(Equal("1.0"))
 }
 
-func Test_ShouldGetMultipelManifestProperties(t *testing.T) {
+func Test_ShouldGetMultipleManifestProperties(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `
 Implementation-Title: Spring Framework
