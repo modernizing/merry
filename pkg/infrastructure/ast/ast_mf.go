@@ -3,6 +3,7 @@ package ast
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
+	"strings"
 )
 
 type KeyValue struct {
@@ -11,8 +12,10 @@ type KeyValue struct {
 }
 
 type JavaPackage struct {
-	Name        string
-	VersionInfo string
+	Name         string
+	VersionInfo  string
+	StartVersion string
+	EndVersion   string
 }
 
 type IgsoManifest struct {
@@ -24,7 +27,6 @@ type IgsoManifest struct {
 type MfIdentListener struct {
 	currentKey string
 	manifest   IgsoManifest
-
 
 	parser.BaseManifestListener
 }
@@ -69,10 +71,14 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 	})
 
 	if ctx.VERSION() != nil {
-		versionInfo := ctx.STRING_LITERAL().GetText()
+		versionText := ctx.STRING_LITERAL().GetText()
+		versionInfo := versionText[2 : len(versionText)-2]
+		split := strings.Split(versionInfo, ",")
 		javaPackage := JavaPackage{
-			Name:        ctx.OTHERS().GetText(),
-			VersionInfo: versionInfo[2:len(versionInfo)-2],
+			Name:         ctx.OTHERS().GetText(),
+			VersionInfo:  versionInfo,
+			StartVersion: split[0],
+			EndVersion:   split[1],
 		}
 		s.manifest.Package = append(s.manifest.Package, javaPackage)
 	}
