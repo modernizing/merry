@@ -56,9 +56,6 @@ func NewMfIdentListener(fileName string) *MfIdentListener {
 }
 
 func (s *MfIdentListener) EnterSection(ctx *parser.SectionContext) {
-	if ctx.IsImport() != nil {
-		s.currentKey = ctx.IsImport().GetText()
-	}
 	if ctx.Key() != nil {
 		s.currentKey = ctx.Key().GetText()
 	}

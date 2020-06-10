@@ -3,20 +3,32 @@ grammar Manifest;
 mf: (LINE_COMMENT | section)* EOF;
 
 section
-  : isImport Colon Space? value
-  | Key Colon Space? value
+  : Key Colon SPACE? value
   ;
 
-isImport: 'Import-Package';
+value
+ : ValueText (ValueText | SPACE)*
+ ;
 
-value: ValueText (ValueText | Space)*;
+Key
+  : IsImport
+  | IsExport
+  | Uppercase Letter* '-' Uppercase Letter*
+  ;
 
-Key: Uppercase Letter* '-' Uppercase Letter*;
+IsImport: 'Import-Package';
+IsExport: 'Export-Package';
 
 ValueText
-  : LetterOrDigit
+  :  ('.' | LetterOrDigit+)+
   | Symbol
   ;
+
+QualifiedName
+    : IDENTIFIER ('.' IDENTIFIER)+
+    ;
+
+IDENTIFIER: Letter LetterOrDigit*;
 
 fragment Letter: [a-zA-Z];
 fragment LetterOrDigit
@@ -24,15 +36,11 @@ fragment LetterOrDigit
     | [0-9]
     ;
 
-Uppercase: [A-Z];
-Lowercase: [a-z];
+Colon:         ':';
 
-Symbol: '(' | ')' | '.' | '-' | ';' | '=' | '[' | ']' | '"' | ',';
-
-Colon: ':';
+Uppercase:     [A-Z];
+Symbol:        '(' | ')' | '-' | '=' | '[' | ']' | '"' | ',' | ';';
 
 LINE_COMMENT : ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
-
-Space:  [ \t];
-
-NewLine : '\r'? '\n' -> skip;
+SPACE:         [ \t];
+NL :           '\r'? '\n' -> skip;
