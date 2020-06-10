@@ -14,8 +14,8 @@ configAssign
   : assignKey SEQUAL assignValue
   ;
 
-assignKey: IDENTIFIER;
-assignValue: IDENTIFIER;
+assignKey: OTHERS;
+assignValue: OTHERS;
 
 VERSION: 'version';
 
@@ -38,6 +38,7 @@ Key: 'Manifest-Version'
   | Uppercase Letter* '-' Uppercase Letter*
   ;
 
+//IDENTIFIER: Letter LetterOrDigit*;
 OTHERS:  ValueText (SPACE? ValueText)*;
 ValueText
   : ('(' | '.' |')' | '-'| LetterOrDigit+)+
@@ -93,7 +94,6 @@ SPACE:               [ \t];
 NL :                 ('\r'? '\n' ' '? ) -> skip;
 
 STRING_LITERAL:     '"' (~["\\\r\n] | EscapeSequence)* '"';
-IDENTIFIER: Letter LetterOrDigit*;
 
 fragment EscapeSequence
     : '\\' [btnfr"'\\]

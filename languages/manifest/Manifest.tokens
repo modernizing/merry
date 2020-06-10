@@ -40,7 +40,6 @@ Uppercase=39
 SPACE=40
 NL=41
 STRING_LITERAL=42
-IDENTIFIER=43
 'version'=1
 ':'=5
 '('=6
