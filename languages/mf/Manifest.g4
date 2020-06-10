@@ -6,7 +6,7 @@ section: Key Colon Space? value;
 
 value: ValueText (ValueText | Space)*;
 
-Key: Uppercase (Letter | Symbol)*;
+Key: Uppercase Letter* '-' Uppercase Letter*;
 
 ValueText
   : LetterOrDigit
