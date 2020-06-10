@@ -31,7 +31,7 @@ var dupSearch = &cobra.Command{
 	Short: "d",
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
-		deps := dupsearch.DupSearch(path)
+		deps := dupsearch.DupSearch(filepath.FromSlash(path))
 		deps = dependency.RemoveDuplicate(deps)
 		result := maven.BuildByDeps(deps, dependency.MavenProject{
 			Version:      "0.0.1",
