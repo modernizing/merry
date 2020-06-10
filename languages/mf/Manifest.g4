@@ -3,12 +3,16 @@ grammar Manifest;
 mf: (LINE_COMMENT | section)* EOF;
 
 section
-  : Key COLON SPACE? value
+  : Key COLON SPACE value
   ;
 
 value
- : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)?
+ : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL SEMI? ConfigAssign?)?
  ;
+
+ConfigAssign
+  : IDENTIFIER SEQUAL IDENTIFIER
+  ;
 
 VERSION: 'version';
 
@@ -34,12 +38,12 @@ Key: 'Manifest-Version'
 OTHERS:  ValueText (ValueText | SPACE)*;
 ValueText
   : ('(' | '.' |')' | '-'| LetterOrDigit+)+
-  | Version
+//  | Version
   ;
 
-Version
-  : Digits ('.' LetterOrDigit)+
-  ;
+//Version
+//  : Digits ('.' LetterOrDigit)+
+//  ;
 
 IDENTIFIER: Letter LetterOrDigit*;
 
@@ -78,6 +82,7 @@ BITOR:              '|';
 CARET:              '^';
 MOD:                '%';
 DQUOTE:             '"';
+SEQUAL:             ':=';
 
 Uppercase:          [A-Z];
 

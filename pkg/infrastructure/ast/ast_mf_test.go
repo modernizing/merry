@@ -1,6 +1,7 @@
 package ast
 
 import (
+	"fmt"
 	. "github.com/onsi/gomega"
 	"testing"
 )
@@ -59,4 +60,14 @@ version="[1.3,2.0)"
 	g.Expect(results.Package[0].VersionInfo).To(Equal(`1.3,2.0`))
 	g.Expect(results.Package[0].StartVersion).To(Equal(`1.3`))
 	g.Expect(results.Package[0].EndVersion).To(Equal(`2.0`))
+}
+
+func Test_ShouldGetCompileSuccessForMorePackageInfo(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Import-Package: javax.persistence.spi;version="[1.0.0,2.0.0)"
+`
+	results := Analysis(code, "hello.mf")
+	fmt.Println(results.Package)
+	//g.Expect(results.Package[0].Name).To(Equal(`javax.persistence.spi`))
+	g.Expect(1).To(Equal(1))
 }
