@@ -10,14 +10,8 @@ value
  : ValueText (ValueText | SPACE)*
  ;
 
-Key
-  : IsImport
-  | IsExport
-  | Uppercase Letter* '-' Uppercase Letter*
+Key: Uppercase Letter* '-' Uppercase Letter*
   ;
-
-IsImport: 'Import-Package';
-IsExport: 'Export-Package';
 
 ValueText
   :  ('.' | LetterOrDigit+)+

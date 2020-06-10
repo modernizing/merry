@@ -16,17 +16,17 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 14, 32, 4,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 12, 32, 4,
 	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 3, 2, 3, 2, 7, 2, 11, 10, 2, 12, 2, 14,
 	2, 14, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 5, 3, 21, 10, 3, 3, 3, 3, 3,
 	3, 4, 3, 4, 7, 4, 27, 10, 4, 12, 4, 14, 4, 30, 11, 4, 3, 4, 2, 2, 5, 2,
-	4, 6, 2, 3, 4, 2, 6, 6, 13, 13, 2, 32, 2, 12, 3, 2, 2, 2, 4, 17, 3, 2,
-	2, 2, 6, 24, 3, 2, 2, 2, 8, 11, 7, 12, 2, 2, 9, 11, 5, 4, 3, 2, 10, 8,
+	4, 6, 2, 3, 4, 2, 4, 4, 11, 11, 2, 32, 2, 12, 3, 2, 2, 2, 4, 17, 3, 2,
+	2, 2, 6, 24, 3, 2, 2, 2, 8, 11, 7, 10, 2, 2, 9, 11, 5, 4, 3, 2, 10, 8,
 	3, 2, 2, 2, 10, 9, 3, 2, 2, 2, 11, 14, 3, 2, 2, 2, 12, 10, 3, 2, 2, 2,
 	12, 13, 3, 2, 2, 2, 13, 15, 3, 2, 2, 2, 14, 12, 3, 2, 2, 2, 15, 16, 7,
-	2, 2, 3, 16, 3, 3, 2, 2, 2, 17, 18, 7, 3, 2, 2, 18, 20, 7, 9, 2, 2, 19,
-	21, 7, 13, 2, 2, 20, 19, 3, 2, 2, 2, 20, 21, 3, 2, 2, 2, 21, 22, 3, 2,
-	2, 2, 22, 23, 5, 6, 4, 2, 23, 5, 3, 2, 2, 2, 24, 28, 7, 6, 2, 2, 25, 27,
+	2, 2, 3, 16, 3, 3, 2, 2, 2, 17, 18, 7, 3, 2, 2, 18, 20, 7, 7, 2, 2, 19,
+	21, 7, 11, 2, 2, 20, 19, 3, 2, 2, 2, 20, 21, 3, 2, 2, 2, 21, 22, 3, 2,
+	2, 2, 22, 23, 5, 6, 4, 2, 23, 5, 3, 2, 2, 2, 24, 28, 7, 4, 2, 2, 25, 27,
 	9, 2, 2, 2, 26, 25, 3, 2, 2, 2, 27, 30, 3, 2, 2, 2, 28, 26, 3, 2, 2, 2,
 	28, 29, 3, 2, 2, 2, 29, 7, 3, 2, 2, 2, 30, 28, 3, 2, 2, 2, 6, 10, 12, 20,
 	28,
@@ -35,11 +35,11 @@ var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "", "'Import-Package'", "'Export-Package'", "", "", "", "':'",
+	"", "", "", "", "", "':'",
 }
 var symbolicNames = []string{
-	"", "Key", "IsImport", "IsExport", "ValueText", "QualifiedName", "IDENTIFIER",
-	"Colon", "Uppercase", "Symbol", "LINE_COMMENT", "SPACE", "NL",
+	"", "Key", "ValueText", "QualifiedName", "IDENTIFIER", "Colon", "Uppercase",
+	"Symbol", "LINE_COMMENT", "SPACE", "NL",
 }
 
 var ruleNames = []string{
@@ -75,17 +75,15 @@ func NewManifestParser(input antlr.TokenStream) *ManifestParser {
 const (
 	ManifestParserEOF           = antlr.TokenEOF
 	ManifestParserKey           = 1
-	ManifestParserIsImport      = 2
-	ManifestParserIsExport      = 3
-	ManifestParserValueText     = 4
-	ManifestParserQualifiedName = 5
-	ManifestParserIDENTIFIER    = 6
-	ManifestParserColon         = 7
-	ManifestParserUppercase     = 8
-	ManifestParserSymbol        = 9
-	ManifestParserLINE_COMMENT  = 10
-	ManifestParserSPACE         = 11
-	ManifestParserNL            = 12
+	ManifestParserValueText     = 2
+	ManifestParserQualifiedName = 3
+	ManifestParserIDENTIFIER    = 4
+	ManifestParserColon         = 5
+	ManifestParserUppercase     = 6
+	ManifestParserSymbol        = 7
+	ManifestParserLINE_COMMENT  = 8
+	ManifestParserSPACE         = 9
+	ManifestParserNL            = 10
 )
 
 // ManifestParser rules.
