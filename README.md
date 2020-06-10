@@ -6,6 +6,7 @@
 [![Build Status](https://travis-ci.org/phodal/igso.svg?branch=master)](https://travis-ci.org/phodal/igso)
 [![codecov](https://codecov.io/gh/phodal/igso/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/igso)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/phodal/igso)
+[![Maintainability](https://api.codeclimate.com/v1/badges/77b3f3f4a2444b33dc16/maintainability)](https://codeclimate.com/github/phodal/igso/maintainability)
 
 Todo:
 
