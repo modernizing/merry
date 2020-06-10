@@ -7,12 +7,12 @@ import (
 
 func Test_ShouldGetManifestProperty(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `KeyValue-Version: 1.0
+	code := `Bundle-Version: 1.0
 
 `
 	results := Analysis(code, "hello.mf").KeyValues
 	g.Expect(len(results)).To(Equal(1))
-	g.Expect(results[0].Key).To(Equal("KeyValue-Version"))
+	g.Expect(results[0].Key).To(Equal("Bundle-Version"))
 	g.Expect(results[0].Value).To(Equal("1.0"))
 }
 
