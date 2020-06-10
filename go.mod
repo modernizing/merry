@@ -3,6 +3,7 @@ module github.com/phodal/igso
 go 1.13
 
 require (
+	github.com/antlr/antlr4 v0.0.0-20200606165112-0b35a76e9b09
 	github.com/mattn/go-shellwords v1.0.10
 	github.com/onsi/ginkgo v1.12.3
 	github.com/onsi/gomega v1.10.1

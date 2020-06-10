@@ -16,32 +16,28 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 7, 32, 4,
-	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 3, 2, 3, 2, 7, 2, 13, 10,
-	2, 12, 2, 14, 2, 16, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3,
-	4, 6, 4, 26, 10, 4, 13, 4, 14, 4, 27, 3, 5, 3, 5, 3, 5, 2, 2, 6, 2, 4,
-	6, 8, 2, 2, 2, 30, 2, 14, 3, 2, 2, 2, 4, 19, 3, 2, 2, 2, 6, 23, 3, 2, 2,
-	2, 8, 29, 3, 2, 2, 2, 10, 13, 7, 7, 2, 2, 11, 13, 5, 4, 3, 2, 12, 10, 3,
-	2, 2, 2, 12, 11, 3, 2, 2, 2, 13, 16, 3, 2, 2, 2, 14, 12, 3, 2, 2, 2, 14,
-	15, 3, 2, 2, 2, 15, 17, 3, 2, 2, 2, 16, 14, 3, 2, 2, 2, 17, 18, 7, 2, 2,
-	3, 18, 3, 3, 2, 2, 2, 19, 20, 5, 6, 4, 2, 20, 21, 7, 3, 2, 2, 21, 22, 5,
-	8, 5, 2, 22, 5, 3, 2, 2, 2, 23, 25, 7, 4, 2, 2, 24, 26, 7, 5, 2, 2, 25,
-	24, 3, 2, 2, 2, 26, 27, 3, 2, 2, 2, 27, 25, 3, 2, 2, 2, 27, 28, 3, 2, 2,
-	2, 28, 7, 3, 2, 2, 2, 29, 30, 7, 6, 2, 2, 30, 9, 3, 2, 2, 2, 5, 12, 14,
-	27,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 8, 24, 4,
+	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 3, 2, 3, 2, 7, 2, 11, 10, 2, 12, 2, 14,
+	2, 14, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 2,
+	2, 5, 2, 4, 6, 2, 2, 2, 22, 2, 12, 3, 2, 2, 2, 4, 17, 3, 2, 2, 2, 6, 21,
+	3, 2, 2, 2, 8, 11, 7, 7, 2, 2, 9, 11, 5, 4, 3, 2, 10, 8, 3, 2, 2, 2, 10,
+	9, 3, 2, 2, 2, 11, 14, 3, 2, 2, 2, 12, 10, 3, 2, 2, 2, 12, 13, 3, 2, 2,
+	2, 13, 15, 3, 2, 2, 2, 14, 12, 3, 2, 2, 2, 15, 16, 7, 2, 2, 3, 16, 3, 3,
+	2, 2, 2, 17, 18, 7, 4, 2, 2, 18, 19, 7, 6, 2, 2, 19, 20, 5, 6, 4, 2, 20,
+	5, 3, 2, 2, 2, 21, 22, 7, 3, 2, 2, 22, 7, 3, 2, 2, 2, 4, 10, 12,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "':'",
+	"", "", "", "", "':'",
 }
 var symbolicNames = []string{
-	"", "", "START_HEAD", "HEAD_TEXT", "TEXT", "LINE_COMMENT",
+	"", "Version", "START_HEAD", "HEAD_TEXT", "Colon", "LINE_COMMENT", "WS",
 }
 
 var ruleNames = []string{
-	"mf", "section", "section_header", "key_values",
+	"mf", "section", "key_values",
 }
 var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
 
@@ -72,19 +68,19 @@ func NewManifestParser(input antlr.TokenStream) *ManifestParser {
 // ManifestParser tokens.
 const (
 	ManifestParserEOF          = antlr.TokenEOF
-	ManifestParserT__0         = 1
+	ManifestParserVersion      = 1
 	ManifestParserSTART_HEAD   = 2
 	ManifestParserHEAD_TEXT    = 3
-	ManifestParserTEXT         = 4
+	ManifestParserColon        = 4
 	ManifestParserLINE_COMMENT = 5
+	ManifestParserWS           = 6
 )
 
 // ManifestParser rules.
 const (
-	ManifestParserRULE_mf             = 0
-	ManifestParserRULE_section        = 1
-	ManifestParserRULE_section_header = 2
-	ManifestParserRULE_key_values     = 3
+	ManifestParserRULE_mf         = 0
+	ManifestParserRULE_section    = 1
+	ManifestParserRULE_key_values = 2
 )
 
 // IMfContext is an interface to support dynamic dispatch.
@@ -202,24 +198,24 @@ func (p *ManifestParser) Mf() (localctx IMfContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(12)
+	p.SetState(10)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == ManifestParserSTART_HEAD || _la == ManifestParserLINE_COMMENT {
-		p.SetState(10)
+		p.SetState(8)
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
 		case ManifestParserLINE_COMMENT:
 			{
-				p.SetState(8)
+				p.SetState(6)
 				p.Match(ManifestParserLINE_COMMENT)
 			}
 
 		case ManifestParserSTART_HEAD:
 			{
-				p.SetState(9)
+				p.SetState(7)
 				p.Section()
 			}
 
@@ -227,12 +223,12 @@ func (p *ManifestParser) Mf() (localctx IMfContext) {
 			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		}
 
-		p.SetState(14)
+		p.SetState(12)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
 	{
-		p.SetState(15)
+		p.SetState(13)
 		p.Match(ManifestParserEOF)
 	}
 
@@ -277,14 +273,12 @@ func NewSectionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *SectionContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *SectionContext) Section_header() ISection_headerContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISection_headerContext)(nil)).Elem(), 0)
+func (s *SectionContext) START_HEAD() antlr.TerminalNode {
+	return s.GetToken(ManifestParserSTART_HEAD, 0)
+}
 
-	if t == nil {
-		return nil
-	}
-
-	return t.(ISection_headerContext)
+func (s *SectionContext) Colon() antlr.TerminalNode {
+	return s.GetToken(ManifestParserColon, 0)
 }
 
 func (s *SectionContext) Key_values() IKey_valuesContext {
@@ -339,130 +333,16 @@ func (p *ManifestParser) Section() (localctx ISectionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(17)
-		p.Section_header()
-	}
-	{
-		p.SetState(18)
-		p.Match(ManifestParserT__0)
-	}
-	{
-		p.SetState(19)
-		p.Key_values()
-	}
-
-	return localctx
-}
-
-// ISection_headerContext is an interface to support dynamic dispatch.
-type ISection_headerContext interface {
-	antlr.ParserRuleContext
-
-	// GetParser returns the parser.
-	GetParser() antlr.Parser
-
-	// IsSection_headerContext differentiates from other interfaces.
-	IsSection_headerContext()
-}
-
-type Section_headerContext struct {
-	*antlr.BaseParserRuleContext
-	parser antlr.Parser
-}
-
-func NewEmptySection_headerContext() *Section_headerContext {
-	var p = new(Section_headerContext)
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = ManifestParserRULE_section_header
-	return p
-}
-
-func (*Section_headerContext) IsSection_headerContext() {}
-
-func NewSection_headerContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Section_headerContext {
-	var p = new(Section_headerContext)
-
-	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
-
-	p.parser = parser
-	p.RuleIndex = ManifestParserRULE_section_header
-
-	return p
-}
-
-func (s *Section_headerContext) GetParser() antlr.Parser { return s.parser }
-
-func (s *Section_headerContext) START_HEAD() antlr.TerminalNode {
-	return s.GetToken(ManifestParserSTART_HEAD, 0)
-}
-
-func (s *Section_headerContext) AllHEAD_TEXT() []antlr.TerminalNode {
-	return s.GetTokens(ManifestParserHEAD_TEXT)
-}
-
-func (s *Section_headerContext) HEAD_TEXT(i int) antlr.TerminalNode {
-	return s.GetToken(ManifestParserHEAD_TEXT, i)
-}
-
-func (s *Section_headerContext) GetRuleContext() antlr.RuleContext {
-	return s
-}
-
-func (s *Section_headerContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
-	return antlr.TreesStringTree(s, ruleNames, recog)
-}
-
-func (s *Section_headerContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(ManifestListener); ok {
-		listenerT.EnterSection_header(s)
-	}
-}
-
-func (s *Section_headerContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(ManifestListener); ok {
-		listenerT.ExitSection_header(s)
-	}
-}
-
-func (p *ManifestParser) Section_header() (localctx ISection_headerContext) {
-	localctx = NewSection_headerContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, ManifestParserRULE_section_header)
-	var _la int
-
-	defer func() {
-		p.ExitRule()
-	}()
-
-	defer func() {
-		if err := recover(); err != nil {
-			if v, ok := err.(antlr.RecognitionException); ok {
-				localctx.SetException(v)
-				p.GetErrorHandler().ReportError(p, v)
-				p.GetErrorHandler().Recover(p, v)
-			} else {
-				panic(err)
-			}
-		}
-	}()
-
-	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(21)
+		p.SetState(15)
 		p.Match(ManifestParserSTART_HEAD)
 	}
-	p.SetState(23)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	for ok := true; ok; ok = _la == ManifestParserHEAD_TEXT {
-		{
-			p.SetState(22)
-			p.Match(ManifestParserHEAD_TEXT)
-		}
-
-		p.SetState(25)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(16)
+		p.Match(ManifestParserColon)
+	}
+	{
+		p.SetState(17)
+		p.Key_values()
 	}
 
 	return localctx
@@ -506,8 +386,8 @@ func NewKey_valuesContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 
 func (s *Key_valuesContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Key_valuesContext) TEXT() antlr.TerminalNode {
-	return s.GetToken(ManifestParserTEXT, 0)
+func (s *Key_valuesContext) Version() antlr.TerminalNode {
+	return s.GetToken(ManifestParserVersion, 0)
 }
 
 func (s *Key_valuesContext) GetRuleContext() antlr.RuleContext {
@@ -532,7 +412,7 @@ func (s *Key_valuesContext) ExitRule(listener antlr.ParseTreeListener) {
 
 func (p *ManifestParser) Key_values() (localctx IKey_valuesContext) {
 	localctx = NewKey_valuesContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, ManifestParserRULE_key_values)
+	p.EnterRule(localctx, 4, ManifestParserRULE_key_values)
 
 	defer func() {
 		p.ExitRule()
@@ -552,8 +432,8 @@ func (p *ManifestParser) Key_values() (localctx IKey_valuesContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(27)
-		p.Match(ManifestParserTEXT)
+		p.SetState(19)
+		p.Match(ManifestParserVersion)
 	}
 
 	return localctx

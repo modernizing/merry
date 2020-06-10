@@ -1,6 +1,7 @@
-T__0=1
+Version=1
 START_HEAD=2
 HEAD_TEXT=3
-TEXT=4
+Colon=4
 LINE_COMMENT=5
-':'=1
+WS=6
+':'=4

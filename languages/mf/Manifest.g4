@@ -2,16 +2,21 @@ grammar Manifest;
 
 mf: (LINE_COMMENT | section)* EOF;
 
-section : section_header ':' key_values;
+section: START_HEAD Colon key_values;
 
-section_header: START_HEAD HEAD_TEXT+;
+key_values
+  : Version
+  ;
 
-key_values: TEXT;
+Version : [0-9]+ ('.' | [0-9]+)+;
 
-START_HEAD: 'A' .. 'Z';
+START_HEAD: [A-Z] ([a-z] | '-' | [A-Z])+;
 
 HEAD_TEXT: 'a' .. 'z' | '-';
 
-TEXT: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '/' | '\\' | ':' | '*' | '.' | ',' | '@' | ' ')+;
+Colon: ':';
 
 LINE_COMMENT : ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
+
+WS  :   (('\r')? '\n' |  ' ' | '\t')+  -> skip;
+
