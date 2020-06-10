@@ -16,6 +16,18 @@ func Test_ShouldGetManifestProperty(t *testing.T) {
 	g.Expect(results[0].Value).To(Equal("1.0"))
 }
 
+func Test_ShouldGetImportPackage(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Import-Package: org.osgi.framework;
+version="[1.3,2.0)"
+
+`
+	results := Analysis(code, "hello.mf").KeyValues
+	g.Expect(len(results)).To(Equal(1))
+	g.Expect(results[0].Key).To(Equal("Import-Package"))
+	g.Expect(results[0].Value).To(Equal(`org.osgi.framework;version="[1.3,2.0)"`))
+}
+
 func Test_ShouldGetMultipleManifestProperties(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `

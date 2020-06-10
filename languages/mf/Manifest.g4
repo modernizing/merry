@@ -22,7 +22,7 @@ fragment LetterOrDigit
 Uppercase: [A-Z];
 Lowercase: [a-z];
 
-Symbol: '(' | ')' | '.' | '-';
+Symbol: '(' | ')' | '.' | '-' | ';' | '=' | '[' | ']' | '"' | ',';
 
 Colon: ':';
 
