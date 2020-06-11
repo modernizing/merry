@@ -110,6 +110,14 @@ Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
 `
 	results := Analysis(code, "hello.mf")
 	g.Expect(len(results.ImportPackage)).To(Equal(15))
-	//g.Expect(results.ImportPackage[0].Config[0].Key).To(Equal("resolution"))
-	//g.Expect(results.ImportPackage[0].Config[0].Value).To(Equal("optional"))
+}
+
+
+func Test_ShouldBuildOsgiPackageName(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Bundle-SymbolicName: felix-tut-8
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.PackageName).To(Equal("felix-tut-8"))
 }

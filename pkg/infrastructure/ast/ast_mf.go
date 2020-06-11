@@ -57,6 +57,10 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		Value: ctx.GetText(),
 	})
 
+	if s.currentKey == "" {
+		s.manifest.PackageName = s.currentKey
+	}
+
 	for _, pkg := range ctx.AllPkg() {
 		pkgContext := (pkg).(*parser.PkgContext)
 		javaPackage := dependency.JavaPackage{
