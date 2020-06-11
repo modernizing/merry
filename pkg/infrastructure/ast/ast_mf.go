@@ -69,14 +69,16 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 				assignText := configAssign.AssignKey().GetText()
 				if assignText == "version" {
 					versionText := configAssign.AssignValue().GetText()
-					versionInfo := versionText[2 : len(versionText)-2]
-					split := strings.Split(versionInfo, ",")
-					javaPackage.VersionInfo = versionInfo
-					if len(split) == 2 {
-						javaPackage.StartVersion = split[0]
-						javaPackage.EndVersion = split[1]
+					if strings.Contains(versionText, "[") {
+						versionInfo := versionText[2 : len(versionText)-2]
+						split := strings.Split(versionInfo, ",")
+						javaPackage.VersionInfo = versionInfo
+						if len(split) == 2 {
+							javaPackage.StartVersion = split[0]
+							javaPackage.EndVersion = split[1]
+						}
 					} else {
-						javaPackage.ExportVersion = split[0]
+						javaPackage.ExportVersion = versionText[1 : len(versionText)-1]
 					}
 				}
 				javaPackage.Config = append(javaPackage.Config, dependency.KeyValue{

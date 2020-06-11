@@ -79,6 +79,15 @@ func Test_ShouldGetCompileSuccessForMorePackageInfo(t *testing.T) {
 	g.Expect(results.ImportPackage[0].Config[1].Value).To(Equal("optional"))
 }
 
+func Test_ShouldSuccessParseExportPackageVersion(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Export-Package: org.springframework.asm;version="2.5.6.SEC01"
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.ExportPackage[0].ExportVersion).To(Equal("2.5.6.SEC01"))
+}
+
 func Test_ShouldGetCompileComplexImport(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `
