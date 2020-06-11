@@ -3,7 +3,6 @@ grammar Manifest;
 mf: (section)* EOF;
 
 section
-//  : 'SHA1-Digest' COLON SPACE ValueText
   : Key COLON SPACE value
   ;
 
