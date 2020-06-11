@@ -115,7 +115,7 @@ Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
 
 func Test_ShouldBuildOsgiPackageName(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `Bundle-SymbolicName: felix-tut-8
+	code := `Private-Package: felix-tut-8
 
 `
 	results := Analysis(code, "hello.mf")
