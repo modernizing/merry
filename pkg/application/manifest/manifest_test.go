@@ -16,3 +16,13 @@ func Test_ShouldParseManifestFile(t *testing.T) {
 	g.Expect(len(manifest.ExportPackage)).To(Equal(19))
 	g.Expect(len(manifest.ImportPackage)).To(Equal(15))
 }
+
+
+func Test_ShouldSuccessScanManifestFiles(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	file := filepath.FromSlash("../../../_fixtures/manifest/")
+	manifests := ScanManifest(file)
+
+	g.Expect(len(manifests)).To(Equal(7))
+}

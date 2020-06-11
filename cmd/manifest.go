@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
 	"github.com/phodal/igso/pkg/instrastructure"
 	"github.com/spf13/cobra"
@@ -45,7 +44,6 @@ func ExtractManifest(ppath string) {
 	}
 
 	jarPaths := instrastructure.GetFilesByFilter(ppath, jarFileFilter)
-	fmt.Println(ppath)
 	for _, path := range jarPaths {
 		_, content, _ := bundle.GetFileFromJar(path, "MANIFEST.MF")
 		pureName := path[len(ppath)+1 : len(path)-len(".jar")]
