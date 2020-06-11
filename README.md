@@ -24,11 +24,13 @@ Todo:
 Feature lists:
 
 ```bash
-COMMANDS:
-   boom       build maven dep from build.xml
-   dupsearch  search unkonw jar source
-   checksum   checksum file
-   help, h    Shows a list of commands or help for one command
+Available Commands:
+  boom        generate pom.xml from build.xml
+  checksum    checksum file md5
+  dupsearch   build maven pom from all jars file
+  help        Help about any command
+  manifest    manifest query & map tools
+  version     version
 
 ```
 
