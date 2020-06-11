@@ -4,6 +4,7 @@ import (
 	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure/ast"
 	"github.com/phodal/igso/pkg/instrastructure"
+	"io/ioutil"
 	"strings"
 )
 
@@ -20,8 +21,8 @@ func ScanManifest(path string) []dependency.IgsoManifest {
 	})
 
 	for _, mPath := range manifestPaths {
-		//fmt.Println(manifest)
-		manifest := ProcessManifest(mPath, "MANIFEST.MF")
+		content, _ := ioutil.ReadFile(mPath)
+		manifest := ProcessManifest(string(content), "MANIFEST.MF")
 		manifests = append(manifests, manifest)
 	}
 

@@ -3,11 +3,15 @@ grammar Manifest;
 mf: (section)* EOF;
 
 section
-  : Key COLON SPACE value
+  : 'SHA1-Digest' COLON SPACE Hash
+  | Key COLON SPACE value
   ;
+
+Hash: EscapeSequence EscapeSequence*;
 
 value
  : pkg (COMMA pkg)*
+ | STRING_LITERAL
  ;
 
 pkg
@@ -35,12 +39,16 @@ Key: 'Manifest-Version'
   | 'Implementation-Title'
   | 'Ant-Version'
   | 'Spring-Version'
-  | Uppercase Letter* '-' Uppercase Letter*
+  | 'Name'
+  | 'Can-Redefine-Classes'
+  | 'Package'
+  | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
+  | Uppercase Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
   ;
 
 OTHERS:  ValueText (SPACE? ValueText)*;
 ValueText
-  : ('(' | '.' |')' | '-'| LetterOrDigit+)+
+  : ('(' | '.' |')' | '-' | '$' | '_' | '/' | '%' | '+' | LetterOrDigit+)+
   ;
 
 COLON:              ':';
@@ -90,6 +98,7 @@ fragment EscapeSequence
     : '\\' [btnfr"'\\]
     | '\\' ([0-3]? [0-7])? [0-7]
     | '\\' 'u'+ HexDigit HexDigit HexDigit HexDigit
+    | '/' | '+'
     ;
 fragment HexDigit
     : [0-9a-fA-F]
