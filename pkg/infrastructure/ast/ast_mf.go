@@ -60,7 +60,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 	for _, pkg := range ctx.AllPkg() {
 		pkgContext := (pkg).(*parser.PkgContext)
 		javaPackage := dependency.JavaPackage{
-			Name:         pkgContext.OTHERS().GetText(),
+			Name: pkgContext.OTHERS().GetText(),
 		}
 
 		if len(pkgContext.AllConfigAssign()) > 0 {
@@ -87,7 +87,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		}
 
 		if s.currentKey == "Import-Package" {
-			s.manifest.Package = append(s.manifest.Package, javaPackage)
+			s.manifest.ImportPackage = append(s.manifest.ImportPackage, javaPackage)
 		}
 		if s.currentKey == "Export-Package" {
 			s.manifest.ExportPackage = append(s.manifest.ExportPackage, javaPackage)

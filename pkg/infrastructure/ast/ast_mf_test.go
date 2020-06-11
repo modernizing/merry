@@ -53,10 +53,10 @@ func Test_ShouldGetImportPackage(t *testing.T) {
 
 `
 	results := Analysis(code, "hello.mf")
-	g.Expect(results.Package[0].Name).To(Equal(`org.osgi.framework`))
-	g.Expect(results.Package[0].VersionInfo).To(Equal(`1.3,2.0`))
-	g.Expect(results.Package[0].StartVersion).To(Equal(`1.3`))
-	g.Expect(results.Package[0].EndVersion).To(Equal(`2.0`))
+	g.Expect(results.ImportPackage[0].Name).To(Equal(`org.osgi.framework`))
+	g.Expect(results.ImportPackage[0].VersionInfo).To(Equal(`1.3,2.0`))
+	g.Expect(results.ImportPackage[0].StartVersion).To(Equal(`1.3`))
+	g.Expect(results.ImportPackage[0].EndVersion).To(Equal(`2.0`))
 }
 
 func Test_ShouldGetCompileSuccessForInline(t *testing.T) {
@@ -65,7 +65,7 @@ func Test_ShouldGetCompileSuccessForInline(t *testing.T) {
 
 `
 	results := Analysis(code, "hello.mf")
-	g.Expect(results.Package[0].Name).To(Equal(`javax.persistence.spi`))
+	g.Expect(results.ImportPackage[0].Name).To(Equal(`javax.persistence.spi`))
 }
 
 func Test_ShouldGetCompileSuccessForMorePackageInfo(t *testing.T) {
@@ -74,9 +74,9 @@ func Test_ShouldGetCompileSuccessForMorePackageInfo(t *testing.T) {
 
 `
 	results := Analysis(code, "hello.mf")
-	g.Expect(results.Package[0].Config[0].Key).To(Equal("version"))
-	g.Expect(results.Package[0].Config[1].Key).To(Equal("resolution"))
-	g.Expect(results.Package[0].Config[1].Value).To(Equal("optional"))
+	g.Expect(results.ImportPackage[0].Config[0].Key).To(Equal("version"))
+	g.Expect(results.ImportPackage[0].Config[1].Key).To(Equal("resolution"))
+	g.Expect(results.ImportPackage[0].Config[1].Value).To(Equal("optional"))
 }
 
 func Test_ShouldGetCompileComplexImport(t *testing.T) {
@@ -100,7 +100,7 @@ Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
 
 `
 	results := Analysis(code, "hello.mf")
-	g.Expect(len(results.Package)).To(Equal(15))
-	//g.Expect(results.Package[0].Config[0].Key).To(Equal("resolution"))
-	//g.Expect(results.Package[0].Config[0].Value).To(Equal("optional"))
+	g.Expect(len(results.ImportPackage)).To(Equal(15))
+	//g.Expect(results.ImportPackage[0].Config[0].Key).To(Equal("resolution"))
+	//g.Expect(results.ImportPackage[0].Config[0].Value).To(Equal("optional"))
 }

@@ -14,5 +14,5 @@ func Test_ShouldParseManifestFile(t *testing.T) {
 	content, _ := ioutil.ReadFile(file)
 	manifest := ProcessManifest(string(content), "hello.mf")
 	g.Expect(len(manifest.ExportPackage)).To(Equal(19))
-	g.Expect(len(manifest.Package)).To(Equal(15))
+	g.Expect(len(manifest.ImportPackage)).To(Equal(15))
 }
