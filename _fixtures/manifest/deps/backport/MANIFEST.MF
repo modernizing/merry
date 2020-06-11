@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: edu.emory.mathcs.backport.java.util;version="3.1.0",ed
+ u.emory.mathcs.backport.java.util.concurrent;version="3.1.0";uses:="e
+ du.emory.mathcs.backport.java.util,edu.emory.mathcs.backport.java.uti
+ l.concurrent.atomic,edu.emory.mathcs.backport.java.util.concurrent.he
+ lpers,edu.emory.mathcs.backport.java.util.concurrent.locks",edu.emory
+ .mathcs.backport.java.util.concurrent.atomic;version="3.1.0",edu.emor
+ y.mathcs.backport.java.util.concurrent.helpers;version="3.1.0";uses:=
+ "edu.emory.mathcs.backport.java.util.concurrent.locks",edu.emory.math
+ cs.backport.java.util.concurrent.locks;version="3.1.0";uses:="edu.emo
+ ry.mathcs.backport.java.util.concurrent,edu.emory.mathcs.backport.jav
+ a.util.concurrent.helpers"
+Ant-Version: Apache Ant 1.7.0
+Bundle-Vendor: SpringSource
+Bundle-Classpath: .
+Bundle-Version: 3.1.0
+Bundle-Name: Backport Util Concurrent
+Bundle-ManifestVersion: 2
+Created-By: 1.4.2_14-b05 (Sun Microsystems Inc.)
+Bundle-SymbolicName: com.springsource.edu.emory.mathcs.backport
+
