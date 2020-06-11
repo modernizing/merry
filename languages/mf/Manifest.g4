@@ -7,19 +7,17 @@ section
   ;
 
 value
- : pkg (SEMI pkg)*
+ : pkg (COMMA pkg)*
  ;
 
 pkg
-  : OTHERS (SEMI VERSION ASSIGN STRING_LITERAL)? (SEMI configAssign)*
+  : OTHERS (SEMI configAssign)*
   ;
 
-configAssign: assignKey SEQUAL assignValue;
+configAssign: assignKey (SEQUAL | ASSIGN) assignValue;
 
 assignKey: OTHERS;
-assignValue: OTHERS;
-
-VERSION: 'version';
+assignValue: STRING_LITERAL | OTHERS;
 
 Key: 'Manifest-Version'
   | 'Bundle-Activator'
@@ -40,19 +38,10 @@ Key: 'Manifest-Version'
   | Uppercase Letter* '-' Uppercase Letter*
   ;
 
-//IDENTIFIER: Letter LetterOrDigit*;
 OTHERS:  ValueText (SPACE? ValueText)*;
 ValueText
   : ('(' | '.' |')' | '-'| LetterOrDigit+)+
-//  | Version
   ;
-
-//Version
-//  : Digits ('.' LetterOrDigit)+
-//  ;
-
-
-// Separators
 
 COLON:              ':';
 LPAREN:             '(';
@@ -91,11 +80,11 @@ SEQUAL:             ':=';
 
 Uppercase:          [A-Z];
 
-//LINE_COMMENT :       ';' ~('\n'|'\r')*  ->  channel(HIDDEN);
 SPACE:               [ \t];
 NL :                 ('\r'? '\n' ' '? ) -> skip;
 
 STRING_LITERAL:     '"' (~["\\\r\n] | EscapeSequence)* '"';
+IDENTIFIER: Letter LetterOrDigit*;
 
 fragment EscapeSequence
     : '\\' [btnfr"'\\]

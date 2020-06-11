@@ -74,13 +74,15 @@ func Test_ShouldGetCompileSuccessForMorePackageInfo(t *testing.T) {
 
 `
 	results := Analysis(code, "hello.mf")
-	g.Expect(results.Package[0].Config[0].Key).To(Equal("resolution"))
-	g.Expect(results.Package[0].Config[0].Value).To(Equal("optional"))
+	g.Expect(results.Package[0].Config[0].Key).To(Equal("version"))
+	g.Expect(results.Package[0].Config[1].Key).To(Equal("resolution"))
+	g.Expect(results.Package[0].Config[1].Value).To(Equal("optional"))
 }
 
 func Test_ShouldGetCompileComplexImport(t *testing.T) {
 	g := NewGomegaWithT(t)
-	code := `Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
+	code := `
+Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
  ="[3.0.0, 4.0.0)";resolution:=optional,javax.xml.transform;resolution
  :=optional,org.apache.commons.attributes;version="[2.2.0, 3.0.0)";res
  olution:=optional,org.apache.commons.collections;version="[3.2.0, 4.0
@@ -98,6 +100,7 @@ func Test_ShouldGetCompileComplexImport(t *testing.T) {
 
 `
 	results := Analysis(code, "hello.mf")
-	g.Expect(results.Package[0].Config[0].Key).To(Equal("resolution"))
-	g.Expect(results.Package[0].Config[0].Value).To(Equal("optional"))
+	g.Expect(len(results.Package)).To(Equal(15))
+	//g.Expect(results.Package[0].Config[0].Key).To(Equal("resolution"))
+	//g.Expect(results.Package[0].Config[0].Value).To(Equal("optional"))
 }

@@ -3,6 +3,7 @@ package ast
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
+	"regexp"
 	"strings"
 )
 
@@ -44,6 +45,9 @@ func ProcessTsString(code string) *parser.ManifestParser {
 }
 
 func Analysis(code string, fileName string) IgsoManifest {
+	re := regexp.MustCompile(`\r?\n `)
+	code = re.ReplaceAllString(code, "")
+
 	scriptParser := ProcessTsString(code)
 	context := scriptParser.Mf()
 
@@ -73,29 +77,30 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 
 	for _, pkg := range ctx.AllPkg() {
 		pkgContext := (pkg).(*parser.PkgContext)
-		if pkgContext.VERSION() != nil {
-			versionText := pkgContext.STRING_LITERAL().GetText()
-			versionInfo := versionText[2 : len(versionText)-2]
-			split := strings.Split(versionInfo, ",")
-			javaPackage := JavaPackage{
-				Name:         pkgContext.OTHERS().GetText(),
-				VersionInfo:  versionInfo,
-				StartVersion: split[0],
-				EndVersion:   split[1],
-			}
-			if len(pkgContext.AllConfigAssign()) > 0 {
-				for _, config := range pkgContext.AllConfigAssign() {
-					configAssign := (config).(*parser.ConfigAssignContext)
-					javaPackage.Config = append(javaPackage.Config, KeyValue{
-						Key: configAssign.AssignKey().GetText(),
-						Value: configAssign.AssignValue().GetText(),
-					})
-				}
-			}
-
-			s.manifest.Package = append(s.manifest.Package, javaPackage)
+		javaPackage := JavaPackage{
+			Name:         pkgContext.OTHERS().GetText(),
 		}
 
+		if len(pkgContext.AllConfigAssign()) > 0 {
+			for _, config := range pkgContext.AllConfigAssign() {
+				configAssign := (config).(*parser.ConfigAssignContext)
+				assignText := configAssign.AssignKey().GetText()
+				if assignText == "version" {
+					versionText := configAssign.AssignValue().GetText()
+					versionInfo := versionText[2 : len(versionText)-2]
+					split := strings.Split(versionInfo, ",")
+					javaPackage.VersionInfo = versionInfo
+					javaPackage.StartVersion = split[0]
+					javaPackage.EndVersion = split[1]
+				}
+				javaPackage.Config = append(javaPackage.Config, KeyValue{
+					Key:   assignText,
+					Value: configAssign.AssignValue().GetText(),
+				})
+			}
+		}
+
+		s.manifest.Package = append(s.manifest.Package, javaPackage)
 	}
 }
 
