@@ -13,7 +13,7 @@ func ProcessManifest(content string, filename string) dependency.IgsoManifest {
 	return results
 }
 
-func ScanManifest(path string) []dependency.IgsoManifest {
+func ScanByPath(path string) []dependency.IgsoManifest {
 	var manifests []dependency.IgsoManifest
 
 	manifestPaths := infrastructure.GetFilesByFilter(path, func(path string) bool {
