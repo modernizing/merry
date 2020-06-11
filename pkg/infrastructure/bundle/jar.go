@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type myCloser interface {
@@ -51,6 +52,23 @@ func ListJarFiles(path string) []zip.File {
 	}
 	return files
 }
+
+func GetFileFromJar(zipFile string, fileName string) (string, string, error) {
+	zf, err := zip.OpenReader(zipFile)
+	check(err)
+	defer closeFile(zf)
+
+	for _, file := range zf.File {
+		if strings.HasSuffix(file.Name, fileName) {
+			all := readAll(file)
+			content := string(all)
+			return file.Name, content, nil
+		}
+	}
+
+	return "", "", err
+}
+
 
 // https://stackoverflow.com/questions/20357223/easy-way-to-unzip-file-with-golang
 func Unzip(src, dest string) ([]string, error) {
