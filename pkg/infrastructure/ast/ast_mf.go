@@ -72,8 +72,12 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 					versionInfo := versionText[2 : len(versionText)-2]
 					split := strings.Split(versionInfo, ",")
 					javaPackage.VersionInfo = versionInfo
-					javaPackage.StartVersion = split[0]
-					javaPackage.EndVersion = split[1]
+					if len(split) == 2 {
+						javaPackage.StartVersion = split[0]
+						javaPackage.EndVersion = split[1]
+					} else {
+						javaPackage.ExportVersion = split[0]
+					}
 				}
 				javaPackage.Config = append(javaPackage.Config, dependency.KeyValue{
 					Key:   assignText,
@@ -82,7 +86,12 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			}
 		}
 
-		s.manifest.Package = append(s.manifest.Package, javaPackage)
+		if s.currentKey == "Import-Package" {
+			s.manifest.Package = append(s.manifest.Package, javaPackage)
+		}
+		if s.currentKey == "Export-Package" {
+			s.manifest.ExportPackage = append(s.manifest.ExportPackage, javaPackage)
+		}
 	}
 }
 

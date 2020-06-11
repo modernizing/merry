@@ -6,11 +6,12 @@ type KeyValue struct {
 }
 
 type JavaPackage struct {
-	Name         string
-	VersionInfo  string
-	StartVersion string
-	EndVersion   string
-	Config       []KeyValue
+	Name          string
+	VersionInfo   string
+	ExportVersion string
+	StartVersion  string
+	EndVersion    string
+	Config        []KeyValue
 }
 
 type IgsoManifest struct {
@@ -18,4 +19,3 @@ type IgsoManifest struct {
 	Package       []JavaPackage
 	KeyValues     []KeyValue
 }
-
