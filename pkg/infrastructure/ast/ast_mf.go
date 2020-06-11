@@ -57,8 +57,8 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		Value: ctx.GetText(),
 	})
 
-	if s.currentKey == "" {
-		s.manifest.PackageName = s.currentKey
+	if s.currentKey == "Private-Package" {
+		s.manifest.PackageName = ctx.GetText()
 	}
 
 	for _, pkg := range ctx.AllPkg() {
@@ -85,9 +85,15 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 						javaPackage.ExportVersion = versionText[1 : len(versionText)-1]
 					}
 				}
+
+				text := ""
+				if configAssign.AssignValue() != nil {
+					text = configAssign.AssignValue().GetText()
+				}
+
 				javaPackage.Config = append(javaPackage.Config, dependency.KeyValue{
 					Key:   assignText,
-					Value: configAssign.AssignValue().GetText(),
+					Value: text,
 				})
 			}
 		}

@@ -18,4 +18,5 @@ type IgsoManifest struct {
 	ExportPackage []JavaPackage
 	ImportPackage []JavaPackage
 	KeyValues     []KeyValue
+	PackageName   string
 }

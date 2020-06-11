@@ -2,8 +2,8 @@ package manifest
 
 import (
 	"github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/ast"
-	"github.com/phodal/igso/pkg/instrastructure"
 	"io/ioutil"
 	"strings"
 )
@@ -16,7 +16,7 @@ func ProcessManifest(content string, filename string) dependency.IgsoManifest {
 func ScanManifest(path string) []dependency.IgsoManifest {
 	var manifests []dependency.IgsoManifest
 
-	manifestPaths := instrastructure.GetFilesByFilter(path, func(path string) bool {
+	manifestPaths := infrastructure.GetFilesByFilter(path, func(path string) bool {
 		return strings.HasSuffix(path, "MANIFEST.MF")
 	})
 

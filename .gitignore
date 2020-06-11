@@ -76,3 +76,4 @@ pom.xml
 !cmd/testdata/boom/build.xml
 _m
 manifest-map.json
+bundles

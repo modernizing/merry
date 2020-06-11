@@ -2,7 +2,7 @@ package dupsearch
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/phodal/igso/pkg/instrastructure"
+	"github.com/phodal/igso/pkg/infrastructure"
 	"strings"
 	"testing"
 )
@@ -14,7 +14,7 @@ func TestShouldGetPropertyName(t *testing.T) {
 		return strings.HasSuffix(path, ".jar")
 	}
 
-	files := instrastructure.GetFilesByFilter("../../../_fixtures/bundle/sample", jarFileFilter)
+	files := infrastructure.GetFilesByFilter("../../../_fixtures/bundle/sample", jarFileFilter)
 
 	g.Expect(len(files)).To(Equal(2))
 }

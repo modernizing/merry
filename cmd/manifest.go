@@ -1,13 +1,18 @@
 package cmd
 
 import (
+	"bufio"
 	"encoding/json"
+	"fmt"
+	"github.com/phodal/igso/pkg/adapter/tequila"
 	"github.com/phodal/igso/pkg/application/manifest"
+	"github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
-	"github.com/phodal/igso/pkg/instrastructure"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -41,10 +46,75 @@ var manifestCmd = &cobra.Command{
 		}
 		if manifestConfig.IsScan {
 			scanManifest := manifest.ScanManifest(path)
-			result, _ := json.MarshalIndent(scanManifest, "", "\t")
-			ioutil.WriteFile("manifest-map.json", result, os.ModePerm)
+			res, _ := json.MarshalIndent(scanManifest, "", "\t")
+			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
+
+			fmt.Println(scanManifest)
+			result := buildFullGraph(scanManifest)
+
+			ignores := strings.Split("", ",")
+			var nodeFilter = func(key string) bool {
+				for _, f := range ignores {
+					if key == f {
+						return true
+					}
+				}
+				return false
+			}
+
+			graph := result.ToDot(".", nodeFilter)
+			f, _ := os.Create("dep.dot")
+			w := bufio.NewWriter(f)
+			_, _ = w.WriteString("di" + graph.String())
+			_ = w.Flush()
+
+			exec.Command("dot", "-Tsvg","dep.dot", "-o", "dep.svg")
 		}
 	},
+}
+
+func buildFullGraph(scanManifest []dependency.IgsoManifest) *tequila.FullGraph {
+	fullGraph := &tequila.FullGraph{
+		NodeList:     make(map[string]string),
+		RelationList: make(map[string]*tequila.Relation),
+	}
+	for _, mani := range scanManifest {
+		if mani.ExportPackage != nil {
+			for _, exp := range mani.ExportPackage {
+				src := exp.Name
+				fullGraph.NodeList[src] = src
+
+				for _, impl := range mani.ImportPackage {
+					implName := impl.Name
+					fullGraph.NodeList[implName] = implName
+					relation := &tequila.Relation{
+						From:  src,
+						To:    implName,
+						Style: "\"solid\"",
+					}
+
+					fullGraph.RelationList[relation.From+"->"+relation.To] = relation
+				}
+			}
+		} else {
+			src := mani.PackageName
+			fullGraph.NodeList[src] = src
+
+			for _, impl := range mani.ImportPackage {
+				implName := impl.Name
+				fullGraph.NodeList[implName] = implName
+				relation := &tequila.Relation{
+					From:  src,
+					To:    implName,
+					Style: "\"solid\"",
+				}
+
+				fullGraph.RelationList[relation.From+"->"+relation.To] = relation
+			}
+		}
+	}
+
+	return fullGraph
 }
 
 func ExtractManifest(ppath string) {
@@ -52,7 +122,7 @@ func ExtractManifest(ppath string) {
 		return strings.HasSuffix(path, ".jar")
 	}
 
-	jarPaths := instrastructure.GetFilesByFilter(ppath, jarFileFilter)
+	jarPaths := infrastructure.GetFilesByFilter(ppath, jarFileFilter)
 	for _, path := range jarPaths {
 		_, content, _ := bundle.GetFileFromJar(path, "MANIFEST.MF")
 		pureName := path[len(ppath)+1 : len(path)-len(".jar")]
