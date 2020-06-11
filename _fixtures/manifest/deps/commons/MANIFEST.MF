@@ -1,0 +1,1569 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.3
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.apache.commons.collections
+Eclipse-SourceReferences: scm:cvs:pserver:dev.eclipse.org:/cvsroot/too
+ ls:org.eclipse.orbit/org.apache.commons.collections;tag=v201303021031
+ 0
+Export-Package: org.apache.commons.collections;version="3.2.0",org.apa
+ che.commons.collections.bag;version="3.2.0",org.apache.commons.collec
+ tions.bidimap;version="3.2.0",org.apache.commons.collections.buffer;v
+ ersion="3.2.0",org.apache.commons.collections.collection;version="3.2
+ .0",org.apache.commons.collections.comparators;version="3.2.0",org.ap
+ ache.commons.collections.functors;version="3.2.0",org.apache.commons.
+ collections.iterators;version="3.2.0",org.apache.commons.collections.
+ keyvalue;version="3.2.0",org.apache.commons.collections.list;version=
+ "3.2.0",org.apache.commons.collections.map;version="3.2.0",org.apache
+ .commons.collections.set;version="3.2.0"
+Bundle-Version: 3.2.0.v2013030210310
+Bundle-ManifestVersion: 2
+
+Name: org/apache/commons/collections/DefaultMapBag.class
+SHA1-Digest: jgheLQH4SUxK2sDMnOm/h1dQNec=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$EntrySet.clas
+ s
+SHA1-Digest: k9UqNKikg57sSQfkNeZK1+fjLEE=
+
+Name: org/apache/commons/collections/list/NodeCachingLinkedList.class
+SHA1-Digest: 9KEbzR2FDVcupLV9HqQPKpC2qiY=
+
+Name: org/apache/commons/collections/map/TypedMap.class
+SHA1-Digest: ybmrvSQaSTpRNYQxa1Eaun4Fg0U=
+
+Name: org/apache/commons/collections/ListUtils.class
+SHA1-Digest: YiFaADMM/YAKhGS/m2HN2oh7UNA=
+
+Name: org/apache/commons/collections/Predicate.class
+SHA1-Digest: Kc2/pFduISLBVzF7GlrCJV+M7J0=
+
+Name: org/apache/commons/collections/map/SingletonMap$SingletonValues.
+ class
+SHA1-Digest: xp9rFnWGa1BJr9XY1T4UgIZw924=
+
+Name: org/apache/commons/collections/set/CompositeSet$SetMutator.class
+SHA1-Digest: +lMwoIEmX9VRXvnvtfbxzgqrO0E=
+
+Name: org/apache/commons/collections/map/CaseInsensitiveMap.class
+SHA1-Digest: LyGeSvospEwwmkaC3iXxqxEtmKk=
+
+Name: org/apache/commons/collections/OrderedMap.class
+SHA1-Digest: u+s59Q6RJ3xNf7mWArT6q04gVZk=
+
+Name: org/apache/commons/collections/comparators/NullComparator.class
+SHA1-Digest: NhWHDusTdSlJWfp0lX2Vctb5tFM=
+
+Name: org/apache/commons/collections/MultiHashMap$ValueIterator.class
+SHA1-Digest: 3PMWO72LzXDh4Y30XNCg6c+1ZWE=
+
+Name: org/apache/commons/collections/map/UnmodifiableEntrySet$Unmodifi
+ ableEntry.class
+SHA1-Digest: cCUoV9sevkZWxNh/S7QBk1z5cTY=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$ListOrderedMap
+ Iterator.class
+SHA1-Digest: sMFUMIf1dz6MUggP20068Crak40=
+
+Name: org/apache/commons/collections/SequencedHashMap$3.class
+SHA1-Digest: dPfTOEvpVgTSXvwZy3JjO3iT42s=
+
+Name: org/apache/commons/collections/buffer/TypedBuffer.class
+SHA1-Digest: bx3AZYKQyG9T5JTSDFEgjViD/VQ=
+
+Name: org/apache/commons/collections/map/IdentityMap.class
+SHA1-Digest: U/rQBaS2/Ox68Ct/JQhs66a0zHM=
+
+Name: org/apache/commons/collections/OrderedMapIterator.class
+SHA1-Digest: WePsRm0vvZElM0V3xXj0Vk2xhH8=
+
+Name: org/apache/commons/collections/iterators/AbstractMapIteratorDeco
+ rator.class
+SHA1-Digest: 8Ct0vKM3rbLQTCvRnIrUr0IgETg=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$KeySetView.cla
+ ss
+SHA1-Digest: Q0CrkBrBEgfNO/rqTXElhDqmsuk=
+
+Name: org/apache/commons/collections/functors/NotNullPredicate.class
+SHA1-Digest: Ymwnshl3yKQl81UR7BCdqt6XM7M=
+
+Name: org/apache/commons/collections/BufferOverflowException.class
+SHA1-Digest: SXQLVPmjDhjfHWr6dY6ORXkfULY=
+
+Name: org/apache/commons/collections/functors/TransformerPredicate.cla
+ ss
+SHA1-Digest: Fcqrk3IUXPVaGjInCP+2jTN6dYE=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap.class
+SHA1-Digest: EH4+I1t2Ak46bPZsBVtZaUZPrCM=
+
+Name: org/apache/commons/collections/bag/SynchronizedSortedBag.class
+SHA1-Digest: 4a7lT/50ZiIgF4vlEl5/sfUKijY=
+
+Name: org/apache/commons/collections/bag/HashBag.class
+SHA1-Digest: 48Pha8Dap1PudELDc7rVhVUpLig=
+
+Name: org/apache/commons/collections/functors/ExceptionPredicate.class
+SHA1-Digest: Dzdg/p91E2m2RpjWvE3oplypVHU=
+
+Name: org/apache/commons/collections/iterators/ObjectArrayIterator.cla
+ ss
+SHA1-Digest: ko/DN0b3Zo8sLaOI416l5jR7kRI=
+
+Name: org/apache/commons/collections/FastHashMap$CollectionView$Collec
+ tionViewIterator.class
+SHA1-Digest: EtBP2JEZyxG2gMvGfIPfNnHIxm8=
+
+Name: org/apache/commons/collections/KeyValue.class
+SHA1-Digest: 4KqQWFrEOONzoHuTi+iwSWSeac0=
+
+Name: org/apache/commons/collections/list/TreeList$AVLNode.class
+SHA1-Digest: 2QLxgOl11rFTFN4HJzL/BwPMxK0=
+
+Name: org/apache/commons/collections/buffer/SynchronizedBuffer.class
+SHA1-Digest: 8sro/+ebqx50GwY2i4dVk3ktyJ0=
+
+Name: org/apache/commons/collections/iterators/AbstractListIteratorDec
+ orator.class
+SHA1-Digest: P/FhMnfdfGla9voypp1Ra2vHQ5k=
+
+Name: org/apache/commons/collections/functors/SwitchClosure.class
+SHA1-Digest: iK0GD906r6SMS4marbwNAiN5pa4=
+
+Name: org/apache/commons/collections/buffer/BoundedFifoBuffer.class
+SHA1-Digest: jK0LCMJIa3VQAAcp2vmrwMwHIG4=
+
+Name: org/apache/commons/collections/map/AbstractInputCheckedMapDecora
+ tor$MapEntry.class
+SHA1-Digest: eMwhcsXAzYRmvLYowI5mAqOv+gk=
+
+Name: org/apache/commons/collections/map/FixedSizeSortedMap.class
+SHA1-Digest: b5osVmWvEEeiSIQmUbcUjYAHh94=
+
+Name: org/apache/commons/collections/set/TransformedSet.class
+SHA1-Digest: gnnTPll/HAjvYrEi3rGNNTIwv6w=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$HashIterato
+ r.class
+SHA1-Digest: j3c6Tqw3nNht7cxniRPSyyYsqAk=
+
+Name: org/apache/commons/collections/CursorableLinkedList$Listable.cla
+ ss
+SHA1-Digest: 5s8LiQsukQeuzqnQ03xQqt/1sXI=
+
+Name: org/apache/commons/collections/bag/TypedSortedBag.class
+SHA1-Digest: jKdLoNCRZGKvvbKCD6LfiOlHPRc=
+
+Name: org/apache/commons/collections/functors/WhileClosure.class
+SHA1-Digest: nElsy0fhAMj9fY+dvEBX7GUu3C0=
+
+Name: org/apache/commons/collections/buffer/UnboundedFifoBuffer$1.clas
+ s
+SHA1-Digest: B2oCkwab3109ae8RvJBtVFooGTc=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$3.class
+SHA1-Digest: KZOJZFKVYkJD7mp6ZL/SayJFWRc=
+
+Name: org/apache/commons/collections/FastHashMap$Values.class
+SHA1-Digest: 4hgrZhw9Xsir8/lu13J9zaXRsVQ=
+
+Name: org/apache/commons/collections/MapUtils.class
+SHA1-Digest: t8ne1UTLnKyh4xruoRuv8uZK3/k=
+
+Name: org/apache/commons/collections/functors/PrototypeFactory$1.class
+SHA1-Digest: /4sonkgTjlK0PJdIZJie4oz9hOw=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eEntry.class
+SHA1-Digest: 3rG0oKX/M8Po1I3LgjQd2RUx7bI=
+
+Name: org/apache/commons/collections/Bag.class
+SHA1-Digest: kEylQyoqmeuFUS72UXmA8IWjkM4=
+
+Name: org/apache/commons/collections/functors/NullIsExceptionPredicate
+ .class
+SHA1-Digest: oMBZSMHOMXirH+yItT8KKNPLfjg=
+
+Name: org/apache/commons/collections/map/UnmodifiableMap.class
+SHA1-Digest: j7vbOHh51k/iLuTIafA5AfYinX4=
+
+Name: org/apache/commons/collections/BeanMap.class
+SHA1-Digest: bpEWcR61ogreIIm1sDpyTpSABPk=
+
+Name: org/apache/commons/collections/functors/MapTransformer.class
+SHA1-Digest: h1m8AnLle2vq5gDZSiTKNq9xk0A=
+
+Name: org/apache/commons/collections/map/UnmodifiableOrderedMap.class
+SHA1-Digest: b7uZXnA1d4eGWmmhMYgtAcUVVm8=
+
+Name: org/apache/commons/collections/iterators/UnmodifiableOrderedMapI
+ terator.class
+SHA1-Digest: wnxHNxebBJub6cnLraPzpToRrzA=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap.class
+SHA1-Digest: fVpPQJDYjHZVuOKRgyVu3aEV2oM=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$MapEn
+ try.class
+SHA1-Digest: jhciLJKoCzsZwVomJQSkeSdqA7k=
+
+Name: org/apache/commons/collections/FactoryUtils.class
+SHA1-Digest: KsHjncUALKnFlVLSEi97wZrJcz4=
+
+Name: org/apache/commons/collections/bidimap/DualTreeBidiMap.class
+SHA1-Digest: cg7ZZeS+sz/ifbaGsevziebIxBk=
+
+Name: org/apache/commons/collections/comparators/ComparatorChain.class
+SHA1-Digest: rLLhboxJSdIZWGzfxhZUoz8oHgU=
+
+Name: org/apache/commons/collections/BeanMap$3.class
+SHA1-Digest: /chIRc+9qz/Ec6ZrkdBdhGtQdyo=
+
+Name: org/apache/commons/collections/FastArrayList.class
+SHA1-Digest: YMGP6oEbWcTyaDZgYfcrnDcIK2Q=
+
+Name: org/apache/commons/collections/StaticBucketMap$EntrySet.class
+SHA1-Digest: qmteLRA/vayGrdMLe2aJCPcDR/A=
+
+Name: org/apache/commons/collections/collection/CompositeCollection.cl
+ ass
+SHA1-Digest: VzRcvQch0IH55DI0CLjGwLYhQGk=
+
+Name: org/apache/commons/collections/functors/CloneTransformer.class
+SHA1-Digest: 9wMCEoAOXGYUViis4VyVEorNoUs=
+
+Name: org/apache/commons/collections/comparators/TransformingComparato
+ r.class
+SHA1-Digest: IxjB0Fh1G9PHpzthNGFLYVPr9hk=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eKeySetIterator.class
+SHA1-Digest: oDNZZyZ8WfTEsDRti1fvMwZzusc=
+
+Name: org/apache/commons/collections/ReferenceMap$3.class
+SHA1-Digest: esznr2P/UEoJ3PV9V6oq5il5klk=
+
+Name: org/apache/commons/collections/BidiMap.class
+SHA1-Digest: ycL3lddsVl8fnHYOxK1H/S2UjV0=
+
+Name: org/apache/commons/collections/map/SingletonMap.class
+SHA1-Digest: p7b0MBP6a2tLbsqu0ZlSV55+/0w=
+
+Name: org/apache/commons/collections/iterators/ProxyIterator.class
+SHA1-Digest: JttCviBoQEr5zDE+rgMKbbtxnuU=
+
+Name: org/apache/commons/collections/set/AbstractSerializableSetDecora
+ tor.class
+SHA1-Digest: i2jDHa00tsAeaK9uJ03h2JF63Gs=
+
+Name: org/apache/commons/collections/bidimap/AbstractSortedBidiMapDeco
+ rator.class
+SHA1-Digest: LuARGTsSScQpAsaH4VZGmeEpxDU=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$KeyIterator.c
+ lass
+SHA1-Digest: Cly45gZ+5mEqRQoGz9txYLZ8ioA=
+
+Name: org/apache/commons/collections/OrderedIterator.class
+SHA1-Digest: Bkl5s0/9WGZchAQrRAJFNLCpCD4=
+
+Name: org/apache/commons/collections/functors/InstantiateTransformer.c
+ lass
+SHA1-Digest: /MOlMrN6r5wWFs3KxOifID4dDEo=
+
+Name: org/apache/commons/collections/map/Flat3Map$KeySetIterator.class
+SHA1-Digest: s1FR4BRrvT24mN/3acHY9ONhT7M=
+
+Name: org/apache/commons/collections/buffer/PriorityBuffer$1.class
+SHA1-Digest: 2SEOYOIzA4fjlmpfBKTT1ypjwgQ=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$8.class
+SHA1-Digest: QLukK0dB5esMnRYGSKUYVo0UNJo=
+
+Name: org/apache/commons/collections/list/TypedList.class
+SHA1-Digest: HecFhtAZeiiMznLhArSTyeB1btE=
+
+Name: org/apache/commons/collections/list/AbstractLinkedList$LinkedSub
+ List.class
+SHA1-Digest: Jlo3Yu8txPSVW/ePE01wGcZgpTY=
+
+Name: org/apache/commons/collections/map/ListOrderedMap.class
+SHA1-Digest: RawjcUPN0TKHd9CsyQ0E73FGu+Q=
+
+Name: org/apache/commons/collections/bidimap/UnmodifiableSortedBidiMap
+ .class
+SHA1-Digest: 0u29ep2GEE7OdKGKhJra/Q+DPe0=
+
+Name: org/apache/commons/collections/buffer/CircularFifoBuffer.class
+SHA1-Digest: tPEupKbgIP2/77u/K+cZYcwepEA=
+
+Name: org/apache/commons/collections/BeanMap$8.class
+SHA1-Digest: lOGg1AWheXQi3UTAXhHTA7m40As=
+
+Name: org/apache/commons/collections/FastTreeMap.class
+SHA1-Digest: UBhX6h3dv1oa8haCPcI4nZNWQ90=
+
+Name: org/apache/commons/collections/map/AbstractMapDecorator.class
+SHA1-Digest: OPnGipDkr8QcdC0un1FldcEw3dk=
+
+Name: org/apache/commons/collections/ReferenceMap$SoftRef.class
+SHA1-Digest: 5DJbhciSPUQxfdc8KrzAJU4m49I=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$EntrySet.cl
+ ass
+SHA1-Digest: VdYTj5KgNR4JoOI4s1kEzxlO87w=
+
+Name: org/apache/commons/collections/functors/InstanceofPredicate.clas
+ s
+SHA1-Digest: 4OXwYGmuTsJxL251wtady/2oqxU=
+
+Name: org/apache/commons/collections/map/MultiValueMap$ReflectionFacto
+ ry.class
+SHA1-Digest: LqnTI/j9MUFl9yU6PsACUmJGvRA=
+
+Name: org/apache/commons/collections/DoubleOrderedMap.class
+SHA1-Digest: 0H3ZKiYP/1BNv7EZsQxdV6HMq54=
+
+Name: org/apache/commons/collections/list/SetUniqueList.class
+SHA1-Digest: p+kXfPbswgfMiNoswTDJGd1dbt4=
+
+Name: org/apache/commons/collections/FastTreeMap$1.class
+SHA1-Digest: oolIYuUvuWvtHVsN11mV8FgdBT0=
+
+Name: org/apache/commons/collections/map/Flat3Map$FlatMapIterator.clas
+ s
+SHA1-Digest: T7eD7uD9OV5VrWghJjDifeWCK0c=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$KeySe
+ tIterator.class
+SHA1-Digest: 7TNIF/sqis4NO+fB6TXhxBRO6GE=
+
+Name: org/apache/commons/collections/keyvalue/UnmodifiableMapEntry.cla
+ ss
+SHA1-Digest: FPCQf+pOTBHdCxXMEgJXiPrcirc=
+
+Name: org/apache/commons/collections/buffer/PriorityBuffer.class
+SHA1-Digest: P0W6avMCWKnyKMVJy+WPqnvR3M8=
+
+Name: org/apache/commons/collections/BoundedFifoBuffer$1.class
+SHA1-Digest: 3pDww1ZSTfunDUVTFhH5huywzU4=
+
+Name: org/apache/commons/collections/bidimap/AbstractOrderedBidiMapDec
+ orator.class
+SHA1-Digest: 5FFLEu/emZCXLcYxjPP8jcj3oEI=
+
+Name: org/apache/commons/collections/list/CursorableLinkedList.class
+SHA1-Digest: EWlLSTpObU8gdKc4VTL5CiE6mmQ=
+
+Name: org/apache/commons/collections/functors/FalsePredicate.class
+SHA1-Digest: 6BVqsDgDi9xyWB1ZnioxKKF5Ivs=
+
+Name: org/apache/commons/collections/SequencedHashMap$2.class
+SHA1-Digest: evhuBazhCtkicKdfujUlO61zJHI=
+
+Name: org/apache/commons/collections/FunctorException.class
+SHA1-Digest: rY10VUMXIWvTDDtBUaI6VU4yPUU=
+
+Name: org/apache/commons/collections/map/Flat3Map$EntrySetIterator.cla
+ ss
+SHA1-Digest: Piu+MqPErK1jiuCdTGEeBQLG478=
+
+Name: org/apache/commons/collections/bag/SynchronizedBag.class
+SHA1-Digest: oHuCNHvctOfX5uXVyOBmlCnttrU=
+
+Name: org/apache/commons/collections/map/LRUMap.class
+SHA1-Digest: /zxAwfY6cOjbs4p20V2QrgroEog=
+
+Name: org/apache/commons/collections/map/MultiValueMap.class
+SHA1-Digest: E0GcSSz/uIb8A9Ax3EnRBfXcKeg=
+
+Name: org/apache/commons/collections/BufferUtils.class
+SHA1-Digest: q/zjwJU8XAkKKzP4DiByrYS7ZWQ=
+
+Name: org/apache/commons/collections/map/AbstractInputCheckedMapDecora
+ tor$EntrySetIterator.class
+SHA1-Digest: zVY0mZF43cLl3gwMRcfrxBdk4ag=
+
+Name: org/apache/commons/collections/functors/IdentityPredicate.class
+SHA1-Digest: BL0cz2pxWEOcNTmFZZpP1wpf4HY=
+
+Name: org/apache/commons/collections/ExtendedProperties.class
+SHA1-Digest: RlO/hnvv/2efHy1PhticYVJoIYM=
+
+Name: org/apache/commons/collections/set/ListOrderedSet$1.class
+SHA1-Digest: aHmSsDKerKCxQexzLPYE3YpMLpU=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$2.class
+SHA1-Digest: /2TRsroTY/ajFneorHSJ34wDt8k=
+
+Name: org/apache/commons/collections/ProxyMap.class
+SHA1-Digest: aIxKp3wKhqIyhpFpSeeVC5LQhf4=
+
+Name: org/apache/commons/collections/collection/PredicatedCollection.c
+ lass
+SHA1-Digest: bMP+3Y+jYB1YRY03DDywkimCWqo=
+
+Name: org/apache/commons/collections/list/PredicatedList.class
+SHA1-Digest: h3zDwa3kC+Ml1qMrcycT180aHy8=
+
+Name: org/apache/commons/collections/functors/IfClosure.class
+SHA1-Digest: o5ralANXlkYvP4tAZRv7KVcrFlA=
+
+Name: org/apache/commons/collections/bidimap/DualHashBidiMap.class
+SHA1-Digest: f4OkOyWh/ILtPjsHl4Hbzd1BSqM=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$ValuesView.cla
+ ss
+SHA1-Digest: vZaPZLVVlfqzdDGsLF5R+0dkklU=
+
+Name: org/apache/commons/collections/StaticBucketMap$KeyIterator.class
+SHA1-Digest: kChYwCaOvxrLXbTKZTNXtPXA2ow=
+
+Name: org/apache/commons/collections/functors/NullPredicate.class
+SHA1-Digest: wkZGJ93q8U/v7Xj0Hla4hb5CfcI=
+
+Name: org/apache/commons/collections/functors/PrototypeFactory$Prototy
+ peSerializationFactory.class
+SHA1-Digest: Q2HxGgTd7P7J74C5xM40kOQ4+DM=
+
+Name: org/apache/commons/collections/FastHashMap$EntrySet.class
+SHA1-Digest: +tXyfZP3D65HStQF9XIj8lv2Euc=
+
+Name: org/apache/commons/collections/list/FixedSizeList.class
+SHA1-Digest: eM5Ycit/FrzqOeYs8QoxKblHTI4=
+
+Name: org/apache/commons/collections/map/TransformedMap.class
+SHA1-Digest: U9kJCBnSRYNFiBgMW2fEzh42Yt0=
+
+Name: org/apache/commons/collections/bag/PredicatedBag.class
+SHA1-Digest: WdMEGHl6GVaFUW6AhCtZ4Vd9YgY=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap$ValuesItera
+ tor.class
+SHA1-Digest: KzzYCx4feVmBNY3WtbvhXHAtFE8=
+
+Name: org/apache/commons/collections/set/TypedSortedSet.class
+SHA1-Digest: 2/zITmAd9nvqZl0jDJG8i34Ni78=
+
+Name: org/apache/commons/collections/map/HashedMap.class
+SHA1-Digest: TslChax7b3IEN31GuLuU5gX6rzY=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$2.class
+SHA1-Digest: /fkD1YIgapOEas7Hsi3iqWXRCmA=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$Entry
+ SetIterator.class
+SHA1-Digest: KqjehO5jnGVwfbzW7mcFPHhYF24=
+
+Name: org/apache/commons/collections/iterators/LoopingIterator.class
+SHA1-Digest: PeuZdIrzJ2bduYmWEtI/YjWtlIw=
+
+Name: org/apache/commons/collections/set/ListOrderedSet$OrderedSetIter
+ ator.class
+SHA1-Digest: JuYtb+XABqXRNku7VS8S1zGQHzg=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$ListOrderedIte
+ rator.class
+SHA1-Digest: B3vkTcXbP91Qkm7uKI6rAdxtp+A=
+
+Name: org/apache/commons/collections/FastArrayList$SubList$SubListIter
+ .class
+SHA1-Digest: xcpdJfeN3HifqA+1W3igGr0inV0=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$ValuesItera
+ tor.class
+SHA1-Digest: ELShVGBQc8sZ2YFffqwTa6szF6Q=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap$LinkIterato
+ r.class
+SHA1-Digest: tU0JdnrYO+tvRjw4DfuyAAEZR6A=
+
+Name: org/apache/commons/collections/map/StaticBucketMap.class
+SHA1-Digest: GvHLOSyIAm2TcxkSSdISTRhSzFY=
+
+Name: org/apache/commons/collections/iterators/EmptyIterator.class
+SHA1-Digest: JaXvFen4cPKrWu46RsTwGb4x0Uo=
+
+Name: org/apache/commons/collections/map/LazyMap.class
+SHA1-Digest: kF0ui453Lpi1eJ7XYfH61n9FeTo=
+
+Name: org/apache/commons/collections/ReferenceMap$WeakRef.class
+SHA1-Digest: CtnxnNhAevS+p1ZqYL8cQlMn5uA=
+
+Name: org/apache/commons/collections/collection/AbstractCollectionDeco
+ rator.class
+SHA1-Digest: PYZEyLnd+Jv24NFKiPAdM9iauZQ=
+
+Name: org/apache/commons/collections/BeanMap$2.class
+SHA1-Digest: qiyZF+WL/Y4470+CDXrkjwrLwAE=
+
+Name: org/apache/commons/collections/buffer/PredicatedBuffer.class
+SHA1-Digest: fF0Fx2YAvdIcYOV/FSHmuoxRlw0=
+
+Name: org/apache/commons/collections/iterators/ArrayIterator.class
+SHA1-Digest: qSvop1jf67xV9R8+vLhohyY39uU=
+
+Name: org/apache/commons/collections/map/MultiValueMap$1.class
+SHA1-Digest: 4seHn4K4aL38cHhpI6/ohfBIt/I=
+
+Name: org/apache/commons/collections/ReferenceMap.class
+SHA1-Digest: 0K20bESR3WWO8v24OP2w20EOR5k=
+
+Name: org/apache/commons/collections/iterators/AbstractIteratorDecorat
+ or.class
+SHA1-Digest: +JSAOMOewpRtx8SusJhhYBwD1bI=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap$LinkEntry.c
+ lass
+SHA1-Digest: quHG4sfX/m6DtYa1NxSmj100AXU=
+
+Name: org/apache/commons/collections/list/SynchronizedList.class
+SHA1-Digest: TazA1CgXxgfpn+DWb6dQQwXwILw=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap$View.class
+SHA1-Digest: VRoSfhsz3Rgx8U+nXyIcmJtiUJw=
+
+Name: org/apache/commons/collections/iterators/CollatingIterator.class
+SHA1-Digest: Cf3SI/0sQ8jwA6OcCOn9vmaI424=
+
+Name: org/apache/commons/collections/set/PredicatedSet.class
+SHA1-Digest: MJ5n/V8ayQUNbeEA99rQlJ9MXTo=
+
+Name: org/apache/commons/collections/iterators/IteratorChain.class
+SHA1-Digest: 5NP/99+TNW+4oNKk9WJh5vJnd34=
+
+Name: org/apache/commons/collections/buffer/TransformedBuffer.class
+SHA1-Digest: /OkDJ7zazC1ZF3/j3fAVQhtGo00=
+
+Name: org/apache/commons/collections/collection/UnmodifiableCollection
+ .class
+SHA1-Digest: 0QjgjBsSm/xsanAivXyCPPsCjSw=
+
+Name: org/apache/commons/collections/list/UnmodifiableList.class
+SHA1-Digest: C6KJmeWZMlxLKGsLKOzTfIxfe2E=
+
+Name: org/apache/commons/collections/ReferenceMap$2.class
+SHA1-Digest: maGw2rZXXQcQQNvZ510lmvH5YuA=
+
+Name: org/apache/commons/collections/list/TreeList.class
+SHA1-Digest: 0Ty1WuaGed40XT8+1seyTJFBtg0=
+
+Name: org/apache/commons/collections/list/TreeList$TreeListIterator.cl
+ ass
+SHA1-Digest: lSUI2edsixMWFbmWQ8dmyXpunMw=
+
+Name: org/apache/commons/collections/SequencedHashMap$OrderedIterator.
+ class
+SHA1-Digest: jfTzRlMIGCpOcSqHRemZh/ly7AM=
+
+Name: org/apache/commons/collections/list/CursorableLinkedList$Cursor.
+ class
+SHA1-Digest: FzBqVtzZhvruXS/2Q3i1P4guSzo=
+
+Name: org/apache/commons/collections/map/ReferenceMap.class
+SHA1-Digest: 22NmFwTKVAuRDqE80v99gNDdx7s=
+
+Name: org/apache/commons/collections/FastHashMap.class
+SHA1-Digest: 55641xrVKqH5oWhoOVsZCxrdl9c=
+
+Name: org/apache/commons/collections/functors/PredicateDecorator.class
+SHA1-Digest: KNHwl9WzkIXZ/N6RbTADhqhtAJ4=
+
+Name: org/apache/commons/collections/FastHashMap$1.class
+SHA1-Digest: I4ocRyCU1/In801jZIHCTtoqs+0=
+
+Name: org/apache/commons/collections/map/AbstractSortedMapDecorator.cl
+ ass
+SHA1-Digest: NAGuV2CrbCvzrzaaFkTxHOD2bRw=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$7.class
+SHA1-Digest: FiO2zQOEhyFkynLtBDVo2f/2PWk=
+
+Name: org/apache/commons/collections/iterators/UnmodifiableMapIterator
+ .class
+SHA1-Digest: JiQMCDvd4A1h/8oNG4lFx35fnok=
+
+Name: org/apache/commons/collections/IterableMap.class
+SHA1-Digest: EZbPia7foNlEoFRh3Z6UVez1CIM=
+
+Name: org/apache/commons/collections/iterators/EnumerationIterator.cla
+ ss
+SHA1-Digest: 2NUcWnP7k7UenxNv0HLBbumN2u0=
+
+Name: org/apache/commons/collections/functors/ClosureTransformer.class
+SHA1-Digest: 7hTnjHlT6KML6pX+7C82IMkhQA8=
+
+Name: org/apache/commons/collections/Buffer.class
+SHA1-Digest: yRp5v9YAQqcVcSXDQDFs5h58rKY=
+
+Name: org/apache/commons/collections/OrderedBidiMap.class
+SHA1-Digest: DCDUlOxcA07rnczCvWHiD3ZwBzc=
+
+Name: org/apache/commons/collections/functors/TransformerClosure.class
+SHA1-Digest: 3nDhGtPAWY3afrTXO4dbdhK9GQU=
+
+Name: org/apache/commons/collections/DefaultMapEntry.class
+SHA1-Digest: YhR0pevjPBdz+i9DN7fnMs3cYnc=
+
+Name: org/apache/commons/collections/set/UnmodifiableSet.class
+SHA1-Digest: tCTwDP6oGaa2J3NlheVtWHaEW94=
+
+Name: org/apache/commons/collections/map/LazySortedMap.class
+SHA1-Digest: qKTW6TpcP+k6+ciFf8nPJK4f9/U=
+
+Name: org/apache/commons/collections/list/AbstractListDecorator.class
+SHA1-Digest: IpTgMA+9/Ru7Y9Y9o4vPGvLG3Sk=
+
+Name: about.html
+SHA1-Digest: POVhbTqhOvSW+f8dzo8vlzqYLZA=
+
+Name: org/apache/commons/collections/BinaryHeap.class
+SHA1-Digest: S/x0CzhKyf1XDL481HC2Kq/AAaI=
+
+Name: org/apache/commons/collections/iterators/ArrayListIterator.class
+SHA1-Digest: ku5UHrWJw3lbmAUPpaFDugp2VsM=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$1.class
+SHA1-Digest: uZPAOLZkTI1bUu91Lzh48/Z+RKo=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eKeySet.class
+SHA1-Digest: vBZRx/SUVhD7GN4tJLXPskYJ1ic=
+
+Name: org/apache/commons/collections/BeanMap$7.class
+SHA1-Digest: QHAwKBy0mVENRZCtFTvjZVnnxeo=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$12.class
+SHA1-Digest: axHWXdNWvz0PDNxs8VSkP7uFjz0=
+
+Name: org/apache/commons/collections/TransformerUtils.class
+SHA1-Digest: QLmlEYDNrzTBrxoYPGbBdbqW/fY=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$Node.class
+SHA1-Digest: 2QcwS1iUNoPyybyss//dA2FsVuY=
+
+Name: org/apache/commons/collections/collection/TransformedCollection.
+ class
+SHA1-Digest: /glRD+Ff+4UmpKfjRiWVNW8t5fc=
+
+Name: org/apache/commons/collections/UnboundedFifoBuffer.class
+SHA1-Digest: BB3urvDBluXSvrCm1N8x6L4ed9U=
+
+Name: org/apache/commons/collections/iterators/TransformIterator.class
+SHA1-Digest: r1Gu6WZzkBu/m0AANqxYMLMXcS0=
+
+Name: org/apache/commons/collections/map/Flat3Map$KeySet.class
+SHA1-Digest: mFyVqYAlIxno22MxYf5HmKSpwik=
+
+Name: org/apache/commons/collections/bag/TypedBag.class
+SHA1-Digest: m7WKhZnD6qxnrG0KtCuEdI5y5MQ=
+
+Name: org/apache/commons/collections/functors/NullIsFalsePredicate.cla
+ ss
+SHA1-Digest: k5LLgixhwgJSAKONzzI3e973c2I=
+
+Name: org/apache/commons/collections/map/CompositeMap.class
+SHA1-Digest: 4tavycZT7ZUuFLb2uHQcw5aOQFs=
+
+Name: org/apache/commons/collections/functors/PrototypeFactory.class
+SHA1-Digest: X5+7MWUv1Pk0cc9jAZdYnX5q9P4=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$SoftRef.
+ class
+SHA1-Digest: OPlqwqHOuiVpyNlxNv/JJMWVU/E=
+
+Name: org/apache/commons/collections/SetUtils.class
+SHA1-Digest: kL8SyYftQ2qW/SerUYvqxjLcQGQ=
+
+Name: org/apache/commons/collections/map/DefaultedMap.class
+SHA1-Digest: OxLj83tYb8uOe8MpUjHBN90GM3E=
+
+Name: org/apache/commons/collections/list/LazyList.class
+SHA1-Digest: 9sdpBghXXYrPbZ7BYdXEud8VgYM=
+
+Name: org/apache/commons/collections/SequencedHashMap$1.class
+SHA1-Digest: IKg0dy4GrG+qrD2o9wTMoyrhZ+E=
+
+Name: org/apache/commons/collections/BeanMap$MyMapEntry.class
+SHA1-Digest: bKBLrwFqxeCTmQNm5Ha8kwaqCyI=
+
+Name: org/apache/commons/collections/StaticBucketMap$1.class
+SHA1-Digest: ClWtvF7PbBYRCRhuT1zpXg3kiuw=
+
+Name: org/apache/commons/collections/list/GrowthList.class
+SHA1-Digest: /eJ3Uz0OhYYZ6sx3w8yXhyv3Xhw=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$EntrySetView.c
+ lass
+SHA1-Digest: 98G9z00GTZrdQ4K+KugnUJRfOU4=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$1.class
+SHA1-Digest: oo3j0reeCFx2Eu/96jc3Y6TslKs=
+
+Name: org/apache/commons/collections/map/IdentityMap$IdentityEntry.cla
+ ss
+SHA1-Digest: peqTDlJI3f9qnZ9yD08JMZXRjYg=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$KeySet.clas
+ s
+SHA1-Digest: MDoea+JjTr0NYqLyhI6gZY6poPQ=
+
+Name: org/apache/commons/collections/map/PredicatedSortedMap.class
+SHA1-Digest: cBKeXpvCqIJiUMFSRNRgelB/0KA=
+
+Name: org/apache/commons/collections/iterators/EmptyOrderedMapIterator
+ .class
+SHA1-Digest: V5XbhBEctRr/ZaHpnoD51SG+pJg=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$KeySe
+ t.class
+SHA1-Digest: 5bLuI70aDVzEFFX+8l4inYoxtUY=
+
+Name: org/apache/commons/collections/IteratorUtils.class
+SHA1-Digest: EUoYotFeU3Ge7l7LwpbiN5Wq2uk=
+
+Name: org/apache/commons/collections/bag/UnmodifiableSortedBag.class
+SHA1-Digest: qYT/auW3T2T68lmBzCbeN0Y6DfA=
+
+Name: org/apache/commons/collections/list/AbstractLinkedList.class
+SHA1-Digest: BZwXwGj6RYg/KT8c+qRHC8nCvu4=
+
+Name: org/apache/commons/collections/FastArrayList$ListIter.class
+SHA1-Digest: iIpIssZkkDx6a0yGkbPFioFmETo=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$HashMapIter
+ ator.class
+SHA1-Digest: xOB6P59cTEL/gGsxuYhJGZZh0cI=
+
+Name: org/apache/commons/collections/map/TypedSortedMap.class
+SHA1-Digest: suNafpQAA79njQh3VAMRiDOpZRk=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$EntrySetIte
+ rator.class
+SHA1-Digest: mHGlFm3VhlaoSHrLW0UjSiv0Mf4=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eEntrySetIterator.class
+SHA1-Digest: Yzsd1s01I8I4SJ6rrnDzAecOYBQ=
+
+Name: org/apache/commons/collections/ExtendedProperties$PropertiesToke
+ nizer.class
+SHA1-Digest: zB0F/VRCYJ0r5HbdrE/qMlGRs78=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$1.class
+SHA1-Digest: 38B+/VzoMoqRGtDkZIWxKONveCs=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eValues.class
+SHA1-Digest: E11lPFuL0rlzW0DlIWU/pNza4ls=
+
+Name: org/apache/commons/collections/map/UnmodifiableEntrySet$Unmodifi
+ ableEntrySetIterator.class
+SHA1-Digest: F5eQLPxcY0ZZhgsiQ5hr2GJLES4=
+
+Name: org/apache/commons/collections/buffer/BlockingBuffer.class
+SHA1-Digest: VpNpDcuRDCYDPSyO4LxEyPRTAA8=
+
+Name: org/apache/commons/collections/BeanMap$11.class
+SHA1-Digest: 6RbwQh/jn7IdCPAjAdK3uTbw/IE=
+
+Name: org/apache/commons/collections/keyvalue/DefaultMapEntry.class
+SHA1-Digest: poKsaDmIRKFEBzlwOlb10MEAHwU=
+
+Name: org/apache/commons/collections/bidimap/DualTreeBidiMap$ViewMap.c
+ lass
+SHA1-Digest: 8n+kz9DQ7G8LSSwjiXBHI6wz2BQ=
+
+Name: org/apache/commons/collections/TreeBag.class
+SHA1-Digest: Nt59FeNPjqUmSZ0aIYKiceVxdS0=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eValuesIterator.class
+SHA1-Digest: pTrT53+QGhESufxrL5KghQ3zWm0=
+
+Name: org/apache/commons/collections/StaticBucketMap$Node.class
+SHA1-Digest: WkdkgY4if+HBTIJqhExXSAyHxL4=
+
+Name: org/apache/commons/collections/MultiHashMap$1.class
+SHA1-Digest: RrNU8np0Fj2tx6U0QufbqxI/jTc=
+
+Name: org/apache/commons/collections/map/MultiValueMap$ValuesIterator.
+ class
+SHA1-Digest: 7B8gVsX3RfQVvStsLJZG6UGCorY=
+
+Name: org/apache/commons/collections/map/Flat3Map$Values.class
+SHA1-Digest: 86ixMXv25qqnz0bFPKOm0+xRI/o=
+
+Name: org/apache/commons/collections/bag/AbstractMapBag$BagIterator.cl
+ ass
+SHA1-Digest: SR7jNCYLNnRl+bIrEE8XNBCYGjM=
+
+Name: org/apache/commons/collections/list/SetUniqueList$SetListListIte
+ rator.class
+SHA1-Digest: pN6HyRAKIRxbVP3eM8olW3PS98c=
+
+Name: org/apache/commons/collections/BufferUnderflowException.class
+SHA1-Digest: j2x3BSsn3RxRO6ey7qDDowmdoSE=
+
+Name: org/apache/commons/collections/BeanMap$1.class
+SHA1-Digest: 9aPH9pr1iH1CcbmRJDb2RvP7m1w=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap$LinkMapIter
+ ator.class
+SHA1-Digest: jzoE4MgxmsabwOgQzq2oXVF9fnw=
+
+Name: org/apache/commons/collections/functors/TransformedPredicate.cla
+ ss
+SHA1-Digest: ZUH7CNp1fWTtJ9XvwTVVx5aoRDQ=
+
+Name: org/apache/commons/collections/map/Flat3Map$ValuesIterator.class
+SHA1-Digest: boA0RypSiFS3IQFQ+zO4ny5a9Nc=
+
+Name: org/apache/commons/collections/keyvalue/MultiKey.class
+SHA1-Digest: sbPzfFiD8nK1Z0liTRbqg/Qip44=
+
+Name: org/apache/commons/collections/iterators/ReverseListIterator.cla
+ ss
+SHA1-Digest: s7/8hGbVHGP2hBD8qb9Jsm02RoQ=
+
+Name: org/apache/commons/collections/SequencedHashMap$Entry.class
+SHA1-Digest: g1cJcwwTVtVXRb3msDmMOHTtT28=
+
+Name: org/apache/commons/collections/list/AbstractLinkedList$Node.clas
+ s
+SHA1-Digest: 1gGYydk4gsimPj920EGGIFq08k0=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$WeakRef.
+ class
+SHA1-Digest: eL+q7LBGgsJ6LWhfieQlMkscmuo=
+
+Name: org/apache/commons/collections/ReferenceMap$1.class
+SHA1-Digest: kabnjK6bd0qeqn3KtwQWuy/K5HU=
+
+Name: org/apache/commons/collections/buffer/UnmodifiableBuffer.class
+SHA1-Digest: K6PujEIBQBDe27YjVI5j7uuFlNQ=
+
+Name: org/apache/commons/collections/comparators/FixedOrderComparator.
+ class
+SHA1-Digest: yPsycwD2byDLw/HTG5n5hXp5cXQ=
+
+Name: org/apache/commons/collections/SortedBidiMap.class
+SHA1-Digest: pPRWNEk/ysgG1GdeKiNqnIC1auE=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$Values.clas
+ s
+SHA1-Digest: c9Qo6v1U8KAYo1oh1TU6/JVOEk0=
+
+Name: org/apache/commons/collections/ComparatorUtils.class
+SHA1-Digest: Q0epfwLw5Ydg2MSPHHgAc9AS0aw=
+
+Name: org/apache/commons/collections/UnboundedFifoBuffer$1.class
+SHA1-Digest: li+doVy6KvQZsRV5YqtZFubPyIs=
+
+Name: org/apache/commons/collections/ArrayStack.class
+SHA1-Digest: ZTsRqKC+oa09e0V9tswKzhAbKII=
+
+Name: org/apache/commons/collections/buffer/BoundedBuffer$NotifyingIte
+ rator.class
+SHA1-Digest: bS+frqKnQWWz0nHW45pFA56b6Gk=
+
+Name: org/apache/commons/collections/map/AbstractInputCheckedMapDecora
+ tor.class
+SHA1-Digest: yVTSsvTC1Ng7veMbvTRF5VggEXY=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$6.class
+SHA1-Digest: 7lVE4TnN7fvrLTuemVYIJwIG2Qw=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$Value
+ s.class
+SHA1-Digest: Mf5RYWovXGWzALpcrIn34UxGhN8=
+
+Name: org/apache/commons/collections/MultiHashMap.class
+SHA1-Digest: /wAKi1QqotVqwnCvpovP34db4Yk=
+
+Name: org/apache/commons/collections/StaticBucketMap.class
+SHA1-Digest: o0PqiB6hw0A1NYzgi3953QietDc=
+
+Name: org/apache/commons/collections/functors/TruePredicate.class
+SHA1-Digest: IFqVUUTuguHUC3ZBCXsmQH5tsbc=
+
+Name: org/apache/commons/collections/list/FixedSizeList$FixedSizeListI
+ terator.class
+SHA1-Digest: izFsPXAlqcoO8lgTmxnpVnQuRtQ=
+
+Name: org/apache/commons/collections/ExtendedProperties$PropertiesRead
+ er.class
+SHA1-Digest: bWDJ0kZHpveo87b+yEhXV3tUc0g=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$Value
+ sIterator.class
+SHA1-Digest: iYGOtKTVYXBW/K4Ehf0ecYfO0UY=
+
+Name: org/apache/commons/collections/bidimap/UnmodifiableBidiMap.class
+SHA1-Digest: Ovu8OEXYYetXc3/fy7XeSO9Ftmk=
+
+Name: org/apache/commons/collections/functors/ConstantTransformer.clas
+ s
+SHA1-Digest: 5tTUASPkxfyEI4i6ISdY64ziDgU=
+
+Name: org/apache/commons/collections/set/AbstractSetDecorator.class
+SHA1-Digest: J0u9OJcSrFjLi7Jc4YYiBCYeVUE=
+
+Name: org/apache/commons/collections/BagUtils.class
+SHA1-Digest: rSGK0pNV3uKR+jEsDLLIP0ZgIf0=
+
+Name: org/apache/commons/collections/ReferenceMap$ValueIterator.class
+SHA1-Digest: ZRUpyy9dBgQgRSfeU6dt8CKAs44=
+
+Name: org/apache/commons/collections/BeanMap$6.class
+SHA1-Digest: r3AX0GLRnjqsrwpxhEwDAwSQfV0=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$11.class
+SHA1-Digest: h0RjKL3pv9fiReI7fA2QV2qKeJI=
+
+Name: org/apache/commons/collections/map/FixedSizeMap.class
+SHA1-Digest: zTF9iAiZinR/afDxpPBdgIytS9c=
+
+Name: org/apache/commons/collections/map/UnmodifiableEntrySet.class
+SHA1-Digest: NeDr8os1xMH2MpEKMix8j8WfDeU=
+
+Name: org/apache/commons/collections/iterators/ProxyListIterator.class
+SHA1-Digest: xk5hCcNS+uZeQPpqPNYcLjaEzrA=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap$ViewIterator.
+ class
+SHA1-Digest: Clkr9JpD3oPMtkcLmlFAAzDKgXA=
+
+Name: org/apache/commons/collections/iterators/AbstractOrderedMapItera
+ torDecorator.class
+SHA1-Digest: 9xKK4IMupaXRoECsYxVuPAKkAnw=
+
+Name: org/apache/commons/collections/StaticBucketMap$Lock.class
+SHA1-Digest: pd00PKZUErDws0hrovnlwtBfMaM=
+
+Name: org/apache/commons/collections/ResettableIterator.class
+SHA1-Digest: 5vsGI072A09uv0WJFT7c+1djZ3w=
+
+Name: org/apache/commons/collections/StaticBucketMap$ValueIterator.cla
+ ss
+SHA1-Digest: ilGX4hUa1ogmVCXE17bQZQ/KWyw=
+
+Name: org/apache/commons/collections/iterators/UnmodifiableIterator.cl
+ ass
+SHA1-Digest: Rsawc2ov0bogYo/VCUtuyMPzJO4=
+
+Name: org/apache/commons/collections/set/SynchronizedSortedSet.class
+SHA1-Digest: GORU/2BN9IHyns0hkKW9a0fBJx8=
+
+Name: org/apache/commons/collections/functors/StringValueTransformer.c
+ lass
+SHA1-Digest: 6KlWclM+E8W+fTb2WCR7D3iNdnk=
+
+Name: org/apache/commons/collections/bag/AbstractBagDecorator.class
+SHA1-Digest: bDDyxDuoCCxX0TJUUEDXaZvTVa8=
+
+Name: org/apache/commons/collections/list/PredicatedList$PredicatedLis
+ tIterator.class
+SHA1-Digest: U4HN1/iGFDx1i+We0JQssuqA8SI=
+
+Name: org/apache/commons/collections/MultiHashMap$Values.class
+SHA1-Digest: lYq1r8tEeihtllvKzJNN0X39XfI=
+
+Name: org/apache/commons/collections/FastTreeMap$CollectionView.class
+SHA1-Digest: P5KRMuXTAEMQCbCLITVavQ1INn4=
+
+Name: org/apache/commons/collections/iterators/ObjectGraphIterator.cla
+ ss
+SHA1-Digest: NctOP7Vggg/ryrP3ApCiQqKywKE=
+
+Name: org/apache/commons/collections/HashBag.class
+SHA1-Digest: ZVFYXX1YWqUti9IZGo4eiiXtSoc=
+
+Name: org/apache/commons/collections/functors/FactoryTransformer.class
+SHA1-Digest: 7I3bGwr6AwGp26WrDQRY2a71cRQ=
+
+Name: org/apache/commons/collections/bag/AbstractMapBag$MutableInteger
+ .class
+SHA1-Digest: pfItOH3h4/RU/KdgNHkYv+dXS7w=
+
+Name: org/apache/commons/collections/BoundedFifoBuffer.class
+SHA1-Digest: zhGDlBJP/n4ugkYRkmP4ael1y8E=
+
+Name: org/apache/commons/collections/Unmodifiable.class
+SHA1-Digest: 7hB5A5LCITtmZYJABl7zoiURL34=
+
+Name: org/apache/commons/collections/functors/InvokerTransformer.class
+SHA1-Digest: SzwR+FJ0aElXpbhR7JP7lblV9B4=
+
+Name: org/apache/commons/collections/MultiMap.class
+SHA1-Digest: uuCS0Gog8ZRtngjkLG/VPnRYDPM=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap.class
+SHA1-Digest: ZwmDax3YdWHRXm1lsvvgYhfwjkY=
+
+Name: org/apache/commons/collections/FastTreeMap$KeySet.class
+SHA1-Digest: B+cPDWmphDKu0wcFTDl8lPF+yyY=
+
+Name: org/apache/commons/collections/list/TreeList$1.class
+SHA1-Digest: 69S0Ny4mntmyz6Yz4twjc8iuMDQ=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap.class
+SHA1-Digest: PVruIKt4Hs+Vf0Q9m/3JtU5ifOI=
+
+Name: org/apache/commons/collections/LRUMap.class
+SHA1-Digest: OdoLUamGWStUgJkVy4G9U2h6xCM=
+
+Name: org/apache/commons/collections/set/SynchronizedSet.class
+SHA1-Digest: zvYKEHjtZ6ZRWZuG86XGS+KDevQ=
+
+Name: org/apache/commons/collections/collection/CompositeCollection$Co
+ llectionMutator.class
+SHA1-Digest: WhnKyVY3lrq5Fu8BwPGgR9nEljk=
+
+Name: org/apache/commons/collections/map/Flat3Map.class
+SHA1-Digest: gWFEqaHen1qw9oVLHGrJaueUbbM=
+
+Name: org/apache/commons/collections/bidimap/DualTreeBidiMap$BidiOrder
+ edMapIterator.class
+SHA1-Digest: y8HSrdA2nM7aetso0Nt7f1ngMB4=
+
+Name: org/apache/commons/collections/ClosureUtils.class
+SHA1-Digest: P1nQD2zTDTkuOdkz4hs7HCed69o=
+
+Name: org/apache/commons/collections/functors/SwitchTransformer.class
+SHA1-Digest: K5qjQCetCt/iRg19olu63UYBISU=
+
+Name: org/apache/commons/collections/BeanMap$10.class
+SHA1-Digest: pMuuDpMNUaSkc7hXBc3cbV2V15Y=
+
+Name: org/apache/commons/collections/functors/AllPredicate.class
+SHA1-Digest: wgiZz3lb1tF9wd5QFqgGxxZ5piM=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$ValueIterator
+ .class
+SHA1-Digest: 15Xa4hEucPusw/V3SS3eUPU8WNk=
+
+Name: org/apache/commons/collections/iterators/AbstractEmptyIterator.c
+ lass
+SHA1-Digest: Y1BGVtMLxJ+dTPAo+Px0qrZodp4=
+
+Name: org/apache/commons/collections/map/LinkedMap.class
+SHA1-Digest: EUHgm+Zd0qhenTqAkXDwxJg/Xng=
+
+Name: org/apache/commons/collections/comparators/ComparableComparator.
+ class
+SHA1-Digest: fbnRmsYC2bUOdOyEdqFcK9ja3bo=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: org/apache/commons/collections/functors/EqualPredicate.class
+SHA1-Digest: Y9Io4Tit+0QZKkjcRK359JHvF94=
+
+Name: org/apache/commons/collections/bag/SynchronizedBag$SynchronizedB
+ agSet.class
+SHA1-Digest: qM+JuJaVNVZAh8u1DYxepgfsCdg=
+
+Name: org/apache/commons/collections/list/AbstractLinkedList$LinkedSub
+ ListIterator.class
+SHA1-Digest: C4BNF9ww8REVT/frEqoBQINk6TU=
+
+Name: org/apache/commons/collections/map/PredicatedMap.class
+SHA1-Digest: /D6PPFRubfa0ebIcYLzijXNeoR8=
+
+Name: org/apache/commons/collections/iterators/FilterListIterator.clas
+ s
+SHA1-Digest: yn77fyaCA39IOwvm15CSH9gELnI=
+
+Name: org/apache/commons/collections/functors/PrototypeFactory$Prototy
+ peCloneFactory.class
+SHA1-Digest: 4gbZafXrI7wTIHABnwNvHacDTHA=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap$EntrySetIte
+ rator.class
+SHA1-Digest: 6wx97+fCtV8wBlnlo+F1t48VBwQ=
+
+Name: org/apache/commons/collections/keyvalue/DefaultKeyValue.class
+SHA1-Digest: mRe8It0tDfp7k2EDyetkZlDq9Js=
+
+Name: org/apache/commons/collections/comparators/ReverseComparator.cla
+ ss
+SHA1-Digest: MC9nZF/kRtEkkdkmVJZEP3essmM=
+
+Name: org/apache/commons/collections/functors/ChainedClosure.class
+SHA1-Digest: 3ujFA5Jjv0kA0ktJqraLgVUdVcY=
+
+Name: org/apache/commons/collections/functors/InstantiateFactory.class
+SHA1-Digest: Ga8xiSuVYsSeLuj5gKGKON1n3/Y=
+
+Name: org/apache/commons/collections/set/TypedSet.class
+SHA1-Digest: MRMUgWl9UwEO4oIPZ3qK1R4BrAU=
+
+Name: org/apache/commons/collections/buffer/BoundedFifoBuffer$1.class
+SHA1-Digest: xthAT7WyK2kLHo3S2fyjA0l0WnY=
+
+Name: org/apache/commons/collections/keyvalue/AbstractMapEntry.class
+SHA1-Digest: J+3oK4VC3iVJN5LOsu3E3r/TnG8=
+
+Name: plugin.properties
+SHA1-Digest: BpvgFq9X3wyKZ3R5PEPRrQ7Jdrk=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eMapIterator.class
+SHA1-Digest: aIX07AsMTuCnPjTHHAT2z//mi7Q=
+
+Name: org/apache/commons/collections/map/Flat3Map$EntrySet.class
+SHA1-Digest: u022UN24tE+q9jMYIwvQjXLosbY=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$5.class
+SHA1-Digest: Jtnn60P0/1IdZ+Y3VB1nEbp9yWU=
+
+Name: org/apache/commons/collections/iterators/LoopingListIterator.cla
+ ss
+SHA1-Digest: 5Z/AwGhh+dNFePpafF+F73/g57c=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap$Node.class
+SHA1-Digest: 9FtcNsQ6rsmrgwz+OV2ukZRsgpA=
+
+Name: org/apache/commons/collections/map/AbstractInputCheckedMapDecora
+ tor$EntrySet.class
+SHA1-Digest: e4MN4YXDbi84Md7psDy14N3cUHY=
+
+Name: org/apache/commons/collections/StaticBucketMap$KeySet.class
+SHA1-Digest: o07ot/uNBGVjhw4B/6g2JcVwXzc=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$DoubleOrderedMap
+ Iterator.class
+SHA1-Digest: 1bWpX+LHg10LTAy5Nfp+imAEAWw=
+
+Name: org/apache/commons/collections/FastTreeMap$Values.class
+SHA1-Digest: SdFb/CIPMTQmFPBIWvsIl52483c=
+
+Name: org/apache/commons/collections/keyvalue/AbstractMapEntryDecorato
+ r.class
+SHA1-Digest: 3BeQBSRZeJAVAvZNYcjHUHGm8j4=
+
+Name: org/apache/commons/collections/buffer/AbstractBufferDecorator.cl
+ ass
+SHA1-Digest: WHK6B3/twilc+ufw7q2Y3ZJWRVA=
+
+Name: org/apache/commons/collections/collection/AbstractSerializableCo
+ llectionDecorator.class
+SHA1-Digest: 3Vq2xrzw+nXWeuDMFN2s7zNq3po=
+
+Name: org/apache/commons/collections/functors/AnyPredicate.class
+SHA1-Digest: CqzwBsD/7SEQrBq+2csppF1ePB8=
+
+Name: org/apache/commons/collections/BeanMap$5.class
+SHA1-Digest: v0aryOpGyOdirrkjiTISXcHY4NI=
+
+Name: org/apache/commons/collections/iterators/FilterIterator.class
+SHA1-Digest: K2PbLRvDmjhh6udBfxmYcRs2F4E=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$Node.class
+SHA1-Digest: NcS6UaXbPFEzohl0Fqsq2WVtbO0=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$10.class
+SHA1-Digest: 96dmruzw7T0oHpwpNXxpkRIR0Dw=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$Entry
+ Set.class
+SHA1-Digest: 7XNB20b3luHQVf5Jw3mRnJaSHJE=
+
+Name: org/apache/commons/collections/iterators/EntrySetMapIterator.cla
+ ss
+SHA1-Digest: 7FUFeOeqXpHPWsjqtUm/YtXsQik=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap$ViewMapIterat
+ or.class
+SHA1-Digest: pQZJCWxA/IDbQ8JCxkxub44ejuU=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap.class
+SHA1-Digest: SOEncUErRvFnfiQ/yT1Bmi4KRrA=
+
+Name: org/apache/commons/collections/bag/TransformedSortedBag.class
+SHA1-Digest: pLh5dxTvZZeZH0p/9sH8xtmy5mc=
+
+Name: org/apache/commons/collections/bag/PredicatedSortedBag.class
+SHA1-Digest: bKjwMAQ785rmVcSVTijD2b9ZxaI=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$HashEntry.c
+ lass
+SHA1-Digest: DVQFPn02imkJvdkhkVdr5MZWxFg=
+
+Name: org/apache/commons/collections/map/CompositeMap$MapMutator.class
+SHA1-Digest: 9ZzB0bgiwmnv21shoDRwK4pd9kI=
+
+Name: org/apache/commons/collections/iterators/EmptyOrderedIterator.cl
+ ass
+SHA1-Digest: jcyZMbZgwvyRwHAii+GW3uZEUz0=
+
+Name: org/apache/commons/collections/functors/ChainedTransformer.class
+SHA1-Digest: WdJKtMT2pwqvY/l116glf3iHBzc=
+
+Name: org/apache/commons/collections/map/LinkedMap$LinkedMapList.class
+SHA1-Digest: MTcVFlVEkYmrj7GJh1bFy/HKq5Y=
+
+Name: org/apache/commons/collections/PriorityQueue.class
+SHA1-Digest: UCZu1VZBIML6uscgZEOw/BAvsqo=
+
+Name: org/apache/commons/collections/iterators/SingletonListIterator.c
+ lass
+SHA1-Digest: 7vF2WoHe/gTYBhl74ilGbvw4KT8=
+
+Name: org/apache/commons/collections/map/ListOrderedMap$ListOrderedMap
+ Entry.class
+SHA1-Digest: 1JvUjrybU5JP9IR9i+VziErDX3c=
+
+Name: org/apache/commons/collections/functors/NotPredicate.class
+SHA1-Digest: mN9P+NWTf2jWlnctizEXyz5/wY4=
+
+Name: org/apache/commons/collections/functors/OrPredicate.class
+SHA1-Digest: zZS6q3TVwjtLkH6N2xfQYASwe5c=
+
+Name: org/apache/commons/collections/map/ReferenceIdentityMap.class
+SHA1-Digest: aQzP5YtC2iWhfAB35sx4/wCybrc=
+
+Name: org/apache/commons/collections/FastArrayList$SubList.class
+SHA1-Digest: 3qvXClSHdxcSNkSHIFvmUndnpaM=
+
+Name: org/apache/commons/collections/map/AbstractOrderedMapDecorator.c
+ lass
+SHA1-Digest: LvghdcO2tr/VMMWr3cGjf6UlUzs=
+
+Name: org/apache/commons/collections/list/SetUniqueList$SetListIterato
+ r.class
+SHA1-Digest: xTyzOJayyAhludhntteSFVD/WNs=
+
+Name: org/apache/commons/collections/functors/NonePredicate.class
+SHA1-Digest: RTPdtSeT86uNtTuU2P9ky41oxC0=
+
+Name: org/apache/commons/collections/functors/OnePredicate.class
+SHA1-Digest: INgvRddqSxiH0wVniV2srBgpmXQ=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$KeySet.class
+SHA1-Digest: fbokyK/wJW+m3xZJ0a+lHHMcaF8=
+
+Name: about_files/README.txt
+SHA1-Digest: 7RU37172r8+wV3ecyvuOsLWHnNw=
+
+Name: org/apache/commons/collections/BinaryHeap$1.class
+SHA1-Digest: Ini8wDa5gso/hh5zejajI9P/LLY=
+
+Name: org/apache/commons/collections/bidimap/UnmodifiableOrderedBidiMa
+ p.class
+SHA1-Digest: h5idJ+FhFdbstMD0UmaMgAtKzwA=
+
+Name: org/apache/commons/collections/CursorableSubList.class
+SHA1-Digest: iTgP3/63+ym45vqtsU2zBAVdykU=
+
+Name: org/apache/commons/collections/StaticBucketMap$Values.class
+SHA1-Digest: bZe2mEQLRSp3FeiKtcH3/FaD3mY=
+
+Name: org/apache/commons/collections/set/AbstractSortedSetDecorator.cl
+ ass
+SHA1-Digest: iuwFOzDaPml+kXBdeN21DTjyC4I=
+
+Name: org/apache/commons/collections/CollectionUtils.class
+SHA1-Digest: dyz3NM3HIMqzfoDLRuKlEVYKtp0=
+
+Name: org/apache/commons/collections/set/TransformedSortedSet.class
+SHA1-Digest: XFUhpTaYNZ27X+SgAx48Q5+u7Pg=
+
+Name: org/apache/commons/collections/set/CompositeSet.class
+SHA1-Digest: XwIKUk3S6fSxKSIzzO4jXbWv8HM=
+
+Name: org/apache/commons/collections/functors/NullIsTruePredicate.clas
+ s
+SHA1-Digest: MOoNSnTnMX3zz01VL0k0X7EnoJc=
+
+Name: org/apache/commons/collections/SequencedHashMap.class
+SHA1-Digest: XrVSRJQ3TI8I9RGzMB2+zZC8mHg=
+
+Name: org/apache/commons/collections/functors/NOPTransformer.class
+SHA1-Digest: U2OxP79kUb/hPn/Jcl08/CRMhCk=
+
+Name: org/apache/commons/collections/list/TransformedList$TransformedL
+ istIterator.class
+SHA1-Digest: xhAYuQnKMhOF4bfmZFrNHi8c3Qg=
+
+Name: org/apache/commons/collections/map/SingletonMap$SingletonMapIter
+ ator.class
+SHA1-Digest: dk1LrRmgLXcnxLF2DT3U3b1F/18=
+
+Name: org/apache/commons/collections/DefaultMapBag$BagIterator.class
+SHA1-Digest: iVTWmZiWP6vXdqd+8z9DnMWL0YU=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$View.
+ class
+SHA1-Digest: S/vHeSkG46jsZ35peQ0FGko4TQk=
+
+Name: org/apache/commons/collections/collection/TypedCollection.class
+SHA1-Digest: HlwuUw7VKXzKNbM9KTaiWmeep7o=
+
+Name: org/apache/commons/collections/functors/ConstantFactory.class
+SHA1-Digest: gfw3mp7fUZW7h20CLOXHwnrMGrg=
+
+Name: about_files/LICENSE.txt
+SHA1-Digest: K4uBUimqimHkg/tLoFiLi2xJGJA=
+
+Name: org/apache/commons/collections/Factory.class
+SHA1-Digest: sDS2I2gNyXTUn7NpPf2IFMCP/d8=
+
+Name: org/apache/commons/collections/SortedBag.class
+SHA1-Digest: Q18K0L4o6wER6VG1mR+FV5LLiKo=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$Lock.class
+SHA1-Digest: +CNOmKEN1QI/1lwoLNz+Lk2D25M=
+
+Name: org/apache/commons/collections/bidimap/AbstractDualBidiMap$BidiM
+ apIterator.class
+SHA1-Digest: ZR5FXP3+6i5U+Zl5QvxDC3lASek=
+
+Name: org/apache/commons/collections/ReferenceMap$Entry.class
+SHA1-Digest: kj9POL8m3FM9SxLG7ECRIc/yCe0=
+
+Name: org/apache/commons/collections/map/UnmodifiableSortedMap.class
+SHA1-Digest: BtYzZl4soB9ZLnpn+0WnBpUr/5A=
+
+Name: org/apache/commons/collections/iterators/EmptyListIterator.class
+SHA1-Digest: J6rQ2YZgM+K/RPsA0Y+3sdYEWm0=
+
+Name: about_files/NOTICE.txt
+SHA1-Digest: l8kmUOH5ziCwuegrbv+5ZT8NVUE=
+
+Name: org/apache/commons/collections/functors/PredicateTransformer.cla
+ ss
+SHA1-Digest: H++j5UWiSZ+Vza3RX1T1sSOmcmI=
+
+Name: org/apache/commons/collections/bidimap/AbstractBidiMapDecorator.
+ class
+SHA1-Digest: pc289UE5Uc9/8CuxvjwBMLVRupI=
+
+Name: org/apache/commons/collections/ReferenceMap$EntryIterator.class
+SHA1-Digest: 3kS1Xx5MPSvEDA6/sUl4manQAKc=
+
+Name: org/apache/commons/collections/BoundedCollection.class
+SHA1-Digest: etyc5WCT6LaWQ4xd3beqXrEWoH0=
+
+Name: org/apache/commons/collections/functors/NOPClosure.class
+SHA1-Digest: 5u/HL7QEeX56GbiTZD8EzouKwUg=
+
+Name: org/apache/commons/collections/map/MultiKeyMap.class
+SHA1-Digest: FyTkPgy3L46iqYVUPkk8uI2f7do=
+
+Name: org/apache/commons/collections/functors/UniquePredicate.class
+SHA1-Digest: kuZyx+a46DmQ3/ke7pqEUrePt/Q=
+
+Name: org/apache/commons/collections/list/TransformedList.class
+SHA1-Digest: /WsxgM+5sqfZ1DP9Qvbd8tmzzYw=
+
+Name: org/apache/commons/collections/functors/ExceptionFactory.class
+SHA1-Digest: /BVy/RfZpTaylA0iwJdV1hmIj6w=
+
+Name: org/apache/commons/collections/buffer/UnboundedFifoBuffer.class
+SHA1-Digest: UBbIeD39cMcbZiXS0nwSXCoPMCw=
+
+Name: org/apache/commons/collections/iterators/IteratorEnumeration.cla
+ ss
+SHA1-Digest: FNzZdsgbytCpQEE7XQt0uY9WHD0=
+
+Name: org/apache/commons/collections/bag/TransformedBag.class
+SHA1-Digest: uWSWCH+y/wKDHUikDVdFD3XUjC4=
+
+Name: org/apache/commons/collections/map/TransformedSortedMap.class
+SHA1-Digest: x1tzsBUu9tGUiNqhppq/T10Au4A=
+
+Name: org/apache/commons/collections/EnumerationUtils.class
+SHA1-Digest: EBcG0DecS2+hFpqQj30H6ZXKoPc=
+
+Name: org/apache/commons/collections/ResettableListIterator.class
+SHA1-Digest: zg/H4TzLWIgmi74tQ/feGxNiMjE=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$4.class
+SHA1-Digest: 24e9lxY49a1vCZFpgBCN/Ekb44I=
+
+Name: org/apache/commons/collections/StaticBucketMap$EntryIterator.cla
+ ss
+SHA1-Digest: 6Baoy65c3FslxwfphC37XZl/EZI=
+
+Name: org/apache/commons/collections/FastTreeMap$EntrySet.class
+SHA1-Digest: iNwwtMB1+j40k33Rp9Ahhz6MMps=
+
+Name: org/apache/commons/collections/iterators/UnmodifiableListIterato
+ r.class
+SHA1-Digest: m4lugUccf9pC5k7xsye8YXfNwVU=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$Values.class
+SHA1-Digest: BW2TipKI9SaaIHufY/M1vVg2RiY=
+
+Name: org/apache/commons/collections/bag/TreeBag.class
+SHA1-Digest: Kk0gvbhvgDbu/rv3H2zzuNYkBWQ=
+
+Name: org/apache/commons/collections/bag/AbstractMapBag.class
+SHA1-Digest: DJCBHFZ8OjH/B4mxj7qWllD4mpk=
+
+Name: org/apache/commons/collections/ReferenceMap$KeyIterator.class
+SHA1-Digest: 2caIw8rqtyzZidTFLPLNz8o96Ok=
+
+Name: org/apache/commons/collections/functors/AndPredicate.class
+SHA1-Digest: dmWPxD+JqjxDe3bQ4dvX1OLqA2M=
+
+Name: org/apache/commons/collections/iterators/UniqueFilterIterator.cl
+ ass
+SHA1-Digest: ayVUIqfzicntxoqJpGaapj4WnPo=
+
+Name: org/apache/commons/collections/FastTreeMap$CollectionView$Collec
+ tionViewIterator.class
+SHA1-Digest: swAGzhbkQYV21i0+xWwPosSleP4=
+
+Name: org/apache/commons/collections/keyvalue/AbstractKeyValue.class
+SHA1-Digest: 7N+AWju8fZCYqatEw86+5sOmfTo=
+
+Name: org/apache/commons/collections/CursorableLinkedList$ListIter.cla
+ ss
+SHA1-Digest: e0JwsrZTpT7xZEZOSWnEUB09quk=
+
+Name: org/apache/commons/collections/CursorableLinkedList$Cursor.class
+SHA1-Digest: kXyGxQfO9mnYNb4FSEXxZZP/+xI=
+
+Name: org/apache/commons/collections/map/AbstractLinkedMap$KeySetItera
+ tor.class
+SHA1-Digest: vAkFrrNdkGtBPZ0EnrfpVaw7soY=
+
+Name: org/apache/commons/collections/Transformer.class
+SHA1-Digest: MjTi8xA+pwi2Nf4BTGTrvTnYymc=
+
+Name: org/apache/commons/collections/BeanMap$4.class
+SHA1-Digest: ZxRCImopmT0Y7NugTP+oOs7cSLs=
+
+Name: org/apache/commons/collections/functors/ForClosure.class
+SHA1-Digest: 72aktSbIdDMg+CgLZYDuQmLXnf4=
+
+Name: org/apache/commons/collections/bag/UnmodifiableBag.class
+SHA1-Digest: t8Vj3b/Yj7zAvorNGJfqcVBMKW4=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap$EntryView.cla
+ ss
+SHA1-Digest: UHEYFpIWcL2NJQAxn9X2azfYzJ0=
+
+Name: org/apache/commons/collections/map/AbstractHashedMap$KeySetItera
+ tor.class
+SHA1-Digest: ZUovYNuU6twhXDLdOAr/hbdb/IQ=
+
+Name: org/apache/commons/collections/MapIterator.class
+SHA1-Digest: 0WTTlZqY5qOd1IswLZEe6pHesMs=
+
+Name: org/apache/commons/collections/set/PredicatedSortedSet.class
+SHA1-Digest: zM5/pg3vqEhC1vj+8bFOMqT+46k=
+
+Name: org/apache/commons/collections/map/AbstractReferenceMap$Referenc
+ eEntrySet.class
+SHA1-Digest: NfEdtYmoS7J6xmJcw6fhY8zmYZQ=
+
+Name: org/apache/commons/collections/CursorableLinkedList.class
+SHA1-Digest: detvYtIHYAmJAusDneAcino6trA=
+
+Name: org/apache/commons/collections/iterators/EmptyMapIterator.class
+SHA1-Digest: HiITby24nVw6NbdjJQSNkIncDHE=
+
+Name: org/apache/commons/collections/functors/ExceptionTransformer.cla
+ ss
+SHA1-Digest: RoLIuD59kujiZjh2gUZlHLwqvP0=
+
+Name: org/apache/commons/collections/Closure.class
+SHA1-Digest: 8WvD8irjPwAYf10dDbKUG4Qdxms=
+
+Name: org/apache/commons/collections/buffer/BoundedBuffer.class
+SHA1-Digest: z0rcAFW+l4TxLDip3T2zLfwierE=
+
+Name: org/apache/commons/collections/iterators/ListIteratorWrapper.cla
+ ss
+SHA1-Digest: qlHfCNfM+shrXvOjKw8HOwdm6nY=
+
+Name: org/apache/commons/collections/map/MultiValueMap$Values.class
+SHA1-Digest: 4sAXEbg6x0FtCHwEnPhfLm31S1k=
+
+Name: org/apache/commons/collections/DoubleOrderedMap$9.class
+SHA1-Digest: jf8JhZF8PoqqTsr2bXa8TSBcxBo=
+
+Name: org/apache/commons/collections/FastHashMap$CollectionView.class
+SHA1-Digest: RUiXC6t/kFlqJfs/dGy2r1OFOYM=
+
+Name: org/apache/commons/collections/PredicateUtils.class
+SHA1-Digest: 6gWFA04F0chtyUCd9dm3ILwWmtQ=
+
+Name: org/apache/commons/collections/map/StaticBucketMap$EntryIterator
+ .class
+SHA1-Digest: LmA1IWWYQgwOg6Fp160FNQmlayI=
+
+Name: org/apache/commons/collections/BoundedMap.class
+SHA1-Digest: npYSx/sIH30gJUMt4slgs9OM0AM=
+
+Name: org/apache/commons/collections/functors/FunctorUtils.class
+SHA1-Digest: BZXUgSF24QGrNJ/DbZ3vLEifoyU=
+
+Name: org/apache/commons/collections/list/AbstractLinkedList$LinkedLis
+ tIterator.class
+SHA1-Digest: sXqam+mXjznOxshwhjV6/gX2cNQ=
+
+Name: org/apache/commons/collections/set/ListOrderedSet.class
+SHA1-Digest: p6nAfH2Mzwz0XFqeqVIPn8TBUGQ=
+
+Name: org/apache/commons/collections/iterators/SingletonIterator.class
+SHA1-Digest: ebJc4+R31h9z/YQk4ZdSFa28KyQ=
+
+Name: org/apache/commons/collections/SynchronizedPriorityQueue.class
+SHA1-Digest: BGRy81YuxW7HPsU1I2VpI5fskvc=
+
+Name: org/apache/commons/collections/list/AbstractSerializableListDeco
+ rator.class
+SHA1-Digest: a8gJOHxfU6zkZP2E9eNEG672BY4=
+
+Name: org/apache/commons/collections/set/UnmodifiableSortedSet.class
+SHA1-Digest: 9DmvW8A6GqG/c/rKlyWCnxID8+U=
+
+Name: org/apache/commons/collections/set/MapBackedSet.class
+SHA1-Digest: ETHkRQEh8zoSoBU+8LmGLBpCJKM=
+
+Name: org/apache/commons/collections/collection/UnmodifiableBoundedCol
+ lection.class
+SHA1-Digest: wq5PvyH/IvnmCMkN7kfi2BfA3Y8=
+
+Name: org/apache/commons/collections/functors/ExceptionClosure.class
+SHA1-Digest: T1IWclzw688BsyC2M5eU+XjWQOQ=
+
+Name: org/apache/commons/collections/iterators/ObjectArrayListIterator
+ .class
+SHA1-Digest: hRMztwiEPDmplUdNPB32lawQcmw=
+
+Name: org/apache/commons/collections/bidimap/TreeBidiMap$Inverse.class
+SHA1-Digest: fzefUf7K0JHANKOjbvrPMfOVgqE=
+
+Name: org/apache/commons/collections/BeanMap$9.class
+SHA1-Digest: avsQS76UKf8e2DWZxrh/OQa8vsI=
+
+Name: org/apache/commons/collections/FastHashMap$KeySet.class
+SHA1-Digest: ksRWWKnNq9BCaySD/+HAttp5EoE=
+
+Name: org/apache/commons/collections/collection/SynchronizedCollection
+ .class
+SHA1-Digest: Qa0ewcHUZye4NGQBqlLwdJ3mwio=
+
+Name: org/apache/commons/collections/bag/AbstractSortedBagDecorator.cl
+ ass
+SHA1-Digest: THlz9HqDCeJIP86lsg7h0Btyles=
+
+Name: org/apache/commons/collections/keyvalue/TiedMapEntry.class
+SHA1-Digest: yME7QI8+lDu+vJc8VXaPYggiiLc=
+
+Name: org/apache/commons/collections/list/CursorableLinkedList$SubCurs
+ or.class
+SHA1-Digest: RKq+XZFUHx0dBmRoemGk3Uh4McQ=
+
+Name: org/apache/commons/collections/comparators/BooleanComparator.cla
+ ss
+SHA1-Digest: f1lBNXRwNrQK5lb81z3W4AQxHQo=
+
