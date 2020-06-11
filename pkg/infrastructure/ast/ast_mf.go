@@ -3,32 +3,14 @@ package ast
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
+	"github.com/phodal/igso/pkg/domain"
 	"regexp"
 	"strings"
 )
 
-type KeyValue struct {
-	Key   string
-	Value string
-}
-
-type JavaPackage struct {
-	Name         string
-	VersionInfo  string
-	StartVersion string
-	EndVersion   string
-	Config       []KeyValue
-}
-
-type IgsoManifest struct {
-	ExportPackage []JavaPackage
-	Package       []JavaPackage
-	KeyValues     []KeyValue
-}
-
 type MfIdentListener struct {
 	currentKey string
-	manifest   IgsoManifest
+	manifest   dependency.IgsoManifest
 
 	parser.BaseManifestListener
 }
@@ -44,7 +26,7 @@ func ProcessTsString(code string) *parser.ManifestParser {
 	return processStream(is)
 }
 
-func Analysis(code string, fileName string) IgsoManifest {
+func Analysis(code string, fileName string) dependency.IgsoManifest {
 	re := regexp.MustCompile(`\r?\n `)
 	code = re.ReplaceAllString(code, "")
 
@@ -59,7 +41,7 @@ func Analysis(code string, fileName string) IgsoManifest {
 
 func NewMfIdentListener(fileName string) *MfIdentListener {
 	listener := &MfIdentListener{}
-	listener.manifest = IgsoManifest{}
+	listener.manifest = dependency.IgsoManifest{}
 	return listener
 }
 
@@ -70,14 +52,14 @@ func (s *MfIdentListener) EnterSection(ctx *parser.SectionContext) {
 }
 
 func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
-	s.manifest.KeyValues = append(s.manifest.KeyValues, KeyValue{
+	s.manifest.KeyValues = append(s.manifest.KeyValues, dependency.KeyValue{
 		Key:   s.currentKey,
 		Value: ctx.GetText(),
 	})
 
 	for _, pkg := range ctx.AllPkg() {
 		pkgContext := (pkg).(*parser.PkgContext)
-		javaPackage := JavaPackage{
+		javaPackage := dependency.JavaPackage{
 			Name:         pkgContext.OTHERS().GetText(),
 		}
 
@@ -93,7 +75,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 					javaPackage.StartVersion = split[0]
 					javaPackage.EndVersion = split[1]
 				}
-				javaPackage.Config = append(javaPackage.Config, KeyValue{
+				javaPackage.Config = append(javaPackage.Config, dependency.KeyValue{
 					Key:   assignText,
 					Value: configAssign.AssignValue().GetText(),
 				})
@@ -104,6 +86,6 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 	}
 }
 
-func (s *MfIdentListener) GetResult() IgsoManifest {
+func (s *MfIdentListener) GetResult() dependency.IgsoManifest {
 	return s.manifest
 }
