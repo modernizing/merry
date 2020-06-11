@@ -21,8 +21,8 @@ func Test_ShouldParseManifestFile(t *testing.T) {
 func Test_ShouldSuccessScanManifestFiles(t *testing.T) {
 	g := NewGomegaWithT(t)
 
-	file := filepath.FromSlash("../../../_fixtures/manifest/")
+	file := filepath.FromSlash("../../../_fixtures/manifest/deps")
 	manifests := ScanManifest(file)
 
-	g.Expect(len(manifests)).To(Equal(7))
+	g.Expect(len(manifests)).To(Equal(5))
 }
