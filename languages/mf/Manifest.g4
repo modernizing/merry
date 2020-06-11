@@ -3,11 +3,9 @@ grammar Manifest;
 mf: (section)* EOF;
 
 section
-  : 'SHA1-Digest' COLON SPACE Hash
-  | Key COLON SPACE value
+//  : 'SHA1-Digest' COLON SPACE ValueText
+  : Key COLON SPACE value '='?
   ;
-
-Hash: EscapeSequence EscapeSequence*;
 
 value
  : pkg (COMMA pkg)*
@@ -42,6 +40,7 @@ Key: 'Manifest-Version'
   | 'Name'
   | 'Can-Redefine-Classes'
   | 'Package'
+  | 'SHA1-Digest'
   | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
   | Uppercase Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
   ;

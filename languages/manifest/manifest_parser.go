@@ -16,47 +16,45 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 46, 62, 4,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 44, 59, 4,
 	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 4,
 	8, 9, 8, 3, 2, 7, 2, 18, 10, 2, 12, 2, 14, 2, 21, 11, 2, 3, 2, 3, 2, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 33, 10, 3, 3, 4, 3,
-	4, 3, 4, 7, 4, 38, 10, 4, 12, 4, 14, 4, 41, 11, 4, 3, 4, 5, 4, 44, 10,
-	4, 3, 5, 3, 5, 3, 5, 7, 5, 49, 10, 5, 12, 5, 14, 5, 52, 11, 5, 3, 6, 3,
-	6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12,
-	14, 2, 4, 4, 2, 18, 18, 41, 41, 4, 2, 6, 6, 45, 45, 2, 59, 2, 19, 3, 2,
-	2, 2, 4, 32, 3, 2, 2, 2, 6, 43, 3, 2, 2, 2, 8, 45, 3, 2, 2, 2, 10, 53,
-	3, 2, 2, 2, 12, 57, 3, 2, 2, 2, 14, 59, 3, 2, 2, 2, 16, 18, 5, 4, 3, 2,
-	17, 16, 3, 2, 2, 2, 18, 21, 3, 2, 2, 2, 19, 17, 3, 2, 2, 2, 19, 20, 3,
-	2, 2, 2, 20, 22, 3, 2, 2, 2, 21, 19, 3, 2, 2, 2, 22, 23, 7, 2, 2, 3, 23,
-	3, 3, 2, 2, 2, 24, 25, 7, 3, 2, 2, 25, 26, 7, 8, 2, 2, 26, 27, 7, 43, 2,
-	2, 27, 33, 7, 4, 2, 2, 28, 29, 7, 5, 2, 2, 29, 30, 7, 8, 2, 2, 30, 31,
-	7, 43, 2, 2, 31, 33, 5, 6, 4, 2, 32, 24, 3, 2, 2, 2, 32, 28, 3, 2, 2, 2,
-	33, 5, 3, 2, 2, 2, 34, 39, 5, 8, 5, 2, 35, 36, 7, 16, 2, 2, 36, 38, 5,
-	8, 5, 2, 37, 35, 3, 2, 2, 2, 38, 41, 3, 2, 2, 2, 39, 37, 3, 2, 2, 2, 39,
-	40, 3, 2, 2, 2, 40, 44, 3, 2, 2, 2, 41, 39, 3, 2, 2, 2, 42, 44, 7, 45,
-	2, 2, 43, 34, 3, 2, 2, 2, 43, 42, 3, 2, 2, 2, 44, 7, 3, 2, 2, 2, 45, 50,
-	7, 6, 2, 2, 46, 47, 7, 15, 2, 2, 47, 49, 5, 10, 6, 2, 48, 46, 3, 2, 2,
-	2, 49, 52, 3, 2, 2, 2, 50, 48, 3, 2, 2, 2, 50, 51, 3, 2, 2, 2, 51, 9, 3,
-	2, 2, 2, 52, 50, 3, 2, 2, 2, 53, 54, 5, 12, 7, 2, 54, 55, 9, 2, 2, 2, 55,
-	56, 5, 14, 8, 2, 56, 11, 3, 2, 2, 2, 57, 58, 7, 6, 2, 2, 58, 13, 3, 2,
-	2, 2, 59, 60, 9, 3, 2, 2, 60, 15, 3, 2, 2, 2, 7, 19, 32, 39, 43, 50,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 30, 10, 3, 3, 4, 3, 4, 3, 4, 7, 4, 35,
+	10, 4, 12, 4, 14, 4, 38, 11, 4, 3, 4, 5, 4, 41, 10, 4, 3, 5, 3, 5, 3, 5,
+	7, 5, 46, 10, 5, 12, 5, 14, 5, 49, 11, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7,
+	3, 7, 3, 8, 3, 8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 4, 4, 2, 16,
+	16, 39, 39, 4, 2, 4, 4, 43, 43, 2, 56, 2, 19, 3, 2, 2, 2, 4, 24, 3, 2,
+	2, 2, 6, 40, 3, 2, 2, 2, 8, 42, 3, 2, 2, 2, 10, 50, 3, 2, 2, 2, 12, 54,
+	3, 2, 2, 2, 14, 56, 3, 2, 2, 2, 16, 18, 5, 4, 3, 2, 17, 16, 3, 2, 2, 2,
+	18, 21, 3, 2, 2, 2, 19, 17, 3, 2, 2, 2, 19, 20, 3, 2, 2, 2, 20, 22, 3,
+	2, 2, 2, 21, 19, 3, 2, 2, 2, 22, 23, 7, 2, 2, 3, 23, 3, 3, 2, 2, 2, 24,
+	25, 7, 3, 2, 2, 25, 26, 7, 6, 2, 2, 26, 27, 7, 41, 2, 2, 27, 29, 5, 6,
+	4, 2, 28, 30, 7, 16, 2, 2, 29, 28, 3, 2, 2, 2, 29, 30, 3, 2, 2, 2, 30,
+	5, 3, 2, 2, 2, 31, 36, 5, 8, 5, 2, 32, 33, 7, 14, 2, 2, 33, 35, 5, 8, 5,
+	2, 34, 32, 3, 2, 2, 2, 35, 38, 3, 2, 2, 2, 36, 34, 3, 2, 2, 2, 36, 37,
+	3, 2, 2, 2, 37, 41, 3, 2, 2, 2, 38, 36, 3, 2, 2, 2, 39, 41, 7, 43, 2, 2,
+	40, 31, 3, 2, 2, 2, 40, 39, 3, 2, 2, 2, 41, 7, 3, 2, 2, 2, 42, 47, 7, 4,
+	2, 2, 43, 44, 7, 13, 2, 2, 44, 46, 5, 10, 6, 2, 45, 43, 3, 2, 2, 2, 46,
+	49, 3, 2, 2, 2, 47, 45, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48, 9, 3, 2, 2,
+	2, 49, 47, 3, 2, 2, 2, 50, 51, 5, 12, 7, 2, 51, 52, 9, 2, 2, 2, 52, 53,
+	5, 14, 8, 2, 53, 11, 3, 2, 2, 2, 54, 55, 7, 4, 2, 2, 55, 13, 3, 2, 2, 2,
+	56, 57, 9, 3, 2, 2, 57, 15, 3, 2, 2, 2, 7, 19, 29, 36, 40, 47,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "'SHA1-Digest'", "", "", "", "", "':'", "'('", "')'", "'{'", "'}'",
-	"'['", "']'", "';'", "','", "'.'", "'='", "'>'", "'<'", "'!'", "'~'", "'?'",
-	"'=='", "'<='", "'>='", "'!='", "'&&'", "'||'", "'++'", "'--'", "'+'",
-	"'-'", "'*'", "'/'", "'&'", "'|'", "'^'", "'%'", "'\"'", "':='",
+	"", "", "", "", "':'", "'('", "')'", "'{'", "'}'", "'['", "']'", "';'",
+	"','", "'.'", "'='", "'>'", "'<'", "'!'", "'~'", "'?'", "'=='", "'<='",
+	"'>='", "'!='", "'&&'", "'||'", "'++'", "'--'", "'+'", "'-'", "'*'", "'/'",
+	"'&'", "'|'", "'^'", "'%'", "'\"'", "':='",
 }
 var symbolicNames = []string{
-	"", "", "Hash", "Key", "OTHERS", "ValueText", "COLON", "LPAREN", "RPAREN",
-	"LBRACE", "RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN",
-	"GT", "LT", "BANG", "TILDE", "QUESTION", "EQUAL", "LE", "GE", "NOTEQUAL",
-	"AND", "OR", "INC", "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR",
-	"CARET", "MOD", "DQUOTE", "SEQUAL", "Uppercase", "SPACE", "NL", "STRING_LITERAL",
-	"IDENTIFIER",
+	"", "Key", "OTHERS", "ValueText", "COLON", "LPAREN", "RPAREN", "LBRACE",
+	"RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN", "GT", "LT",
+	"BANG", "TILDE", "QUESTION", "EQUAL", "LE", "GE", "NOTEQUAL", "AND", "OR",
+	"INC", "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR", "CARET", "MOD",
+	"DQUOTE", "SEQUAL", "Uppercase", "SPACE", "NL", "STRING_LITERAL", "IDENTIFIER",
 }
 
 var ruleNames = []string{
@@ -91,50 +89,48 @@ func NewManifestParser(input antlr.TokenStream) *ManifestParser {
 // ManifestParser tokens.
 const (
 	ManifestParserEOF            = antlr.TokenEOF
-	ManifestParserT__0           = 1
-	ManifestParserHash           = 2
-	ManifestParserKey            = 3
-	ManifestParserOTHERS         = 4
-	ManifestParserValueText      = 5
-	ManifestParserCOLON          = 6
-	ManifestParserLPAREN         = 7
-	ManifestParserRPAREN         = 8
-	ManifestParserLBRACE         = 9
-	ManifestParserRBRACE         = 10
-	ManifestParserLBRACK         = 11
-	ManifestParserRBRACK         = 12
-	ManifestParserSEMI           = 13
-	ManifestParserCOMMA          = 14
-	ManifestParserDOT            = 15
-	ManifestParserASSIGN         = 16
-	ManifestParserGT             = 17
-	ManifestParserLT             = 18
-	ManifestParserBANG           = 19
-	ManifestParserTILDE          = 20
-	ManifestParserQUESTION       = 21
-	ManifestParserEQUAL          = 22
-	ManifestParserLE             = 23
-	ManifestParserGE             = 24
-	ManifestParserNOTEQUAL       = 25
-	ManifestParserAND            = 26
-	ManifestParserOR             = 27
-	ManifestParserINC            = 28
-	ManifestParserDEC            = 29
-	ManifestParserADD            = 30
-	ManifestParserSUB            = 31
-	ManifestParserMUL            = 32
-	ManifestParserDIV            = 33
-	ManifestParserBITAND         = 34
-	ManifestParserBITOR          = 35
-	ManifestParserCARET          = 36
-	ManifestParserMOD            = 37
-	ManifestParserDQUOTE         = 38
-	ManifestParserSEQUAL         = 39
-	ManifestParserUppercase      = 40
-	ManifestParserSPACE          = 41
-	ManifestParserNL             = 42
-	ManifestParserSTRING_LITERAL = 43
-	ManifestParserIDENTIFIER     = 44
+	ManifestParserKey            = 1
+	ManifestParserOTHERS         = 2
+	ManifestParserValueText      = 3
+	ManifestParserCOLON          = 4
+	ManifestParserLPAREN         = 5
+	ManifestParserRPAREN         = 6
+	ManifestParserLBRACE         = 7
+	ManifestParserRBRACE         = 8
+	ManifestParserLBRACK         = 9
+	ManifestParserRBRACK         = 10
+	ManifestParserSEMI           = 11
+	ManifestParserCOMMA          = 12
+	ManifestParserDOT            = 13
+	ManifestParserASSIGN         = 14
+	ManifestParserGT             = 15
+	ManifestParserLT             = 16
+	ManifestParserBANG           = 17
+	ManifestParserTILDE          = 18
+	ManifestParserQUESTION       = 19
+	ManifestParserEQUAL          = 20
+	ManifestParserLE             = 21
+	ManifestParserGE             = 22
+	ManifestParserNOTEQUAL       = 23
+	ManifestParserAND            = 24
+	ManifestParserOR             = 25
+	ManifestParserINC            = 26
+	ManifestParserDEC            = 27
+	ManifestParserADD            = 28
+	ManifestParserSUB            = 29
+	ManifestParserMUL            = 30
+	ManifestParserDIV            = 31
+	ManifestParserBITAND         = 32
+	ManifestParserBITOR          = 33
+	ManifestParserCARET          = 34
+	ManifestParserMOD            = 35
+	ManifestParserDQUOTE         = 36
+	ManifestParserSEQUAL         = 37
+	ManifestParserUppercase      = 38
+	ManifestParserSPACE          = 39
+	ManifestParserNL             = 40
+	ManifestParserSTRING_LITERAL = 41
+	ManifestParserIDENTIFIER     = 42
 )
 
 // ManifestParser rules.
@@ -259,7 +255,7 @@ func (p *ManifestParser) Mf() (localctx IMfContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == ManifestParserT__0 || _la == ManifestParserKey {
+	for _la == ManifestParserKey {
 		{
 			p.SetState(14)
 			p.Section()
@@ -315,20 +311,16 @@ func NewSectionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *SectionContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *SectionContext) Key() antlr.TerminalNode {
+	return s.GetToken(ManifestParserKey, 0)
+}
+
 func (s *SectionContext) COLON() antlr.TerminalNode {
 	return s.GetToken(ManifestParserCOLON, 0)
 }
 
 func (s *SectionContext) SPACE() antlr.TerminalNode {
 	return s.GetToken(ManifestParserSPACE, 0)
-}
-
-func (s *SectionContext) Hash() antlr.TerminalNode {
-	return s.GetToken(ManifestParserHash, 0)
-}
-
-func (s *SectionContext) Key() antlr.TerminalNode {
-	return s.GetToken(ManifestParserKey, 0)
 }
 
 func (s *SectionContext) Value() IValueContext {
@@ -339,6 +331,10 @@ func (s *SectionContext) Value() IValueContext {
 	}
 
 	return t.(IValueContext)
+}
+
+func (s *SectionContext) ASSIGN() antlr.TerminalNode {
+	return s.GetToken(ManifestParserASSIGN, 0)
 }
 
 func (s *SectionContext) GetRuleContext() antlr.RuleContext {
@@ -364,6 +360,7 @@ func (s *SectionContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *ManifestParser) Section() (localctx ISectionContext) {
 	localctx = NewSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ManifestParserRULE_section)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -381,50 +378,33 @@ func (p *ManifestParser) Section() (localctx ISectionContext) {
 		}
 	}()
 
-	p.SetState(30)
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(22)
+		p.Match(ManifestParserKey)
+	}
+	{
+		p.SetState(23)
+		p.Match(ManifestParserCOLON)
+	}
+	{
+		p.SetState(24)
+		p.Match(ManifestParserSPACE)
+	}
+	{
+		p.SetState(25)
+		p.Value()
+	}
+	p.SetState(27)
 	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
 
-	switch p.GetTokenStream().LA(1) {
-	case ManifestParserT__0:
-		p.EnterOuterAlt(localctx, 1)
-		{
-			p.SetState(22)
-			p.Match(ManifestParserT__0)
-		}
-		{
-			p.SetState(23)
-			p.Match(ManifestParserCOLON)
-		}
-		{
-			p.SetState(24)
-			p.Match(ManifestParserSPACE)
-		}
-		{
-			p.SetState(25)
-			p.Match(ManifestParserHash)
-		}
-
-	case ManifestParserKey:
-		p.EnterOuterAlt(localctx, 2)
+	if _la == ManifestParserASSIGN {
 		{
 			p.SetState(26)
-			p.Match(ManifestParserKey)
-		}
-		{
-			p.SetState(27)
-			p.Match(ManifestParserCOLON)
-		}
-		{
-			p.SetState(28)
-			p.Match(ManifestParserSPACE)
-		}
-		{
-			p.SetState(29)
-			p.Value()
+			p.Match(ManifestParserASSIGN)
 		}
 
-	default:
-		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
 
 	return localctx
@@ -544,31 +524,31 @@ func (p *ManifestParser) Value() (localctx IValueContext) {
 		}
 	}()
 
-	p.SetState(41)
+	p.SetState(38)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case ManifestParserOTHERS:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(32)
+			p.SetState(29)
 			p.Pkg()
 		}
-		p.SetState(37)
+		p.SetState(34)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == ManifestParserCOMMA {
 			{
-				p.SetState(33)
+				p.SetState(30)
 				p.Match(ManifestParserCOMMA)
 			}
 			{
-				p.SetState(34)
+				p.SetState(31)
 				p.Pkg()
 			}
 
-			p.SetState(39)
+			p.SetState(36)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
@@ -576,7 +556,7 @@ func (p *ManifestParser) Value() (localctx IValueContext) {
 	case ManifestParserSTRING_LITERAL:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(40)
+			p.SetState(37)
 			p.Match(ManifestParserSTRING_LITERAL)
 		}
 
@@ -703,24 +683,24 @@ func (p *ManifestParser) Pkg() (localctx IPkgContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(43)
+		p.SetState(40)
 		p.Match(ManifestParserOTHERS)
 	}
-	p.SetState(48)
+	p.SetState(45)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == ManifestParserSEMI {
 		{
-			p.SetState(44)
+			p.SetState(41)
 			p.Match(ManifestParserSEMI)
 		}
 		{
-			p.SetState(45)
+			p.SetState(42)
 			p.ConfigAssign()
 		}
 
-		p.SetState(50)
+		p.SetState(47)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -837,11 +817,11 @@ func (p *ManifestParser) ConfigAssign() (localctx IConfigAssignContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(51)
+		p.SetState(48)
 		p.AssignKey()
 	}
 	{
-		p.SetState(52)
+		p.SetState(49)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == ManifestParserASSIGN || _la == ManifestParserSEQUAL) {
@@ -852,7 +832,7 @@ func (p *ManifestParser) ConfigAssign() (localctx IConfigAssignContext) {
 		}
 	}
 	{
-		p.SetState(53)
+		p.SetState(50)
 		p.AssignValue()
 	}
 
@@ -943,7 +923,7 @@ func (p *ManifestParser) AssignKey() (localctx IAssignKeyContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(55)
+		p.SetState(52)
 		p.Match(ManifestParserOTHERS)
 	}
 
@@ -1039,7 +1019,7 @@ func (p *ManifestParser) AssignValue() (localctx IAssignValueContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(57)
+		p.SetState(54)
 		_la = p.GetTokenStream().LA(1)
 
 		if !(_la == ManifestParserOTHERS || _la == ManifestParserSTRING_LITERAL) {
