@@ -112,7 +112,6 @@ Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
 	g.Expect(len(results.ImportPackage)).To(Equal(15))
 }
 
-
 func Test_ShouldBuildOsgiPackageName(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `Private-Package: felix-tut-8
@@ -120,4 +119,13 @@ func Test_ShouldBuildOsgiPackageName(t *testing.T) {
 `
 	results := Analysis(code, "hello.mf")
 	g.Expect(results.PackageName).To(Equal("felix-tut-8"))
+}
+
+func Test_ShouldBuildForVendorSpring(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Bundle-Vendor: SpringSource
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.KeyValues[0].Value).To(Equal("SpringSource"))
 }

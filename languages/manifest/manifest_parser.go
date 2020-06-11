@@ -19,26 +19,26 @@ var parserATN = []uint16{
 	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 44, 59, 4,
 	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 4,
 	8, 9, 8, 3, 2, 7, 2, 18, 10, 2, 12, 2, 14, 2, 21, 11, 2, 3, 2, 3, 2, 3,
-	3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 30, 10, 3, 3, 4, 3, 4, 3, 4, 7, 4, 35,
-	10, 4, 12, 4, 14, 4, 38, 11, 4, 3, 4, 5, 4, 41, 10, 4, 3, 5, 3, 5, 3, 5,
-	7, 5, 46, 10, 5, 12, 5, 14, 5, 49, 11, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7,
-	3, 7, 3, 8, 3, 8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 4, 4, 2, 16,
-	16, 39, 39, 4, 2, 4, 4, 43, 43, 2, 56, 2, 19, 3, 2, 2, 2, 4, 24, 3, 2,
-	2, 2, 6, 40, 3, 2, 2, 2, 8, 42, 3, 2, 2, 2, 10, 50, 3, 2, 2, 2, 12, 54,
-	3, 2, 2, 2, 14, 56, 3, 2, 2, 2, 16, 18, 5, 4, 3, 2, 17, 16, 3, 2, 2, 2,
-	18, 21, 3, 2, 2, 2, 19, 17, 3, 2, 2, 2, 19, 20, 3, 2, 2, 2, 20, 22, 3,
-	2, 2, 2, 21, 19, 3, 2, 2, 2, 22, 23, 7, 2, 2, 3, 23, 3, 3, 2, 2, 2, 24,
-	25, 7, 3, 2, 2, 25, 26, 7, 6, 2, 2, 26, 27, 7, 41, 2, 2, 27, 29, 5, 6,
-	4, 2, 28, 30, 7, 16, 2, 2, 29, 28, 3, 2, 2, 2, 29, 30, 3, 2, 2, 2, 30,
-	5, 3, 2, 2, 2, 31, 36, 5, 8, 5, 2, 32, 33, 7, 14, 2, 2, 33, 35, 5, 8, 5,
-	2, 34, 32, 3, 2, 2, 2, 35, 38, 3, 2, 2, 2, 36, 34, 3, 2, 2, 2, 36, 37,
-	3, 2, 2, 2, 37, 41, 3, 2, 2, 2, 38, 36, 3, 2, 2, 2, 39, 41, 7, 43, 2, 2,
-	40, 31, 3, 2, 2, 2, 40, 39, 3, 2, 2, 2, 41, 7, 3, 2, 2, 2, 42, 47, 7, 4,
-	2, 2, 43, 44, 7, 13, 2, 2, 44, 46, 5, 10, 6, 2, 45, 43, 3, 2, 2, 2, 46,
-	49, 3, 2, 2, 2, 47, 45, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48, 9, 3, 2, 2,
-	2, 49, 47, 3, 2, 2, 2, 50, 51, 5, 12, 7, 2, 51, 52, 9, 2, 2, 2, 52, 53,
-	5, 14, 8, 2, 53, 11, 3, 2, 2, 2, 54, 55, 7, 4, 2, 2, 55, 13, 3, 2, 2, 2,
-	56, 57, 9, 3, 2, 2, 57, 15, 3, 2, 2, 2, 7, 19, 29, 36, 40, 47,
+	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 7, 4, 33, 10, 4, 12, 4, 14,
+	4, 36, 11, 4, 3, 4, 3, 4, 3, 4, 5, 4, 41, 10, 4, 3, 5, 3, 5, 3, 5, 7, 5,
+	46, 10, 5, 12, 5, 14, 5, 49, 11, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7,
+	3, 8, 3, 8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 4, 4, 2, 16, 16,
+	39, 39, 4, 2, 4, 4, 43, 43, 2, 56, 2, 19, 3, 2, 2, 2, 4, 24, 3, 2, 2, 2,
+	6, 40, 3, 2, 2, 2, 8, 42, 3, 2, 2, 2, 10, 50, 3, 2, 2, 2, 12, 54, 3, 2,
+	2, 2, 14, 56, 3, 2, 2, 2, 16, 18, 5, 4, 3, 2, 17, 16, 3, 2, 2, 2, 18, 21,
+	3, 2, 2, 2, 19, 17, 3, 2, 2, 2, 19, 20, 3, 2, 2, 2, 20, 22, 3, 2, 2, 2,
+	21, 19, 3, 2, 2, 2, 22, 23, 7, 2, 2, 3, 23, 3, 3, 2, 2, 2, 24, 25, 7, 3,
+	2, 2, 25, 26, 7, 6, 2, 2, 26, 27, 7, 41, 2, 2, 27, 28, 5, 6, 4, 2, 28,
+	5, 3, 2, 2, 2, 29, 34, 5, 8, 5, 2, 30, 31, 7, 14, 2, 2, 31, 33, 5, 8, 5,
+	2, 32, 30, 3, 2, 2, 2, 33, 36, 3, 2, 2, 2, 34, 32, 3, 2, 2, 2, 34, 35,
+	3, 2, 2, 2, 35, 41, 3, 2, 2, 2, 36, 34, 3, 2, 2, 2, 37, 41, 7, 43, 2, 2,
+	38, 39, 7, 4, 2, 2, 39, 41, 7, 16, 2, 2, 40, 29, 3, 2, 2, 2, 40, 37, 3,
+	2, 2, 2, 40, 38, 3, 2, 2, 2, 41, 7, 3, 2, 2, 2, 42, 47, 7, 4, 2, 2, 43,
+	44, 7, 13, 2, 2, 44, 46, 5, 10, 6, 2, 45, 43, 3, 2, 2, 2, 46, 49, 3, 2,
+	2, 2, 47, 45, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48, 9, 3, 2, 2, 2, 49, 47,
+	3, 2, 2, 2, 50, 51, 5, 12, 7, 2, 51, 52, 9, 2, 2, 2, 52, 53, 5, 14, 8,
+	2, 53, 11, 3, 2, 2, 2, 54, 55, 7, 4, 2, 2, 55, 13, 3, 2, 2, 2, 56, 57,
+	9, 3, 2, 2, 57, 15, 3, 2, 2, 2, 6, 19, 34, 40, 47,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
@@ -333,10 +333,6 @@ func (s *SectionContext) Value() IValueContext {
 	return t.(IValueContext)
 }
 
-func (s *SectionContext) ASSIGN() antlr.TerminalNode {
-	return s.GetToken(ManifestParserASSIGN, 0)
-}
-
 func (s *SectionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -360,7 +356,6 @@ func (s *SectionContext) ExitRule(listener antlr.ParseTreeListener) {
 func (p *ManifestParser) Section() (localctx ISectionContext) {
 	localctx = NewSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ManifestParserRULE_section)
-	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -394,17 +389,6 @@ func (p *ManifestParser) Section() (localctx ISectionContext) {
 	{
 		p.SetState(25)
 		p.Value()
-	}
-	p.SetState(27)
-	p.GetErrorHandler().Sync(p)
-	_la = p.GetTokenStream().LA(1)
-
-	if _la == ManifestParserASSIGN {
-		{
-			p.SetState(26)
-			p.Match(ManifestParserASSIGN)
-		}
-
 	}
 
 	return localctx
@@ -483,6 +467,14 @@ func (s *ValueContext) STRING_LITERAL() antlr.TerminalNode {
 	return s.GetToken(ManifestParserSTRING_LITERAL, 0)
 }
 
+func (s *ValueContext) OTHERS() antlr.TerminalNode {
+	return s.GetToken(ManifestParserOTHERS, 0)
+}
+
+func (s *ValueContext) ASSIGN() antlr.TerminalNode {
+	return s.GetToken(ManifestParserASSIGN, 0)
+}
+
 func (s *ValueContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -526,42 +518,50 @@ func (p *ManifestParser) Value() (localctx IValueContext) {
 
 	p.SetState(38)
 	p.GetErrorHandler().Sync(p)
-
-	switch p.GetTokenStream().LA(1) {
-	case ManifestParserOTHERS:
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext()) {
+	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(29)
+			p.SetState(27)
 			p.Pkg()
 		}
-		p.SetState(34)
+		p.SetState(32)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == ManifestParserCOMMA {
 			{
-				p.SetState(30)
+				p.SetState(28)
 				p.Match(ManifestParserCOMMA)
 			}
 			{
-				p.SetState(31)
+				p.SetState(29)
 				p.Pkg()
 			}
 
-			p.SetState(36)
+			p.SetState(34)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
-	case ManifestParserSTRING_LITERAL:
+	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(37)
+			p.SetState(35)
 			p.Match(ManifestParserSTRING_LITERAL)
 		}
 
-	default:
-		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
+	case 3:
+		p.EnterOuterAlt(localctx, 3)
+		{
+			p.SetState(36)
+			p.Match(ManifestParserOTHERS)
+		}
+		{
+			p.SetState(37)
+			p.Match(ManifestParserASSIGN)
+		}
+
 	}
 
 	return localctx

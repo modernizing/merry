@@ -4,12 +4,13 @@ mf: (section)* EOF;
 
 section
 //  : 'SHA1-Digest' COLON SPACE ValueText
-  : Key COLON SPACE value '='?
+  : Key COLON SPACE value
   ;
 
 value
  : pkg (COMMA pkg)*
  | STRING_LITERAL
+ | OTHERS '='
  ;
 
 pkg
@@ -43,7 +44,6 @@ Key: 'Manifest-Version'
   | 'SHA1-Digest'
   | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
   | Uppercase Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
-  | Uppercase Letter*
   ;
 
 OTHERS:  ValueText (SPACE? ValueText)*;
@@ -98,7 +98,8 @@ fragment EscapeSequence
     : '\\' [btnfr"'\\]
     | '\\' ([0-3]? [0-7])? [0-7]
     | '\\' 'u'+ HexDigit HexDigit HexDigit HexDigit
-    | '/' | '+'
+    | '/'
+    | '+'
     ;
 fragment HexDigit
     : [0-9a-fA-F]
