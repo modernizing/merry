@@ -16,25 +16,25 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 44, 59, 4,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 45, 59, 4,
 	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 4,
 	8, 9, 8, 3, 2, 7, 2, 18, 10, 2, 12, 2, 14, 2, 21, 11, 2, 3, 2, 3, 2, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 7, 4, 33, 10, 4, 12, 4, 14,
 	4, 36, 11, 4, 3, 4, 3, 4, 3, 4, 5, 4, 41, 10, 4, 3, 5, 3, 5, 3, 5, 7, 5,
 	46, 10, 5, 12, 5, 14, 5, 49, 11, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7,
-	3, 8, 3, 8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 4, 4, 2, 16, 16,
-	39, 39, 4, 2, 4, 4, 43, 43, 2, 56, 2, 19, 3, 2, 2, 2, 4, 24, 3, 2, 2, 2,
+	3, 8, 3, 8, 3, 8, 2, 2, 9, 2, 4, 6, 8, 10, 12, 14, 2, 4, 4, 2, 17, 17,
+	40, 40, 4, 2, 4, 4, 44, 44, 2, 56, 2, 19, 3, 2, 2, 2, 4, 24, 3, 2, 2, 2,
 	6, 40, 3, 2, 2, 2, 8, 42, 3, 2, 2, 2, 10, 50, 3, 2, 2, 2, 12, 54, 3, 2,
 	2, 2, 14, 56, 3, 2, 2, 2, 16, 18, 5, 4, 3, 2, 17, 16, 3, 2, 2, 2, 18, 21,
 	3, 2, 2, 2, 19, 17, 3, 2, 2, 2, 19, 20, 3, 2, 2, 2, 20, 22, 3, 2, 2, 2,
 	21, 19, 3, 2, 2, 2, 22, 23, 7, 2, 2, 3, 23, 3, 3, 2, 2, 2, 24, 25, 7, 3,
-	2, 2, 25, 26, 7, 6, 2, 2, 26, 27, 7, 41, 2, 2, 27, 28, 5, 6, 4, 2, 28,
-	5, 3, 2, 2, 2, 29, 34, 5, 8, 5, 2, 30, 31, 7, 14, 2, 2, 31, 33, 5, 8, 5,
+	2, 2, 25, 26, 7, 7, 2, 2, 26, 27, 7, 42, 2, 2, 27, 28, 5, 6, 4, 2, 28,
+	5, 3, 2, 2, 2, 29, 34, 5, 8, 5, 2, 30, 31, 7, 15, 2, 2, 31, 33, 5, 8, 5,
 	2, 32, 30, 3, 2, 2, 2, 33, 36, 3, 2, 2, 2, 34, 32, 3, 2, 2, 2, 34, 35,
-	3, 2, 2, 2, 35, 41, 3, 2, 2, 2, 36, 34, 3, 2, 2, 2, 37, 41, 7, 43, 2, 2,
-	38, 39, 7, 4, 2, 2, 39, 41, 7, 16, 2, 2, 40, 29, 3, 2, 2, 2, 40, 37, 3,
+	3, 2, 2, 2, 35, 41, 3, 2, 2, 2, 36, 34, 3, 2, 2, 2, 37, 41, 7, 44, 2, 2,
+	38, 39, 7, 4, 2, 2, 39, 41, 7, 17, 2, 2, 40, 29, 3, 2, 2, 2, 40, 37, 3,
 	2, 2, 2, 40, 38, 3, 2, 2, 2, 41, 7, 3, 2, 2, 2, 42, 47, 7, 4, 2, 2, 43,
-	44, 7, 13, 2, 2, 44, 46, 5, 10, 6, 2, 45, 43, 3, 2, 2, 2, 46, 49, 3, 2,
+	44, 7, 14, 2, 2, 44, 46, 5, 10, 6, 2, 45, 43, 3, 2, 2, 2, 46, 49, 3, 2,
 	2, 2, 47, 45, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48, 9, 3, 2, 2, 2, 49, 47,
 	3, 2, 2, 2, 50, 51, 5, 12, 7, 2, 51, 52, 9, 2, 2, 2, 52, 53, 5, 14, 8,
 	2, 53, 11, 3, 2, 2, 2, 54, 55, 7, 4, 2, 2, 55, 13, 3, 2, 2, 2, 56, 57,
@@ -44,17 +44,18 @@ var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "", "", "", "':'", "'('", "')'", "'{'", "'}'", "'['", "']'", "';'",
+	"", "", "", "", "", "':'", "'('", "')'", "'{'", "'}'", "'['", "']'", "';'",
 	"','", "'.'", "'='", "'>'", "'<'", "'!'", "'~'", "'?'", "'=='", "'<='",
 	"'>='", "'!='", "'&&'", "'||'", "'++'", "'--'", "'+'", "'-'", "'*'", "'/'",
 	"'&'", "'|'", "'^'", "'%'", "'\"'", "':='",
 }
 var symbolicNames = []string{
-	"", "Key", "OTHERS", "ValueText", "COLON", "LPAREN", "RPAREN", "LBRACE",
-	"RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN", "GT", "LT",
-	"BANG", "TILDE", "QUESTION", "EQUAL", "LE", "GE", "NOTEQUAL", "AND", "OR",
-	"INC", "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR", "CARET", "MOD",
-	"DQUOTE", "SEQUAL", "Uppercase", "SPACE", "NL", "STRING_LITERAL", "IDENTIFIER",
+	"", "Key", "OTHERS", "ValueText", "Symbol", "COLON", "LPAREN", "RPAREN",
+	"LBRACE", "RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", "ASSIGN",
+	"GT", "LT", "BANG", "TILDE", "QUESTION", "EQUAL", "LE", "GE", "NOTEQUAL",
+	"AND", "OR", "INC", "DEC", "ADD", "SUB", "MUL", "DIV", "BITAND", "BITOR",
+	"CARET", "MOD", "DQUOTE", "SEQUAL", "Uppercase", "SPACE", "NL", "STRING_LITERAL",
+	"IDENTIFIER",
 }
 
 var ruleNames = []string{
@@ -92,45 +93,46 @@ const (
 	ManifestParserKey            = 1
 	ManifestParserOTHERS         = 2
 	ManifestParserValueText      = 3
-	ManifestParserCOLON          = 4
-	ManifestParserLPAREN         = 5
-	ManifestParserRPAREN         = 6
-	ManifestParserLBRACE         = 7
-	ManifestParserRBRACE         = 8
-	ManifestParserLBRACK         = 9
-	ManifestParserRBRACK         = 10
-	ManifestParserSEMI           = 11
-	ManifestParserCOMMA          = 12
-	ManifestParserDOT            = 13
-	ManifestParserASSIGN         = 14
-	ManifestParserGT             = 15
-	ManifestParserLT             = 16
-	ManifestParserBANG           = 17
-	ManifestParserTILDE          = 18
-	ManifestParserQUESTION       = 19
-	ManifestParserEQUAL          = 20
-	ManifestParserLE             = 21
-	ManifestParserGE             = 22
-	ManifestParserNOTEQUAL       = 23
-	ManifestParserAND            = 24
-	ManifestParserOR             = 25
-	ManifestParserINC            = 26
-	ManifestParserDEC            = 27
-	ManifestParserADD            = 28
-	ManifestParserSUB            = 29
-	ManifestParserMUL            = 30
-	ManifestParserDIV            = 31
-	ManifestParserBITAND         = 32
-	ManifestParserBITOR          = 33
-	ManifestParserCARET          = 34
-	ManifestParserMOD            = 35
-	ManifestParserDQUOTE         = 36
-	ManifestParserSEQUAL         = 37
-	ManifestParserUppercase      = 38
-	ManifestParserSPACE          = 39
-	ManifestParserNL             = 40
-	ManifestParserSTRING_LITERAL = 41
-	ManifestParserIDENTIFIER     = 42
+	ManifestParserSymbol         = 4
+	ManifestParserCOLON          = 5
+	ManifestParserLPAREN         = 6
+	ManifestParserRPAREN         = 7
+	ManifestParserLBRACE         = 8
+	ManifestParserRBRACE         = 9
+	ManifestParserLBRACK         = 10
+	ManifestParserRBRACK         = 11
+	ManifestParserSEMI           = 12
+	ManifestParserCOMMA          = 13
+	ManifestParserDOT            = 14
+	ManifestParserASSIGN         = 15
+	ManifestParserGT             = 16
+	ManifestParserLT             = 17
+	ManifestParserBANG           = 18
+	ManifestParserTILDE          = 19
+	ManifestParserQUESTION       = 20
+	ManifestParserEQUAL          = 21
+	ManifestParserLE             = 22
+	ManifestParserGE             = 23
+	ManifestParserNOTEQUAL       = 24
+	ManifestParserAND            = 25
+	ManifestParserOR             = 26
+	ManifestParserINC            = 27
+	ManifestParserDEC            = 28
+	ManifestParserADD            = 29
+	ManifestParserSUB            = 30
+	ManifestParserMUL            = 31
+	ManifestParserDIV            = 32
+	ManifestParserBITAND         = 33
+	ManifestParserBITOR          = 34
+	ManifestParserCARET          = 35
+	ManifestParserMOD            = 36
+	ManifestParserDQUOTE         = 37
+	ManifestParserSEQUAL         = 38
+	ManifestParserUppercase      = 39
+	ManifestParserSPACE          = 40
+	ManifestParserNL             = 41
+	ManifestParserSTRING_LITERAL = 42
+	ManifestParserIDENTIFIER     = 43
 )
 
 // ManifestParser rules.

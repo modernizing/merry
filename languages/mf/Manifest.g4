@@ -42,13 +42,15 @@ Key: 'Manifest-Version'
   | 'Package'
   | 'SHA1-Digest'
   | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
-  | Uppercase Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
+  | Letter Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
   ;
 
 OTHERS:  ValueText (SPACE? ValueText)*;
 ValueText
-  : ('(' | '.' |')' | '-' | '$' | '_' | '/' | '%' | '+' | '<' | '>='| LetterOrDigit+)+
+  : ( Symbol | LetterOrDigit+)+
   ;
+
+Symbol: ('(' | '.' |')' | '-' | '$' | '_' | '/' | '%' | '+' | '<' | '>='| '://');
 
 COLON:              ':';
 LPAREN:             '(';
