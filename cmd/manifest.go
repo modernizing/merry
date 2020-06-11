@@ -4,9 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"github.com/phodal/igso/pkg/adapter/tequila"
 	"github.com/phodal/igso/pkg/application/manifest"
-	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
 	"github.com/spf13/cobra"
@@ -50,7 +48,7 @@ var manifestCmd = &cobra.Command{
 			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
 
 			fmt.Println(scanManifest)
-			result := buildFullGraph(scanManifest)
+			result := manifest.BuildFullGraph(scanManifest)
 
 			ignores := strings.Split("", ",")
 			var nodeFilter = func(key string) bool {
@@ -71,50 +69,6 @@ var manifestCmd = &cobra.Command{
 			exec.Command("dot", "-Tsvg","dep.dot", "-o", "dep.svg")
 		}
 	},
-}
-
-func buildFullGraph(scanManifest []dependency.IgsoManifest) *tequila.FullGraph {
-	fullGraph := &tequila.FullGraph{
-		NodeList:     make(map[string]string),
-		RelationList: make(map[string]*tequila.Relation),
-	}
-	for _, mani := range scanManifest {
-		if mani.ExportPackage != nil {
-			for _, exp := range mani.ExportPackage {
-				src := exp.Name
-				fullGraph.NodeList[src] = src
-
-				for _, impl := range mani.ImportPackage {
-					implName := impl.Name
-					fullGraph.NodeList[implName] = implName
-					relation := &tequila.Relation{
-						From:  src,
-						To:    implName,
-						Style: "\"solid\"",
-					}
-
-					fullGraph.RelationList[relation.From+"->"+relation.To] = relation
-				}
-			}
-		} else {
-			src := mani.PackageName
-			fullGraph.NodeList[src] = src
-
-			for _, impl := range mani.ImportPackage {
-				implName := impl.Name
-				fullGraph.NodeList[implName] = implName
-				relation := &tequila.Relation{
-					From:  src,
-					To:    implName,
-					Style: "\"solid\"",
-				}
-
-				fullGraph.RelationList[relation.From+"->"+relation.To] = relation
-			}
-		}
-	}
-
-	return fullGraph
 }
 
 func ExtractManifest(ppath string) {
