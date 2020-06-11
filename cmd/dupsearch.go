@@ -28,7 +28,7 @@ func init() {
 
 var dupSearch = &cobra.Command{
 	Use:   "dupsearch",
-	Short: "d",
+	Short: "build maven pom from all jars file",
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
 		deps := dupsearch.DupSearch(filepath.FromSlash(path))

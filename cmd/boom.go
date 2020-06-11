@@ -30,7 +30,7 @@ func init() {
 
 var boomCmd = &cobra.Command{
 	Use:   "boom",
-	Short: "b",
+	Short: "generate pom.xml from build.xml",
 	Run: func(cmd *cobra.Command, args []string) {
 		var contents []byte
 		var err error

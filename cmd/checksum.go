@@ -26,7 +26,7 @@ func init() {
 
 var checksumCmd = &cobra.Command{
 	Use:   "checksum",
-	Short: "c",
+	Short: "checksum file md5",
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
 		result, err := bundle.HashFileMD5(path)
