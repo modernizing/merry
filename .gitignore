@@ -76,3 +76,4 @@ pom.xml
 !_fixtures/multiple/maven
 !cmd/testdata/boom/build.xml
 _m
+manifest-map.json
