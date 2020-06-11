@@ -80,6 +80,7 @@ func (f *FullGraph) SortedByFan(merge func(string) string) []*Fan {
 func (fullGraph *FullGraph) ToDot(split string, filter func(string) bool) *gographviz.Graph {
 	graph := gographviz.NewGraph()
 	_ = graph.SetName("G")
+	graph.Attrs.Add("lankdir", "LR")
 
 	nodeIndex := 1
 	layerIndex := 1
@@ -110,6 +111,7 @@ func (fullGraph *FullGraph) ToDot(split string, filter func(string) bool) *gogra
 	for layer := range layerMap {
 		layerAttr := make(map[string]string)
 		layerAttr["label"] = "\"" + layer + "\""
+		layerAttr["rankdir"] = "LR"
 		layerName := "cluster" + strconv.Itoa(layerIndex)
 		_ = graph.AddSubGraph("G", layerName, layerAttr)
 		layerIndex++

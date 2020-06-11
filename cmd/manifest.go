@@ -3,7 +3,6 @@ package cmd
 import (
 	"bufio"
 	"encoding/json"
-	"fmt"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
@@ -47,7 +46,7 @@ var manifestCmd = &cobra.Command{
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
 			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
 
-			fmt.Println(scanManifest)
+			//fmt.Println(scanManifest)
 			result := manifest.BuildFullGraph(scanManifest)
 
 			ignores := strings.Split("", ",")

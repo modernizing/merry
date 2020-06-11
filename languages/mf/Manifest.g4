@@ -43,11 +43,12 @@ Key: 'Manifest-Version'
   | 'SHA1-Digest'
   | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
   | Uppercase Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
+  | Uppercase Letter*
   ;
 
 OTHERS:  ValueText (SPACE? ValueText)*;
 ValueText
-  : ('(' | '.' |')' | '-' | '$' | '_' | '/' | '%' | '+' | LetterOrDigit+)+
+  : ('(' | '.' |')' | '-' | '$' | '_' | '/' | '%' | '+' | '<' | '>='| LetterOrDigit+)+
   ;
 
 COLON:              ':';
