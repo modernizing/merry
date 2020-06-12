@@ -1,4 +1,4 @@
-package dependency
+package domain
 
 type KeyValue struct {
 	Key   string

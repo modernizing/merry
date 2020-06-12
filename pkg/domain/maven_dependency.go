@@ -1,4 +1,9 @@
-package dependency
+package domain
+
+import (
+	"regexp"
+	"strings"
+)
 
 type MavenDependency struct {
 	Version    string
@@ -26,4 +31,50 @@ func RemoveDuplicate(deps []MavenDependency) []MavenDependency {
 	}
 
 	return depArray;
+}
+
+func FromManifest(manifest IgsoManifest) []MavenDependency {
+	var deps []MavenDependency
+	for _, javaPack := range manifest.ExportPackage {
+		dependency := ByFileName(javaPack.Name, 2)
+		mavenDep := MavenDependency{
+			Version:    javaPack.StartVersion,
+			GroupId:    dependency.GroupId,
+			ArtifactId: dependency.ArtifactId,
+		}
+
+		deps = append(deps, mavenDep)
+	}
+
+	return deps
+}
+
+func BySlashFileName(s string) MavenDependency {
+	var dependency MavenDependency
+	reg := regexp.MustCompile("([a-z][a-z0-9_-]*)-([.a-z0-9_]+[.0-9a-z_]*).jar")
+	result := reg.FindStringSubmatch(s)
+	if len(result) >= 2 {
+		dependency.ArtifactId = result[1]
+		dependency.Version = result[2]
+	}
+
+	return dependency
+}
+
+func ByFileName(s string, groupIdLength int) MavenDependency {
+	var dependency MavenDependency
+	reg := regexp.MustCompile("([.a-z0-9]+[.0-9a-z]*)_([.a-z0-9]+[.0-9a-z]*).jar")
+	result := reg.FindStringSubmatch(s)
+	if len(result) >= 2 {
+		if strings.Contains(result[1], ".") {
+			split := strings.Split(result[1], ".")
+			dependency.GroupId = strings.Join(split[0:groupIdLength], ".")
+			dependency.ArtifactId = strings.Join(split[groupIdLength:], "-")
+		} else {
+			dependency.ArtifactId = result[1]
+		}
+		dependency.Version = result[2]
+	}
+
+	return dependency
 }

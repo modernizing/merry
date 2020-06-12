@@ -5,7 +5,7 @@ import (
 	"github.com/phodal/igso/pkg/domain"
 )
 
-func BuildFullGraph(scanManifest []dependency.IgsoManifest) *tequila.FullGraph {
+func BuildFullGraph(scanManifest []domain.IgsoManifest) *tequila.FullGraph {
 	fullGraph := &tequila.FullGraph{
 		NodeList:     make(map[string]string),
 		RelationList: make(map[string]*tequila.Relation),

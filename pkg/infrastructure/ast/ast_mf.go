@@ -10,7 +10,7 @@ import (
 
 type MfIdentListener struct {
 	currentKey string
-	manifest   dependency.IgsoManifest
+	manifest   domain.IgsoManifest
 
 	parser.BaseManifestListener
 }
@@ -26,7 +26,7 @@ func ProcessTsString(code string) *parser.ManifestParser {
 	return processStream(is)
 }
 
-func Analysis(code string, fileName string) dependency.IgsoManifest {
+func Analysis(code string, fileName string) domain.IgsoManifest {
 	re := regexp.MustCompile(`\r?\n `)
 	code = re.ReplaceAllString(code, "")
 
@@ -41,7 +41,7 @@ func Analysis(code string, fileName string) dependency.IgsoManifest {
 
 func NewMfIdentListener(fileName string) *MfIdentListener {
 	listener := &MfIdentListener{}
-	listener.manifest = dependency.IgsoManifest{}
+	listener.manifest = domain.IgsoManifest{}
 	return listener
 }
 
@@ -52,7 +52,7 @@ func (s *MfIdentListener) EnterSection(ctx *parser.SectionContext) {
 }
 
 func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
-	s.manifest.KeyValues = append(s.manifest.KeyValues, dependency.KeyValue{
+	s.manifest.KeyValues = append(s.manifest.KeyValues, domain.KeyValue{
 		Key:   s.currentKey,
 		Value: ctx.GetText(),
 	})
@@ -63,7 +63,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 
 	for _, pkg := range ctx.AllPkg() {
 		pkgContext := (pkg).(*parser.PkgContext)
-		javaPackage := dependency.JavaPackage{
+		javaPackage := domain.JavaPackage{
 			Name: pkgContext.OTHERS().GetText(),
 		}
 
@@ -91,7 +91,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 					text = configAssign.AssignValue().GetText()
 				}
 
-				javaPackage.Config = append(javaPackage.Config, dependency.KeyValue{
+				javaPackage.Config = append(javaPackage.Config, domain.KeyValue{
 					Key:   assignText,
 					Value: text,
 				})
@@ -107,6 +107,6 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 	}
 }
 
-func (s *MfIdentListener) GetResult() dependency.IgsoManifest {
+func (s *MfIdentListener) GetResult() domain.IgsoManifest {
 	return s.manifest
 }

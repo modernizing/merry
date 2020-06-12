@@ -10,13 +10,13 @@ func FromAntToXml(content string, isExtract bool) string {
 	return withPom
 }
 
-func BuildByDeps(deps []dependency.MavenDependency, newAntModel dependency.MavenProject) string {
+func BuildByDeps(deps []domain.MavenDependency, newAntModel domain.MavenProject) string {
 	results := buildDepStr(deps)
 	withPom := buildFinal(newAntModel, results)
 	return withPom
 }
 
-func buildFinal(newAntModel dependency.MavenProject, results string) string {
+func buildFinal(newAntModel domain.MavenProject, results string) string {
 	var withPom = `<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -33,7 +33,7 @@ func buildFinal(newAntModel dependency.MavenProject, results string) string {
 	return withPom
 }
 
-func buildDepStr(deps []dependency.MavenDependency) string {
+func buildDepStr(deps []domain.MavenDependency) string {
 	var results = ""
 	for _, dep := range deps {
 		var tmpl = `

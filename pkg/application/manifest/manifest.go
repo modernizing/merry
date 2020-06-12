@@ -10,13 +10,13 @@ import (
 	"strings"
 )
 
-func ProcessManifest(content string, filename string) dependency.IgsoManifest {
+func ProcessManifest(content string, filename string) domain.IgsoManifest {
 	results := ast.Analysis(content, filename)
 	return results
 }
 
-func ScanByPath(path string) []dependency.IgsoManifest {
-	var manifests []dependency.IgsoManifest
+func ScanByPath(path string) []domain.IgsoManifest {
+	var manifests []domain.IgsoManifest
 
 	manifestPaths := infrastructure.GetFilesByFilter(path, func(path string) bool {
 		return strings.HasSuffix(path, "MANIFEST.MF")
@@ -31,11 +31,11 @@ func ScanByPath(path string) []dependency.IgsoManifest {
 	return manifests
 }
 
-func ScanByFile(path string) dependency.IgsoManifest {
+func ScanByFile(path string) domain.IgsoManifest {
 	_, content, err := bundle.GetFileFromJar(path, "MANIFEST.MF")
 	if err != nil {
 		fmt.Println(err)
-		return dependency.IgsoManifest{};
+		return domain.IgsoManifest{};
 	}
 
 	mani := ProcessManifest(content, "MANIFEST.MF")
