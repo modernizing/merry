@@ -3,6 +3,8 @@ package cmd
 import (
 	"bufio"
 	"encoding/json"
+	"fmt"
+	"github.com/phodal/igso/cmd/cmd_util"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
@@ -15,9 +17,10 @@ import (
 )
 
 type ManifestConfig struct {
-	Path      string
-	IsExtract bool
-	IsScan    bool
+	Path            string
+	IsExtract       bool
+	IsScan          bool
+	ManifestVersion bool
 }
 
 var (
@@ -29,6 +32,7 @@ func init() {
 	manifestCmd.PersistentFlags().StringVarP(&manifestConfig.Path, "path", "p", ".", "path")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsExtract, "extract", "x", false, "extract manifest file from jar")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsScan, "scan", "s", false, "scan manifest file to graphviz")
+	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.ManifestVersion, "version", "v", false, "show manifest version info of jar ")
 
 	rootCmd.AddCommand(manifestCmd)
 }
@@ -41,8 +45,23 @@ var manifestCmd = &cobra.Command{
 		if manifestConfig.IsExtract {
 			ExtractManifest(path)
 		}
+		if manifestConfig.ManifestVersion {
+			if !strings.HasSuffix(path, ".jar") {
+				fmt.Fprintf(output, "path: " + path + " lost jar files")
+				return
+			}
+			igsoManifest := manifest.ScanByFile(path)
+			table := cmd_util.NewOutput(output)
+
+			table.SetHeader([]string{"Name", "Version Info", "Export Version", "Start Version", "EndVersion", "Config"})
+
+			for _, pkg := range igsoManifest.ImportPackage {
+				table.Append([]string{pkg.Name, pkg.VersionInfo, pkg.ExportVersion, pkg.StartVersion, pkg.EndVersion, "TBD" })
+			}
+			table.Render()
+		}
 		if manifestConfig.IsScan {
-			scanManifest := manifest.ScanManifest(path)
+			scanManifest := manifest.ScanByPath(path)
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
 			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
 
@@ -65,7 +84,7 @@ var manifestCmd = &cobra.Command{
 			_, _ = w.WriteString("di" + graph.String())
 			_ = w.Flush()
 
-			exec.Command("dot", "-Tsvg","dep.dot", "-o", "dep.svg")
+			exec.Command("dot", "-Tsvg", "dep.dot", "-o", "dep.svg")
 		}
 	},
 }

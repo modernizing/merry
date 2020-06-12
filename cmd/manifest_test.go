@@ -23,3 +23,12 @@ func Test_ShouldCommandManifest(t *testing.T) {
 }
 `))
 }
+
+func Test_ShouldVersionManifest(t *testing.T) {
+	tests := []testcase.CmdTestCase{{
+		Name:   "manifest",
+		Cmd:    "manifest  -p ../_fixtures/bundle/sample/felix-duplicate.jar -v",
+		Golden: "testdata/manifest/version.txt",
+	}}
+	RunTestCmd(t, tests)
+}

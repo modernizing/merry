@@ -40,6 +40,7 @@ Key: 'Manifest-Version'
   | 'Name'
   | 'Can-Redefine-Classes'
   | 'Package'
+  | 'Tool'
   | 'SHA1-Digest'
   | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
   | Letter Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
