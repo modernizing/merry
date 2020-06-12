@@ -67,9 +67,13 @@ gen/
 tmp/
 build.xml
 pom.xml
+
 !_fixtures/multiple/maven
 !_fixtures/_m
+
 !cmd/testdata/boom/build.xml
+!cmd/testdata/manifest/dep.dot
+
 manifest-map.json
 bundles
 dep.png

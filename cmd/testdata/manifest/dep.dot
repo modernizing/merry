@@ -1,0 +1,71 @@
+digraph G {
+	node11->node12[ style="solid" ];
+	node11->node11[ style="solid" ];
+	node5->node11[ style="solid" ];
+	node1->node12[ style="solid" ];
+	node1->node11[ style="solid" ];
+	node2->node12[ style="solid" ];
+	node3->node11[ style="solid" ];
+	node3->node8[ style="solid" ];
+	node7->node10[ style="solid" ];
+	node10->node12[ style="solid" ];
+	node2->node9[ style="solid" ];
+	node2->node10[ style="solid" ];
+	node5->node12[ style="solid" ];
+	node4->node12[ style="solid" ];
+	node6->node12[ style="solid" ];
+	node6->node11[ style="solid" ];
+	node1->node9[ style="solid" ];
+	node10->node11[ style="solid" ];
+	node3->node10[ style="solid" ];
+	node7->node11[ style="solid" ];
+	subgraph cluster1 {
+	label="tutorial";
+	rankdir=LR;
+	node1 [ label="example5", shape=box ];
+	node2 [ label="example7", shape=box ];
+	node3 [ label="example8", shape=box ];
+	node4 [ label="example1", shape=box ];
+	node5 [ label="example3", shape=box ];
+	node6 [ label="example4", shape=box ];
+	node7 [ label="example9", shape=box ];
+
+}
+;
+	subgraph cluster2 {
+	label="org.apache.felix";
+	rankdir=LR;
+	node8 [ label="servicebinder", shape=box ];
+
+}
+;
+	subgraph cluster3 {
+	label="org.osgi.util";
+	rankdir=LR;
+	node9 [ label="tracker", shape=box ];
+
+}
+;
+	subgraph cluster4 {
+	label="tutorial.example6";
+	rankdir=LR;
+	node10 [ label="service", shape=box ];
+
+}
+;
+	subgraph cluster5 {
+	label="tutorial.example2";
+	rankdir=LR;
+	node11 [ label="service", shape=box ];
+
+}
+;
+	subgraph cluster6 {
+	label="org.osgi";
+	rankdir=LR;
+	node12 [ label="framework", shape=box ];
+
+}
+;
+
+}
