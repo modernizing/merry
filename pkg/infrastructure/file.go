@@ -3,6 +3,7 @@ package infrastructure
 import (
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func GetFilesByFilter(root string, filter func(path string) bool) []string {
@@ -17,4 +18,13 @@ func GetFilesByFilter(root string, filter func(path string) bool) []string {
 		panic(err)
 	}
 	return files
+}
+
+func GetJarFilesByPath(path string) []string {
+	var jarFileFilter = func(path string) bool {
+		return strings.HasSuffix(path, ".jar")
+	}
+
+	jarPaths := GetFilesByFilter(path, jarFileFilter)
+	return jarPaths
 }

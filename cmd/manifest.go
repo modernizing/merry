@@ -100,11 +100,7 @@ var manifestCmd = &cobra.Command{
 }
 
 func ExtractManifest(ppath string, filter string) {
-	var jarFileFilter = func(path string) bool {
-		return strings.HasSuffix(path, ".jar")
-	}
-
-	jarPaths := infrastructure.GetFilesByFilter(ppath, jarFileFilter)
+	jarPaths := infrastructure.GetJarFilesByPath(ppath)
 	for _, path := range jarPaths {
 		fmt.Println(path)
 		if !strings.Contains(path, filter) {
@@ -112,7 +108,7 @@ func ExtractManifest(ppath string, filter string) {
 		}
 
 		_, content, _ := bundle.GetFileFromJar(path, "MANIFEST.MF")
-		pureName := path[0: len(path)-len(".jar")]
+		pureName := path[0 : len(path)-len(".jar")]
 
 		filePath := path + pureName + "/META-INF/"
 
@@ -120,3 +116,4 @@ func ExtractManifest(ppath string, filter string) {
 		_ = ioutil.WriteFile(filepath.FromSlash(filePath+"MANIFEST.MF"), []byte(content), os.ModePerm)
 	}
 }
+
