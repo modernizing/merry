@@ -141,3 +141,21 @@ func Test_ShouldBuildForVendorSpring(t *testing.T) {
 	results := Analysis(code, "hello.mf")
 	g.Expect(results.KeyValues[0].Value).To(Equal("SpringSource"))
 }
+
+func Test_ShouldBuildForVendorVersion(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Implementation-Version: 2.5.6.SEC01
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.Version).To(Equal("2.5.6.SEC01"))
+}
+
+func Test_ShouldBuildForBundlename(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Bundle-SymbolicName: org.springframework.core
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.PackageName).To(Equal("org.springframework.core"))
+}

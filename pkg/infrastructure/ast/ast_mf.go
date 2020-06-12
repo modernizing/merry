@@ -57,10 +57,6 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		Value: ctx.GetText(),
 	})
 
-	if s.currentKey == "Private-Package" {
-		s.manifest.PackageName = ctx.GetText()
-	}
-
 	for _, pkg := range ctx.AllPkg() {
 		pkgContext := (pkg).(*parser.PkgContext)
 		javaPackage := domain.JavaPackage{
@@ -98,11 +94,21 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			}
 		}
 
+
+		if s.currentKey == "Private-Package" {
+			s.manifest.PackageName = ctx.GetText()
+		}
+		if s.currentKey == "Bundle-SymbolicName" {
+			s.manifest.PackageName = ctx.GetText()
+		}
 		if s.currentKey == "Import-Package" {
 			s.manifest.ImportPackage = append(s.manifest.ImportPackage, javaPackage)
 		}
 		if s.currentKey == "Export-Package" {
 			s.manifest.ExportPackage = append(s.manifest.ExportPackage, javaPackage)
+		}
+		if s.currentKey == "Implementation-Version" {
+			s.manifest.Version = ctx.GetText()
 		}
 	}
 }
