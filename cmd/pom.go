@@ -55,7 +55,7 @@ var pomCmd = &cobra.Command{
 			pomfile := maven.BuildByDeps(importDeps, MavenProject{
 				Version:    dep.Version,
 				GroupId:    dep.GroupId,
-				ArtifactId: dep.GroupId,
+				ArtifactId: dep.ArtifactId,
 			})
 
 			err := ioutil.WriteFile(filepath.FromSlash(path+ "/" + pomName), []byte(pomfile), os.ModePerm)
