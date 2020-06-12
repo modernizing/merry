@@ -35,7 +35,14 @@ func RemoveDuplicate(deps []MavenDependency) []MavenDependency {
 func FromPackage(packages []JavaPackage) []MavenDependency {
 	var deps []MavenDependency
 	for _, javaPack := range packages {
-		dependency := ByPackage(javaPack.Name, 2)
+		checkSplit := strings.Split(javaPack.Name, ".")
+		var dependency MavenDependency
+		if len(checkSplit) <= 1 {
+			dependency = ByPackage(javaPack.Name, 0)
+			dependency.GroupId = javaPack.Name
+		} else {
+			dependency = ByPackage(javaPack.Name, 2)
+		}
 		mavenDep := MavenDependency{
 			Version:    javaPack.StartVersion,
 			GroupId:    dependency.GroupId,
