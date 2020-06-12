@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Created-By: 13 (Oracle Corporation)
+Built-By: fdhuang
+Build-Jdk: 13
+Bnd-LastModified: 1591859233931
+Bundle-Activator: tutorial.example8.Activator
+Bundle-Description: A bundle that implements a simple spell checker serv
+ ice
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Service Binder Spell checker service
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: felix-tut-8
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0.SNAPSHOT
+Import-Package: tutorial.example2.service;version="[1.0,2)",tutorial.exa
+ mple6.service;version="[1.0,2)",org.apache.felix.servicebinder;version=
+ "[1.1,2)"
+Metadata-Location: tutorial/example8/metadata.xml
+Private-Package: tutorial.example8
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-4.1.0.201810181252
+

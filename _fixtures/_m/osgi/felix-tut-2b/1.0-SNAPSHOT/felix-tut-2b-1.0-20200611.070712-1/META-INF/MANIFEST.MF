@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Created-By: 13 (Oracle Corporation)
+Built-By: fdhuang
+Build-Jdk: 13
+Bnd-LastModified: 1591859231835
+Bundle-Activator: tutorial.example2b.Activator
+Bundle-Description: A bundle that registers a French dictionary service
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: French dictionary
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: felix-tut-2b
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0.SNAPSHOT
+Export-Package: tutorial.example2.service;version="1.0.0.SNAPSHOT"
+Import-Package: org.osgi.framework;version="[1.8,2)",tutorial.example2.s
+ ervice;version="[1.0,2)"
+Private-Package: tutorial.example2b
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-4.1.0.201810181252
+

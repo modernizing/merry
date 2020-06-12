@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Created-By: 13 (Oracle Corporation)
+Built-By: fdhuang
+Build-Jdk: 13
+Bnd-LastModified: 1591859234333
+Bundle-Description: A bundle that implements a simple spell checker serv
+ ice using Declarative Services
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Spell Checker Service using Declarative Services
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: felix-tut-9
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0.SNAPSHOT
+Import-Package: tutorial.example2.service;version="[1.0,2)",tutorial.exa
+ mple6.service;version="[1.0,2)"
+Private-Package: tutorial.example9
+Provide-Capability: osgi.service;objectClass:List<String>="tutorial.exam
+ ple6.service.SpellChecker"
+Require-Capability: osgi.service;filter:="(objectClass=tutorial.example2
+ .service.DictionaryService)";effective:=active;cardinality:=multiple,os
+ gi.extender;filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!
+ (version>=2.0.0)))",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/tutorial.example9.SpellCheckServiceImpl.xml
+Tool: Bnd-4.1.0.201810181252
+

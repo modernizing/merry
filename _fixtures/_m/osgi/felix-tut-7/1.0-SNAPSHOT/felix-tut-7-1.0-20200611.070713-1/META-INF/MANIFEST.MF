@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Created-By: 13 (Oracle Corporation)
+Built-By: fdhuang
+Build-Jdk: 13
+Bnd-LastModified: 1591859233577
+Bundle-Activator: tutorial.example7.Activator
+Bundle-Description: A bundle that uses the spell checker service
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Spell checker client
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: felix-tut-7
+Bundle-Vendor: Richard Hall
+Bundle-Version: 1.0.0.SNAPSHOT
+Import-Package: org.osgi.framework;version="[1.8,2)",org.osgi.util.track
+ er;version="[1.5,2)",tutorial.example6.service;version="[1.0,2)"
+Private-Package: tutorial.example7
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-4.1.0.201810181252
+

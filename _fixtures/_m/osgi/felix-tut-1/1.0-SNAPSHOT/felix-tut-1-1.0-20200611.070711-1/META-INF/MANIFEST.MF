@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Created-By: 13 (Oracle Corporation)
+Built-By: fdhuang
+Build-Jdk: 13
+Bnd-LastModified: 1591859230886
+Bundle-Activator: tutorial.example1.Activator
+Bundle-Description: A bundle that displays messages at startup and when 
+ service events occur
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Service listener example
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: felix-tut-1
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0.SNAPSHOT
+Import-Package: org.osgi.framework;version="[1.8,2)"
+Private-Package: tutorial.example1
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-4.1.0.201810181252
+
