@@ -22,7 +22,7 @@ type MavenProject struct {
 func RemoveDuplicate(deps []MavenDependency) []MavenDependency {
 	depMap := make(map[string]MavenDependency)
 	for _, dep := range deps {
-		depMap[dep.GroupId + "." + dep.ArtifactId] = dep
+		depMap[dep.GroupId+"."+dep.ArtifactId] = dep
 	}
 
 	var depArray []MavenDependency
@@ -30,15 +30,15 @@ func RemoveDuplicate(deps []MavenDependency) []MavenDependency {
 		depArray = append(depArray, value)
 	}
 
-	return depArray;
+	return depArray
 }
 
-func FromManifest(manifest IgsoManifest) []MavenDependency {
+func FromPackage(version string, packages []JavaPackage) []MavenDependency {
 	var deps []MavenDependency
-	for _, javaPack := range manifest.ExportPackage {
-		dependency := ByFileName(javaPack.Name, 2)
+	for _, javaPack := range packages {
+		dependency := ByPackage(javaPack.Name, 2)
 		mavenDep := MavenDependency{
-			Version:    javaPack.StartVersion,
+			Version:    version,
 			GroupId:    dependency.GroupId,
 			ArtifactId: dependency.ArtifactId,
 		}
@@ -75,6 +75,16 @@ func ByFileName(s string, groupIdLength int) MavenDependency {
 		}
 		dependency.Version = result[2]
 	}
+
+	return dependency
+}
+
+func ByPackage(pkg string, groupIdLength int) MavenDependency {
+	var dependency MavenDependency
+
+	split := strings.Split(pkg, ".")
+	dependency.GroupId = strings.Join(split[0:groupIdLength], ".")
+	dependency.ArtifactId = strings.Join(split[groupIdLength:], "-")
 
 	return dependency
 }
