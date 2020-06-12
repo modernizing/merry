@@ -24,9 +24,10 @@ Todo:
 Todo 2：
 
  - [ ] POM 遍历生成依赖关系图
- - [ ] POM 替换关系版本号
- - [ ] 支持自动重命名
+ - [x] 支持自动重命名 jar
+   - [x] POM 替换关系版本号 jar
  - [ ] 支持定制版本号
+   - [ ] 配置化
 
 Feature lists:
 
@@ -35,8 +36,10 @@ Available Commands:
   boom        generate pom.xml from build.xml
   checksum    checksum file md5
   dupsearch   build maven pom from all jars file
+  fix         fix jar naming issue
   help        Help about any command
   manifest    manifest query & map tools
+  pom         generate pom file from jar file
   version     version
 
 ```
