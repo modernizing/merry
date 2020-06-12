@@ -19,6 +19,13 @@ func Test_ShouldCommandManifest(t *testing.T) {
 
 	content, _ := ioutil.ReadFile(filepath.FromSlash("dep.dot"))
 	g.Expect(string(content)).To(Equal(`digraph G {
+	subgraph cluster1 {
+	label="main";
+	rankdir=LR;
+	node1 [ label="", shape=box ];
+
+}
+;
 
 }
 `))

@@ -32,7 +32,7 @@ func RemoveDuplicate(deps []MavenDependency) []MavenDependency {
 	return depArray
 }
 
-func FromPackage(version string, packages []JavaPackage) []MavenDependency {
+func FromPackage(packages []JavaPackage) []MavenDependency {
 	var deps []MavenDependency
 	for _, javaPack := range packages {
 		dependency := ByPackage(javaPack.Name, 2)

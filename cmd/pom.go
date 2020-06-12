@@ -51,7 +51,7 @@ var pomCmd = &cobra.Command{
 			//basePkgPath := "maven/" + all
 			//_ = os.MkdirAll(filepath.FromSlash(basePkgPath), os.ModePerm)
 
-			importDeps := FromPackage(dep.Version, manifest.ImportPackage)
+			importDeps := FromPackage(manifest.ImportPackage)
 			pomfile := maven.BuildByDeps(importDeps, MavenProject{
 				Version:    dep.Version,
 				GroupId:    dep.GroupId,

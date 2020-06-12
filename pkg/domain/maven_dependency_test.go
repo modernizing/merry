@@ -64,10 +64,11 @@ func Test_ShouldBuildVersionFromManifestPackage(t *testing.T) {
 	var pkgs []JavaPackage
 	javaPackage := JavaPackage{
 		Name: "com.csii.pe.http",
+		StartVersion: "5.0.0_201",
 	}
 	pkgs = append(pkgs, javaPackage)
 
-	dependencies := FromPackage("5.0.0_201", pkgs)
+	dependencies := FromPackage(pkgs)
 	g.Expect(dependencies[0].Version).To(Equal("5.0.0_201"))
 	g.Expect(dependencies[0].GroupId).To(Equal("com.csii"))
 	g.Expect(dependencies[0].ArtifactId).To(Equal("pe-http"))
