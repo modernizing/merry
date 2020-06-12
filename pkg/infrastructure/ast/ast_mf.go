@@ -94,22 +94,34 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			}
 		}
 
+		buildPackageName(ctx, s)
 
-		if s.currentKey == "Private-Package" {
-			s.manifest.PackageName = ctx.GetText()
-		}
-		if s.currentKey == "Bundle-SymbolicName" {
-			s.manifest.PackageName = ctx.GetText()
-		}
+		buildPackageVersion(ctx, s)
+
 		if s.currentKey == "Import-Package" {
 			s.manifest.ImportPackage = append(s.manifest.ImportPackage, javaPackage)
 		}
 		if s.currentKey == "Export-Package" {
 			s.manifest.ExportPackage = append(s.manifest.ExportPackage, javaPackage)
 		}
-		if s.currentKey == "Implementation-Version" {
-			s.manifest.Version = ctx.GetText()
-		}
+	}
+}
+
+func buildPackageVersion(ctx *parser.ValueContext, s *MfIdentListener) {
+	if s.currentKey == "Implementation-Version" {
+		s.manifest.Version = ctx.GetText()
+	}
+	if s.manifest.Version == "" && s.currentKey == "Bundle-Version" {
+		s.manifest.Version = ctx.GetText()
+	}
+}
+
+func buildPackageName(ctx *parser.ValueContext, s *MfIdentListener) {
+	if s.currentKey == "Private-Package" {
+		s.manifest.PackageName = ctx.GetText()
+	}
+	if s.currentKey == "Bundle-SymbolicName" {
+		s.manifest.PackageName = ctx.GetText()
 	}
 }
 
