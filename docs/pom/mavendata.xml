@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-orm</artifactId>
+    <versioning>
+        <latest>5.2.7.RELEASE</latest>
+        <release>5.2.7.RELEASE</release>
+        <versions>
+            <version>1.0-rc1</version>
+        </versions>
+        <lastUpdated>20200609090652</lastUpdated>
+    </versioning>
+</metadata>
