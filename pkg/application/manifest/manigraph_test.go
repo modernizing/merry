@@ -11,7 +11,7 @@ func Test_ShouldSuccessBuildGraph(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	file := filepath.FromSlash("../../../_fixtures/manifest/deps/aspectj")
-	scanManifest := ScanByPath(file)
+	scanManifest := ScanByPath(file, "")
 	graph := BuildFullGraph(scanManifest)
 
 	ignores := strings.Split("", ",")

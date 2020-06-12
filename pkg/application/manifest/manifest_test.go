@@ -22,7 +22,7 @@ func Test_ShouldSuccessScanManifestFiles(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	file := filepath.FromSlash("../../../_fixtures/manifest/deps")
-	manifests := ScanByPath(file)
+	manifests := ScanByPath(file, "")
 
 	g.Expect(len(manifests)).To(Equal(5))
 }

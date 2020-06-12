@@ -32,3 +32,20 @@ func Test_ShouldVersionManifest(t *testing.T) {
 	}}
 	RunTestCmd(t, tests)
 }
+
+
+func Test_ShouldFitlerJarForManifest(t *testing.T) {
+	g := NewGomegaWithT(t)
+	tests := []testcase.CmdTestCase{{
+		Name:   "manifest",
+		Cmd:    "manifest -p ../_fixtures/manifest/deps/log4j -s",
+		Golden: "",
+	}}
+	RunTestCmd(t, tests)
+
+	content, _ := ioutil.ReadFile(filepath.FromSlash("dep.dot"))
+	g.Expect(string(content)).To(Equal(`digraph G {
+
+}
+`))
+}

@@ -19,6 +19,7 @@ import (
 
 type ManifestConfig struct {
 	Path            string
+	FilterName      string
 	IsExtract       bool
 	IsScan          bool
 	ManifestVersion bool
@@ -32,6 +33,7 @@ var (
 func init() {
 	manifestCmd.SetOut(output)
 	manifestCmd.PersistentFlags().StringVarP(&manifestConfig.Path, "path", "p", ".", "path")
+	manifestCmd.PersistentFlags().StringVarP(&manifestConfig.FilterName, "filter", "f", "", "filter")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsExtract, "extract", "x", false, "extract manifest file from jar")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsScan, "scan", "s", false, "scan manifest file to graphviz")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.ManifestVersion, "version", "v", false, "show manifest version info of jar ")
@@ -46,7 +48,7 @@ var manifestCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
 		if manifestConfig.IsExtract {
-			ExtractManifest(path)
+			ExtractManifest(path, manifestConfig.FilterName)
 		}
 		if manifestConfig.ManifestVersion {
 			if !strings.HasSuffix(path, ".jar") {
@@ -97,15 +99,20 @@ var manifestCmd = &cobra.Command{
 	},
 }
 
-func ExtractManifest(ppath string) {
+func ExtractManifest(ppath string, filter string) {
 	var jarFileFilter = func(path string) bool {
 		return strings.HasSuffix(path, ".jar")
 	}
 
 	jarPaths := infrastructure.GetFilesByFilter(ppath, jarFileFilter)
 	for _, path := range jarPaths {
+		fmt.Println(path)
+		if !strings.Contains(path, filter) {
+			continue
+		}
+
 		_, content, _ := bundle.GetFileFromJar(path, "MANIFEST.MF")
-		pureName := path[len(ppath)+1 : len(path)-len(".jar")]
+		pureName := path[0: len(path)-len(".jar")]
 
 		filePath := "_m/" + pureName + "/META-INF/"
 
