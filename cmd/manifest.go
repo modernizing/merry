@@ -84,17 +84,9 @@ var manifestCmd = &cobra.Command{
 				result = result.MergeHeaderFile(tequila.MergePackageFunc)
 			}
 
-			ignores := strings.Split("", ",")
-			var nodeFilter = func(key string) bool {
-				for _, f := range ignores {
-					if key == f {
-						return true
-					}
-				}
+			graph := result.ToDot(".", func(s string) bool {
 				return false
-			}
-
-			graph := result.ToDot(".", nodeFilter)
+			})
 			f, _ := os.Create("dep.dot")
 			w := bufio.NewWriter(f)
 			_, _ = w.WriteString("di" + graph.String())
