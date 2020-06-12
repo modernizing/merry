@@ -47,10 +47,6 @@ var pomCmd = &cobra.Command{
 			dep := ByFileName(jarName, 2)
 			manifest := manifest.ProcessManifest(content, "MANIFEST.MF")
 
-			//all := strings.ReplaceAll(dep.GroupId, ".", "/")
-			//basePkgPath := "maven/" + all
-			//_ = os.MkdirAll(filepath.FromSlash(basePkgPath), os.ModePerm)
-
 			importDeps := FromPackage(manifest.ImportPackage)
 			pomfile := maven.BuildByDeps(importDeps, MavenProject{
 				Version:    dep.Version,
@@ -66,22 +62,3 @@ var pomCmd = &cobra.Command{
 
 	},
 }
-
-//
-//func generateMavenDataXml(dep dependency2.MavenDependency, path string) {
-//	xml := `<?xml version="1.0" encoding="UTF-8"?>
-//<metadata modelVersion="1.1.0">
-//    <groupId>` + dep.GroupId + `</groupId>
-//    <artifactId>` + dep.ArtifactId + `</artifactId>
-//    <versioning>
-//        <latest>` + dep.Version + `</latest>
-//        <release>` + dep.Version + `</release>
-//        <versions>
-//            <version>` + dep.Version + `</version>
-//        </versions>
-//        <lastUpdated>20200612091552</lastUpdated>
-//    </versioning>
-//</metadata>`
-//
-//	ioutil.WriteFile("mavendata.xml", []byte(xml), os.ModePerm)
-//}
