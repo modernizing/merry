@@ -1,5 +1,5 @@
 |              NAME              | VERSION INFO | EXPORT VERSION | START VERSION | ENDVERSION | CONFIG |
 |--------------------------------|--------------|----------------|---------------|------------|--------|
-| tutorial.example2.service      | 1.0,2        |                |           1.0 |          2 | TBD    |
-| tutorial.example6.service      | 1.0,2        |                |           1.0 |          2 | TBD    |
-| org.apache.felix.servicebinder | 1.1,2        |                |           1.1 |          2 | TBD    |
+| tutorial.example2.service      | 1.0,2        |                |           1.0 |          2 |        |
+| tutorial.example6.service      | 1.0,2        |                |           1.0 |          2 |        |
+| org.apache.felix.servicebinder | 1.1,2        |                |           1.1 |          2 |        |

@@ -47,7 +47,7 @@ var manifestCmd = &cobra.Command{
 		}
 		if manifestConfig.ManifestVersion {
 			if !strings.HasSuffix(path, ".jar") {
-				fmt.Fprintf(output, "path: " + path + " lost jar files")
+				fmt.Fprintf(output, "path: "+path+" lost jar files")
 				return
 			}
 			igsoManifest := manifest.ScanByFile(path)
@@ -56,7 +56,13 @@ var manifestCmd = &cobra.Command{
 			table.SetHeader([]string{"Name", "Version Info", "Export Version", "Start Version", "EndVersion", "Config"})
 
 			for _, pkg := range igsoManifest.ImportPackage {
-				table.Append([]string{pkg.Name, pkg.VersionInfo, pkg.ExportVersion, pkg.StartVersion, pkg.EndVersion, "TBD" })
+				results := ""
+				for _, conf := range pkg.Config {
+					if conf.Key != "version" {
+						results += conf.Key + ": " + conf.Value + " "
+					}
+				}
+				table.Append([]string{pkg.Name, pkg.VersionInfo, pkg.ExportVersion, pkg.StartVersion, pkg.EndVersion, results})
 			}
 			table.Render()
 		}
