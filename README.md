@@ -21,6 +21,13 @@ Todo:
  - [ ] Microservices
  - [x] Dup Search. search all jars and find not in nexus package
 
+Todo 2：
+
+ - [ ] POM 遍历生成依赖关系图
+ - [ ] POM 替换关系版本号
+ - [ ] 支持自动重命名
+ - [ ] 支持定制版本号
+
 Feature lists:
 
 ```bash
