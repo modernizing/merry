@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/phodal/igso/cmd/cmd_util"
+	"github.com/phodal/igso/pkg/adapter/tequila"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
@@ -21,6 +22,7 @@ type ManifestConfig struct {
 	IsExtract       bool
 	IsScan          bool
 	ManifestVersion bool
+	IsMergePackage  bool
 }
 
 var (
@@ -33,6 +35,7 @@ func init() {
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsExtract, "extract", "x", false, "extract manifest file from jar")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsScan, "scan", "s", false, "scan manifest file to graphviz")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.ManifestVersion, "version", "v", false, "show manifest version info of jar ")
+	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsMergePackage, "merge", "m", false, "is merge package")
 
 	rootCmd.AddCommand(manifestCmd)
 }
@@ -71,8 +74,15 @@ var manifestCmd = &cobra.Command{
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
 			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
 
-			//fmt.Println(scanManifest)
 			result := manifest.BuildFullGraph(scanManifest)
+
+			if manifestConfig.IsMergePackage {
+				//fans := result.SortedByFan(tequila.EmptyMergePackageFunc)
+				//for _, fan := range fans {
+				//	fmt.Println(fan, fan.FanIn, fan.FanOut)
+				//}
+				result = result.MergeHeaderFile(tequila.MergePackageFunc)
+			}
 
 			ignores := strings.Split("", ",")
 			var nodeFilter = func(key string) bool {

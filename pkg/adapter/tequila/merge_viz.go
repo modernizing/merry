@@ -6,6 +6,10 @@ import (
 
 var Level = 7
 
+var EmptyMergePackageFunc = func(input string) string {
+	return input;
+}
+
 var MergePackageFunc = func(input string) string {
 	split := "/"
 	if !strings.Contains(input, split) {
