@@ -16,7 +16,6 @@ func FromAnt(str string, extract bool) MavenProject {
 		Version:      antModel.Version,
 		ArtifactId:   antModel.ArtifactId,
 		GroupId:      antModel.GroupId,
-		ModelVersion: antModel.ModelVersion,
 	}
 
 	project.Dependencies = BuildDependencies(antModel, extract)

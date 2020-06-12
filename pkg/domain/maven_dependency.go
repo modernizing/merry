@@ -15,7 +15,6 @@ type MavenProject struct {
 	Version      string
 	GroupId      string
 	ArtifactId   string
-	ModelVersion string
 	Dependencies []MavenDependency
 }
 
@@ -38,7 +37,7 @@ func FromPackage(version string, packages []JavaPackage) []MavenDependency {
 	for _, javaPack := range packages {
 		dependency := ByPackage(javaPack.Name, 2)
 		mavenDep := MavenDependency{
-			Version:    version,
+			Version:    javaPack.StartVersion,
 			GroupId:    dependency.GroupId,
 			ArtifactId: dependency.ArtifactId,
 		}
@@ -63,7 +62,7 @@ func BySlashFileName(s string) MavenDependency {
 
 func ByFileName(s string, groupIdLength int) MavenDependency {
 	var dependency MavenDependency
-	reg := regexp.MustCompile("([.a-z0-9]+[.0-9a-z]*)_([.a-z0-9]+[.0-9a-z]*).jar")
+	reg := regexp.MustCompile("([.a-z0-9]+[.0-9a-z]*)[_-]([.a-z0-9]+[.0-9a-z]*).jar")
 	result := reg.FindStringSubmatch(s)
 	if len(result) >= 2 {
 		if strings.Contains(result[1], ".") {

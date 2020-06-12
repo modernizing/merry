@@ -37,7 +37,6 @@ var dupSearch = &cobra.Command{
 			Version:      "0.0.1",
 			GroupId:      "com.igso",
 			ArtifactId:   "test",
-			ModelVersion: "4.0.0",
 		})
 
 		_ = ioutil.WriteFile(filepath.FromSlash(path+"/pom.xml"), []byte(result), os.ModePerm)
