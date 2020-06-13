@@ -92,8 +92,13 @@ func ByFileName(s string, groupIdLength int) MavenDependency {
 
 func ByPackage(pkg string, groupIdLength int) MavenDependency {
 	var dependency MavenDependency
-
 	split := strings.Split(pkg, ".")
+
+	if len(split) <= 2 {
+		dependency.GroupId = pkg
+		dependency.ArtifactId = pkg
+		return dependency
+	}
 	dependency.GroupId = strings.Join(split[0:groupIdLength], ".")
 	dependency.ArtifactId = strings.Join(split[groupIdLength:], "-")
 

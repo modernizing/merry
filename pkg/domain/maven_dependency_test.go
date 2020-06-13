@@ -126,3 +126,21 @@ func Test_ShouldBuildDepWithMapFilterRemoveDep(t *testing.T) {
 	g.Expect(dependencies[1].GroupId).To(Equal("factory"))
 	g.Expect(dependencies[0].Version).To(Equal("5.0"))
 }
+
+func Test_ShouldBuildByPackageWhenFourDot(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	dep := ByPackage("com.phodal.chapi.zero", 2)
+
+	g.Expect(dep.GroupId).To(Equal("com.phodal"))
+	g.Expect(dep.ArtifactId).To(Equal("chapi-zero"))
+}
+
+func Test_ShouldBuildByPackageWhenTwoDot(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	dep := ByPackage("log4j", 2)
+
+	g.Expect(dep.GroupId).To(Equal("log4j"))
+	g.Expect(dep.ArtifactId).To(Equal("log4j"))
+}
