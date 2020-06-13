@@ -14,7 +14,7 @@ func Test_ShouldConvertCsvToMavenDependencies(t *testing.T) {
 	csv := csvconv.ParseCSV(absPath)
 
 	var deps []MavenDependency
-	deps, _ = FromCSV(csv)
+	deps, _ = MapFromCSV(csv)
 
 	g.Expect(len(deps)).To(Equal(9))
 }
@@ -25,7 +25,7 @@ func Test_ShouldBuildDependenciesMap(t *testing.T) {
 	absPath := filepath.FromSlash(`../../_fixtures/map/map.csv`)
 	csv := csvconv.ParseCSV(absPath)
 
-	_, depmap := FromCSV(csv)
+	_, depmap := MapFromCSV(csv)
 
 	dependency := depmap["org.apache.commons.logging"]
 

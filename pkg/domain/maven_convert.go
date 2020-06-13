@@ -2,7 +2,7 @@ package domain
 
 import "fmt"
 
-func FromCSV(csv [][]string) ([]MavenDependency, map[string]MavenDependency) {
+func MapFromCSV(csv [][]string) ([]MavenDependency, map[string]MavenDependency) {
 	var results []MavenDependency
 	depsMap := make(map[string]MavenDependency)
 

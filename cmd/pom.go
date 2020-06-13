@@ -7,6 +7,7 @@ import (
 	domain "github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
+	"github.com/phodal/igso/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"
@@ -48,7 +49,14 @@ var pomCmd = &cobra.Command{
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
 			dep := domain.ByFileName(jarName, 2)
 			manifest := manifest.ProcessManifest(content, "MANIFEST.MF")
-			importDeps := domain.FromPackage(manifest.ImportPackage, nil)
+
+			var depmap = make(map[string]domain.MavenDependency)
+			if pomConfig.MapFile != "" {
+				csv := csvconv.ParseCSV(filepath.FromSlash(pomConfig.MapFile))
+				_, depmap = domain.MapFromCSV(csv)
+			}
+
+			importDeps := domain.FromPackage(manifest.ImportPackage, depmap)
 			pomfile := maven.BuildByDeps(importDeps, domain.MavenProject{
 				Version:    dep.Version,
 				GroupId:    dep.GroupId,
