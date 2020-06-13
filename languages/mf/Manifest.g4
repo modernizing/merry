@@ -42,6 +42,7 @@ Key: 'Manifest-Version'
   | 'Package'
   | 'Tool'
   | 'SHA1-Digest'
+  | 'SHA-256-Digest'
   | 'ant' '-' Uppercase Letter* ('-' Uppercase Letter*)*
   | Letter Letter* '-' Uppercase Letter* ('-' Uppercase Letter*)*
   ;
