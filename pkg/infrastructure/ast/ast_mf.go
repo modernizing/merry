@@ -21,7 +21,7 @@ func processStream(is antlr.CharStream) *parser.ManifestParser {
 	return parser.NewManifestParser(stream)
 }
 
-func ProcessTsString(code string) *parser.ManifestParser {
+func ProcessString(code string) *parser.ManifestParser {
 	is := antlr.NewInputStream(code)
 	return processStream(is)
 }
@@ -30,7 +30,7 @@ func Analysis(code string, fileName string) domain.IgsoManifest {
 	re := regexp.MustCompile(`\r?\n `)
 	code = re.ReplaceAllString(code, "")
 
-	scriptParser := ProcessTsString(code)
+	scriptParser := ProcessString(code)
 	context := scriptParser.Mf()
 
 	listener := NewMfIdentListener(fileName)
