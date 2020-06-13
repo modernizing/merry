@@ -25,16 +25,17 @@ var fixCmd = &cobra.Command{
 		jarPaths := infrastructure.GetJarFilesByPath(path)
 		for _, jarPath := range jarPaths {
 			manifest := manifest.ScanByFile(jarPath)
-			fmt.Println(manifest.PackageName, manifest.Version)
 			if manifest.PackageName != "" && manifest.Version != "" {
 				newPkgName := manifest.PackageName + "_" + manifest.Version + ".jar"
 				basePath := infrastructure.GetJarPath(jarPath)
 				dst := basePath + newPkgName
-				_, err := infrastructure.Copy(jarPath, dst)
-				if err != nil {
-					fmt.Println(err)
+				if jarPath != dst {
+					_, err := infrastructure.Copy(jarPath, dst)
+					if err != nil {
+						fmt.Println(err)
+					}
+					fmt.Fprintln(output, "rename: " + jarPath + " -> " + dst)
 				}
-				fmt.Println("rename: " + jarPath + " -> " + dst)
 			}
 		}
 	},
