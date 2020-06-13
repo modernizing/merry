@@ -79,10 +79,6 @@ var manifestCmd = &cobra.Command{
 			result := manifest.BuildFullGraph(scanManifest)
 
 			if manifestConfig.IsMergePackage {
-				//fans := result.SortedByFan(tequila.EmptyMergePackageFunc)
-				//for _, fan := range fans {
-				//	fmt.Println(fan, fan.FanIn, fan.FanOut)
-				//}
 				result = result.MergeHeaderFile(tequila.MergePackageFunc)
 			}
 
@@ -99,8 +95,8 @@ var manifestCmd = &cobra.Command{
 	},
 }
 
-func ExtractManifest(ppath string, filter string) {
-	jarPaths := infrastructure.GetJarFilesByPath(ppath)
+func ExtractManifest(path string, filter string) {
+	jarPaths := infrastructure.GetJarFilesByPath(path)
 	for _, path := range jarPaths {
 		if !strings.Contains(path, filter) {
 			continue
@@ -108,8 +104,6 @@ func ExtractManifest(ppath string, filter string) {
 
 		_, content, _ := bundle.GetFileFromJar(path, "MANIFEST.MF")
 		pureName := path[0 : len(path)-len(".jar")]
-
-		//filePath := path + pureName + "/META-INF/"
 
 		_ = os.MkdirAll(filepath.FromSlash(pureName), os.ModePerm)
 		_ = ioutil.WriteFile(filepath.FromSlash(pureName+"/"+"MANIFEST.MF"), []byte(content), os.ModePerm)
