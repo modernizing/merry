@@ -109,9 +109,9 @@ func ExtractManifest(ppath string, filter string) {
 		_, content, _ := bundle.GetFileFromJar(path, "MANIFEST.MF")
 		pureName := path[0 : len(path)-len(".jar")]
 
-		filePath := path + pureName + "/META-INF/"
+		//filePath := path + pureName + "/META-INF/"
 
-		_ = os.MkdirAll(filepath.FromSlash(filePath), os.ModePerm)
-		_ = ioutil.WriteFile(filepath.FromSlash(filePath+"MANIFEST.MF"), []byte(content), os.ModePerm)
+		_ = os.MkdirAll(filepath.FromSlash(pureName), os.ModePerm)
+		_ = ioutil.WriteFile(filepath.FromSlash(pureName+"/"+"MANIFEST.MF"), []byte(content), os.ModePerm)
 	}
 }
