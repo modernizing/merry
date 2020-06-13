@@ -14,7 +14,6 @@ BINARY_WASM=$(BINARY_DIR)/$(PACKAGE_NAME).wasm
 all: clean build
 build: build-linux build-windows build-macos
 test:
-#	make build-plugins
 	$(GOTEST) -v ./...
 clean:
 	$(GOCLEAN)
