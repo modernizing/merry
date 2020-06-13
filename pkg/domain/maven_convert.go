@@ -2,16 +2,18 @@ package domain
 
 import "fmt"
 
-func FromCSV(csv [][]string) []MavenDependency {
+func FromCSV(csv [][]string) ([]MavenDependency, map[string]MavenDependency) {
 	var results []MavenDependency
+	depsMap := make(map[string]MavenDependency)
+
 	header := csv[0]
 	if len(header) != 4 {
 		fmt.Println("not valid igso map csv")
-		return nil
+		return nil, nil
 	}
 	if header[0] != "origin" {
 		fmt.Println("not valid igso map csv")
-		return nil
+		return nil, nil
 	}
 	body := csv[1:]
 	for _, item := range body {
@@ -21,7 +23,8 @@ func FromCSV(csv [][]string) []MavenDependency {
 			Version:    item[3],
 		}
 		results = append(results, dep)
+		depsMap[item[0]] = dep
 	}
 
-	return results
+	return results, depsMap
 }
