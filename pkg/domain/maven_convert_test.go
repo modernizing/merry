@@ -15,7 +15,6 @@ func Test_ShouldConvertCsvToMavenDependencies(t *testing.T) {
 
 	var deps []MavenDependency
 	deps = FromCSV(csv)
-	result := RemoveDuplicate(deps)
 
-	g.Expect(len(result)).To(Equal(5))
+	g.Expect(len(deps)).To(Equal(9))
 }
