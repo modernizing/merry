@@ -16,7 +16,7 @@ func Test_ShouldConvertCsvToMavenDependencies(t *testing.T) {
 	var deps []MavenDependency
 	deps, _ = MapFromCSV(csv)
 
-	g.Expect(len(deps)).To(Equal(9))
+	g.Expect(len(deps)).To(Equal(10))
 }
 
 func Test_ShouldBuildDependenciesMap(t *testing.T) {

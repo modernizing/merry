@@ -12,7 +12,7 @@ func TestShouldGetPropertyName(t *testing.T) {
 	absPath := filepath.FromSlash(csvPath)
 
 	csv := ParseCSV(absPath)
-	g.Expect(len(csv)).To(Equal(10))
+	g.Expect(len(csv)).To(Equal(11))
 	header := csv[0]
 	g.Expect(len(header)).To(Equal(4))
 	g.Expect(header[0]).To(Equal("origin"))
