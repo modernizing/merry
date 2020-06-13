@@ -28,6 +28,7 @@ Todo 2：
    - [x] POM 替换关系版本号 jar
  - [x] 支持定制版本号
    - [x] 配置化
+   - [ ] 根据 jar 生成 map.csv，以进行修改
 
 Feature lists:
 
@@ -81,6 +82,12 @@ org.apache.commons.dbcp,org.apache.commons,com.springsource.org.apache.commons.d
 org.apache.commons.logging,commons-logging,commons-logging,1.1.1
 org.slf4j,org.slf4j,org.slf4j,1.5.1
 ``
+
+### Generate Pom from jars
+
+```
+go run igso.go pom -p _fixtures/demo -m _fixtures/map/map.csv
+```
 
 ## Issues
 
