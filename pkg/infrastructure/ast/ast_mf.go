@@ -1,6 +1,7 @@
 package ast
 
 import (
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	parser "github.com/phodal/igso/languages/manifest"
 	"github.com/phodal/igso/pkg/domain"
@@ -96,6 +97,11 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 
 func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *parser.ConfigAssignContext, javaPackage *domain.JavaPackage) {
 	if assignText == "version" {
+		if configAssign.AssignValue() == nil {
+			fmt.Println(configAssign.GetText())
+			return
+		}
+
 		versionText := configAssign.AssignValue().GetText()
 		if strings.Contains(versionText, "[") {
 			versionInfo := versionText[2 : len(versionText)-2]
