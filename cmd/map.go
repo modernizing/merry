@@ -6,6 +6,8 @@ import (
 	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/spf13/cobra"
+	"io/ioutil"
+	"os"
 )
 
 type MapConfig struct {
@@ -39,5 +41,6 @@ var mapCmd = &cobra.Command{
 			}
 		}
 		fmt.Fprintf(output, results)
+		ioutil.WriteFile("map.csv", []byte(results), os.ModePerm)
 	},
 }
