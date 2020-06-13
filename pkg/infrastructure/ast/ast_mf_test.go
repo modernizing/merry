@@ -100,6 +100,15 @@ func Test_ShouldSuccessParseExportPackageVersion(t *testing.T) {
 	g.Expect(results.ExportPackage[0].ExportVersion).To(Equal("2.5.6.SEC01"))
 }
 
+func Test_ShouldSuccessParseImporPackageVersion(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Import-Package: org.springframework.asm;version="2.5.6.SEC01"
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.ImportPackage[0].StartVersion).To(Equal("2.5.6.SEC01"))
+}
+
 func Test_ShouldGetCompileComplexImport(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `

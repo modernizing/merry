@@ -67,7 +67,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			for _, config := range pkgContext.AllConfigAssign() {
 				configAssign := (config).(*parser.ConfigAssignContext)
 				assignText := configAssign.AssignKey().GetText()
-				s.buildPackageVersion(assignText, configAssign, javaPackage)
+				s.buildPackageVersion(assignText, configAssign, &javaPackage)
 
 				text := ""
 				if configAssign.AssignValue() != nil {
@@ -94,7 +94,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 	}
 }
 
-func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *parser.ConfigAssignContext, javaPackage domain.JavaPackage) {
+func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *parser.ConfigAssignContext, javaPackage *domain.JavaPackage) {
 	if assignText == "version" {
 		versionText := configAssign.AssignValue().GetText()
 		if strings.Contains(versionText, "[") {
@@ -106,7 +106,12 @@ func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *p
 				javaPackage.EndVersion = split[1]
 			}
 		} else {
-			javaPackage.ExportVersion = versionText[1 : len(versionText)-1]
+			if s.currentKey == "Import-Package" {
+				javaPackage.StartVersion = versionText[1 : len(versionText)-1]
+			}
+			if s.currentKey == "Export-Package" {
+				javaPackage.ExportVersion = versionText[1 : len(versionText)-1]
+			}
 		}
 	}
 }
