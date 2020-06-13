@@ -25,7 +25,7 @@ func init() {
 	boomCmd.SetOut(output)
 
 	boomCmd.PersistentFlags().StringVarP(&boomConfig.Path, "path", "p", ".", "path")
-	boomCmd.PersistentFlags().StringVarP(&boomConfig.MapFile, "map", "m", "", "map")
+	boomCmd.PersistentFlags().StringVarP(&boomConfig.MapFile, "map", "m", "", "-m map.csv")
 	boomCmd.PersistentFlags().BoolVarP(&boomConfig.WithGit, "extract", "x", false, "extract file")
 
 	rootCmd.AddCommand(boomCmd)
@@ -47,7 +47,7 @@ var boomCmd = &cobra.Command{
 
 		var depmap = make(map[string]domain.MavenDependency)
 		if boomConfig.MapFile != "" {
-			csv := csvconv.ParseCSV(filepath.FromSlash(pomConfig.MapFile))
+			csv := csvconv.ParseCSV(filepath.FromSlash(boomConfig.MapFile))
 			_, depmap = domain.MapFromCSV(csv)
 		}
 
