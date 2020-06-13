@@ -1,12 +1,25 @@
 package maven
 
-import "github.com/phodal/igso/pkg/domain"
+import (
+	"github.com/phodal/igso/pkg/domain"
+)
 
-func FromAntToXml(content string, isExtract bool) string {
+func FromAntToXml(content string, isExtract bool, depmap map[string]domain.MavenDependency) string {
 	newAntModel := FromAnt(content, isExtract)
 	deps := newAntModel.Dependencies
 
-	withPom := BuildByDeps(deps, newAntModel)
+	var javaPkgs []domain.JavaPackage
+	for _, dep := range deps {
+		pkg := domain.JavaPackage{
+			Name: dep.GroupId + "." + dep.ArtifactId,
+			StartVersion: dep.Version,
+		}
+		javaPkgs = append(javaPkgs, pkg)
+	}
+
+	importDeps := domain.FromPackage(javaPkgs, depmap)
+
+	withPom := BuildByDeps(importDeps, newAntModel)
 	return withPom
 }
 
