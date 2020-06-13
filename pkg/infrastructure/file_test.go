@@ -1,6 +1,5 @@
 package infrastructure
 
-
 import (
 	. "github.com/onsi/gomega"
 	"path/filepath"

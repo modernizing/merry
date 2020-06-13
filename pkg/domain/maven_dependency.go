@@ -57,9 +57,7 @@ func FromPackage(packages []JavaPackage, depmap map[string]MavenDependency) []Ma
 		deps = append(deps, mavenDep)
 	}
 
-	duplicate := RemoveDuplicate(deps)
-
-	return duplicate
+	return RemoveDuplicate(deps)
 }
 
 func BySlashFileName(s string) MavenDependency {
