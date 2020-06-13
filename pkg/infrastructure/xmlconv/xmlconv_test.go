@@ -19,7 +19,7 @@ func TestShouldGetProjectName(t *testing.T) {
   <property name="dist" location="dist"/>
 </project>`
 
-	result := XmlConvert(xml)
+	result := XMLConvert(xml)
 	g.Expect(result.Name).To(Equal(`MyProject`))
 	g.Expect(result.Default).To(Equal(`dist`))
 	g.Expect(result.BaseDir).To(Equal(`.`))
@@ -39,7 +39,7 @@ func TestShouldGetPropertyName(t *testing.T) {
   <property name="dist" location="dist"/>
 </project>`
 
-	result := XmlConvert(xml)
+	result := XMLConvert(xml)
 	g.Expect(result.Property[0].Name).To(Equal(`src`))
 	g.Expect(result.Property[1].Name).To(Equal(`build`))
 	g.Expect(result.Property[2].Name).To(Equal(`dist`))
@@ -56,7 +56,7 @@ func TestShouldGetTargetInfo(t *testing.T) {
 </project>
 `
 
-	result := XmlConvert(xml)
+	result := XMLConvert(xml)
 	g.Expect(result.Target[0].Name).To(Equal(`test.management`))
 	g.Expect(result.Target[0].Depends).To(Equal(`dist`))
 	g.Expect(result.Target[0].Launch.Target).To(Equal(`management`))
@@ -73,9 +73,9 @@ func TestShouldIdentifyPackageInfo(t *testing.T) {
 </project>
 `
 
-	result := XmlConvert(xml)
+	result := XMLConvert(xml)
 	g.Expect(result.ModelVersion).To(Equal(`4.0.0`))
-	g.Expect(result.ArtifactId).To(Equal(`my-test-app`))
-	g.Expect(result.GroupId).To(Equal(`my-test-group`))
+	g.Expect(result.ArtifactID).To(Equal(`my-test-app`))
+	g.Expect(result.GroupID).To(Equal(`my-test-group`))
 	g.Expect(result.Version).To(Equal(`1.0-SNAPSHOT`))
 }

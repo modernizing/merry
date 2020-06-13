@@ -15,7 +15,7 @@ type PathElement struct {
 }
 
 type Path struct {
-	Id           string        `xml:"id,attr"`
+	ID           string        `xml:"id,attr"`
 	PathElements []PathElement `xml:"pathelement"`
 }
 
@@ -33,8 +33,8 @@ type Target struct {
 type AntModel struct {
 	XMLName      xml.Name   `xml:"project"`
 	ModelVersion string     `xml:"modelVersion"`
-	ArtifactId   string     `xml:"artifactId"`
-	GroupId      string     `xml:"groupId"`
+	ArtifactID   string     `xml:"artifactId"`
+	GroupID      string     `xml:"groupId"`
 	Version      string     `xml:"version"`
 	Name         string     `xml:"name,attr"`
 	Default      string     `xml:"default,attr"`
@@ -44,7 +44,7 @@ type AntModel struct {
 	Target       []Target   `xml:"target"`
 }
 
-func XmlConvert(str string) AntModel {
+func XMLConvert(str string) AntModel {
 	var model AntModel
 	err := xml.Unmarshal([]byte(str), &model)
 	if err != nil {

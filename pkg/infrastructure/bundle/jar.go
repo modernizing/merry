@@ -71,7 +71,7 @@ func GetFileFromJar(zipFile string, fileName string) (string, string, error) {
 
 
 // https://stackoverflow.com/questions/20357223/easy-way-to-unzip-file-with-golang
-func Unzip(src, dest string) ([]string, error) {
+func UnZip(src, dest string) ([]string, error) {
 	var fileNames []string
 	r, err := zip.OpenReader(src)
 	if err != nil {

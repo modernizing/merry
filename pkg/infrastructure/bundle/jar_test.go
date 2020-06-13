@@ -40,7 +40,7 @@ func TestShouldUnzipBundle(t *testing.T) {
 
 	path := `../../../_fixtures/bundle/sample/felix-tut-8-1.0-SNAPSHOT.jar`
 	absPath := filepath.FromSlash(path)
-	filenames, err := Unzip(absPath, filepath.FromSlash("./tmp"))
+	filenames, err := UnZip(absPath, filepath.FromSlash("./tmp"))
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -56,7 +56,7 @@ func TestShouldUnzipJar(t *testing.T) {
 
 	path := `../../../_fixtures/jar/sample/annotations-13.0.jar`
 	absPath := filepath.FromSlash(path)
-	_, err := Unzip(absPath, filepath.FromSlash("./tmp"))
+	_, err := UnZip(absPath, filepath.FromSlash("./tmp"))
 	if err != nil {
 		fmt.Println(err)
 	}

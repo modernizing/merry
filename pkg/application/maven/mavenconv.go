@@ -10,12 +10,12 @@ import (
 )
 
 func FromAnt(str string, extract bool) MavenProject {
-	antModel := xmlconv.XmlConvert(str)
+	antModel := xmlconv.XMLConvert(str)
 
 	project := &MavenProject{
 		Version:      antModel.Version,
-		ArtifactId:   antModel.ArtifactId,
-		GroupId:      antModel.GroupId,
+		ArtifactId:   antModel.ArtifactID,
+		GroupId:      antModel.GroupID,
 	}
 
 	project.Dependencies = BuildDependencies(antModel, extract)
@@ -49,7 +49,7 @@ func BuildDependencies(antModel xmlconv.AntModel, extract bool) []MavenDependenc
 }
 
 func readWithUnzip(pathElement xmlconv.PathElement, results []MavenDependency) []MavenDependency {
-	filenames, _ := bundle.Unzip(pathElement.Path, "tmp")
+	filenames, _ := bundle.UnZip(pathElement.Path, "tmp")
 	for _, filename := range filenames {
 		if strings.HasSuffix(filename, "pom.properties") {
 			props, _ := properties.ReadPropertiesFile(filename)
