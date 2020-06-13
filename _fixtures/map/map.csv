@@ -5,3 +5,6 @@ edu.emory.mathcs.backport.java.util.concurrent,edu.emory.mathcs.backport,com.spr
 edu.emory.mathcs.backport.java.util.concurrent.atomic,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0,false
 edu.emory.mathcs.backport.java.util.concurrent.helpers,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0,false
 edu.emory.mathcs.backport.java.util.concurrent.locks,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0,false
+javax.servlet,javax.servlet,javax.servlet,2.4.0,false
+org.apache.commons.dbcp,org.apache.commons,com.springsource.org.apache.commons.dbcp,1.2.2.osgi,false
+org.apache.commons.logging,commons-logging,commons-logging,1.1.1,false

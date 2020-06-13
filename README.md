@@ -72,6 +72,14 @@ format: `{GroupId}-{ArtifactId}_{VersionId}`
 org`.springframework.transaction org.springframework-transaction.org.springframework.transaction_2.5.6.SEC01
 ``
 
+## Issues
+
+Lost Package
+
+ - javax.net
+ - javax.servlet
+ - org.osgi.framework
+ - org.slf4j
 
 License
 ---
