@@ -33,13 +33,13 @@ func Analysis(code string, fileName string) domain.IgsoManifest {
 	scriptParser := ProcessString(code)
 	context := scriptParser.Mf()
 
-	listener := NewMfIdentListener(fileName)
+	listener := NewMfIdentListener()
 	antlr.NewParseTreeWalker().Walk(listener, context)
 
 	return listener.GetResult()
 }
 
-func NewMfIdentListener(fileName string) *MfIdentListener {
+func NewMfIdentListener() *MfIdentListener {
 	listener := &MfIdentListener{}
 	listener.manifest = domain.IgsoManifest{}
 	return listener
