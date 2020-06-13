@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/application/maven"
-	. "github.com/phodal/igso/pkg/domain"
+	domain "github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/phodal/igso/pkg/infrastructure/bundle"
 	"github.com/spf13/cobra"
@@ -15,7 +15,8 @@ import (
 )
 
 type PomConfig struct {
-	Path string
+	Path    string
+	MapFile string
 }
 
 var (
@@ -25,6 +26,7 @@ var (
 func init() {
 	pomCmd.SetOut(output)
 	pomCmd.PersistentFlags().StringVarP(&pomConfig.Path, "path", "p", ".", "path")
+	pomCmd.PersistentFlags().StringVarP(&pomConfig.MapFile, "map", "p", ".", "map file")
 	rootCmd.AddCommand(pomCmd)
 }
 
@@ -44,11 +46,10 @@ var pomCmd = &cobra.Command{
 			pomName := strings.ReplaceAll(jarName, ".jar", ".pom")
 
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
-			dep := ByFileName(jarName, 2)
+			dep := domain.ByFileName(jarName, 2)
 			manifest := manifest.ProcessManifest(content, "MANIFEST.MF")
-
-			importDeps := FromPackage(manifest.ImportPackage)
-			pomfile := maven.BuildByDeps(importDeps, MavenProject{
+			importDeps := domain.FromPackage(manifest.ImportPackage)
+			pomfile := maven.BuildByDeps(importDeps, domain.MavenProject{
 				Version:    dep.Version,
 				GroupId:    dep.GroupId,
 				ArtifactId: dep.ArtifactId,
