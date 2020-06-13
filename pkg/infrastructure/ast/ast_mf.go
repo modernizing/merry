@@ -67,20 +67,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 			for _, config := range pkgContext.AllConfigAssign() {
 				configAssign := (config).(*parser.ConfigAssignContext)
 				assignText := configAssign.AssignKey().GetText()
-				if assignText == "version" {
-					versionText := configAssign.AssignValue().GetText()
-					if strings.Contains(versionText, "[") {
-						versionInfo := versionText[2 : len(versionText)-2]
-						split := strings.Split(versionInfo, ",")
-						javaPackage.VersionInfo = versionInfo
-						if len(split) == 2 {
-							javaPackage.StartVersion = split[0]
-							javaPackage.EndVersion = split[1]
-						}
-					} else {
-						javaPackage.ExportVersion = versionText[1 : len(versionText)-1]
-					}
-				}
+				s.buildPackageVersion(assignText, configAssign, javaPackage)
 
 				text := ""
 				if configAssign.AssignValue() != nil {
@@ -103,6 +90,23 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 		}
 		if s.currentKey == "Export-Package" {
 			s.manifest.ExportPackage = append(s.manifest.ExportPackage, javaPackage)
+		}
+	}
+}
+
+func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *parser.ConfigAssignContext, javaPackage domain.JavaPackage) {
+	if assignText == "version" {
+		versionText := configAssign.AssignValue().GetText()
+		if strings.Contains(versionText, "[") {
+			versionInfo := versionText[2 : len(versionText)-2]
+			split := strings.Split(versionInfo, ",")
+			javaPackage.VersionInfo = versionInfo
+			if len(split) == 2 {
+				javaPackage.StartVersion = split[0]
+				javaPackage.EndVersion = split[1]
+			}
+		} else {
+			javaPackage.ExportVersion = versionText[1 : len(versionText)-1]
 		}
 	}
 }
