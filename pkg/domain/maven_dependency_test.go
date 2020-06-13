@@ -123,6 +123,6 @@ func Test_ShouldBuildDepWithMapFilterRemoveDep(t *testing.T) {
 	dependencies := FromPackage(pkgs, depmap)
 	g.Expect(len(dependencies)).To(Equal(2))
 	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
-	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
+	g.Expect(dependencies[1].GroupId).To(Equal("factory"))
 	g.Expect(dependencies[0].Version).To(Equal("5.0"))
 }
