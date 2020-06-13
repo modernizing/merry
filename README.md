@@ -64,6 +64,15 @@ igso boom
 igso dupsearch
 ```
 
+4. map format
+
+format: `{GroupId}-{ArtifactId}_{VersionId}`
+
+```
+org`.springframework.transaction org.springframework-transaction.org.springframework.transaction_2.5.6.SEC01
+``
+
+
 License
 ---
 
