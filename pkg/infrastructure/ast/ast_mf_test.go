@@ -10,10 +10,12 @@ func Test_ShouldGetManifestProperty(t *testing.T) {
 	code := `Bundle-Version: 1.0
 
 `
-	results := Analysis(code, "hello.mf").KeyValues
+	manifest := Analysis(code, "hello.mf")
+	results := manifest.KeyValues
 	g.Expect(len(results)).To(Equal(1))
 	g.Expect(results[0].Key).To(Equal("Bundle-Version"))
 	g.Expect(results[0].Value).To(Equal("1.0"))
+	g.Expect(manifest.Version).To(Equal("1.0"))
 }
 
 func Test_ShouldParseImportPackage(t *testing.T) {
