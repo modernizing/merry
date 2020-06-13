@@ -14,7 +14,7 @@ Todo:
     - [x] dependencies convert
     - [x] Checksum File
     - [x] Unzip file
-    - [ ] Parse Manifest
+    - [x] Parse Manifest
  - [ ] Ant to Gradle
  - [ ] Manifest convert
     - [ ] to BND
@@ -26,8 +26,8 @@ Todo 2：
  - [ ] POM 遍历生成依赖关系图
  - [x] 支持自动重命名 jar
    - [x] POM 替换关系版本号 jar
- - [ ] 支持定制版本号
-   - [ ] 配置化
+ - [x] 支持定制版本号
+   - [x] 配置化
 
 Feature lists:
 
@@ -64,12 +64,22 @@ igso boom
 igso dupsearch
 ```
 
-4. map format
+4. map file example
 
-format: `{GroupId}-{ArtifactId}_{VersionId}`
+format: `{origin},{GroupId},{ArtifactId},{VersionId}`
 
 ```
-org`.springframework.transaction org.springframework-transaction.org.springframework.transaction_2.5.6.SEC01
+origin,groupid,artifactId,version
+org.springframework.transaction,org.springframework,transaction.org.springframework.transaction,2.5.6.SEC01
+javax.servlet,javax.servlet,javax.servlet,2.4.0
+edu.emory.mathcs.backport.java.util,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0
+edu.emory.mathcs.backport.java.util.concurrent,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0
+edu.emory.mathcs.backport.java.util.concurrent.atomic,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0
+edu.emory.mathcs.backport.java.util.concurrent.helpers,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0
+edu.emory.mathcs.backport.java.util.concurrent.locks,edu.emory.mathcs.backport,com.springsource.edu.emory.mathcs.backport,3.1.0
+org.apache.commons.dbcp,org.apache.commons,com.springsource.org.apache.commons.dbcp,1.2.2.osgi
+org.apache.commons.logging,commons-logging,commons-logging,1.1.1
+org.slf4j,org.slf4j,org.slf4j,1.5.1
 ``
 
 ## Issues
