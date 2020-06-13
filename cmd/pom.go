@@ -26,7 +26,7 @@ var (
 func init() {
 	pomCmd.SetOut(output)
 	pomCmd.PersistentFlags().StringVarP(&pomConfig.Path, "path", "p", ".", "path")
-	pomCmd.PersistentFlags().StringVarP(&pomConfig.MapFile, "map", "p", ".", "map file")
+	pomCmd.PersistentFlags().StringVarP(&pomConfig.MapFile, "map", "m", "", "map file")
 	rootCmd.AddCommand(pomCmd)
 }
 
