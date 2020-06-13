@@ -14,7 +14,7 @@ func TestShouldGetPropertyName(t *testing.T) {
 	csv := ParseCSV(absPath)
 	g.Expect(len(csv)).To(Equal(10))
 	header := csv[0]
-	g.Expect(len(header)).To(Equal(5))
+	g.Expect(len(header)).To(Equal(4))
 	g.Expect(header[0]).To(Equal("origin"))
 }
 
