@@ -20,7 +20,6 @@ func TestShouldGetVersionByDepName(t *testing.T) {
 	g.Expect(len(result)).To(Equal(1))
 }
 
-
 func TestShouldGetVersionByName(t *testing.T) {
 	g := NewGomegaWithT(t)
 
@@ -90,4 +89,3 @@ func Test_ShouldBuildVersionFromManifestPackageForSingleeName(t *testing.T) {
 	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
 	g.Expect(dependencies[0].ArtifactId).To(Equal("ognl"))
 }
-

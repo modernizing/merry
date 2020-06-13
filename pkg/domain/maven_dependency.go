@@ -94,3 +94,4 @@ func ByPackage(pkg string, groupIdLength int) MavenDependency {
 
 	return dependency
 }
+
