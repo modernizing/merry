@@ -48,7 +48,7 @@ var pomCmd = &cobra.Command{
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
 			dep := domain.ByFileName(jarName, 2)
 			manifest := manifest.ProcessManifest(content, "MANIFEST.MF")
-			importDeps := domain.FromPackage(manifest.ImportPackage)
+			importDeps := domain.FromPackage(manifest.ImportPackage, nil)
 			pomfile := maven.BuildByDeps(importDeps, domain.MavenProject{
 				Version:    dep.Version,
 				GroupId:    dep.GroupId,

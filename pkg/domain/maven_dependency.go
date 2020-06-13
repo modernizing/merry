@@ -32,9 +32,14 @@ func RemoveDuplicate(deps []MavenDependency) []MavenDependency {
 	return depArray
 }
 
-func FromPackage(packages []JavaPackage) []MavenDependency {
+func FromPackage(packages []JavaPackage, depmap map[string]MavenDependency) []MavenDependency {
 	var deps []MavenDependency
 	for _, javaPack := range packages {
+		if val, ok := depmap[javaPack.Name]; ok {
+			deps = append(deps, val)
+			continue;
+		}
+
 		checkSplit := strings.Split(javaPack.Name, ".")
 		var dependency MavenDependency
 		if len(checkSplit) <= 1 {
@@ -52,7 +57,7 @@ func FromPackage(packages []JavaPackage) []MavenDependency {
 		deps = append(deps, mavenDep)
 	}
 
-	return deps
+	return RemoveDuplicate(deps)
 }
 
 func BySlashFileName(s string) MavenDependency {

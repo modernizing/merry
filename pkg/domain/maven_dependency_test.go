@@ -62,30 +62,67 @@ func Test_ShouldBuildVersionFromManifestPackage(t *testing.T) {
 
 	var pkgs []JavaPackage
 	javaPackage := JavaPackage{
-		Name: "com.csii.pe.http",
+		Name:         "com.csii.pe.http",
 		StartVersion: "5.0.0_201",
 	}
 	pkgs = append(pkgs, javaPackage)
 
-	dependencies := FromPackage(pkgs)
+	dependencies := FromPackage(pkgs, nil)
 	g.Expect(dependencies[0].Version).To(Equal("5.0.0_201"))
 	g.Expect(dependencies[0].GroupId).To(Equal("com.csii"))
 	g.Expect(dependencies[0].ArtifactId).To(Equal("pe-http"))
 }
-
 
 func Test_ShouldBuildVersionFromManifestPackageForSingleeName(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	var pkgs []JavaPackage
 	javaPackage := JavaPackage{
-		Name: "ognl",
+		Name:         "ognl",
 		StartVersion: "5.0.0_201",
 	}
 	pkgs = append(pkgs, javaPackage)
 
-	dependencies := FromPackage(pkgs)
+	dependencies := FromPackage(pkgs, nil)
 	g.Expect(dependencies[0].Version).To(Equal("5.0.0_201"))
 	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
 	g.Expect(dependencies[0].ArtifactId).To(Equal("ognl"))
+}
+
+func Test_ShouldBuildDepWithMapFilter(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	ognlDep := MavenDependency{GroupId: "ognl", ArtifactId: "ognl", Version: "5.0"}
+
+	var depmap = make(map[string]MavenDependency)
+	depmap["ognl"] = ognlDep
+
+	var pkgs []JavaPackage
+	pkgs = append(pkgs, JavaPackage{Name: "ognl", StartVersion: "5.0.0_201"})
+
+	dependencies := FromPackage(pkgs, depmap)
+	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
+	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
+	g.Expect(dependencies[0].Version).To(Equal("5.0"))
+}
+
+func Test_ShouldBuildDepWithMapFilterRemoveDep(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	ognlDep := MavenDependency{GroupId: "ognl", ArtifactId: "ognl", Version: "5.0"}
+
+	var depmap = make(map[string]MavenDependency)
+	depmap["ognl"] = ognlDep
+	depmap["ognl.factory"] = ognlDep
+
+	var pkgs []JavaPackage
+	pkgs = append(pkgs, JavaPackage{Name: "ognl", StartVersion: "5.0.0_201"})
+	pkgs = append(pkgs, JavaPackage{Name: "ognl.factory", StartVersion: "5.0.0_201"})
+	pkgs = append(pkgs, JavaPackage{Name: "factory", StartVersion: "5.0.0_201"})
+
+	dependencies := FromPackage(pkgs, depmap)
+	g.Expect(len(dependencies)).To(Equal(2))
+	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
+	g.Expect(dependencies[0].GroupId).To(Equal("ognl"))
+	g.Expect(dependencies[0].Version).To(Equal("5.0"))
 }
