@@ -6,7 +6,7 @@
 
     <target name="test.management" depends="dist">
         <path id="classpatsh">
-            <pathelement path="../_fixtures/bundle/sample/felix-duplicate.jar" />
+<!--            <pathelement path="../_fixtures/bundle/sample/felix-duplicate.jar" />-->
             <pathelement path="../_fixtures/jar/sample/annotations-13.0.jar" />
             <pathelement path="../_fixtures/jar/kotlinjar/chapi-tbs-0.0.5.jar" />
         </path>

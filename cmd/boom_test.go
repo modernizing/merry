@@ -29,12 +29,6 @@ func Test_ShouldBuildPomXmlWithBoom(t *testing.T) {
 
     <dependencies>
       <dependency>
-          <groupId>org.vaadin</groupId>
-          <artifactId>example-osgi-felix-tut-8</artifactId>
-          <version>1.0-SNAPSHOT</version>
-      </dependency>
-
-      <dependency>
           <groupId>org.jetbrains</groupId>
           <artifactId>annotations</artifactId>
           <version>13.0</version>
