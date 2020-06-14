@@ -83,6 +83,29 @@ org.apache.commons.logging,commons-logging,commons-logging,1.1.1
 org.slf4j,org.slf4j,org.slf4j,1.5.1
 ```
 
+### Manifest
+
+```bash
+Usage:
+  igso manifest [flags]
+
+Flags:
+  -e, --excludeSource   is with exclude source file
+  -x, --extract         extract manifest file from jar
+  -f, --filter string   filter
+  -h, --help            help for manifest
+  -m, --merge           is merge package
+  -p, --path string     path (default ".")
+  -s, --scan            scan manifest file to graphviz
+  -v, --version         show manifest version info of jar
+```
+
+examples:
+
+```
+igso manifest -s -x -f org.eclipse.equinox -p ~/sdk/equinox-SDK-4.15/plugins
+```
+
 ### Generate Pom from jars
 
 ```
@@ -100,6 +123,15 @@ igso call -p ~/sdk/apache-karaf-4.2.9/lib/boot -m map.csv
 results:
 
 ![Call Graph](docs/screenshots/call-example-karaf.svg)
+
+show only one line with `strict`
+
+```
+strict digraph G {
+  a -> b [ label = "foo" ];
+  a -> b [ label = "bar" ];
+}
+```
 
 ## Issues
 
