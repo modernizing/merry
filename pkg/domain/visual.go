@@ -21,16 +21,18 @@ func VisualFromManifest(manifests []IgsoManifest) DData {
 	nodeMap := make(map[string]DNode)
 	sourceTargetMap := make(map[string]int)
 	var links []DLink
+	var groupIndex = 0
 	for _, mani := range manifests {
+		groupIndex++
 		nodeMap[mani.PackageName] = DNode{
 			ID:    mani.PackageName,
-			Group: 1,
+			Group: groupIndex,
 		}
 		for _, pkg := range mani.ImportPackage {
 			if pkg.Name != "" {
 				nodeMap[pkg.Name] = DNode{
 					ID:    pkg.Name,
-					Group: 1,
+					Group: groupIndex,
 				}
 				links = append(links, DLink{
 					Source: mani.PackageName,
