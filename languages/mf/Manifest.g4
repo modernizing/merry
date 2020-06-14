@@ -16,7 +16,7 @@ pkg
   : OTHERS (SEMI configAssign)*
   ;
 
-configAssign: assignKey (SEQUAL | ASSIGN) assignValue;
+configAssign: SPACE? assignKey (SEQUAL | ASSIGN) assignValue;
 
 assignKey: OTHERS;
 assignValue: STRING_LITERAL | OTHERS;

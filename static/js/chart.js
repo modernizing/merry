@@ -1,3 +1,5 @@
+// d3.json("output.json").then(function (data) {
+
 d3.json("/manifest-map.json").then(function(data){
     console.log(data);
     var width = 1440;
@@ -32,10 +34,14 @@ d3.json("/manifest-map.json").then(function(data){
     height = (nodes.length - 1) * step + margin.top + margin.bottom
     var y = d3.scalePoint(nodes.map(d => d.id).sort(d3.ascending), [margin.top, height - margin.bottom])
     var color = d3.scaleOrdinal(nodes.map(d => d.group).sort(d3.ascending), d3.schemeCategory10)
-    console.log(height);
     var svg = d3.select("#svg").append("svg")
         .attr("width", width)
         .attr("height", height);
+
+    // Define the div for the tooltip
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 
     const label = svg.append("g")
         .attr("font-family", "sans-serif")
@@ -78,12 +84,22 @@ d3.json("/manifest-map.json").then(function(data){
             label.classed("primary", n => n === d);
             label.classed("secondary", n => n.sourceLinks.some(l => l.target === d) || n.targetLinks.some(l => l.source === d));
             path.classed("primary", l => l.source === d || l.target === d).filter(".primary").raise();
-        })
-        .on("click", d => {
-            svg.classed("hover", true);
-            label.classed("primary", n => n === d);
-            label.classed("secondary", n => n.sourceLinks.some(l => l.target === d) || n.targetLinks.some(l => l.source === d));
-            path.classed("primary", l => l.source === d || l.target === d).filter(".primary").raise();
+
+            var result = "";
+            for (let linkElement of d.targetLinks) {
+                result += "from: " + linkElement.source.id + "<br>"
+            }
+
+            for (let linkElement of d.sourceLinks) {
+                result += "to: " + linkElement.target.id + "<br>"
+            }
+
+            div.transition()
+                .duration(200)
+                .style("opacity", .9);
+            div.html(result)
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
         })
         .on("mouseout", d => {
             svg.classed("hover", false);
