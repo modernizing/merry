@@ -1,11 +1,12 @@
 package manifest
 
 import (
+	"fmt"
 	"github.com/phodal/igso/pkg/adapter/tequila"
 	"github.com/phodal/igso/pkg/domain"
 )
 
-func BuildFullGraph(scanManifest []domain.IgsoManifest) *tequila.FullGraph {
+func BuildFullGraph(scanManifest []domain.IgsoManifest, depmap map[string]domain.MavenDependency) *tequila.FullGraph {
 	fullGraph := &tequila.FullGraph{
 		NodeList:     make(map[string]string),
 		RelationList: make(map[string]*tequila.Relation),
@@ -33,6 +34,13 @@ func BuildFullGraph(scanManifest []domain.IgsoManifest) *tequila.FullGraph {
 			fullGraph.NodeList[src] = src
 
 			for _, impl := range mani.ImportPackage {
+				if depmap != nil {
+					fmt.Println(depmap[impl.Name])
+					if _, ok := depmap[impl.Name]; ok {
+						continue
+					}
+				}
+
 				implName := impl.Name
 				fullGraph.NodeList[implName] = implName
 				relation := &tequila.Relation{

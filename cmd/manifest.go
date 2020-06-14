@@ -76,7 +76,7 @@ var manifestCmd = &cobra.Command{
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
 			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
 
-			result := manifest.BuildFullGraph(scanManifest)
+			result := manifest.BuildFullGraph(scanManifest, nil)
 
 			if manifestConfig.IsMergePackage {
 				result = result.MergeHeaderFile(tequila.MergePackageFunc)

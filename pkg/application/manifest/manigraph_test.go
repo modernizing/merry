@@ -12,7 +12,7 @@ func Test_ShouldSuccessBuildGraph(t *testing.T) {
 
 	file := filepath.FromSlash("../../../_fixtures/manifest/deps/aspectj")
 	scanManifest := ScanByPath(file)
-	graph := BuildFullGraph(scanManifest)
+	graph := BuildFullGraph(scanManifest, nil)
 
 	ignores := strings.Split("", ",")
 	var nodeFilter = func(key string) bool {
