@@ -8,6 +8,7 @@ import (
 	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -40,8 +41,23 @@ var callCmd = &cobra.Command{
 		if callConfig.Server {
 			box := packr.NewBox("../static")
 
+			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
+				abs, _ := filepath.Abs("./manifest-map.json")
+				content, err := ioutil.ReadFile(abs)
+
+				w.Header().Set("Content-Type", "application/json")
+				if err != nil {
+					http.Error(w, err.Error(), http.StatusInternalServerError)
+					return
+				}
+				w.Write(content)
+			})
+
+			//http.Handle("/manifest-map.json", http.FileServer(http.Dir(abs)))
 			http.Handle("/", http.FileServer(box))
 			http.ListenAndServe(":3000", nil)
+
+			return
 		}
 
 		path := cmd.Flag("path").Value.String()
