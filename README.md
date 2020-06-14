@@ -15,9 +15,6 @@ Todo:
     - [x] Checksum File
     - [x] Unzip file
     - [x] Parse Manifest
- - [ ] Ant to Gradle
- - [ ] Manifest convert
-    - [ ] to BND
  - [ ] Microservices
  - [x] Dup Search. search all jars and find not in nexus package
  - [x] POM generate dep graph
@@ -29,17 +26,22 @@ Todo:
  - [x] custom version
    - [x] configurable
    - [x] from jar to map.csv
+ - [ ] Ant to Gradle
+ - [ ] Manifest convert
+    - [ ] to BND
 
 Feature lists:
 
 ```bash
 Available Commands:
   boom        generate pom.xml from build.xml
+  call        show call graph for packages
   checksum    checksum file md5
   dupsearch   build maven pom from all jars file
   fix         fix jar naming issue
   help        Help about any command
   manifest    manifest query & map tools
+  map         generate map.csv from jar
   pom         generate pom file from jar file
   version     version
 
