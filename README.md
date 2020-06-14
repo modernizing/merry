@@ -97,6 +97,10 @@ igso map -p ~/sdk/apache-karaf-4.2.9/lib/boot
 igso call -p ~/sdk/apache-karaf-4.2.9/lib/boot -m map.csv
 ```
 
+results:
+
+![Call Graph](docs/screenshots/call-example-karaf.svg)
+
 ## Issues
 
 Lost Package
