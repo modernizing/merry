@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/antlr/antlr4 v0.0.0-20200606165112-0b35a76e9b09
 	github.com/awalterschulze/gographviz v2.0.1+incompatible
+	github.com/gobuffalo/packr v1.30.1
 	github.com/mattn/go-shellwords v1.0.10
 	github.com/olekukonko/tablewriter v0.0.4
 	github.com/onsi/ginkgo v1.12.3

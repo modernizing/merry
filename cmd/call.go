@@ -3,6 +3,7 @@ package cmd
 import (
 	"bufio"
 	"fmt"
+	"github.com/gobuffalo/packr"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure/csvconv"
@@ -37,14 +38,10 @@ var callCmd = &cobra.Command{
 	Short: "show call graph for packages",
 	Run: func(cmd *cobra.Command, args []string) {
 		if callConfig.Server {
-			fs := http.FileServer(http.Dir("./static"))
-			http.Handle("/", fs)
+			box := packr.NewBox("../static")
 
-			log.Println("Listening on :3000...")
-			err := http.ListenAndServe(":3000", nil)
-			if err != nil {
-				log.Fatal(err)
-			}
+			http.Handle("/", http.FileServer(box))
+			http.ListenAndServe(":3000", nil)
 		}
 
 		path := cmd.Flag("path").Value.String()
