@@ -509,32 +509,29 @@ d3.select("#selectSort").on("change", function () {
 function doSort(sortMethod) {
     var nodeMap = [],
         sortFunciton;
-    //
-    // for (i = 0; i < nodes.length; i++) {
-    //     var node = $.extend({index: i}, nodes[i]); // Shallow copy
-    //     nodeMap.push(node);
-    // }
-    //
-    // if (sortMethod == 0) {
-    //     // GROUP
-    //     sortFunction = function (a, b) {
-    //         return b.group - a.group;
-    //     };
-    // } else if (sortMethod == 1) {
-    //     // FREQUENCY
-    //     sortFunction = function (a, b) {
-    //         return b.value - a.value;
-    //     };
-    // } else if (sortMethod == 2) {
-    //     // ALPHABETICAL
-    //     sortFunction = function (a, b) {
-    //         return a.nodeName.localeCompare(b.nodeName)
-    //     };
-    // }
 
-    sortFunction = function (a, b) {
-        return b.value - a.value;
-    };
+    for (i = 0; i < nodes.length; i++) {
+        // var node = $.extend({index: i}, nodes[i]); // Shallow copy
+        var node = Object.assign({index: i}, nodes[i]);
+        nodeMap.push(node);
+    }
+
+    if (sortMethod == 0) {
+        // GROUP
+        sortFunction = function (a, b) {
+            return b.group - a.group;
+        };
+    } else if (sortMethod == 1) {
+        // FREQUENCY
+        sortFunction = function (a, b) {
+            return b.value - a.value;
+        };
+    } else if (sortMethod == 2) {
+        // ALPHABETICAL
+        sortFunction = function (a, b) {
+            return a.nodeName.localeCompare(b.nodeName)
+        };
+    }
 
     nodeMap.sort(sortFunction);
     for (i = 0; i < nodeMap.length; i++) {
