@@ -13,7 +13,7 @@ value
  ;
 
 pkg
-  : OTHERS (SEMI configAssign)*
+  : OTHERS (SPACE? SEMI configAssign)*
   ;
 
 configAssign: SPACE? assignKey (SEQUAL | ASSIGN) assignValue;
