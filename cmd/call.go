@@ -115,7 +115,7 @@ type DLink struct {
 func manifestForD3(manifests []domain.IgsoManifest) DData {
 	var data DData
 	nodeMap := make(map[string]DNode)
-	//linkMap := make(map[string]DLink)
+	sourceTargetMap := make(map[string]int)
 	var links []DLink
 	for _, mani := range manifests {
 		nodeMap[mani.PackageName] = DNode{
@@ -133,12 +133,16 @@ func manifestForD3(manifests []domain.IgsoManifest) DData {
 					Target: pkg.Name,
 					Value:  1,
 				})
+				sourceTargetMap[mani.PackageName+".igso."+pkg.Name]++
 			}
 		}
 	}
 
 	for _, value := range nodeMap {
 		data.Nodes = append(data.Nodes, value)
+	}
+	for _, link := range links {
+		link.Value = sourceTargetMap[link.Source+".igso."+link.Target]
 	}
 
 	data.Links = links
