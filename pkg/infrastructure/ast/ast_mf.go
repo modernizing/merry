@@ -137,6 +137,9 @@ func buildPackageName(ctx *parser.ValueContext, s *MfIdentListener) {
 	}
 	if s.currentKey == "Bundle-SymbolicName" {
 		s.manifest.PackageName = ctx.GetText()
+		if ctx.AllPkg() != nil {
+			s.manifest.PackageName = ctx.Pkg(0).(*parser.PkgContext).OTHERS().GetText()
+		}
 	}
 }
 

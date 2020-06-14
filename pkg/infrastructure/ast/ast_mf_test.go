@@ -170,3 +170,13 @@ func Test_ShouldBuildForBundlename(t *testing.T) {
 	results := Analysis(code, "hello.mf")
 	g.Expect(results.PackageName).To(Equal("org.springframework.core"))
 }
+
+
+func Test_ShouldBuildForBundleNameWithOptions(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Bundle-SymbolicName: org.eclipse.equinox.http.registry;singleton:=true
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.PackageName).To(Equal("org.eclipse.equinox.http.registry"))
+}
