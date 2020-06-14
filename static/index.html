@@ -11,7 +11,8 @@
 <script>
     d3.select("body").append("span")
         .text("Hello, world!");
-    d3.json("/manifest-map.json", function (data) {
+    d3.json("/manifest-map.json").then(function(data){
+        console.log(data);
         for (var i = 0; i < data.length; i++) {
             console.log(data[i]);
         }
