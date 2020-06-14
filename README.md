@@ -89,6 +89,14 @@ org.slf4j,org.slf4j,org.slf4j,1.5.1
 go run igso.go pom -p _fixtures/demo -m _fixtures/map/map.csv
 ```
 
+### Call Graph by Manifest.MF
+
+```
+igso manifest -s -p ~/sdk/apache-karaf-4.2.9/lib/boot  -x
+igso map -p ~/sdk/apache-karaf-4.2.9/lib/boot
+igso call -p ~/sdk/apache-karaf-4.2.9/lib/boot -m map.csv
+```
+
 ## Issues
 
 Lost Package
