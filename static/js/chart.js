@@ -1,7 +1,7 @@
 d3.json("/manifest-map.json").then(function(data){
     console.log(data);
-    var width = 900;
-    var height = 1104;
+    var width = 1440;
+    var height = 2048;
 
     const nodes = data.nodes.map(({id, group}) => ({
         id,
@@ -26,7 +26,7 @@ d3.json("/manifest-map.json").then(function(data){
         }
     }
 
-    var margin = ({top: 20, right: 20, bottom: 20, left: 100});
+    var margin = ({top: 20, right: 20, bottom: 20, left: 200});
     var y = d3.scalePoint(nodes.map(d => d.id).sort(d3.ascending), [margin.top, height - margin.bottom])
     var color = d3.scaleOrdinal(nodes.map(d => d.group).sort(d3.ascending), d3.schemeCategory10)
     var step = 14;
@@ -72,6 +72,12 @@ d3.json("/manifest-map.json").then(function(data){
         .attr("height", step)
         .attr("y", d => y(d.id) - step / 2)
         .on("mouseover", d => {
+            svg.classed("hover", true);
+            label.classed("primary", n => n === d);
+            label.classed("secondary", n => n.sourceLinks.some(l => l.target === d) || n.targetLinks.some(l => l.source === d));
+            path.classed("primary", l => l.source === d || l.target === d).filter(".primary").raise();
+        })
+        .on("click", d => {
             svg.classed("hover", true);
             label.classed("primary", n => n === d);
             label.classed("secondary", n => n.sourceLinks.some(l => l.target === d) || n.targetLinks.some(l => l.source === d));
