@@ -30,7 +30,6 @@ var mapCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
 		jarPaths := infrastructure.GetJarFilesByPath(path, false)
-		fmt.Println(jarPaths)
 		var results  = "origin,groupid,artifactId,version" + "\n"
 		for _, jarPath := range jarPaths {
 			manifest := manifest.ScanByFile(jarPath)
