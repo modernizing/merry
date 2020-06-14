@@ -8,6 +8,7 @@ import (
 	"github.com/phodal/igso/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
 	"log"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -16,6 +17,7 @@ import (
 type CallConfig struct {
 	Path    string
 	MapFile string
+	Server  bool
 }
 
 var (
@@ -26,6 +28,7 @@ func init() {
 	callCmd.SetOut(output)
 	callCmd.PersistentFlags().StringVarP(&callConfig.Path, "path", "p", ".", "path")
 	callCmd.PersistentFlags().StringVarP(&callConfig.MapFile, "map", "m", "", "map file")
+	callCmd.PersistentFlags().BoolVarP(&callConfig.Server, "server", "s", false, "with server")
 	rootCmd.AddCommand(callCmd)
 }
 
@@ -33,6 +36,17 @@ var callCmd = &cobra.Command{
 	Use:   "call",
 	Short: "show call graph for packages",
 	Run: func(cmd *cobra.Command, args []string) {
+		if callConfig.Server {
+			fs := http.FileServer(http.Dir("./static"))
+			http.Handle("/", fs)
+
+			log.Println("Listening on :3000...")
+			err := http.ListenAndServe(":3000", nil)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+
 		path := cmd.Flag("path").Value.String()
 
 		scanManifest := manifest.ScanByPath(path)
