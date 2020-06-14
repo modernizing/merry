@@ -418,8 +418,7 @@ const overlay = svg.append("g")
         path.classed("primary", false).order();
     });
 
-function update() {
-    // y.domain(nodes.sort("name").map(d => d.id));
+function update(order) {
     y.domain(nodes.sort(order.value).map(d => d.id));
 
     const t = svg.transition()
@@ -433,7 +432,7 @@ function update() {
         });
 
     path.transition(t)
-        .duration(750 + graph.nodes.length * 20)
+        .duration(750 + nodes.length * 20)
         .attrTween("d", d => () => arc(d));
 
     overlay.transition(t)
@@ -448,5 +447,21 @@ function arc(d) {
     return `M${margin.left},${y1}A${r},${r} 0,0,${y1 < y2 ? 1 : 0} ${margin.left},${y2}`;
 }
 
-order.addEventListener("input", update);
-invalidation.then(() => order.removeEventListener("input", update));
+d3.select("#selectSort").on("change", function () {
+    var value = d3.select("#selectSort").node().value;
+    var selectMap = {
+        Group: {
+            value: (a, b) => a.group - b.group || d3.ascending(a.id, b.id)
+        },
+        Name: {
+            value: (a, b) => d3.ascending(a.id, b.id)
+        },
+        Frequency: {
+            value: (a, b) => d3.sum(b.sourceLinks, l => l.value) + d3.sum(b.targetLinks, l => l.value) - d3.sum(a.sourceLinks, l => l.value) - d3.sum(a.targetLinks, l => l.value) || d3.ascending(a.id, b.id)
+        }
+    }
+
+    let select = selectMap[value];
+    console.log(select);
+    update(select);
+})
