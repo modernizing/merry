@@ -30,5 +30,5 @@ div.tooltip {
     background: lightsteelblue;
     border: 0;
     border-radius: 8px;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }

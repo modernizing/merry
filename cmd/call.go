@@ -50,7 +50,7 @@ var callCmd = &cobra.Command{
 			dData := domain.VisualFromManifest(manifests)
 			dContent, err := json.Marshal(dData)
 
-			ioutil.WriteFile("output.json", []byte(dContent), os.ModePerm)
+			ioutil.WriteFile("output.json", dContent, os.ModePerm)
 
 			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set("Content-Type", "application/json")
@@ -62,7 +62,12 @@ var callCmd = &cobra.Command{
 			})
 
 			http.Handle("/", http.FileServer(box))
-			http.ListenAndServe(":3000", nil)
+			fmt.Fprintf(output, "localserver started: http://localhost:3000/\n")
+
+			err = http.ListenAndServe(":3000", nil)
+			if err != nil {
+				fmt.Println(err)
+			}
 
 			return
 		}

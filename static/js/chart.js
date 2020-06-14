@@ -1,6 +1,6 @@
 // d3.json("output.json").then(function (data) {
 
-d3.json("/manifest-map.json").then(function(data){
+d3.json("/manifest-map.json").then(function (data) {
     console.log(data);
     var width = 1440;
     var height = 2048;
@@ -28,7 +28,7 @@ d3.json("/manifest-map.json").then(function(data){
         }
     }
 
-    var margin = ({top: 20, right: 20, bottom: 20, left: 200});
+    var margin = ({top: 20, right: 20, bottom: 20, left: 250});
     var step = 14;
 
     height = (nodes.length - 1) * step + margin.top + margin.bottom
@@ -45,7 +45,7 @@ d3.json("/manifest-map.json").then(function(data){
 
     const label = svg.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 12)
         .attr("text-anchor", "end")
         .selectAll("g")
         .data(nodes)
@@ -87,17 +87,18 @@ d3.json("/manifest-map.json").then(function(data){
 
             var result = "<h3>" + d.id + "</h3>";
             for (let linkElement of d.targetLinks) {
-                result += "from: " + linkElement.source.id + "<br>"
+                result += "usedby: " + linkElement.source.id + "<br>"
             }
 
             for (let linkElement of d.sourceLinks) {
-                result += "to: " + linkElement.target.id + "<br>"
+                result += "use: " + linkElement.target.id + "<br>"
             }
 
             div.transition()
                 .duration(200)
                 .style("opacity", .9);
             div.html(result)
+                .style("display", "block")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -106,6 +107,7 @@ d3.json("/manifest-map.json").then(function(data){
             label.classed("primary", false);
             label.classed("secondary", false);
             path.classed("primary", false).order();
+            div.style("display", "none")
         });
 
     function update(order) {
