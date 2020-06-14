@@ -20,15 +20,15 @@ Todo:
     - [ ] to BND
  - [ ] Microservices
  - [x] Dup Search. search all jars and find not in nexus package
-
-Todo 2：
-
- - [ ] POM 遍历生成依赖关系图
- - [x] 支持自动重命名 jar
-   - [x] POM 替换关系版本号 jar
- - [x] 支持定制版本号
-   - [x] 配置化
-   - [ ] 根据 jar 生成 map.csv，以进行修改
+ - [x] POM generate dep graph
+    - [x] basic graph
+    - [x] go server
+    - [x] visual with circle [Hierarchical Edge Bundling](https://observablehq.com/@d3/hierarchical-edge-bundling)
+ - [x] remove jar
+   - [x] use POM rename jar
+ - [x] custom version
+   - [x] configurable
+   - [x] from jar to map.csv
 
 Feature lists:
 
