@@ -1,15 +1,21 @@
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    width: 960px;
-    height: 500px;
-    position: relative;
+.hover path {
+    stroke: #ccc;
 }
 
-path {
-    fill: #505050;
-    fill-opacity: 0.2;
+.hover text {
+    fill: #ccc;
 }
 
-circle{
-    stroke-width: 1;
+.hover g.primary text {
+    fill: black;
+    font-weight: bold;
+}
+
+.hover g.secondary text {
+    fill: #333;
+}
+
+.hover path.primary {
+    stroke: #333;
+    stroke-opacity: 1;
 }
