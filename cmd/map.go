@@ -34,7 +34,7 @@ var mapCmd = &cobra.Command{
 		for _, jarPath := range jarPaths {
 			manifest := manifest.ScanByFile(jarPath)
 			for _, pkg := range manifest.ExportPackage {
-				dep := domain.ByPackage(pkg.Name, 2)
+				dep := domain.ByPackage(manifest.PackageName, 2)
 				var pkgStr = pkg.Name + "," + dep.GroupId + "," + dep.ArtifactId + "," + manifest.Version
 				results += pkgStr + "\n"
 			}
