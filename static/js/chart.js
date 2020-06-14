@@ -27,10 +27,12 @@ d3.json("/manifest-map.json").then(function(data){
     }
 
     var margin = ({top: 20, right: 20, bottom: 20, left: 200});
+    var step = 14;
+
+    height = (nodes.length - 1) * step + margin.top + margin.bottom
     var y = d3.scalePoint(nodes.map(d => d.id).sort(d3.ascending), [margin.top, height - margin.bottom])
     var color = d3.scaleOrdinal(nodes.map(d => d.group).sort(d3.ascending), d3.schemeCategory10)
-    var step = 14;
-    height = (nodes.length - 1) * step + margin.top + margin.bottom
+    console.log(height);
     var svg = d3.select("#svg").append("svg")
         .attr("width", width)
         .attr("height", height);
