@@ -24,6 +24,7 @@ type ManifestConfig struct {
 	IsScan          bool
 	ManifestVersion bool
 	IsMergePackage  bool
+	ExcludeSource   bool
 }
 
 var (
@@ -38,6 +39,7 @@ func init() {
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsScan, "scan", "s", false, "scan manifest file to graphviz")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.ManifestVersion, "version", "v", false, "show manifest version info of jar ")
 	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.IsMergePackage, "merge", "m", false, "is merge package")
+	manifestCmd.PersistentFlags().BoolVarP(&manifestConfig.ExcludeSource, "excludeSource", "e", false, "is with exclude source file")
 
 	rootCmd.AddCommand(manifestCmd)
 }
@@ -96,7 +98,7 @@ var manifestCmd = &cobra.Command{
 }
 
 func ExtractManifest(path string, filter string) {
-	jarPaths := infrastructure.GetJarFilesByPath(path)
+	jarPaths := infrastructure.GetJarFilesByPath(path, manifestConfig.ExcludeSource)
 	for _, path := range jarPaths {
 		if !strings.Contains(path, filter) {
 			continue

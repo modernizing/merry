@@ -22,7 +22,7 @@ var fixCmd = &cobra.Command{
 	Short: "fix jar naming issue",
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
-		jarPaths := infrastructure.GetJarFilesByPath(path)
+		jarPaths := infrastructure.GetJarFilesByPath(path, false)
 		for _, jarPath := range jarPaths {
 			manifest := manifest.ScanByFile(jarPath)
 			if manifest.PackageName != "" && manifest.Version != "" {

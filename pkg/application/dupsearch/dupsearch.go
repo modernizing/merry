@@ -9,7 +9,7 @@ import (
 
 func DupSearch(root string) []MavenDependency {
 	var results []MavenDependency
-	jarPaths := infrastructure.GetJarFilesByPath(root)
+	jarPaths := infrastructure.GetJarFilesByPath(root, false)
 	for _, path := range jarPaths {
 		props, err := properties.ReadPropertiesFromZip(path)
 		if (err == nil) && props["groupId"] != "" {

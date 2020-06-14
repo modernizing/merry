@@ -29,7 +29,7 @@ var mapCmd = &cobra.Command{
 	Short: "generate map.csv from jar",
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
-		jarPaths := infrastructure.GetJarFilesByPath(path)
+		jarPaths := infrastructure.GetJarFilesByPath(path, false)
 		fmt.Println(jarPaths)
 		var results  = "origin,groupid,artifactId,version" + "\n"
 		for _, jarPath := range jarPaths {

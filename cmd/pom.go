@@ -37,7 +37,7 @@ var pomCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
 
-		jarPaths := infrastructure.GetJarFilesByPath(path)
+		jarPaths := infrastructure.GetJarFilesByPath(path, false)
 		for _, jarPath := range jarPaths {
 			pathSplit := strings.Split(jarPath, string(os.PathSeparator))
 			jarName := pathSplit[len(pathSplit)-1]

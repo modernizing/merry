@@ -22,9 +22,14 @@ func GetFilesByFilter(root string, filter func(path string) bool) []string {
 	return files
 }
 
-func GetJarFilesByPath(path string) []string {
+func GetJarFilesByPath(path string, excludeSource bool) []string {
 	var jarFileFilter = func(path string) bool {
 		return strings.HasSuffix(path, ".jar")
+	}
+	if excludeSource {
+		jarFileFilter = func(path string) bool {
+			return strings.HasSuffix(path, ".jar") && !strings.Contains(path, ".source")
+		}
 	}
 
 	jarPaths := GetFilesByFilter(path, jarFileFilter)
