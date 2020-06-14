@@ -133,6 +133,14 @@ strict digraph G {
 }
 ```
 
+#### Call Server
+
+cmd: `igso call -s`
+
+`igso` will read `manifest-map.json` and start to [http://localhost:3000](http://localhost:3000):
+
+![Call Server](docs/screenshots/call-server.svg)
+
 ## Issues
 
 Lost Package

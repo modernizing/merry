@@ -85,7 +85,7 @@ d3.json("/manifest-map.json").then(function(data){
             label.classed("secondary", n => n.sourceLinks.some(l => l.target === d) || n.targetLinks.some(l => l.source === d));
             path.classed("primary", l => l.source === d || l.target === d).filter(".primary").raise();
 
-            var result = "";
+            var result = "<h3>" + d.id + "</h3>";
             for (let linkElement of d.targetLinks) {
                 result += "from: " + linkElement.source.id + "<br>"
             }
