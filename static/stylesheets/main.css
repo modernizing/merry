@@ -1,3 +1,15 @@
 body {
-    color: #c0392b
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 960px;
+    height: 500px;
+    position: relative;
+}
+
+path {
+    fill: #505050;
+    fill-opacity: 0.2;
+}
+
+circle{
+    stroke-width: 1;
 }
