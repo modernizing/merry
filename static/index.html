@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <title>Igso Dependencies Analyser</title>
-    <link rel="stylesheet" href="/stylesheets/main.css">
-    <script src="/js/d3.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script src="js/d3.min.js"></script>
 </head>
 <body>
+Order:
+<select id="selectSort">
+    <option value="Group">by Cluster</option>
+    <option value="Frequency">by Frequency</option>
+    <option value="Name">by Name</option>
+</select>
+<div id="svg">
+
+</div>
 </body>
-<script>
-    d3.select("body").append("span")
-        .text("Hello, world!");
-    d3.json("/manifest-map.json").then(function(data){
-        console.log(data);
-        for (var i = 0; i < data.length; i++) {
-            console.log(data[i]);
-        }
-    });
-</script>
+<script src="js/chart.js"></script>
 </html>

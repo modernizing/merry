@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"github.com/gobuffalo/packr"
 	"github.com/phodal/igso/pkg/application/manifest"
@@ -41,19 +42,25 @@ var callCmd = &cobra.Command{
 		if callConfig.Server {
 			box := packr.NewBox("../static")
 
-			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
-				abs, _ := filepath.Abs("./manifest-map.json")
-				content, err := ioutil.ReadFile(abs)
+			abs, _ := filepath.Abs("./manifest-map.json")
+			content, err := ioutil.ReadFile(abs)
 
+			var manifests []domain.IgsoManifest
+			_ = json.Unmarshal(content, &manifests)
+			dData := manifestForD3(manifests)
+			dContent, err := json.Marshal(dData)
+
+			ioutil.WriteFile("output.json", []byte(dContent), os.ModePerm)
+
+			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set("Content-Type", "application/json")
 				if err != nil {
 					http.Error(w, err.Error(), http.StatusInternalServerError)
 					return
 				}
-				w.Write(content)
+				w.Write(dContent)
 			})
 
-			//http.Handle("/manifest-map.json", http.FileServer(http.Dir(abs)))
 			http.Handle("/", http.FileServer(box))
 			http.ListenAndServe(":3000", nil)
 
@@ -87,4 +94,53 @@ var callCmd = &cobra.Command{
 		}
 
 	},
+}
+
+type DData struct {
+	Nodes []DNode `json:"nodes,omitempty"`
+	Links []DLink `json:"links,omitempty"`
+}
+
+type DNode struct {
+	ID    string `json:"id,omitempty"`
+	Group int    `json:"group,omitempty"`
+}
+
+type DLink struct {
+	Source string `json:"source,omitempty"`
+	Target string `json:"target,omitempty"`
+	Value  int    `json:"value,omitempty"`
+}
+
+func manifestForD3(manifests []domain.IgsoManifest) DData {
+	var data DData
+	nodeMap := make(map[string]DNode)
+	//linkMap := make(map[string]DLink)
+	var links []DLink
+	for _, mani := range manifests {
+		nodeMap[mani.PackageName] = DNode{
+			ID:    mani.PackageName,
+			Group: 1,
+		}
+		for _, pkg := range mani.ImportPackage {
+			if pkg.Name != "" {
+				nodeMap[pkg.Name] = DNode{
+					ID:    pkg.Name,
+					Group: 1,
+				}
+				links = append(links, DLink{
+					Source: mani.PackageName,
+					Target: pkg.Name,
+					Value:  1,
+				})
+			}
+		}
+	}
+
+	for _, value := range nodeMap {
+		data.Nodes = append(data.Nodes, value)
+	}
+
+	data.Links = links
+	return data
 }
