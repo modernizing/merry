@@ -49,6 +49,14 @@ func Test_ShouldGetTwoLengthGroupIdWhen2(t *testing.T) {
 	g.Expect(result.ArtifactId).To(Equal(`pe-http`))
 }
 
+func Test_ShouldHandleOneLengthGroupIdWhen2(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	result := ByFileName(`rxjava-3.0.4.jar`, 2)
+	g.Expect(result.GroupId).To(Equal(`rxjava`))
+	g.Expect(result.ArtifactId).To(Equal(`rxjava`))
+}
+
 func Test_ShouldGetOneLengthGroupIdWhen2(t *testing.T) {
 	g := NewGomegaWithT(t)
 

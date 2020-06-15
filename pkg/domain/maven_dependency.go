@@ -82,9 +82,12 @@ func ByFileName(s string, groupIdLength int) MavenDependency {
 			dependency.GroupId = strings.Join(split[0:groupIdLength], ".")
 			dependency.ArtifactId = strings.Join(split[groupIdLength:], "-")
 		} else {
+			dependency.GroupId = result[1]
 			dependency.ArtifactId = result[1]
 		}
 		dependency.Version = result[2]
+	} else {
+		dependency.GroupId = s
 	}
 
 	return dependency
