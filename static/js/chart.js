@@ -1,6 +1,5 @@
 function renderVertical() {
     return function (data) {
-        console.log(data)
         var width = 1440;
         var height = 2048;
 
@@ -183,8 +182,12 @@ function renderCircle() {
         }
 
         var jdata = []
+        // var jdata = [
+        //     {"name":"flare.vis.events.DataEvent","size":2313,"imports":["flare.vis.events.SelectionEvent"]},
+        //     {"name":"flare.vis.events.SelectionEvent","size":1880,"imports":["flare.vis.events.DataEvent"]}
+        // ]
         for (let link of originData) {
-            if (link.PackageName && link.ImportPackage) {
+            if (link.PackageName !== "" && link.ImportPackage && link.ImportPackage.length > 0) {
                 if (link.ImportPackage.length === 0) {
                     continue;
                 }
