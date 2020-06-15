@@ -248,7 +248,7 @@ function renderCircle() {
         var colorin = "#00f",
             colorout = "#f00",
             colornone = "#ccc",
-            width = 1200,
+            width = 800,
             radius = width / 2,
             line = d3.lineRadial()
                 .curve(d3.curveBundle.beta(0.85))
@@ -261,6 +261,9 @@ function renderCircle() {
             .sort((a, b) => d3.ascending(a.data.originName, b.data.originName));
 
         var svg = d3.select("#circle").append("svg")
+            // .attr("preserveAspectRatio", "xMinYMin meet")
+            // .attr("viewBox", "0 0 300 300")
+            // .classed("svg-content", true);
             .attr("viewBox", [-width / 2, -width / 2, width, width]);
 
         const node = svg.append("g")
