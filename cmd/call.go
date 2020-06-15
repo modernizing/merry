@@ -43,22 +43,30 @@ var callCmd = &cobra.Command{
 			box := packr.NewBox("../static")
 
 			abs, _ := filepath.Abs("./manifest-map.json")
-			content, err := ioutil.ReadFile(abs)
+			originContent, err := ioutil.ReadFile(abs)
 
 			var manifests []domain.IgsoManifest
-			_ = json.Unmarshal(content, &manifests)
+			_ = json.Unmarshal(originContent, &manifests)
 			dData := domain.VisualFromManifest(manifests)
 			dContent, err := json.Marshal(dData)
 
 			ioutil.WriteFile("output.json", dContent, os.ModePerm)
 
-			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
+			http.HandleFunc("/output.json", func(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set("Content-Type", "application/json")
 				if err != nil {
 					http.Error(w, err.Error(), http.StatusInternalServerError)
 					return
 				}
 				w.Write(dContent)
+			})
+			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
+				w.Header().Set("Content-Type", "application/json")
+				if err != nil {
+					http.Error(w, err.Error(), http.StatusInternalServerError)
+					return
+				}
+				w.Write(originContent)
 			})
 
 			http.Handle("/", http.FileServer(box))

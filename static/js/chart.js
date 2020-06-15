@@ -157,9 +157,10 @@ function renderVertical() {
     };
 }
 
-d3.json("/manifest-map.json").then(renderVertical());
-
+d3.json("/output.json").then(renderVertical());
 // d3.json("output.json").then(renderVertical());
+d3.json("/manifest-map.json").then(renderCircle());
+// d3.json("manifest-map.json").then(renderCircle());
 
 function renderCircle() {
     return function (originData) {
@@ -174,6 +175,7 @@ function renderCircle() {
                 if (i >= 0) {
                     find({name: name.substring(0, i), children: []}).children.push(data);
                     data.name = name.substring(i + 1);
+                    data.originName = name;
                 } else {
                     root = data;
                 }
@@ -251,7 +253,7 @@ function renderCircle() {
             .attr("x", d => d.x < Math.PI ? 6 : -6)
             .attr("text-anchor", d => d.x < Math.PI ? "start" : "end")
             .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-            .text(d => d.data.name)
+            .text(d => d.data.originName)
             .each(function (d) {
                 d.text = this;
             })
@@ -304,6 +306,4 @@ ${d.incoming.length} incoming`));
 
     }
 }
-
-d3.json("manifest-map.json").then(renderCircle());
 
