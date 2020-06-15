@@ -160,12 +160,16 @@ function renderVertical() {
 d3.json("/output.json").then(renderVertical());
 // d3.json("output.json").then(renderVertical());
 d3.json("/output.json").then(renderCircle());
+
 // d3.json("manifest-map.json").then(renderCircle());
 
 function renderCircle() {
     return function (originData) {
         function hierarchy(data, delimiter = ".") {
-            let root;
+            let root = {
+                name: "",
+                children: []
+            };
             const map = new Map;
             data.forEach(function find(data) {
                 const {name} = data;
@@ -174,20 +178,37 @@ function renderCircle() {
                 map.set(name, data);
                 if (i >= 0) {
                     let found = find({name: name.substring(0, i), children: []});
-                    found.children.push(data);
+                    if (found.children) {
+                        found.children.push(data);
+                    } else {
+                        return data
+                    }
                     data.name = name.substring(i + 1);
                     data.originName = name;
                 } else {
-                    root = data;
+                    root.children.push(data)
                 }
                 return data;
             });
+
             return root;
         }
 
         var jdata = []
         var dMap = {}
+
+        for (let node of originData.nodes) {
+            dMap[node.id] = {
+                name: node.id,
+                imports: [],
+                size: node.group
+            }
+        }
+
         for (let link of originData.links) {
+            if (link.source === link.target) {
+                continue
+            }
             if (dMap[link.source]) {
                 dMap[link.source].imports.push(link.target)
             } else {
@@ -200,18 +221,8 @@ function renderCircle() {
         }
 
         jdata = Object.values(dMap)
-        for (let link of originData.links) {
-            if (!dMap[link.target]) {
-                dMap[link.target] = {
-                    name: link.target,
-                    imports: [link.source],
-                    size: 1
-                }
-            } else {
-                dMap[link.target].imports.push(link.source)
-            }
-        }
-        var data = hierarchy(jdata)
+
+        var data = hierarchy(jdata).children[0];
 
         function bilink(root) {
             const map = new Map(root.leaves().map(d => [id(d), d]));
@@ -245,8 +256,8 @@ function renderCircle() {
             tree = d3.cluster()
                 .size([2 * Math.PI, radius - 100]);
 
-        const root = tree(bilink(d3.hierarchy(data))).sort((a, b) => d3.ascending(a.data.originName, b.data.originName));
-        console.log(root)
+        const root = tree(bilink(d3.hierarchy(data)))
+            .sort((a, b) => d3.ascending(a.data.originName, b.data.originName));
 
         var svg = d3.select("#circle").append("svg")
             .attr("viewBox", [-width / 2, -width / 2, width, width]);
