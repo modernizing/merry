@@ -173,7 +173,8 @@ function renderCircle() {
                 const i = name.lastIndexOf(delimiter);
                 map.set(name, data);
                 if (i >= 0) {
-                    find({name: name.substring(0, i), children: []}).children.push(data);
+                    let found = find({name: name.substring(0, i), children: []});
+                    found.children.push(data);
                     data.name = name.substring(i + 1);
                     data.originName = name;
                 } else {
@@ -197,7 +198,19 @@ function renderCircle() {
                 }
             }
         }
+
         jdata = Object.values(dMap)
+        for (let link of originData.links) {
+            if (!dMap[link.target]) {
+                dMap[link.target] = {
+                    name: link.target,
+                    imports: [link.source],
+                    size: 1
+                }
+            } else {
+                dMap[link.target].imports.push(link.source)
+            }
+        }
         var data = hierarchy(jdata)
 
         function bilink(root) {
@@ -224,7 +237,7 @@ function renderCircle() {
             colorout = "#f00",
             colornone = "#ccc",
             width = 954,
-            radius = width / 2,
+            radius = width / 2.5,
             line = d3.lineRadial()
                 .curve(d3.curveBundle.beta(0.85))
                 .radius(d => d.y)
@@ -232,7 +245,7 @@ function renderCircle() {
             tree = d3.cluster()
                 .size([2 * Math.PI, radius - 100]);
 
-        const root = tree(bilink(d3.hierarchy(data))).sort((a, b) => d3.ascending(a.data.name, b.data.name));
+        const root = tree(bilink(d3.hierarchy(data))).sort((a, b) => d3.ascending(a.data.originName, b.data.originName));
         console.log(root)
 
         var svg = d3.select("#circle").append("svg")
@@ -255,7 +268,7 @@ function renderCircle() {
                 d.text = this;
             })
             .on("mouseover", function (d) {
-                window.link.style("mix-blend-mode", null);
+                link.style("mix-blend-mode", null);
                 d3.select(this).attr("font-weight", "bold");
                 d3.selectAll(d.incoming.map(d => d.path)).attr("stroke", colorin).raise();
                 d3.selectAll(d.incoming.map(([d]) => d.text)).attr("fill", colorin).attr("font-weight", "bold");
@@ -268,7 +281,7 @@ function renderCircle() {
                 })).attr("fill", colorout).attr("font-weight", "bold");
             })
             .on("mouseout", function (d) {
-                window.link.style("mix-blend-mode", "multiply");
+                link.style("mix-blend-mode", "multiply");
                 d3.select(this).attr("font-weight", null);
                 d3.selectAll(d.incoming.map(d => d.path)).attr("stroke", null);
                 d3.selectAll(d.incoming.map(([d]) => d.text)).attr("fill", null).attr("font-weight", null);
@@ -284,7 +297,7 @@ function renderCircle() {
 ${d.outgoing.length} outgoing
 ${d.incoming.length} incoming`));
 
-        window.link = svg.append("g")
+        const link = svg.append("g")
             .attr("stroke", colornone)
             .attr("fill", "none")
             .selectAll("path")
