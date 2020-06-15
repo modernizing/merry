@@ -1,5 +1,6 @@
 function renderVertical() {
     return function (data) {
+        console.log(data)
         var width = 1440;
         var height = 2048;
 
@@ -158,10 +159,10 @@ function renderVertical() {
 }
 
 d3.json("/manifest-map.json").then(renderVertical());
-// d3.json("output.json").then(renderVertical());
+d3.json("output.json").then(renderVertical());
 
 function renderCircle() {
-    return function () {
+    return function (originData) {
         function hierarchy(data, delimiter = ".") {
             let root;
             const map = new Map;
@@ -180,12 +181,29 @@ function renderCircle() {
             });
             return root;
         }
-        var jdata = [
-            {"name":"flare.vis.events.DataEvent","size":2313,"imports":["flare.vis.events.SelectionEvent"]},
-            {"name":"flare.vis.events.SelectionEvent","size":1880,"imports":["flare.vis.events.DataEvent"]}
-            ]
+
+        var jdata = []
+        for (let link of originData) {
+            if (link.PackageName && link.ImportPackage) {
+                if (link.ImportPackage.length === 0) {
+                    continue;
+                }
+                var imports = [];
+                for (let node of link.ImportPackage) {
+                    imports.push(node.Name)
+                }
+                console.log(imports);
+                jdata.push({
+                    name: link.PackageName,
+                    imports: imports,
+                    size: link.ImportPackage.length
+                })
+            }
+        }
 
         var data = hierarchy(jdata)
+        console.log(data);
+
         function bilink(root) {
             const map = new Map(root.leaves().map(d => [id(d), d]));
             for (const d of root.leaves()) {
@@ -194,7 +212,9 @@ function renderCircle() {
             }
             for (const d of root.leaves()) {
                 for (const o of d.outgoing) {
-                    o[1].incoming.push(o)
+                    if (o && o.length >= 2 && o[1]) {
+                        o[1].incoming.push(o)
+                    }
                 }
             }
             return root;
@@ -216,8 +236,9 @@ function renderCircle() {
             tree = d3.cluster()
                 .size([2 * Math.PI, radius - 100]);
 
-        const root = tree(bilink(d3.hierarchy(data)
-            .sort((a, b) => d3.ascending(a.height, b.height) || d3.ascending(a.data.name, b.data.name))));
+        const root = tree(bilink(d3.hierarchy(data)))
+        console.log(root);
+            // .sort((a, b) => d3.ascending(a.data.name, b.data.name))));
 
         var svg = d3.select("#circle").append("svg")
             .attr("viewBox", [-width / 2, -width / 2, width, width]);
@@ -277,5 +298,5 @@ ${d.incoming.length} incoming`));
     }
 }
 
-// d3.json("output.json").then(renderCircle());
+d3.json("manifest-map.json").then(renderCircle());
 
