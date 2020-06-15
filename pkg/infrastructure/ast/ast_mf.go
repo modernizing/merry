@@ -132,14 +132,14 @@ func buildPackageVersion(ctx *parser.ValueContext, s *MfIdentListener) {
 }
 
 func buildPackageName(ctx *parser.ValueContext, s *MfIdentListener) {
-	if s.currentKey == "Private-Package" {
-		s.manifest.PackageName = ctx.GetText()
-	}
 	if s.currentKey == "Bundle-SymbolicName" {
 		s.manifest.PackageName = ctx.GetText()
 		if ctx.AllPkg() != nil {
 			s.manifest.PackageName = ctx.Pkg(0).(*parser.PkgContext).OTHERS().GetText()
 		}
+	}
+	if s.manifest.PackageName == "" && s.currentKey == "Private-Package" {
+		s.manifest.PackageName = ctx.GetText()
 	}
 }
 

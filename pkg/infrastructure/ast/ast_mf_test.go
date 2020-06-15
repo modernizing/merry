@@ -171,7 +171,6 @@ func Test_ShouldBuildForBundlename(t *testing.T) {
 	g.Expect(results.PackageName).To(Equal("org.springframework.core"))
 }
 
-
 func Test_ShouldBuildForBundleNameWithOptions(t *testing.T) {
 	g := NewGomegaWithT(t)
 	code := `Bundle-SymbolicName: org.eclipse.equinox.http.registry;singleton:=true
@@ -179,4 +178,16 @@ func Test_ShouldBuildForBundleNameWithOptions(t *testing.T) {
 `
 	results := Analysis(code, "hello.mf")
 	g.Expect(results.PackageName).To(Equal("org.eclipse.equinox.http.registry"))
+}
+
+func Test_FixMultiplePrivatePackageIssue(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Bundle-SymbolicName: rxjava
+Private-Package: io.reactivex.rxjava3.internal.disposables,io.reactive
+ x.rxjava3.internal.functions,io.reactivex.rxjava3.internal.fuseable,i
+ o.reactivex.rxjava3.internal.jdk8
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(results.PackageName).To(Equal("rxjava"))
 }
