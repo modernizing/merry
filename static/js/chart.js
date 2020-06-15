@@ -166,10 +166,11 @@ d3.json("/output.json").then(renderCircle());
 function renderCircle() {
     return function (originData) {
         function hierarchy(data, delimiter = ".") {
-            let root = {
-                name: "",
-                children: []
-            };
+            let root;
+            // let root = {
+            //     name: "root",
+            //     children: []
+            // };
             const map = new Map;
             data.forEach(function find(data) {
                 const {name} = data;
@@ -184,9 +185,10 @@ function renderCircle() {
                         return data
                     }
                     data.name = name.substring(i + 1);
-                    data.originName = name;
+                    data.originName = name.substring(name.indexOf((delimiter)) + 1);
                 } else {
-                    root.children.push(data)
+                    // root.children.push(data)
+                    root = data;
                 }
                 return data;
             });
@@ -199,7 +201,7 @@ function renderCircle() {
 
         for (let node of originData.nodes) {
             dMap[node.id] = {
-                name: node.id,
+                name: "root." + node.id,
                 imports: [],
                 size: node.group
             }
@@ -210,11 +212,11 @@ function renderCircle() {
                 continue
             }
             if (dMap[link.source]) {
-                dMap[link.source].imports.push(link.target)
+                dMap[link.source].imports.push("root." + link.target)
             } else {
                 dMap[link.source] = {
-                    name: link.source,
-                    imports: [link.target],
+                    name: "root." + link.source,
+                    imports: ["root." + link.target],
                     size: 1
                 }
             }
@@ -222,7 +224,7 @@ function renderCircle() {
 
         jdata = Object.values(dMap)
 
-        var data = hierarchy(jdata).children[0];
+        var data = hierarchy(jdata);
 
         function bilink(root) {
             const map = new Map(root.leaves().map(d => [id(d), d]));
@@ -247,8 +249,8 @@ function renderCircle() {
         var colorin = "#00f",
             colorout = "#f00",
             colornone = "#ccc",
-            width = 954,
-            radius = width / 2.5,
+            width = 1920,
+            radius = 960,
             line = d3.lineRadial()
                 .curve(d3.curveBundle.beta(0.85))
                 .radius(d => d.y)
