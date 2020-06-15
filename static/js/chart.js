@@ -187,7 +187,6 @@ function renderCircle() {
                     data.name = name.substring(i + 1);
                     data.originName = name.substring(name.indexOf((delimiter)) + 1);
                 } else {
-                    // root.children.push(data)
                     root = data;
                 }
                 return data;
@@ -319,7 +318,7 @@ ${d.incoming.length} incoming`));
             .style("mix-blend-mode", "multiply")
             .attr("d", ([i, o]) => {
                     if (o) {
-                        line(i.path(o))
+                        return line(i.path(o))
                     }
                 }
             )
