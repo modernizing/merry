@@ -241,14 +241,14 @@ function renderCircle() {
         var colorin = "#00f",
             colorout = "#f00",
             colornone = "#ccc",
-            width = 800,
+            width = 900,
             radius = width / 2,
             line = d3.lineRadial()
-                .curve(d3.curveBundle.beta(0.85))
+                .curve(d3.curveBundle.beta(0.8))
                 .radius(d => d.y)
                 .angle(d => d.x),
             tree = d3.cluster()
-                .size([2 * Math.PI, radius - 100]);
+                .size([2 * Math.PI, radius - 200]);
 
         const root = tree(bilink(d3.hierarchy(data)))
             .sort((a, b) => d3.ascending(a.data.originName, b.data.originName));
