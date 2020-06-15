@@ -249,8 +249,8 @@ function renderCircle() {
         var colorin = "#00f",
             colorout = "#f00",
             colornone = "#ccc",
-            width = 1920,
-            radius = 960,
+            width = 1200,
+            radius = width / 2,
             line = d3.lineRadial()
                 .curve(d3.curveBundle.beta(0.85))
                 .radius(d => d.y)
