@@ -159,7 +159,7 @@ function renderVertical() {
 
 d3.json("/output.json").then(renderVertical());
 // d3.json("output.json").then(renderVertical());
-d3.json("/manifest-map.json").then(renderCircle());
+d3.json("/output.json").then(renderCircle());
 // d3.json("manifest-map.json").then(renderCircle());
 
 function renderCircle() {
@@ -185,23 +185,19 @@ function renderCircle() {
         }
 
         var jdata = []
-        for (let link of originData) {
-            if (link.PackageName !== "" && link.ImportPackage) {
-                if (link.ImportPackage.length === 0) {
-                    continue;
-                }
-                var imports = [];
-                for (let node of link.ImportPackage) {
-                    imports.push(node.Name);
-                }
-                jdata.push({
-                    name: link.PackageName,
-                    imports: imports,
+        var dMap = {}
+        for (let link of originData.links) {
+            if (dMap[link.source]) {
+                dMap[link.source].imports.push(link.target)
+            } else {
+                dMap[link.source] = {
+                    name: link.source,
+                    imports: [link.target],
                     size: 1
-                })
+                }
             }
         }
-
+        jdata = Object.values(dMap)
         var data = hierarchy(jdata)
 
         function bilink(root) {
@@ -237,6 +233,7 @@ function renderCircle() {
                 .size([2 * Math.PI, radius - 100]);
 
         const root = tree(bilink(d3.hierarchy(data))).sort((a, b) => d3.ascending(a.data.name, b.data.name));
+        console.log(root)
 
         var svg = d3.select("#circle").append("svg")
             .attr("viewBox", [-width / 2, -width / 2, width, width]);
