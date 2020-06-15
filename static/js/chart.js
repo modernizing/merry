@@ -157,20 +157,13 @@ function renderVertical() {
     };
 }
 
-d3.json("/output.json").then(renderVertical());
-// d3.json("output.json").then(renderVertical());
-d3.json("/output.json").then(renderCircle());
-
-// d3.json("manifest-map.json").then(renderCircle());
+d3.json("output.json").then(renderVertical());
+d3.json("output.json").then(renderCircle());
 
 function renderCircle() {
     return function (originData) {
         function hierarchy(data, delimiter = ".") {
             let root;
-            // let root = {
-            //     name: "root",
-            //     children: []
-            // };
             const map = new Map;
             data.forEach(function find(data) {
                 const {name} = data;
@@ -261,9 +254,6 @@ function renderCircle() {
             .sort((a, b) => d3.ascending(a.data.originName, b.data.originName));
 
         var svg = d3.select("#circle").append("svg")
-            // .attr("preserveAspectRatio", "xMinYMin meet")
-            // .attr("viewBox", "0 0 300 300")
-            // .classed("svg-content", true);
             .attr("viewBox", [-width / 2, -width / 2, width, width]);
 
         const node = svg.append("g")
