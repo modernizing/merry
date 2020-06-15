@@ -32,3 +32,8 @@ div.tooltip {
     border-radius: 8px;
     /*pointer-events: none;*/
 }
+
+#circle {
+    width: 965px;
+    height: 965px;
+}

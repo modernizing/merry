@@ -158,7 +158,8 @@ function renderVertical() {
 }
 
 d3.json("/manifest-map.json").then(renderVertical());
-d3.json("output.json").then(renderVertical());
+
+// d3.json("output.json").then(renderVertical());
 
 function renderCircle() {
     return function (originData) {
@@ -182,30 +183,24 @@ function renderCircle() {
         }
 
         var jdata = []
-        // var jdata = [
-        //     {"name":"flare.vis.events.DataEvent","size":2313,"imports":["flare.vis.events.SelectionEvent"]},
-        //     {"name":"flare.vis.events.SelectionEvent","size":1880,"imports":["flare.vis.events.DataEvent"]}
-        // ]
         for (let link of originData) {
-            if (link.PackageName !== "" && link.ImportPackage && link.ImportPackage.length > 0) {
+            if (link.PackageName !== "" && link.ImportPackage) {
                 if (link.ImportPackage.length === 0) {
                     continue;
                 }
                 var imports = [];
                 for (let node of link.ImportPackage) {
-                    imports.push(node.Name)
+                    imports.push(node.Name);
                 }
-                console.log(imports);
                 jdata.push({
                     name: link.PackageName,
                     imports: imports,
-                    size: link.ImportPackage.length
+                    size: 1
                 })
             }
         }
 
         var data = hierarchy(jdata)
-        console.log(data);
 
         function bilink(root) {
             const map = new Map(root.leaves().map(d => [id(d), d]));
@@ -239,9 +234,7 @@ function renderCircle() {
             tree = d3.cluster()
                 .size([2 * Math.PI, radius - 100]);
 
-        const root = tree(bilink(d3.hierarchy(data)))
-        console.log(root);
-            // .sort((a, b) => d3.ascending(a.data.name, b.data.name))));
+        const root = tree(bilink(d3.hierarchy(data))).sort((a, b) => d3.ascending(a.data.name, b.data.name));
 
         var svg = d3.select("#circle").append("svg")
             .attr("viewBox", [-width / 2, -width / 2, width, width]);
@@ -262,41 +255,52 @@ function renderCircle() {
             .each(function (d) {
                 d.text = this;
             })
-            .on("mouseover", overed)
-            .on("mouseout", outed)
+            .on("mouseover", function (d) {
+                window.link.style("mix-blend-mode", null);
+                d3.select(this).attr("font-weight", "bold");
+                d3.selectAll(d.incoming.map(d => d.path)).attr("stroke", colorin).raise();
+                d3.selectAll(d.incoming.map(([d]) => d.text)).attr("fill", colorin).attr("font-weight", "bold");
+                d3.selectAll(d.outgoing.map(d => d.path)).attr("stroke", colorout).raise();
+                d3.selectAll(d.outgoing.map(([, d]) => {
+                    if (d) {
+                        return d.text
+                    }
+                    return ""
+                })).attr("fill", colorout).attr("font-weight", "bold");
+            })
+            .on("mouseout", function (d) {
+                window.link.style("mix-blend-mode", "multiply");
+                d3.select(this).attr("font-weight", null);
+                d3.selectAll(d.incoming.map(d => d.path)).attr("stroke", null);
+                d3.selectAll(d.incoming.map(([d]) => d.text)).attr("fill", null).attr("font-weight", null);
+                d3.selectAll(d.outgoing.map(d => d.path)).attr("stroke", null);
+                d3.selectAll(d.outgoing.map(([, d]) => {
+                    if (d) {
+                        return d.text
+                    }
+                    return ""
+                })).attr("fill", null).attr("font-weight", null);
+            })
             .call(text => text.append("title").text(d => `${id(d)}
 ${d.outgoing.length} outgoing
 ${d.incoming.length} incoming`));
 
-        const link = svg.append("g")
+        window.link = svg.append("g")
             .attr("stroke", colornone)
             .attr("fill", "none")
             .selectAll("path")
             .data(root.leaves().flatMap(leaf => leaf.outgoing))
             .join("path")
             .style("mix-blend-mode", "multiply")
-            .attr("d", ([i, o]) => line(i.path(o)))
+            .attr("d", ([i, o]) => {
+                    if (o) {
+                        line(i.path(o))
+                    }
+                }
+            )
             .each(function (d) {
                 d.path = this;
             });
-
-        function overed(d) {
-            link.style("mix-blend-mode", null);
-            d3.select(this).attr("font-weight", "bold");
-            d3.selectAll(d.incoming.map(d => d.path)).attr("stroke", colorin).raise();
-            d3.selectAll(d.incoming.map(([d]) => d.text)).attr("fill", colorin).attr("font-weight", "bold");
-            d3.selectAll(d.outgoing.map(d => d.path)).attr("stroke", colorout).raise();
-            d3.selectAll(d.outgoing.map(([, d]) => d.text)).attr("fill", colorout).attr("font-weight", "bold");
-        }
-
-        function outed(d) {
-            link.style("mix-blend-mode", "multiply");
-            d3.select(this).attr("font-weight", null);
-            d3.selectAll(d.incoming.map(d => d.path)).attr("stroke", null);
-            d3.selectAll(d.incoming.map(([d]) => d.text)).attr("fill", null).attr("font-weight", null);
-            d3.selectAll(d.outgoing.map(d => d.path)).attr("stroke", null);
-            d3.selectAll(d.outgoing.map(([, d]) => d.text)).attr("fill", null).attr("font-weight", null);
-        }
 
     }
 }
