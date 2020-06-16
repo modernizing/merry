@@ -9,5 +9,5 @@ import (
 
 func TestIgso(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Igso Suite")
+	RunSpecs(t, "Merry Suite")
 }
