@@ -80,3 +80,5 @@ dep.png
 demo
 map.csv
 output.json
+*.pom
+MANIFEST.MF
