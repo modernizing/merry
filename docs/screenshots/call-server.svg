@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg viewBox="-450,-450,900,900" xmlns="http://www.w3.org/2000/svg">
+<svg width="1440" height="2784" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke-opacity="0.6" stroke-width="1.5">
         <path stroke="#7f7f7f" d="M250,2596A336,336 0,0,0 250,1924"></path>
         <path stroke="#aaa" d="M250,2610A343,343 0,0,0 250,1924"></path>

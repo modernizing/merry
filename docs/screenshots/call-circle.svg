@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="1440" height="2784" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="-450,-450,900,900" xmlns="http://www.w3.org/2000/svg">
     <g font-family="sans-serif" font-size="10">
         <g transform="rotate(-68.64406779661017) translate(250,0)">
             <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.accesscontrol
