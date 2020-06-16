@@ -1,19 +1,16 @@
 package cmd
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
 	"github.com/gobuffalo/packr"
+	"github.com/phodal/igso/cmd/cmd_util"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
 	"io/ioutil"
-	"log"
 	"net/http"
-	"os"
-	"os/exec"
 	"path/filepath"
 )
 
@@ -50,7 +47,7 @@ var callCmd = &cobra.Command{
 			dData := domain.VisualFromManifest(manifests)
 			dContent, err := json.Marshal(dData)
 
-			ioutil.WriteFile("output.json", dContent, os.ModePerm)
+			cmd_util.WriteToCocaFile("output.json", string(dContent))
 
 			http.HandleFunc("/output.json", func(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set("Content-Type", "application/json")
@@ -94,18 +91,9 @@ var callCmd = &cobra.Command{
 		graph := result.ToDot(".", func(s string) bool {
 			return false
 		})
-		f, _ := os.Create("call.dot")
-		w := bufio.NewWriter(f)
-		_, _ = w.WriteString("di" + graph.String())
-		_ = w.Flush()
 
-		acmd := exec.Command("dot", "-Tsvg", "call.dot", "-o", "call.svg")
-		out, err := acmd.CombinedOutput()
-		if err != nil {
-			fmt.Println(string(out))
-			log.Fatalf("Cmd.Run() failed with %s\n", err)
-		}
-
+		cmd_util.WriteToCocaFile("call.dot", graph.String())
+		cmd_util.ConvertToSvg("call")
 	},
 }
 

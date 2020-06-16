@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
 	"github.com/phodal/igso/cmd/cmd_util"
@@ -12,7 +11,6 @@ import (
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -84,15 +82,13 @@ var manifestCmd = &cobra.Command{
 				result = result.MergeHeaderFile(tequila.MergePackageFunc)
 			}
 
+
 			graph := result.ToDot(".", func(s string) bool {
 				return false
 			})
-			f, _ := os.Create("dep.dot")
-			w := bufio.NewWriter(f)
-			_, _ = w.WriteString("di" + graph.String())
-			_ = w.Flush()
 
-			exec.Command("dot", "-Tsvg", "dep.dot", "-o", "dep.svg")
+			cmd_util.WriteToCocaFile("dep.dot", graph.String())
+			cmd_util.ConvertToSvg("dep")
 		}
 	},
 }

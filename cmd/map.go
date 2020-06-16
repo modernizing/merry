@@ -2,12 +2,11 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/phodal/igso/cmd/cmd_util"
 	"github.com/phodal/igso/pkg/application/manifest"
 	"github.com/phodal/igso/pkg/domain"
 	"github.com/phodal/igso/pkg/infrastructure"
 	"github.com/spf13/cobra"
-	"io/ioutil"
-	"os"
 )
 
 type MapConfig struct {
@@ -30,7 +29,7 @@ var mapCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
 		jarPaths := infrastructure.GetJarFilesByPath(path, false)
-		var results  = "origin,groupid,artifactId,version" + "\n"
+		var results = "origin,groupid,artifactId,version" + "\n"
 		for _, jarPath := range jarPaths {
 			manifest := manifest.ScanByFile(jarPath)
 			for _, pkg := range manifest.ExportPackage {
@@ -40,6 +39,6 @@ var mapCmd = &cobra.Command{
 			}
 		}
 		fmt.Fprintf(output, results)
-		ioutil.WriteFile("map.csv", []byte(results), os.ModePerm)
+		cmd_util.WriteToCocaFile("map.csv", results)
 	},
 }
