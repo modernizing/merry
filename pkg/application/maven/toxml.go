@@ -52,11 +52,15 @@ func buildFinal(newAntModel domain.MavenProject, results string) string {
 func buildDepStr(deps []domain.MavenDependency) string {
 	var results = ""
 	for _, dep := range deps {
+		version := dep.Version
+		if version == "" {
+			version = "[1.0.0,)"
+		}
 		var tmpl = `
       <dependency>
           <groupId>` + dep.GroupId + `</groupId>
           <artifactId>` + dep.ArtifactId + `</artifactId>
-          <version>` + dep.Version + `</version>
+          <version>` + version + `</version>
       </dependency>
 `
 		results += tmpl
