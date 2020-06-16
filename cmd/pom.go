@@ -41,7 +41,7 @@ var pomCmd = &cobra.Command{
 		for _, jarPath := range jarPaths {
 			pathSplit := strings.Split(jarPath, string(os.PathSeparator))
 			jarName := pathSplit[len(pathSplit)-1]
-			pomName := strings.ReplaceAll(jarName, ".jar", ".pom")
+			//pomName := strings.ReplaceAll(jarName, ".jar", ".pom")
 
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
 			dep := domain.ByFileName(jarName, 2)
@@ -61,7 +61,7 @@ var pomCmd = &cobra.Command{
 				ArtifactId: dep.ArtifactId,
 			})
 
-			err := ioutil.WriteFile(filepath.FromSlash(path+ "/" + pomName), []byte(pomfile), os.ModePerm)
+			err := ioutil.WriteFile(filepath.FromSlash(strings.ReplaceAll(jarPath, ".jar", ".pom")), []byte(pomfile), os.ModePerm)
 			if err != nil {
 				fmt.Println(err)
 			}
