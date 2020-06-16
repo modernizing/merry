@@ -141,7 +141,7 @@ cmd: `igso call -s`
 
 `igso` will read `manifest-map.json` and start to [http://localhost:3000](http://localhost:3000):
 
-![Call Circle](docs/screenshots/circle-call.svg)
+![Call Circle](docs/screenshots/call-circle.svg)
 
 ![Call Server](docs/screenshots/call-server.svg)
 
