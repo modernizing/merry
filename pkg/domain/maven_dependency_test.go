@@ -120,11 +120,11 @@ func Test_ShouldBuildDepWithMapFilterRemoveDep(t *testing.T) {
 	ognlDep := MavenDependency{GroupId: "ognl", ArtifactId: "ognl", Version: "5.0"}
 
 	var depmap = make(map[string]MavenDependency)
-	depmap["ognl"] = ognlDep
+	depmap["ognl.bean"] = ognlDep
 	depmap["ognl.factory"] = ognlDep
 
 	var pkgs []JavaPackage
-	pkgs = append(pkgs, JavaPackage{Name: "ognl", StartVersion: "5.0.0_201"})
+	pkgs = append(pkgs, JavaPackage{Name: "ognl.bean", StartVersion: "5.0.0_201"})
 	pkgs = append(pkgs, JavaPackage{Name: "ognl.factory", StartVersion: "5.0.0_201"})
 	pkgs = append(pkgs, JavaPackage{Name: "factory", StartVersion: "5.0.0_201"})
 
