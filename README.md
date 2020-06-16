@@ -29,6 +29,8 @@ Todo:
  - [ ] Ant to Gradle
  - [ ] Manifest convert
     - [ ] to BND
+ - [ ] repackage
+    - [ ] add maven info to package
 
 Feature lists:
 
