@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/phodal/igso/pkg/application/dupsearch"
-	"github.com/phodal/igso/pkg/application/maven"
-	dependency "github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/merry/pkg/application/dupsearch"
+	"github.com/phodal/merry/pkg/application/maven"
+	dependency "github.com/phodal/merry/pkg/domain"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"
@@ -35,7 +35,7 @@ var dupSearch = &cobra.Command{
 		deps = dependency.RemoveDuplicate(deps)
 		result := maven.BuildByDeps(deps, dependency.MavenProject{
 			Version:      "0.0.1",
-			GroupId:      "com.igso",
+			GroupId:      "com.merry",
 			ArtifactId:   "test",
 		})
 

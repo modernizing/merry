@@ -1,1 +1,2 @@
-rename: ../_fixtures/fix/felix-duplicate.jar -> ../_fixtures/fix/tutorial.example8_1.0.0.SNAPSHOT.jar
+rename: ../_fixtures/fix/felix-duplicate.jar -> ../_fixtures/fix/felix-tut-8_1.0.0.SNAPSHOT.jar
+rename: ../_fixtures/fix/tutorial.example8_1.0.0.SNAPSHOT.jar -> ../_fixtures/fix/felix-tut-8_1.0.0.SNAPSHOT.jar

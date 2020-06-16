@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/igso/cmd/config"
+	"github.com/phodal/merry/cmd/config"
 	"github.com/spf13/cobra"
 )
 

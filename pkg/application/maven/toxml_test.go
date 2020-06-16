@@ -2,7 +2,7 @@ package maven
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/merry/pkg/domain"
 	"testing"
 )
 

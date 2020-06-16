@@ -2,7 +2,7 @@ package domain
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/phodal/igso/pkg/infrastructure/csvconv"
+	"github.com/phodal/merry/pkg/infrastructure/csvconv"
 	"path/filepath"
 	"testing"
 )

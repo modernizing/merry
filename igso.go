@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "github.com/phodal/igso/cmd"
+	. "github.com/phodal/merry/cmd"
 	"os"
 )
 

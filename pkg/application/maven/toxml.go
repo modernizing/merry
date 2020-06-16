@@ -1,7 +1,7 @@
 package maven
 
 import (
-	"github.com/phodal/igso/pkg/domain"
+	"github.com/phodal/merry/pkg/domain"
 )
 
 func FromAntToXml(content string, isExtract bool, depmap map[string]domain.MavenDependency) string {

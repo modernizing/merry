@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/igso/pkg/application/manifest"
-	"github.com/phodal/igso/pkg/infrastructure"
+	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/infrastructure"
 	"github.com/spf13/cobra"
 )
 

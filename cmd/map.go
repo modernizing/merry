@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/igso/cmd/cmd_util"
-	"github.com/phodal/igso/pkg/application/manifest"
-	"github.com/phodal/igso/pkg/domain"
-	"github.com/phodal/igso/pkg/infrastructure"
+	"github.com/phodal/merry/cmd/cmd_util"
+	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/domain"
+	"github.com/phodal/merry/pkg/infrastructure"
 	"github.com/spf13/cobra"
 )
 

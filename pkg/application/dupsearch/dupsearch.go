@@ -2,9 +2,9 @@ package dupsearch
 
 import (
 	"fmt"
-	. "github.com/phodal/igso/pkg/domain"
-	"github.com/phodal/igso/pkg/infrastructure"
-	"github.com/phodal/igso/pkg/infrastructure/properties"
+	. "github.com/phodal/merry/pkg/domain"
+	"github.com/phodal/merry/pkg/infrastructure"
+	"github.com/phodal/merry/pkg/infrastructure/properties"
 )
 
 func DupSearch(root string) []MavenDependency {

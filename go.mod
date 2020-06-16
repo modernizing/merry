@@ -1,4 +1,4 @@
-module github.com/phodal/igso
+module github.com/phodal/merry
 
 go 1.13
 

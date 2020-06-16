@@ -3,11 +3,11 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/phodal/igso/cmd/cmd_util"
-	"github.com/phodal/igso/pkg/adapter/tequila"
-	"github.com/phodal/igso/pkg/application/manifest"
-	"github.com/phodal/igso/pkg/infrastructure"
-	"github.com/phodal/igso/pkg/infrastructure/bundle"
+	"github.com/phodal/merry/cmd/cmd_util"
+	"github.com/phodal/merry/pkg/adapter/tequila"
+	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/infrastructure"
+	"github.com/phodal/merry/pkg/infrastructure/bundle"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"
@@ -55,12 +55,12 @@ var manifestCmd = &cobra.Command{
 				fmt.Fprintf(output, "path: "+path+" lost jar files")
 				return
 			}
-			igsoManifest := manifest.ScanByFile(path)
+			merryManifest := manifest.ScanByFile(path)
 			table := cmd_util.NewOutput(output)
 
 			table.SetHeader([]string{"Name", "Version Info", "Export Version", "Start Version", "EndVersion", "Config"})
 
-			for _, pkg := range igsoManifest.ImportPackage {
+			for _, pkg := range merryManifest.ImportPackage {
 				results := ""
 				for _, conf := range pkg.Config {
 					if conf.Key != "version" {
@@ -86,7 +86,7 @@ var manifestCmd = &cobra.Command{
 				return false
 			})
 
-			cmd_util.WriteToCocaFile("dep.dot", graph.String())
+			cmd_util.WriteToCocaFile("dep.dot", "di" + graph.String())
 			cmd_util.ConvertToSvg("dep")
 		}
 	},

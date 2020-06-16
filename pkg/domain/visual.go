@@ -39,7 +39,7 @@ func VisualFromManifest(manifests []IgsoManifest) DData {
 					Target: pkg.Name,
 					Value:  1,
 				})
-				sourceTargetMap[mani.PackageName+".igso."+pkg.Name]++
+				sourceTargetMap[mani.PackageName+".merry."+pkg.Name]++
 			}
 		}
 	}
@@ -48,7 +48,7 @@ func VisualFromManifest(manifests []IgsoManifest) DData {
 		data.Nodes = append(data.Nodes, value)
 	}
 	for _, link := range links {
-		link.Value = sourceTargetMap[link.Source+".igso."+link.Target]
+		link.Value = sourceTargetMap[link.Source+".merry."+link.Target]
 	}
 
 	data.Links = links

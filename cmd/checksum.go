@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/igso/pkg/infrastructure/bundle"
+	"github.com/phodal/merry/pkg/infrastructure/bundle"
 	"github.com/spf13/cobra"
 )
 

@@ -2,10 +2,10 @@ package manifest
 
 import (
 	"fmt"
-	"github.com/phodal/igso/pkg/domain"
-	"github.com/phodal/igso/pkg/infrastructure"
-	"github.com/phodal/igso/pkg/infrastructure/ast"
-	"github.com/phodal/igso/pkg/infrastructure/bundle"
+	"github.com/phodal/merry/pkg/domain"
+	"github.com/phodal/merry/pkg/infrastructure"
+	"github.com/phodal/merry/pkg/infrastructure/ast"
+	"github.com/phodal/merry/pkg/infrastructure/bundle"
 	"io/ioutil"
 	"strings"
 )

@@ -2,7 +2,7 @@ package cmd
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/phodal/igso/cmdtest/testcase"
+	"github.com/phodal/merry/cmdtest/testcase"
 	"io/ioutil"
 	"path/filepath"
 	"testing"

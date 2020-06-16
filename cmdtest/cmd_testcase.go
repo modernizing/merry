@@ -3,7 +3,7 @@ package cmdtest
 import (
 	"bytes"
 	"github.com/mattn/go-shellwords"
-	"github.com/phodal/igso/cmdtest/testcase"
+	"github.com/phodal/merry/cmdtest/testcase"
 	"github.com/spf13/cobra"
 	"io"
 	"os"

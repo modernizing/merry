@@ -1,4 +1,4 @@
 origin,groupid,artifactId,version
-tutorial.example2.service,tutorial.example2,tutorial.example2,1.0.0.SNAPSHOT
-tutorial.example2.service,tutorial.example2b,tutorial.example2b,1.0.0.SNAPSHOT
-tutorial.example6.service,tutorial.example6,tutorial.example6,1.0.0.SNAPSHOT
+tutorial.example2.service,felix-tut-2,felix-tut-2,1.0.0.SNAPSHOT
+tutorial.example2.service,felix-tut-2b,felix-tut-2b,1.0.0.SNAPSHOT
+tutorial.example6.service,felix-tut-6,felix-tut-6,1.0.0.SNAPSHOT

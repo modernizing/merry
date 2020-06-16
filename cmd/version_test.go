@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/phodal/igso/cmdtest/testcase"
+	"github.com/phodal/merry/cmdtest/testcase"
 	"testing"
 )
 

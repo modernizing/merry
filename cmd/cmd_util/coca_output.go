@@ -3,7 +3,7 @@ package cmd_util
 import (
 	"fmt"
 	"github.com/olekukonko/tablewriter"
-	"github.com/phodal/igso/cmd/config"
+	"github.com/phodal/merry/cmd/config"
 	"io"
 	"io/ioutil"
 	"os"

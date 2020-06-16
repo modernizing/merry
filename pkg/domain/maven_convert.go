@@ -8,11 +8,11 @@ func MapFromCSV(csv [][]string) ([]MavenDependency, map[string]MavenDependency) 
 
 	header := csv[0]
 	if len(header) != 4 {
-		fmt.Println("not valid igso map csv")
+		fmt.Println("not valid merry map csv")
 		return nil, nil
 	}
 	if header[0] != "origin" {
-		fmt.Println("not valid igso map csv")
+		fmt.Println("not valid merry map csv")
 		return nil, nil
 	}
 	body := csv[1:]

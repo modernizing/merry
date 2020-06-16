@@ -12,7 +12,7 @@ func TestShouldGetVersionByDepName(t *testing.T) {
 	dependency := MavenDependency{
 		Version:    "1.0.0",
 		GroupId:    "com.phodal",
-		ArtifactId: "igso",
+		ArtifactId: "merry",
 	}
 	deps = append(deps, dependency)
 

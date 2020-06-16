@@ -3,8 +3,8 @@ package ast
 import (
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	parser "github.com/phodal/igso/languages/manifest"
-	"github.com/phodal/igso/pkg/domain"
+	parser "github.com/phodal/merry/languages/manifest"
+	"github.com/phodal/merry/pkg/domain"
 	"regexp"
 	"strings"
 )

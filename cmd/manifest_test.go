@@ -2,7 +2,8 @@ package cmd
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/phodal/igso/cmdtest/testcase"
+	"github.com/phodal/merry/cmd/config"
+	"github.com/phodal/merry/cmdtest/testcase"
 	"io/ioutil"
 	"path/filepath"
 	"testing"
@@ -17,7 +18,7 @@ func Test_ShouldCommandManifest(t *testing.T) {
 	}}
 	RunTestCmd(t, tests)
 
-	content, _ := ioutil.ReadFile(filepath.FromSlash("dep.dot"))
+	content, _ := ioutil.ReadFile(filepath.FromSlash(config.CmdConfig.ReporterPath + "/" + "dep.dot"))
 	g.Expect(string(content)).To(Equal(`digraph G {
 	subgraph cluster1 {
 	label="main";
@@ -40,8 +41,7 @@ func Test_ShouldVersionManifest(t *testing.T) {
 	RunTestCmd(t, tests)
 }
 
-
-func Test_ShouldFitlerJarForManifest(t *testing.T) {
+func Test_ShouldFilterJarForManifest(t *testing.T) {
 	g := NewGomegaWithT(t)
 	tests := []testcase.CmdTestCase{{
 		Name:   "manifest",
@@ -50,7 +50,7 @@ func Test_ShouldFitlerJarForManifest(t *testing.T) {
 	}}
 	RunTestCmd(t, tests)
 
-	content, _ := ioutil.ReadFile(filepath.FromSlash("dep.dot"))
+	content, _ := ioutil.ReadFile(filepath.FromSlash(config.CmdConfig.ReporterPath + "/" + "dep.dot"))
 	g.Expect(string(content)).To(Equal(`digraph G {
 
 }

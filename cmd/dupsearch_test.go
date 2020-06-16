@@ -2,7 +2,7 @@ package cmd
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/phodal/igso/cmdtest/testcase"
+	"github.com/phodal/merry/cmdtest/testcase"
 	"io/ioutil"
 	"path/filepath"
 	"testing"
@@ -22,7 +22,7 @@ func Test_ShouldBuildPomXmlWithDupSearch(t *testing.T) {
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-	<groupId>com.igso</groupId>        
+	<groupId>com.merry</groupId>        
 	<artifactId>test</artifactId>
 	<version>0.0.1</version>
 

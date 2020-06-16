@@ -2,10 +2,10 @@ package maven
 
 import (
 	"fmt"
-	. "github.com/phodal/igso/pkg/domain"
-	"github.com/phodal/igso/pkg/infrastructure/bundle"
-	"github.com/phodal/igso/pkg/infrastructure/properties"
-	"github.com/phodal/igso/pkg/infrastructure/xmlconv"
+	. "github.com/phodal/merry/pkg/domain"
+	"github.com/phodal/merry/pkg/infrastructure/bundle"
+	"github.com/phodal/merry/pkg/infrastructure/properties"
+	"github.com/phodal/merry/pkg/infrastructure/xmlconv"
 	"strings"
 )
 

@@ -8,9 +8,9 @@ import (
 var (
 	output io.Writer
 	rootCmd = &cobra.Command{
-		Use:   "igso",
+		Use:   "merry",
 		Short: "A generator for Cobra based Applications",
-		Long:  `igso`,
+		Long:  `merry`,
 	}
 )
 

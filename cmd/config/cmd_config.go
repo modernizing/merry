@@ -6,5 +6,5 @@ type IgsoConfig struct {
 
 const VERSION = "0.0.1"
 var CmdConfig = &IgsoConfig{
-	ReporterPath: "igso",
+	ReporterPath: "merry",
 }

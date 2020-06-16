@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/igso/pkg/application/maven"
-	"github.com/phodal/igso/pkg/domain"
-	"github.com/phodal/igso/pkg/infrastructure/csvconv"
+	"github.com/phodal/merry/pkg/application/maven"
+	"github.com/phodal/merry/pkg/domain"
+	"github.com/phodal/merry/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"
