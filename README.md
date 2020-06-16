@@ -1,4 +1,4 @@
-# Merry
+# Going Merry
 
 > a legacy system migration tools for OSGI based architecture Java applications.
 
