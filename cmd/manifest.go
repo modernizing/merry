@@ -74,8 +74,7 @@ var manifestCmd = &cobra.Command{
 		if manifestConfig.IsScan {
 			scanManifest := manifest.ScanByPath(path)
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
-			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
-			cmd_util.WriteToCocaFile("manifest-map.json", res)
+			cmd_util.WriteToCocaFile("manifest-map.json", string(res))
 
 			result := manifest.BuildFullGraph(scanManifest, nil)
 
