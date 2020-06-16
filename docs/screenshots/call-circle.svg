@@ -1,0 +1,1419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1440" height="2784" xmlns="http://www.w3.org/2000/svg">
+    <g font-family="sans-serif" font-size="10">
+        <g transform="rotate(-68.64406779661017) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.accesscontrol
+                <title>root.com.csii.pe.accesscontrol
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-70.16949152542372) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.action
+                <title>root.com.csii.pe.action
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-88.47457627118644) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.cache
+                <title>root.com.csii.pe.cache
+                    0 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-71.69491525423729) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.chain
+                <title>root.com.csii.pe.chain
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-25.932203389830505) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.channel.http
+                <title>root.com.csii.pe.channel.http
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-33.559322033898304) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.common.jdbc
+                <title>root.com.csii.pe.common.jdbc
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-39.66101694915255) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.common.security
+                <title>root.com.csii.pe.common.security
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-41.186440677966104) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.common.socket
+                <title>root.com.csii.pe.common.socket
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-36.61016949152543) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.common.util.regex
+                <title>root.com.csii.pe.common.util.regex
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-54.91525423728813) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.config.support
+                <title>root.com.csii.pe.config.support
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-51.86440677966102) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.core
+                <title>root.com.csii.pe.core
+                    15 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-74.7457627118644) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.dynamic.core.monitor
+                <title>root.com.csii.pe.dynamic.core.monitor
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-44.23728813559322) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.ibs
+                <title>root.com.csii.pe.ibs
+                    60 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-30.50847457627119) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.report
+                <title>root.com.csii.pe.report
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-57.96610169491525) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.security
+                <title>root.com.csii.pe.security
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-80.84745762711864) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.service.comm
+                <title>root.com.csii.pe.service.comm
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-77.79661016949153) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.service.event.support
+                <title>root.com.csii.pe.service.event.support
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-83.89830508474576) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.service.executor
+                <title>root.com.csii.pe.service.executor
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-82.37288135593221) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.service.id
+                <title>root.com.csii.pe.service.id
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-85.42372881355932) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.service.jdbc
+                <title>root.com.csii.pe.service.jdbc
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-28.983050847457626) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.template
+                <title>root.com.csii.pe.template
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-65.59322033898306) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.transform.stream
+                <title>root.com.csii.pe.transform.stream
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-50.33898305084745) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.trsflow
+                <title>root.com.csii.pe.trsflow
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-47.28813559322034) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.util.config
+                <title>root.com.csii.pe.util.config
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-62.54237288135593) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.validation.convert
+                <title>root.com.csii.pe.validation.convert
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-61.016949152542374) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.pe.validation.rule
+                <title>root.com.csii.pe.validation.rule
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-22.88135593220339) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.csii.rule
+                <title>root.com.csii.rule
+                    6 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-1.52542372881355) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.common.jdbc.exception
+                <title>root.com.ibatis.common.jdbc.exception
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-4.576271186440678) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.common.util
+                <title>root.com.ibatis.common.util
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(1.5254237288135641) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.common.xml
+                <title>root.com.ibatis.common.xml
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-19.830508474576263) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.sqlmap.client.event
+                <title>root.com.ibatis.sqlmap.client.event
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-10.677966101694906) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.sqlmap.engine.builder.xml
+                <title>root.com.ibatis.sqlmap.engine.builder.xml
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-7.627118644067792) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.sqlmap.engine.impl
+                <title>root.com.ibatis.sqlmap.engine.impl
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-16.77966101694915) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.sqlmap.engine.transaction.external
+                <title>root.com.ibatis.sqlmap.engine.transaction.external
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(-13.728813559322035) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.ibatis.sqlmap.engine.type
+                <title>root.com.ibatis.sqlmap.engine.type
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(4.576271186440692) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">com.springsource.edu.emory.mathcs.backport
+                <title>root.com.springsource.edu.emory.mathcs.backport
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(241.01694915254234) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">
+                edu.emory.mathcs.backport.java.util.concurrent
+                <title>root.edu.emory.mathcs.backport.java.util.concurrent
+                    0 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(260.8474576271186) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-1
+                <title>root.felix-tut-1
+                    2 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(247.1186440677966) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-2
+                <title>root.felix-tut-2
+                    2 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(263.8983050847458) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-2b
+                <title>root.felix-tut-2b
+                    4 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(244.06779661016947) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-3
+                <title>root.felix-tut-3
+                    4 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(257.79661016949154) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-4
+                <title>root.felix-tut-4
+                    4 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(265.4237288135593) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-5
+                <title>root.felix-tut-5
+                    6 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(259.32203389830505) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-6
+                <title>root.felix-tut-6
+                    4 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(245.5932203389831) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-7
+                <title>root.felix-tut-7
+                    6 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(248.64406779661022) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-8
+                <title>root.felix-tut-8
+                    6 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(262.37288135593224) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">felix-tut-9
+                <title>root.felix-tut-9
+                    4 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(176.94915254237293) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.jdo.datastore
+                <title>root.javax.jdo.datastore
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(193.72881355932202) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.naming
+                <title>root.javax.naming
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(192.2033898305085) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.net
+                <title>root.javax.net
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(180) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.persistence.spi
+                <title>root.javax.persistence.spi
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(198.3050847457627) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.security.cert
+                <title>root.javax.security.cert
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(183.05084745762713) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.servlet
+                <title>root.javax.servlet
+                    0 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(184.57627118644064) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.sql
+                <title>root.javax.sql
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(195.25423728813558) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.transaction
+                <title>root.javax.transaction
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(189.15254237288138) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.xml.parsers
+                <title>root.javax.xml.parsers
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(187.62711864406782) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">javax.xml.transform
+                <title>root.javax.xml.transform
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(268.47457627118644) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">ognl
+                <title>root.ognl
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(215.08474576271186) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.essentials.ejb.cmp3
+                <title>root.oracle.toplink.essentials.ejb.cmp3
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(205.93220338983053) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.essentials.expressions
+                <title>root.oracle.toplink.essentials.expressions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(210.50847457627117) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">
+                oracle.toplink.essentials.internal.databaseaccess
+                <title>root.oracle.toplink.essentials.internal.databaseaccess
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(212.03389830508473) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">
+                oracle.toplink.essentials.internal.sessions
+                <title>root.oracle.toplink.essentials.internal.sessions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(207.45762711864404) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.essentials.sessions
+                <title>root.oracle.toplink.essentials.sessions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(219.66101694915255) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.exceptions
+                <title>root.oracle.toplink.exceptions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(218.135593220339) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.expressions
+                <title>root.oracle.toplink.expressions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(230.33898305084745) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.internal.databaseaccess
+                <title>root.oracle.toplink.internal.databaseaccess
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(237.9661016949152) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.jndi
+                <title>root.oracle.toplink.jndi
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(201.35593220338978) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.logging
+                <title>root.oracle.toplink.logging
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(202.8813559322034) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.publicinterface
+                <title>root.oracle.toplink.publicinterface
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(234.9152542372882) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.queryframework
+                <title>root.oracle.toplink.queryframework
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(227.28813559322037) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.sessionbroker
+                <title>root.oracle.toplink.sessionbroker
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(236.44067796610165) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.sessions
+                <title>root.oracle.toplink.sessions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(233.38983050847457) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.threetier
+                <title>root.oracle.toplink.threetier
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(224.2372881355932) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.tools.sessionconfiguration
+                <title>root.oracle.toplink.tools.sessionconfiguration
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(222.71186440677963) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">oracle.toplink.tools.sessionmanagement
+                <title>root.oracle.toplink.tools.sessionmanagement
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(173.89830508474574) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.aopalliance.intercept
+                <title>root.org.aopalliance.intercept
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(131.18644067796615) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.commons.attributes
+                <title>root.org.apache.commons.attributes
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(126.6101694915254) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.commons.collections
+                <title>root.org.apache.commons.collections
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(128.13559322033902) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.commons.dbcp
+                <title>root.org.apache.commons.dbcp
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(129.66101694915255) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.commons.logging
+                <title>root.org.apache.commons.logging
+                    0 outgoing
+                    3 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(137.28813559322035) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.felix.servicebinder
+                <title>root.org.apache.felix.servicebinder
+                    0 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(134.23728813559322) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.log4j
+                <title>root.org.apache.log4j
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(123.55932203389827) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.apache.openjpa.persistence
+                <title>root.org.apache.openjpa.persistence
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(79.32203389830511) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.aspectj.bridge
+                <title>root.org.aspectj.bridge
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(76.27118644067795) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.aspectj.weaver.bcel
+                <title>root.org.aspectj.weaver.bcel
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(74.74576271186442) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.aspectj.weaver.patterns
+                <title>root.org.aspectj.weaver.patterns
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(167.79661016949154) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.eclipse.core.runtime
+                <title>root.org.eclipse.core.runtime
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(155.59322033898306) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.eclipse.persistence.expressions
+                <title>root.org.eclipse.persistence.expressions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(158.64406779661022) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">
+                org.eclipse.persistence.internal.databaseaccess
+                <title>root.org.eclipse.persistence.internal.databaseaccess
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(160.16949152542372) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.eclipse.persistence.internal.sessions
+                <title>root.org.eclipse.persistence.internal.sessions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(163.22033898305085) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.eclipse.persistence.jpa
+                <title>root.org.eclipse.persistence.jpa
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(164.7457627118644) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.eclipse.persistence.sessions
+                <title>root.org.eclipse.persistence.sessions
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(108.30508474576268) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.cache
+                <title>root.org.hibernate.cache
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(91.52542372881356) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.cfg
+                <title>root.org.hibernate.cfg
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(94.57627118644066) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.classic
+                <title>root.org.hibernate.classic
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(115.93220338983053) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.connection
+                <title>root.org.hibernate.connection
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(100.67796610169492) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.context
+                <title>root.org.hibernate.context
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(111.35593220338981) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.criterion
+                <title>root.org.hibernate.criterion
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(82.37288135593218) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.hibernate.dialect
+                <title>root.org.hibernate.dialect
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(90) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.ejb
+                <title>root.org.hibernate.ejb
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(88.47457627118644) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.hibernate.engine
+                <title>root.org.hibernate.engine
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(105.25423728813558) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.event.def
+                <title>root.org.hibernate.event.def
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(112.8813559322034) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.exception
+                <title>root.org.hibernate.exception
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(120.50847457627117) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.impl
+                <title>root.org.hibernate.impl
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(93.05084745762713) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.jdbc
+                <title>root.org.hibernate.jdbc
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(97.62711864406779) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.persister.entity
+                <title>root.org.hibernate.persister.entity
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(85.42372881355931) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.hibernate.tool.hbm2ddl
+                <title>root.org.hibernate.tool.hbm2ddl
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(102.20338983050846) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.transaction
+                <title>root.org.hibernate.transaction
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(109.83050847457625) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.transform
+                <title>root.org.hibernate.transform
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(117.45762711864407) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.type
+                <title>root.org.hibernate.type
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(114.40677966101697) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.usertype
+                <title>root.org.hibernate.usertype
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(118.98305084745763) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.hibernate.util
+                <title>root.org.hibernate.util
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(140.33898305084745) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.osgi.framework
+                <title>root.org.osgi.framework
+                    0 outgoing
+                    17 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(146.44067796610167) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.osgi.service.cm
+                <title>root.org.osgi.service.cm
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(143.3898305084746) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.osgi.util.tracker
+                <title>root.org.osgi.util.tracker
+                    0 outgoing
+                    4 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(149.49152542372883) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.slf4j
+                <title>root.org.slf4j
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(50.338983050847474) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.aop.scope
+                <title>root.org.springframework.aop.scope
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(51.86440677966101) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.aop.support
+                <title>root.org.springframework.aop.support
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(25.932203389830505) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.beans.factory.annotation
+                <title>root.org.springframework.beans.factory.annotation
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(27.457627118644083) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.beans.factory.config
+                <title>root.org.springframework.beans.factory.config
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(28.98305084745762) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.beans.factory.support
+                <title>root.org.springframework.beans.factory.support
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(57.96610169491527) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.context.event
+                <title>root.org.springframework.context.event
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(56.4406779661017) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.context.support
+                <title>root.org.springframework.context.support
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(54.91525423728814) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.context.weaving
+                <title>root.org.springframework.context.weaving
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(18.3050847457627) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.core.io.support
+                <title>root.org.springframework.core.io.support
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(22.88135593220339) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.core.type.classreading
+                <title>root.org.springframework.core.type.classreading
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(21.355932203389827) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.core.type.filter
+                <title>root.org.springframework.core.type.filter
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(32.03389830508475) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.dao
+                <title>root.org.springframework.dao
+                    0 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(38.13559322033899) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.instrument.classloading
+                <title>root.org.springframework.instrument.classloading
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(12.203389830508485) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.jdbc.datasource.lookup
+                <title>root.org.springframework.jdbc.datasource.lookup
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(15.254237288135585) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.jdbc.support
+                <title>root.org.springframework.jdbc.support
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(71.69491525423729) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.jndi
+                <title>root.org.springframework.jndi
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(35.08474576271186) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.orm.ibatis
+                <title>root.org.springframework.orm.ibatis
+                    0 outgoing
+                    2 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(65.59322033898306) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.osgi.context
+                <title>root.org.springframework.osgi.context
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(62.54237288135593) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.osgi.service.exporter
+                <title>root.org.springframework.osgi.service.exporter
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(61.01694915254237) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.osgi.service.importer
+                <title>root.org.springframework.osgi.service.importer
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(9.152542372881342) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.transaction.jta
+                <title>root.org.springframework.transaction.jta
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(7.627118644067792) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.transaction.support
+                <title>root.org.springframework.transaction.support
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(68.64406779661019) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.ui
+                <title>root.org.springframework.ui
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(70.16949152542372) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.util
+                <title>root.org.springframework.util
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(42.71186440677968) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.web.context.request
+                <title>root.org.springframework.web.context.request
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(41.18644067796609) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.web.context.support
+                <title>root.org.springframework.web.context.support
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(47.28813559322032) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.web.filter
+                <title>root.org.springframework.web.filter
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(45.76271186440678) translate(250,0)">
+            <text dy="0.31em" x="6" text-anchor="start">org.springframework.web.multipart
+                <title>root.org.springframework.web.multipart
+                    0 outgoing
+                    1 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(170.84745762711862) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.w3c.dom
+                <title>root.org.w3c.dom
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(152.5423728813559) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">org.xml.sax
+                <title>root.org.xml.sax
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(254.74576271186436) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">tutorial.example2.service
+                <title>root.tutorial.example2.service
+                    0 outgoing
+                    14 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(251.6949152542373) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">tutorial.example6.service
+                <title>root.tutorial.example6.service
+                    0 outgoing
+                    6 incoming
+                </title>
+            </text>
+        </g>
+        <g transform="rotate(266.9491525423729) translate(250,0)">
+            <text dy="0.31em" x="-6" text-anchor="end" transform="rotate(180)">undefined
+                <title>root.undefined
+                    0 outgoing
+                    0 incoming
+                </title>
+            </text>
+        </g>
+    </g>
+    <g stroke="#ccc" fill="none">
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L143.53735579959144,-186.32854119451466C132.69355786263492,-176.01919343836866,111.00596198872188,-155.40049792607667,99.76276259134863,-138.41767129275507C88.51956319397537,-121.4348446594335,87.72076027314192,-108.08788690508236,84.69233790344661,-94.77855940920978C81.66391553375134,-81.4692319133372,76.40587371519422,-68.19753467594317,63.72529659836459,-59.22928377865944C51.04471948153495,-50.26103288137571,30.94160706643279,-45.596228324202265,17.747760091393772,-47.49619145909082C4.553913116354756,-49.39615459397936,-1.7306684186211172,-57.86088542092991,-8.01524995359699,-66.32561624788046C-14.299831488572861,-74.790347074831,-20.58441302354873,-83.25507790178155,-26.868994558524605,-91.71980872873208C-33.153576093500476,-100.18453955568263,-39.438157628476354,-108.64927038263318,-45.722739163452225,-117.11400120958372C-52.007320698428096,-125.57873203653425,-58.29190223340397,-134.0434628634848,-64.57648376837984,-142.50819369043532C-70.86106530335572,-150.9729245173859,-77.14564683833159,-159.43765534433643,-83.43022837330746,-167.90238617128696C-89.71480990828333,-176.36711699823752,-95.9993914432592,-184.83184782518808,-102.28397297823507,-193.2965786521386C-108.56855451321094,-201.76130947908916,-114.85313604818681,-210.22604030603972,-117.99542681567476,-214.45840571951499L-121.1377175831627,-218.69077113299028"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L142.15708368586272,-185.4628685396814C129.93301363517745,-174.2878481287022,105.48487353380693,-151.93780730674374,91.4811299089762,-133.22363536375573C77.47738628414548,-114.50946342076772,73.91803913585456,-99.43116035675014,68.1290725387018,-84.39048755121112C62.34010594154904,-69.34981474567209,54.32151989553446,-54.34677219861163,38.88039855124735,-43.64717599166146C23.439277206960245,-32.94757978471129,0.575620564400611,-26.5514299178714,-36.64624670461511,-25.88907745806884C-73.86811397363083,-25.22672499826629,-125.44819186910263,-30.298169945501062,-162.4586604318206,-35.74656592156348C-199.46912899453855,-41.194961897625895,-221.90998822450263,-47.02030890251596,-233.13041783948464,-49.93298240496099L-244.3508474544667,-52.84565590740601"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L142.1276679832809,-185.2432012496989C129.87418223001384,-173.8485135487371,105.36721072347973,-151.05913814681352,91.30463569348542,-131.90563162386036C77.2420606634911,-112.75212510090722,73.62388211003656,-97.23448745692451,67.77608410772021,-81.75448007142036C61.928286105403856,-66.2744726859162,53.85086865422568,-50.832095558890614,38.35091590477497,-39.69316477197531C22.85096315532427,-28.55423398506001,-0.07152489239895961,-21.718749538254993,-37.35222356657828,-20.617062498487307C-74.6329222407576,-19.51537545871962,-126.271831541393,-24.147485825989275,-164.04710837123773,-23.88453226250503C-201.82238520108243,-23.621578699020784,-225.73402956013646,-18.463561204782643,-237.68985173966348,-15.884552457663572L-249.64567391919047,-13.305543710544502"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L143.29868624295062,-186.61687103767864C132.21621874935326,-176.59585312469662,110.05128376215858,-156.5538172987326,98.33074525150369,-140.147650351739C86.6102067408488,-123.7414834047454,85.33406470673368,-110.97118533672223,81.82830322375675,-98.23851752717763C78.32254174077983,-85.50584971763301,72.58716080894108,-72.81081216656698,59.4292445788298,-64.41922095561124C46.27132834871853,-56.027629744655464,25.69087682033471,-51.93948487380999,13.439725114243691,-83.57208956803703C1.1885734081526687,-115.20469426226407,-2.733278475645568,-182.5580485215636,-4.694204417544687,-216.23472565121338L-6.655130359443805,-249.91140278086314"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L143.08575185578601,-184.6230652042218C131.79034997502404,-172.60824145778292,109.19954621350011,-148.57859396490517,97.05313892851598,-128.18481535099787C84.90673164353183,-107.79103673709056,83.20472083508747,-91.03312700215368,79.2730905777813,-74.31284752569537C75.34146032047512,-57.59256804923706,69.18021061430713,-40.90991883125731,55.59642560986661,-28.53071595338784C42.012640605426085,-16.151513075518373,21.00632030271304,-8.075756537759188,-0.13445651884939025,8.400698096448311C-21.27523334041182,24.87715273065581,-42.550466680823625,49.754305461311624,-60.74261002712846,71.00203448575522C-78.9347533734333,92.24976351019882,-94.04380672563116,109.86806882843018,-105.20686277030045,124.58148895817067C-116.36991881496972,139.29490908791118,-123.58697755211045,151.10344402916078,-131.1250264952303,162.62869649649394C-138.66307543835012,174.15394896382713,-146.5221145874491,185.39591895724388,-150.45163416199856,191.01690395395224L-154.38115373654804,196.63788895066062"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L143.0641689717249,-184.64047934211007C131.7471842069019,-172.64306973355943,109.11321467725583,-148.64825051645823,96.92364162414954,-128.28930017832747C84.73406857104327,-107.9303498401967,82.98889199447676,-91.20726838103634,79.01409596904844,-74.52181718035456C75.03929994362014,-57.83636597967279,68.83488446933,-41.188545037469574,55.20793369676735,-28.84417043537664C41.580982924204676,-16.49979583328371,20.531496853369486,-8.458867571301058,-0.6524457363150885,7.982758787129906C-21.836388325999664,24.424385145560866,-43.15478743453361,49.26670960044015,-61.39009654896059,70.4796103491072C-79.62540566338757,91.69251109777427,-94.77762478370757,109.27598814022912,-105.98384659649899,123.95457999419308C-117.19006840929042,138.63317184815705,-124.45029291455326,150.40687851363012,-132.7221599157495,161.34005029276221C-140.99402691694576,172.2732220718943,-150.2775364140754,182.36585896468543,-154.91929116264023,187.412177411081L-159.56104591120504,192.45849585747655"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L142.72064409123806,-184.5655288747065C131.06013444592818,-172.49316879875235,107.7391151553084,-148.34844864684405,94.86249234122839,-127.83959737390616C81.98586952714838,-107.33074610096828,79.55364318960817,-90.45776370700084,74.89179740320613,-73.62241157151196C70.2299516168041,-56.78705943602308,63.338486381540235,-39.98933755901276,49.024485848003856,-27.49506202211273C34.71048531446747,-15.000786485212693,12.973949482658563,-6.809957288422944,-8.897042867999728,9.781570004815121C-30.768035218658017,26.373097298053185,-52.773484088165695,51.365322687739564,-75.18890070170316,68.9569163182931C-97.60431731524062,86.54850994884661,-120.42970167280788,96.73947182026727,-140.0429621561084,110.60672145923043C-159.65622263940892,124.47397109819364,-176.0573592484427,142.01750850469935,-184.25792755295961,150.7892772079522L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L142.31798550311834,-184.46419017305857C130.25481726968871,-172.29049139545646,106.12848080282949,-147.94309384025232,92.44654081251004,-127.23156516401855C78.7646008221906,-106.5200364877848,75.52705730841095,-89.44437669052148,70.05989434576946,-72.40634715173671C64.592731383128,-55.36831761295196,56.8959489716247,-38.36791833264578,41.77663126184887,-25.67096539244987C26.657313552073045,-12.974012452253964,4.11546054402469,-4.58050585216834,-18.560848982873043,12.2136988443656C-41.23715850977078,29.007903540899537,-64.0479245555179,54.202806333881796,-96.87494586958921,74.72004789001392C-129.7019671836605,95.23728944614602,-172.54524376605602,111.076869765428,-193.96688205725377,118.99665992506898L-215.38852034845152,126.91645008470998"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L144.159436023197,-184.49381185312566C133.93771830984605,-172.34973475559067,113.49428288314414,-148.06158056052072,103.49524393298202,-127.40929524442117C93.4962049828199,-106.75700992832164,93.94156250919758,-89.74059349119254,92.15730058671342,-72.76180731254199C90.37303866422928,-55.78302113389143,86.35915729288331,-38.84186521371945,74.9227406232648,-26.204155633657752C63.4863239536463,-13.56644605359606,44.627371985755275,-5.2321828136446475,25.633963499014865,11.50277852275508C6.640555012274453,28.237739859154804,-12.487309993315336,53.37339929200285,1.0211536119097389,69.8958220442101C14.529617217134811,86.41824479641737,60.67440943317474,94.32743086798384,80.1542307434621,108.40572629409458C99.63405205374943,122.48402172020532,92.44890245828418,142.73142650086035,91.86287659043082,163.63510587989C91.27685072257746,184.5387852589197,97.28994858233598,206.098739236324,100.29649751221525,216.87871622502618L103.30304644209453,227.65869321372833"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M154.38115373654796,-196.63788895066065L144.2491376326521,-184.72345998220453C134.11712152875623,-172.80903101374838,113.8530893209645,-148.98017307683608,104.03345358971256,-128.7871840188942C94.21381785846063,-108.59419496095235,94.83857860374849,-92.03707478198093,93.23371990017453,-75.51758486148806C91.62886119660055,-58.998094940995195,87.79438304416476,-42.51623527898089,76.53736959345646,-30.33782195707687C65.28035614274813,-18.159408635172856,46.60080739376729,-10.284441653379119,27.786802125937058,5.991223424862931C8.972796858106832,22.26688850310498,-9.975664928572773,46.94325167779535,3.712201895562482,63.00637817184492C17.40006871969774,79.0695046658945,63.72426415464785,86.51939447930329,83.38348868384539,100.13839364725635C103.04271321304292,113.75739281520941,96.03696683648785,133.54550133770675,95.36699272322993,148.81069629925352C94.69701860997202,164.07589126080032,100.36281676001124,174.81817266139657,105.71389961388287,185.7110328735276C111.06498246775452,196.6038930856586,116.10135002545854,207.64733210932445,118.61953380431056,213.16905162115734L121.13771758316257,218.69077113299028"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.33965460886103,-167.96947616880706C149.56512414314332,-161.53107205386794,120.01606321170784,-148.65426382398968,105.33705633481232,-158.39195783721274C90.65804945791679,-168.1296518504358,90.84909663556117,-200.48184810676022,90.94462022438336,-216.6579462349224L91.04014381320555,-232.83404436308462"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.23581415413273,-168.0084932072183C149.35744323368672,-161.6091061306904,119.60070139279465,-148.8103319776346,103.88328996861613,-158.93819637496995C88.1658785444376,-169.0660607723053,86.4877975369726,-202.1205637200318,85.64875703324007,-218.64781519389507L84.80971652950757,-235.1750666677583"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L162.933237717965,-168.2540988091034C146.75229036135124,-162.10031733446056,114.39039564812374,-149.79275438517493,85.64721986226789,-162.37667480136108C56.90404407641205,-174.96059521754725,31.77958721792787,-212.43599899920522,19.217358788685782,-231.17370089003418L6.655130359443691,-249.91140278086317"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.13097184539905,-168.04473213137393C149.14775861621936,-161.68158397900163,119.18133215785997,-148.95528767425705,102.41549764634472,-159.44554131314857C85.64966313482945,-169.93579495204008,82.08442057015833,-203.6425985345677,80.30179928782276,-220.4960003258315L78.5191780054872,-237.3494021170953"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.31548693508643,-166.27258398782885C153.51678879559412,-158.1372876919115,127.91939251660945,-141.86669510007678,130.74799674101027,-129.66056037318515C133.57660096541102,-117.4544256462935,164.83120569319726,-109.31274878434493,185.24887841072726,-106.60120338542356C205.66655112825728,-103.88965798650219,215.24729183553106,-106.60824405060801,220.03766218916792,-107.96753708266094L224.8280325428048,-109.32683011471386"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.95582541636057,-166.8307419411232C152.79746575814235,-159.25360359850018,126.48074644170599,-144.0993269132542,121.72025951137307,-135.09300735399665C116.95977258104017,-126.08668779473915,133.75551803681074,-123.22832536147013,149.13792949217859,-128.3309913086696C164.5203409475464,-133.4336572558691,178.48941840251146,-146.49735158353707,185.473957129994,-153.02919874737105L192.45849585747655,-159.56104591120504"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.9078720453223,-166.88703970617937C152.7015590160659,-159.36619912861252,126.288932957553,-144.32451797347883,121.43253928514359,-135.43079394433363C116.57614561273421,-126.53706991518845,133.2759843264283,-123.79130301203175,147.98704858726072,-129.6821376700175C162.69811284809313,-135.57297232800326,175.42040265606389,-150.10040854713148,181.78154756004923,-157.3641266566956L188.1426924640346,-164.6278447662597"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.98725299995192,-166.78473976207542C152.8603209253251,-159.16159924040466,126.60645677607147,-143.9153181970631,121.90882501292133,-134.81699427971003C117.21119324977117,-125.71867036235699,134.06979387272452,-122.76830357099242,146.78854594087719,-123.54322642541668C159.50729800902982,-124.31814927984094,168.08620152238186,-128.81836178005403,176.377787353559,-133.69734558922028C184.66937318473617,-138.57632939838655,192.67364133373852,-143.83408451650595,196.6757754082397,-146.46296207556566L200.6779094827409,-149.0918396346254"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.41402937965083,-167.33090469741026C151.71387368472293,-160.25392911107437,124.3135622948671,-146.0999779384025,116.06711655248779,-146.89606907208267C107.82067081010847,-147.69216020576286,118.72809071520567,-163.43829364579503,126.52535765663741,-175.54323818101363C134.32262459806915,-187.6481827162322,139.00973857583543,-196.11193834663723,141.3532955647186,-200.34381616183975L143.69685255360173,-204.57569397704225"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.3953381075834,-167.36620691193335C151.67649114058807,-160.32453354012048,124.23879720659734,-146.24118679649473,120.11662531692555,-149.9461882409805C115.99445342725376,-153.65118968546622,135.18780358190085,-175.14453931806347,144.7844786592244,-185.89121413436203L154.38115373654796,-196.63788895066065"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.4121275511151,-166.20418293083415C153.7100700276515,-158.00048557792212,128.30595498072427,-141.59309087209803,134.3516775263697,-133.67785250559203C140.3974000720152,-125.76261413908598,177.89296021023335,-126.339532111898,196.64074027934245,-126.62799109830401L215.38852034845152,-126.91645008471001"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.03240599580653,-167.6211355456293C150.95062691703433,-160.8343908075124,122.78706875948986,-147.26090133127855,115.03557575204934,-153.5151891127238C107.28408274460882,-159.76947689416906,119.94465488727222,-185.85154193329342,126.2749409586039,-198.89257445285557L132.6052270299356,-211.93360697241775"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.25924072910823,-167.80025352744687C149.40429638363773,-161.19262677114756,119.6944076926967,-147.9773732585489,96.00163114966642,-149.9137983446634C72.30885460663613,-151.8502234307779,54.63319021151659,-168.93832711560557,46.26341604535198,-187.61415527133656C37.89364187918736,-206.28998342706754,38.82975794197769,-226.55353605370183,39.297815973372856,-236.685312367019L39.765874004768015,-246.81708868033613"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.7553175534908,-167.57856482724077C150.39645003240287,-160.74924937073533,121.678714990227,-147.09061845772445,98.97809209596183,-148.58366614342677C76.27746920169669,-150.07671382912906,59.59395845534228,-166.7214401135445,52.953724936248726,-179.9707568491385C46.313491417155156,-193.22007358473243,49.716535125322444,-203.0739807715049,51.37240315839215,-213.2380942809227C53.02827119146185,-223.40220779034044,52.93696354943396,-233.8765276224036,52.89130972842002,-239.11368753843513L52.845655907406076,-244.35084745446667"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.18607970484337,-167.81104373934315C149.257974335108,-161.21420719494014,119.40176359563726,-148.02053410613405,95.56266500407725,-149.9785396160411C71.72356641251724,-151.9365451259482,53.90157996886797,-169.04622923456841,44.5075514629953,-187.8731203568474C35.113522957122626,-206.70001147912637,34.14745238902656,-227.2441096150641,33.664417104978526,-237.51615868303296L33.18138182093049,-247.7882077510018"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.46716506419077,-166.10787072247504C153.8201450538028,-157.80786116120387,128.52610503302685,-141.20784203866154,135.12220270942876,-132.32948158856428C141.7183003858307,-123.451121138467,180.2045357594105,-122.29441936081479,199.4476534462004,-121.71606847198869L218.69077113299028,-121.13771758316257"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.48166964382767,-167.29655036038028C151.84915421307662,-160.18522043701435,124.58412335157449,-145.96256059028246,121.32526682434553,-148.97099651923753C118.06641029711659,-151.9794324481926,138.81372810416082,-172.2189641528346,149.18738700768293,-182.33873000515555L159.56104591120504,-192.45849585747655"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.7015972298042,-167.09888073895166C152.28900938502963,-159.78988119415712,125.46383369548055,-145.17188210456803,120.75036439784249,-143.11739317718522C116.03689510020445,-141.0629042498024,133.43513219447746,-151.57192548462584,145.25834903805625,-160.42853460142382C157.081565881635,-169.28514371822178,163.32976247451953,-176.48934071699432,166.45386077096177,-180.09143921638056L169.57795906740404,-183.69353771576684"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.16337232442373,-167.4877388880319C151.21255957426874,-160.56759749231765,123.31093407395868,-146.72731470088908,111.65106484772569,-149.63229917332248C99.9911956214927,-152.53728364575588,104.57308266933673,-172.18753538205124,108.86115083758904,-186.48815858597285C113.14921900584136,-200.7887817898945,117.14346829450194,-209.7397764614424,119.14059293883223,-214.21527379721635L121.13771758316253,-218.6907711329903"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.14468490467576,-166.1968841487976C153.17518473477276,-157.98588801384903,127.23618439496674,-141.56389574395186,115.03931804343796,-125.8137711974365C102.84245169190916,-110.06364665092114,104.38771932865761,-94.98538982778764,103.70336751654422,-79.94476326313269C103.01901570443084,-64.90413669847774,100.10504444345564,-49.90114039230136,103.88718348071431,-41.3800025023384C107.66932251797296,-32.85886461237544,118.14757185346548,-30.81958513862591,133.40626651196035,-27.456532645955487C148.6649611704552,-24.09348015328506,168.70410115195241,-19.406654641693745,183.82101794665212,-16.39118365500986C198.93793474135188,-13.375712668325976,209.13262834925413,-12.031596206549523,219.3273219571564,-10.68747974477307C229.52201556505864,-9.343363282996616,239.71670917296092,-7.9992468212201615,244.81405597691204,-7.327188590331935L249.91140278086317,-6.6551303594437075"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.19693761145675,-166.1375881347321C153.27969014833474,-157.86729598571804,127.44519522209072,-141.32671168768988,115.35283428412392,-125.45799511304358C103.26047334615714,-109.58927853839725,104.91024639646757,-94.39242968713278,104.33039999791617,-79.23321109434684C103.75055359936478,-64.07399250156094,100.94108775195157,-48.952404167253576,104.82773220277225,-40.312674249159635C108.71437665359288,-31.672944331065708,119.2971314026474,-29.515072829185204,134.66033147470426,-26.033428308383808C150.02353154676112,-22.55178378758241,170.16717694182032,-17.74636624786012,190.05436287615126,-16.51125375802113C209.9415488104822,-15.276141268182144,229.57227528408487,-17.61133382822646,239.3876385208862,-18.778930108248616L249.20300175768753,-19.946526388270776"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.07451187556572,-166.56904884484553C153.0348386765527,-158.73021740594487,126.95549227852665,-143.05255452814353,114.6182798687778,-128.04675937372403C102.28106745902898,-113.04096421930451,103.68598903755738,-98.70703678826686,102.86129116722395,-84.41073961570775C102.03659329689053,-70.11444244314866,98.98227597769528,-55.85577552906812,102.6240689567339,-48.07896703120101C106.26586193577252,-40.302158533333895,116.603765213045,-39.007208451680214,126.22922050554753,-41.01031489329482C135.85467579805007,-43.013421334909424,144.76768310578268,-48.31458429979231,158.0601011436218,-54.97539541035442C171.35251918146093,-61.63620652091654,189.02434794940663,-69.65666577715787,202.60674399178046,-74.85566065462994C216.1891400341543,-80.05465553210199,225.68210335095628,-82.43218603080476,230.42858500935733,-83.62095128015615L235.17506666775833,-84.80971652950754"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.89770104607257,-167.1298973458158C150.6812170175664,-159.8519144078854,122.24824896055406,-145.2959485320246,107.55741489181894,-131.41185037954565C92.86658082308382,-117.5277522270667,91.91788074262593,-104.3155217979696,88.7395612133062,-91.14092162735103C85.5612416839865,-77.96632145673249,80.15330270580496,-64.8293515445925,67.32282842935089,-55.99582797256281C54.49235415289684,-47.162304400533095,34.23934457817024,-42.632227168613674,20.89560044350679,-44.666917628756245C7.551856308843341,-46.70160808889883,1.1173776142430392,-55.3010662411034,-5.317101080357261,-63.90052439330797C-11.751579774957563,-72.49998254551254,-18.18605846955786,-81.09944069771711,-24.62053716415816,-89.69889884992169C-31.055015858758463,-98.29835700212625,-37.48949455335876,-106.89781515433083,-43.92397324795906,-115.49727330653538C-50.35845194255936,-124.09673145873997,-56.79293063715968,-132.69618961094454,-63.227409331759965,-141.2956477631491C-69.66188802636027,-149.8951059153537,-76.09636672096057,-158.49456406755826,-82.53084541556088,-167.09402221976282C-88.96532411016118,-175.6934803719674,-95.39980280476148,-184.29293852417197,-101.83428149936178,-192.89239667637653C-108.26876019396208,-201.49185482858113,-114.7032388885624,-210.0913129807857,-117.92047823586255,-214.39104205688798L-121.1377175831627,-218.69077113299028"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L163.8243953575426,-166.53909389949305C148.53460564050647,-158.6703075152399,117.9550262064342,-142.93273474673364,101.11758076063914,-127.86702970160916C84.28013531484409,-112.80132465648471,81.18482385732625,-98.40748733474209,75.8598929509466,-84.05128027147802C70.53496204456695,-69.69507320821396,62.98041168932548,-55.37649640342847,48.00332603581148,-45.361365938753266C33.02624038229749,-35.34623547407806,10.62661943051096,-29.634551349513128,-26.131212147731656,-29.656664631985535C-62.88904372597426,-29.678777914457942,-114.00508593067296,-35.43468860396769,-145.09705176492838,-43.49508321146851C-176.18901759918379,-51.55547781896934,-187.2569070629959,-61.92035634446123,-199.29495272661654,-68.14178612979619C-211.33299839023712,-74.36321591513114,-224.34120025366624,-76.44119696030914,-230.84530118538078,-77.48018748289813L-237.34940211709534,-78.51917800548713"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L163.42555607991852,-166.10069378652253C147.73692708525832,-157.79350728929887,116.35966909593787,-141.17913429485154,98.72454509489467,-125.23662902378602C81.08942109385144,-109.29412375272052,77.19643108108546,-94.02348620503686,71.07382161945765,-78.79047891583177C64.95121215782984,-63.55747162662666,56.59898324734021,-48.362094595900125,40.82421903857805,-37.47016390528387C25.049454829815897,-26.578233214667616,1.8521553227812102,-19.989748864161648,-35.70335481070956,-19.135061920693015C-73.25886494420034,-18.28037497722438,-125.1725857041472,-23.159485440793077,-163.22267399330337,-23.14353197360788C-201.27276228245955,-23.127578506422683,-225.45921810082504,-18.216561108483592,-237.55244601000777,-15.761052409514045L-249.6456739191905,-13.305543710544502"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L164.3964085007765,-165.46709686689633C149.67863192697422,-156.52631345004647,120.24307877936968,-138.64474661634674,104.54965962004236,-121.43504750602885C88.85624046071507,-104.22534839571095,86.90495528966498,-87.68751700877489,82.72405066975307,-71.1873158803174C78.54314604984117,-54.687114751859916,72.13262198106744,-38.22454388188098,58.2995626140212,-26.065419352012338C44.46650324697493,-13.906294822143687,23.210908581656156,-6.050616632385328,1.8208573974879911,10.205759653821348C-19.56919378668017,26.462135940028023,-41.093701489697715,51.11921032268301,-59.53511919860828,72.14686099912579C-77.97653690751885,93.17451167556857,-93.33486462232243,110.57273864579912,-104.74719502959745,125.06608042753881C-116.15952543687247,139.5594222092785,-123.62585853661892,151.14787880252726,-132.10383413229874,161.89580050943508C-140.5818097279786,172.6437222163429,-150.0714278195918,182.5511090369097,-154.81623686539842,187.50480244719313L-159.56104591120504,192.45849585747655"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.96579171762303,-165.92281415398077C152.81739836066734,-157.43774802421535,126.52061164675592,-140.4676157646845,113.96595892112173,-124.16935122853546C101.41130619548751,-107.87108669238644,102.59878745813056,-92.24468987961926,101.55664927191178,-76.65592332533065C100.51451108569297,-61.06715677104202,97.24275345061238,-45.51602047523196,86.54846051725924,-34.26833051953219C75.85416758390612,-23.02064056383242,57.737339352280436,-16.07639694824293,39.4860546018054,-0.7314552362051275C21.234769851330352,14.613486475832678,2.8490285820059307,38.3591262843188,17.09961592349637,53.49152941216412C31.350203264986803,68.62393254000945,78.23711921729209,75.143098987214,109.03212947366148,77.46734981513355C139.8271397300309,79.79160064305307,154.53024429046437,77.9209358516876,166.26551906345153,80.25417464783898C178.0007938364387,82.58741344399037,186.7682388219795,89.12455582765858,195.53568380752037,95.66169821132682C204.3031287930612,102.19884059499505,213.07057377860204,108.73598297866327,217.45429627137244,112.00455417049739L221.83801876414287,115.2731253623315"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.61376797136458,-165.38595057058407C152.11335086815038,-156.36402085742196,125.11251666172201,-138.32016143109772,111.85381644357086,-120.94816972815534C98.59511622541974,-103.57617802521293,99.07854999554583,-86.87605404565234,97.33236431681011,-70.21356032457034C95.58617863807437,-53.551066603488344,91.6103735104768,-36.9262031408849,80.21203308460673,-24.60478601839175C68.81369265873664,-12.28336889589859,49.99281693459404,-4.26539811351572,31.037484691602057,12.153270765315467C12.082152448610065,28.571939644146653,-7.0076363132313055,53.39130661942615,6.538903535742186,69.59743691406487C20.085443384715678,85.80356720870357,66.26831184450403,93.39646082270151,91.02613183161505,109.6250150424071C115.7839518187261,125.85356926211269,119.11672333315978,150.71778408752593,122.47573112076698,169.20849284347898C125.83473890837422,187.69920159943203,129.21998296915493,199.81640428592485,130.91260499954527,205.87500562917128L132.60522702993563,211.93360697241772"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.63707959349108,-165.40097193392486C152.15997411240343,-156.39406358410352,125.20576315022807,-138.3802468844609,111.99368617632996,-121.03829790820004C98.78160920243185,-103.69634893193921,99.31166621681093,-87.02626767906021,97.61210378232825,-70.39381668465978C95.91254134784553,-53.76136569025936,91.98335946450099,-37.166544954337496,80.63164228288393,-24.875170558525912C69.27992510126687,-12.583796162714336,50.50567262137729,-4.5958681070130405,31.596963622638324,11.792758045136571C12.688254623899354,28.18138419728618,-6.3549108936889915,52.97070844588411,7.238252199537523,69.14679601384125C20.831415292764035,85.3228835817984,67.0609069968054,92.88573446911475,91.86535022816946,109.08424596213877C116.66979345953352,125.28275745516277,120.04918821822024,150.11692955389444,124.20079115812884,168.0969119562607C128.35239409803742,186.076894358627,133.27620521916788,197.2026870646279,135.73811077973312,202.76558341762833L138.20001634029833,208.32847977062877"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.02324128559692,-166.05893988493204C152.93229749661512,-157.7099994861179,126.7504099186515,-141.0121186884896,114.3106563289651,-124.98610561424312C101.87090273927872,-108.96009253999665,103.17328313786955,-93.60594718913201,102.24604408759855,-78.28943209674595C101.31880503732755,-62.97291700435988,98.16194653819474,-47.694032170452374,87.58255274078941,-36.71859367665515C77.00315894338407,-25.743155182857922,59.00122984770619,-19.07116302917099,40.86484423317894,-3.998472779035737C22.7284586186517,11.074217471099516,4.457616485275071,34.547605817683085,18.823102962713303,49.407757483625865C33.18858944015154,64.26790914956865,80.19040452840463,70.51482413487064,112.31625262695279,69.81444318362325C144.44210072550092,69.11406223237587,161.6919818343441,61.46638534457912,175.31488526933074,59.32692155233145C188.93778870431743,57.18745776008378,198.93371446544757,60.556207063385195,208.66830432776558,64.67295198816933C218.40289419008363,68.78969691295346,227.87614815358947,73.65443745922032,232.61277513534242,76.08680773235373L237.34940211709534,78.51917800548716"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.96383825796886,-165.53373958980058C152.813491441359,-156.65959889585494,126.51279780813918,-138.91131750796364,113.95423816319665,-121.83490384345423C101.39567851825409,-104.75849017894478,102.57925286158877,-88.35394423781719,101.53320775606163,-71.98702855516815C100.48716265053447,-55.62011287251912,97.21149809614552,-39.29082744834865,86.51329824348402,-27.26498836428846C75.81509839082253,-15.239149280228276,57.6943632398885,-7.516756536278369,39.4391715701051,8.606334304119848C21.1839799003217,24.729425144518064,2.7943317116889212,49.253214081364604,17.041012133871003,65.16376633757035C31.287692556053084,81.07431859377608,78.17070158905003,88.37163416934106,116.09218883061028,98.17633817129513C154.01367607217057,107.98104217324921,182.97364152229417,120.2931346015924,197.45362424735595,126.44918081576401L211.93360697241775,132.6052270299356"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.91364491697752,-165.6702703806625C152.71310475937628,-156.93266047757876,126.3120244441738,-139.45744067141132,113.65307811724854,-122.65408858862571C100.99413179032331,-105.85073650584012,102.07731945167528,-89.71925214643636,100.93088766416543,-73.62539804551115C99.7844558766556,-57.53154394458594,96.4084046402839,-41.47532010213931,85.60981810563972,-29.72254259980295C74.81123157099553,-17.969765097466595,56.59010973807881,-10.520433935240522,38.23453138631272,5.329595323433865C19.878953034546615,21.179624582108254,1.388918163931135,45.43035193723096,15.535211904130515,61.06784261171288C29.681505644329892,76.70533328619479,76.46412799534413,83.72958728003591,109.40749360359463,92.00303019763875C142.35085921184518,100.27647311524159,161.45496807733196,109.79910495660613,175.00979201577925,118.62294016989354C188.56461595422658,127.44677538318099,196.57015496563443,135.57181396839133,200.57292447133833,139.6343332609965L204.57569397704228,143.69685255360167"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L166.09369705770234,-166.1307515087153C153.07320904082596,-157.85362273368438,127.03223300707312,-141.2993651836225,114.73339096159754,-125.4169753569425C102.43454891612195,-109.5345855302625,103.87784085892359,-94.32406342696432,103.0915133528634,-79.1511715821447C102.30518584680323,-63.978279737325096,99.28923889188123,-48.84301815098405,88.85075663868669,-38.01120290475329C78.41227438549217,-27.17938765852253,60.551256834025104,-20.65101875240205,42.55578276370867,-5.721951749833257C24.56030869339223,9.207115252735536,6.430378104226413,32.53688035175264,20.936776125875454,47.253408770128964C35.443174147524495,61.96993718850529,82.58590077998839,68.07322892624082,120.77495552429025,63.17199613068249C158.96401026859215,58.27076333512415,188.19939312473198,42.36500600627195,207.87598984782358,35.5324828657643C227.55258657091517,28.69995972525665,237.6703971609585,30.940670773093558,242.72930245598016,32.06102629701201L247.7882077510018,33.18138182093047"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.3584863987169,-165.04531178200142C151.60278772285508,-155.68274328025663,124.0913903711314,-136.95760627676705,110.32212700768493,-118.9043369966593C96.55286364423847,-100.85106771655155,96.52573426906925,-83.46966615982564,94.2689854450382,-66.12589486157829C92.01223662100715,-48.78212356333095,87.52586834811427,-31.475982523562163,75.61696477694886,-18.473287823903664C63.70806120578347,-5.470593124245165,44.37662233634554,3.2286552353030498,24.910726948058237,20.328601691299582C5.444831559770928,37.42854814729611,-14.15552034736576,62.92919269974096,-1.1195436436875876,79.81660057154501C11.916433059990586,96.70400844334908,57.588738374483626,104.97817963451234,77.3496698384853,129.4357178704411C97.11060130248698,153.89325610636985,90.9601589159973,194.53416138706407,87.88493772275245,214.8546140274112L84.80971652950761,235.1750666677583"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M179.11418507457876,-174.4078802837462L165.78794569325544,-165.52269816182508C152.46170631193215,-156.63751603990397,125.80922754928554,-138.86715179606173,112.89888277491616,-121.7686552756013C99.98853800054677,-104.67015875514089,100.82032721445461,-88.24352995806231,99.42249697950064,-71.8545314194623C98.02466674454665,-55.46553288086229,94.39721706073084,-39.114164600740835,83.3472320786425,-27.066242660729667C72.29724709655419,-15.018320720718506,53.82472681619333,-7.273845120817623,35.2177500169831,8.871328575531573C16.61077321777287,25.016502271880768,-2.1306601002867445,49.56237406467829,11.7642351924685,65.49500917683501C25.65913048522374,81.42764428899173,72.19035438879384,88.74704272050765,98.33811798047509,97.72900838362482C124.48588157215634,106.71097404674197,130.25018485194872,117.35550694146032,139.53123518384578,131.19679759521952C148.81228551574281,145.0380882489787,161.6100828997445,162.07613666177875,168.00898159174534,170.59516086817874L174.40788028374618,179.11418507457876"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M230.32799446760325,-97.20604386833018L208.14310693510797,-95.04386895805054C185.9582194026127,-92.88169404777089,141.58844433762218,-88.5573442272116,116.48279854923167,-94.8322013199508C91.37715276084111,-101.10705841269002,85.53563624905057,-117.98112241872771,70.44171309685258,-145.5941904810962C55.34778994465458,-173.2072585434647,31.001460152049134,-211.55933066216392,18.82829525574641,-230.73536672151354L6.655130359443691,-249.91140278086317"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M230.32799446760325,-97.20604386833018L209.78450719485355,-94.45194102660385C189.2410199221039,-91.69783818487751,148.1540453766046,-86.18963250142481,126.33120010770527,-91.28063373127064C104.50835483880594,-96.37163496111646,101.9496388465066,-112.06184310426079,109.83531933074705,-131.38792012637555C117.72099981498748,-150.71399714849028,136.0510767757677,-173.67594304957547,145.21611525615785,-185.15691600011806L154.38115373654796,-196.63788895066065"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M230.32799446760325,-97.20604386833018L208.77174650275984,-91.96778779683602C187.2154985379165,-86.72953172534183,144.10300260822976,-76.2530195823535,118.89602492677932,-62.93273302538302C93.68904724532884,-49.61244646841254,86.38758781211466,-33.44838549745993,71.66359308062798,-21.587770866617603C56.93959834914126,-9.72715623577527,34.79306831938202,-2.169987945043223,12.512081770773412,13.787878442137137C-9.768904777835202,29.745744829317502,-32.184347845293196,54.10430931294618,-51.51670091864421,74.83345009036263C-70.84905399199523,95.5625908677791,-87.09831707123926,112.66230793898335,-99.40158284295474,126.8571398216967C-111.70484861467021,141.05197170441005,-120.06211707885711,152.34191839863252,-129.4310280389774,162.791330206514C-138.7999389990977,173.24074201439552,-149.18049245515135,182.84961893593604,-154.3707691831782,187.6540573967063L-159.56104591120504,192.45849585747655"></path>
+        <path style="mix-blend-mode: multiply;"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M230.32799446760325,-97.20604386833018L210.52616993911428,-92.07041346514313C190.72434541062532,-86.93478306195611,151.1206963536474,-76.66352225558201,129.42256554490575,-63.54848703522578C107.72443473616408,-50.43345181486956,103.93182217565872,-34.4746421805312,92.71667431688083,-22.819278886303124C81.50152645810293,-11.163915592075044,62.86384330105252,-3.8119986379572524,44.09170362515271,11.940616412608854C25.319563949252906,27.693231463174957,6.412967754503723,51.846544610189376,20.1427001705694,67.38662107656302C33.87243258663508,82.92669754293665,80.23849361351562,89.8535373286695,117.64303284895948,99.28776554079148C155.04757208440336,108.72199375291343,183.49058952841054,120.66361039142453,197.71209825041413,126.63441871068005L211.93360697241775,132.6052270299356"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M230.32799446760325,-97.20604386833018L210.5057309784182,-92.19998609828303C190.68346748923315,-87.19392832823588,151.03894051086306,-77.1818127881416,129.29993178072922,-64.32592283406517C107.5609230505954,-51.47003287998873,103.72743256869786,-35.77036851193016,92.47140678852782,-24.374150483981875C81.21538100835774,-12.97793245603359,62.53681992991515,-5.88516076819559,43.72380233262317,9.608309016090724C24.9107847353312,25.101778800377037,5.96331061918985,48.99594668111167,19.652165113863358,64.27687788120552C33.34101960853686,79.55780908129935,79.66620271402523,86.2255036007524,112.15212907674987,94.14238704396718C144.63805543947453,102.05927048718193,163.28472505943543,111.2253428541584,176.38210975235685,119.69261859305777C189.4794944452783,128.15989433195713,197.02759421116028,135.92837344277942,200.8016440941013,139.81261299819053L204.57569397704228,143.69685255360167"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-39.765874004768165,-246.8170886803361L-35.73619598623831,-210.52165906802847C-31.70651796770846,-174.22622945572076,-23.647161930648753,-101.63537023110547,-30.241029483292806,-51.15352887312923C-36.83489703593686,-0.6716875151529985,-58.08198817828467,27.70113597618416,-79.73904706466229,48.67332770838845C-101.39610595103989,69.64551944059274,-123.46313258144731,83.21707941366417,-142.31803533758796,100.46492715427813C-161.17293809372865,117.71277489489209,-176.8157169756026,138.63691040304857,-184.63710641653952,149.09897815712682L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-39.765874004768165,-246.8170886803361L-35.73619598623831,-210.52165906802847C-31.70651796770846,-174.22622945572076,-23.647161930648753,-101.63537023110547,-30.241029483292806,-51.15352887312923C-36.83489703593686,-0.6716875151529985,-58.08198817828467,27.70113597618416,-79.73904706466229,48.67332770838845C-101.39610595103989,69.64551944059274,-123.46313258144731,83.21707941366417,-142.31803533758796,100.46492715427813C-161.17293809372865,117.71277489489209,-176.8157169756026,138.63691040304857,-184.63710641653952,149.09897815712682L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-97.20604386833033,-230.32799446760322L-85.0390084524625,-196.36851986876604C-72.87197303659467,-162.4090452699289,-48.53790220485902,-94.49009607225456,-46.51574427796876,-46.48161884618824C-44.49358635107848,1.5268583798780568,-64.78334132903359,29.624863634336332,-85.4830640510185,50.32223712966174C-106.1827867730034,71.01961062498715,-127.29247723901811,84.3163523611797,-145.19004383076606,101.28938186491477C-163.08761042251405,118.26241136864985,-177.7730531399953,138.91172863992747,-185.11577449873587,149.23638727556627L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-97.20604386833033,-230.32799446760322L-85.0390084524625,-196.36851986876604C-72.87197303659467,-162.4090452699289,-48.53790220485902,-94.49009607225456,-46.51574427796876,-46.48161884618824C-44.49358635107848,1.5268583798780568,-64.78334132903359,29.624863634336332,-85.4830640510185,50.32223712966174C-106.1827867730034,71.01961062498715,-127.29247723901811,84.3163523611797,-145.19004383076606,101.28938186491477C-163.08761042251405,118.26241136864985,-177.7730531399953,138.91172863992747,-185.11577449873587,149.23638727556627L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-26.573371411841403,-248.58370005253428L-24.41263126064284,-212.03800049583188C-22.251891109444284,-175.49230093912948,-17.930410807047156,-102.40090182572469,-26.503153748630226,-51.654068761918715C-35.07589669021329,-0.9072356981127546,-56.54286287577656,27.49503131609437,-78.41979680536961,48.49666657116864C-100.29673073496265,69.4983018262429,-122.58363240858552,83.09930532218429,-141.65841020794164,100.37659658566822C-160.73318800729774,117.65388784915217,-176.59584193238712,138.60746688017863,-184.52716889493183,149.08425639569188L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-26.573371411841403,-248.58370005253428L-23.35694080397121,-215.3776089384555C-20.140510196101012,-182.1715178243767,-13.707648980360622,-115.75933559621915,-17.69152174666625,-105.28740952654248C-21.675394512971877,-94.8154834568658,-36.076001261323526,-140.28381354567003,-44.246588542860515,-167.72541425003158C-52.4171758243975,-195.16701495439315,-54.357743639119825,-204.58188627431204,-56.907582480320706,-213.82185686917117C-59.457421321521586,-223.06182746403024,-62.61653118920102,-232.1268973338296,-64.19608612304073,-236.65943226872932L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-26.573371411841403,-248.58370005253428L-24.41263126064284,-212.03800049583188C-22.251891109444284,-175.49230093912948,-17.930410807047156,-102.40090182572469,-26.503153748630226,-51.654068761918715C-35.07589669021329,-0.9072356981127546,-56.54286287577656,27.49503131609437,-78.41979680536961,48.49666657116864C-100.29673073496265,69.4983018262429,-122.58363240858552,83.09930532218429,-141.65841020794164,100.37659658566822C-160.73318800729774,117.65388784915217,-176.59584193238712,138.60746688017863,-184.52716889493183,149.08425639569188L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-26.573371411841403,-248.58370005253428L-23.35694080397121,-215.3776089384555C-20.140510196101012,-182.1715178243767,-13.707648980360622,-115.75933559621915,-17.69152174666625,-105.28740952654248C-21.675394512971877,-94.8154834568658,-36.076001261323526,-140.28381354567003,-44.246588542860515,-167.72541425003158C-52.4171758243975,-195.16701495439315,-54.357743639119825,-204.58188627431204,-56.907582480320706,-213.82185686917117C-59.457421321521586,-223.06182746403024,-62.61653118920102,-232.1268973338296,-64.19608612304073,-236.65943226872932L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-109.3268301147139,-224.82803254280478L-95.44268331394174,-191.6477192166474C-81.55853651316957,-158.46740589049,-53.790242911625235,-92.10677923817524,-49.94996704777743,-44.92329630082869C-46.109691183929634,2.260186636517846,-66.19743305777835,30.266525858896145,-86.69514267565687,50.87223332214159C-107.19285229353538,71.47794078538702,-128.1005296554437,84.6830164894996,-145.79608314308527,101.56437996115471C-163.49163663072684,118.4457434328098,-177.97506624410167,139.00339467200746,-185.2167810507891,149.28222029160625L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-109.3268301147139,-224.82803254280478L-94.3869928572701,-194.98732765927102C-79.4471555998263,-165.14662277573723,-49.5674810849387,-105.46521300866969,-41.138335045813456,-98.55663706545245C-32.709189006688206,-91.6480611222352,-45.73057144332532,-137.51231900286825,-52.52193441314776,-165.34984749905865C-59.313297382970205,-193.18737599524903,-59.87464088597799,-202.99817510699674,-61.04525541546433,-212.6340734936847C-62.21586994495067,-222.26997188037262,-63.99575550091556,-231.7309695420008,-64.885698278898,-236.4614683728149L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-109.3268301147139,-224.82803254280478L-95.44268331394174,-191.6477192166474C-81.55853651316957,-158.46740589049,-53.790242911625235,-92.10677923817524,-49.94996704777743,-44.92329630082869C-46.109691183929634,2.260186636517846,-66.19743305777835,30.266525858896145,-86.69514267565687,50.87223332214159C-107.19285229353538,71.47794078538702,-128.1005296554437,84.6830164894996,-145.79608314308527,101.56437996115471C-163.49163663072684,118.4457434328098,-177.97506624410167,139.00339467200746,-185.2167810507891,149.28222029160625L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-109.3268301147139,-224.82803254280478L-94.3869928572701,-194.98732765927102C-79.4471555998263,-165.14662277573723,-49.5674810849387,-105.46521300866969,-41.138335045813456,-98.55663706545245C-32.709189006688206,-91.6480611222352,-45.73057144332532,-137.51231900286825,-52.52193441314776,-165.34984749905865C-59.313297382970205,-193.18737599524903,-59.87464088597799,-202.99817510699674,-61.04525541546433,-212.6340734936847C-62.21586994495067,-222.26997188037262,-63.99575550091556,-231.7309695420008,-64.885698278898,-236.4614683728149L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-52.84565590740611,-244.35084745446665L-46.963008786002554,-208.40480201582383C-41.08036166459899,-172.45875657718102,-29.315067421791866,-100.56666569989538,-33.94696768904023,-50.45476052579955C-38.57886795628858,-0.34285535170373765,-59.60796273359244,27.98886411920226,-81.04702525492608,48.919951830975386C-102.48608777625971,69.85103954274852,-124.33511804162316,83.38149549538879,-142.97202443271988,100.58823921557159C-161.60893082381656,117.79498293575439,-177.03371334064653,138.67801442347977,-184.7461045990615,149.11953016734242L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-52.84565590740611,-244.35084745446665L-45.90731832933091,-211.74441045844745C-38.96898075125572,-179.13797346242825,-25.09230559510533,-113.92509947038984,-25.13533568707625,-104.08810129042331C-25.178365779047173,-94.25110311045678,-39.14110111913941,-139.78998074256216,-46.873816992416984,-167.30212899022482C-54.60653286569456,-194.81427723788752,-56.10922927215748,-204.29969610110751,-58.22119670509894,-213.61021423926778C-60.33316413804041,-222.92073237742798,-63.05440259746043,-232.05634979052851,-64.41502182717043,-236.62415849707872L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-52.84565590740611,-244.35084745446665L-46.963008786002554,-208.40480201582383C-41.08036166459899,-172.45875657718102,-29.315067421791866,-100.56666569989538,-33.94696768904023,-50.45476052579955C-38.57886795628858,-0.34285535170373765,-59.60796273359244,27.98886411920226,-81.04702525492608,48.919951830975386C-102.48608777625971,69.85103954274852,-124.33511804162316,83.38149549538879,-142.97202443271988,100.58823921557159C-161.60893082381656,117.79498293575439,-177.03371334064653,138.67801442347977,-184.7461045990615,149.11953016734242L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-52.84565590740611,-244.35084745446665L-45.90731832933091,-211.74441045844745C-38.96898075125572,-179.13797346242825,-25.09230559510533,-113.92509947038984,-25.13533568707625,-104.08810129042331C-25.178365779047173,-94.25110311045678,-39.14110111913941,-139.78998074256216,-46.873816992416984,-167.30212899022482C-54.60653286569456,-194.81427723788752,-56.10922927215748,-204.29969610110751,-58.22119670509894,-213.61021423926778C-60.33316413804041,-222.92073237742798,-63.05440259746043,-232.05634979052851,-64.41502182717043,-236.62415849707872L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-19.94652638827077,-249.20300175768753L-18.724589282078046,-212.56956779275507C-17.502652175885327,-175.93613382782266,-15.058777963499884,-102.66926589795776,-24.625547658618547,-51.8295375783788C-34.19231735373721,-0.9898092587998543,-55.76973095635998,27.422779450493156,-77.75711230301253,48.434736400653314C-99.7444936496651,69.44669335081346,-122.14184274034746,83.05801854184074,-141.3270679567631,100.34563150041056C-160.51229317317873,117.6332444589804,-176.4853945153276,138.59714518509273,-184.47194518640208,149.0790955481489L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-19.94652638827077,-249.20300175768753L-18.4918654237978,-213.3206359140471C-17.03720445932483,-177.43827007040667,-14.127882530378892,-105.67353838312583,-23.229204508937062,-56.33594630613092C-32.330526487495234,-6.998354229136012,-53.44249237355751,19.912098237572962,-74.96442600364959,39.421918945149066C-96.48635963374166,58.931739652725184,-118.41826100786352,71.04092860116843,-134.41152395332077,82.59066658247451C-150.40478689877799,94.14040456378062,-160.45941141557057,105.13069157794956,-170.51403593236316,116.1209785921185C-180.56866044915577,127.11126560628743,-190.62328496594833,138.10155262045637,-195.65059722434464,143.59669612754087L-200.67790948274092,149.09183963462533"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-19.94652638827077,-249.20300175768753L-17.668898825406412,-215.9091762353787C-15.391271262542057,-182.6153507130699,-10.836016136813347,-116.02769966845221,-15.81391565665457,-105.46287834300256C-20.791815176495792,-94.8980570175529,-35.30286934190695,-140.35606541127123,-43.583904040503455,-167.7873444205469C-51.86493873909995,-195.21862342982254,-53.91595397088179,-204.62317305465558,-56.57624022914217,-213.8528219544288C-59.23652648740256,-223.08247085420203,-62.5060837721415,-232.13721902891552,-64.14086241451098,-236.66459311627224L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-19.94652638827077,-249.20300175768753L-18.724589282078046,-212.56956779275507C-17.502652175885327,-175.93613382782266,-15.058777963499884,-102.66926589795776,-24.625547658618547,-51.8295375783788C-34.19231735373721,-0.9898092587998543,-55.76973095635998,27.422779450493156,-77.75711230301253,48.434736400653314C-99.7444936496651,69.44669335081346,-122.14184274034746,83.05801854184074,-141.3270679567631,100.34563150041056C-160.51229317317873,117.6332444589804,-176.4853945153276,138.59714518509273,-184.47194518640208,149.0790955481489L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-19.94652638827077,-249.20300175768753L-18.4918654237978,-213.3206359140471C-17.03720445932483,-177.43827007040667,-14.127882530378892,-105.67353838312583,-23.229204508937062,-56.33594630613092C-32.330526487495234,-6.998354229136012,-53.44249237355751,19.912098237572962,-74.96442600364959,39.421918945149066C-96.48635963374166,58.931739652725184,-118.41826100786352,71.04092860116843,-134.41152395332077,82.59066658247451C-150.40478689877799,94.14040456378062,-160.45941141557057,105.13069157794956,-170.51403593236316,116.1209785921185C-180.56866044915577,127.11126560628743,-190.62328496594833,138.10155262045637,-195.65059722434464,143.59669612754087L-200.67790948274092,149.09183963462533"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-19.94652638827077,-249.20300175768753L-17.668898825406412,-215.9091762353787C-15.391271262542057,-182.6153507130699,-10.836016136813347,-116.02769966845221,-15.81391565665457,-105.46287834300256C-20.791815176495792,-94.8980570175529,-35.30286934190695,-140.35606541127123,-43.583904040503455,-167.7873444205469C-51.86493873909995,-195.21862342982254,-53.91595397088179,-204.62317305465558,-56.57624022914217,-213.8528219544288C-59.23652648740256,-223.08247085420203,-62.5060837721415,-232.13721902891552,-64.14086241451098,-236.66459311627224L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-46.32218102177878,-245.67103114813023L-41.36369284250576,-209.5379596862184C-36.40520466323273,-173.40488822430657,-26.488228304686686,-101.13874530048292,-32.09864980477915,-50.82881257233756C-37.70907130487161,-0.5188798441922083,-58.846890663602586,27.834842688274847,-80.39467776636336,48.78793346160904C-101.94246486912412,69.74102423494323,-123.90021971591467,83.29348324914456,-142.6458506884385,100.52223003088842C-161.39148166096234,117.7509768126323,-176.92498875921942,138.6560113619187,-184.69174230834798,149.1085286365619L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-46.32218102177878,-245.67103114813023L-40.30800238583412,-212.877568128842C-34.29382374988947,-180.0841051095538,-22.26546647800015,-114.49717907097738,-23.287017802815175,-104.46215333696132C-24.308569127630193,-94.42712760294525,-38.380029049149556,-139.94400217348957,-46.22146950385425,-167.43414735959118C-54.06290995855895,-194.9242925456928,-55.67433094644898,-204.38770834735178,-57.89502296081758,-213.67622342395097C-60.115714975186165,-222.96473850055017,-62.945678016033305,-232.07835285208955,-64.36065953645688,-236.63516002785926L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-46.32218102177878,-245.67103114813023L-41.36369284250576,-209.5379596862184C-36.40520466323273,-173.40488822430657,-26.488228304686686,-101.13874530048292,-32.09864980477915,-50.82881257233756C-37.70907130487161,-0.5188798441922083,-58.846890663602586,27.834842688274847,-80.39467776636336,48.78793346160904C-101.94246486912412,69.74102423494323,-123.90021971591467,83.29348324914456,-142.6458506884385,100.52223003088842C-161.39148166096234,117.7509768126323,-176.92498875921942,138.6560113619187,-184.69174230834798,149.1085286365619L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-46.32218102177878,-245.67103114813023L-40.30800238583412,-212.877568128842C-34.29382374988947,-180.0841051095538,-22.26546647800015,-114.49717907097738,-23.287017802815175,-104.46215333696132C-24.308569127630193,-94.42712760294525,-38.380029049149556,-139.94400217348957,-46.22146950385425,-167.43414735959118C-54.06290995855895,-194.9242925456928,-55.67433094644898,-204.38770834735178,-57.89502296081758,-213.67622342395097C-60.115714975186165,-222.96473850055017,-62.945678016033305,-232.07835285208955,-64.36065953645688,-236.63516002785926L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-103.30304644209455,-227.65869321372827L-90.27226899494345,-194.07736962585673C-77.24149154779236,-160.49604603798517,-51.17993665349019,-93.33339886224208,-48.24322834053529,-45.72531682425702C-45.30652002758038,1.8827652137280424,-65.49465829597276,29.93628211395507,-86.09276430839493,50.589167255049226C-106.6908703208171,71.2420523961434,-127.69894407726906,84.49430577810469,-145.4948939594543,101.42284692760852C-163.29084384163951,118.35138807711235,-177.87466984955802,138.95621699415872,-185.16658285351727,149.25863145268193L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-103.30304644209455,-227.65869321372827L-90.17847267008625,-194.79253056624216C-77.05389889807796,-161.92636791875603,-50.80475135406136,-96.19404262378374,-47.68045039139204,-50.01628246656954C-44.556149428722726,-3.838522309355317,-64.55669504740068,22.784672710100864,-84.96720841010844,42.00723597042418C-105.3777217728162,61.229799230747496,-126.19820287955376,73.05173073193795,-141.08004555762668,84.31421126599126C-155.96188823569958,95.57669180004457,-164.90509248510784,106.27972136696071,-173.8482967345161,116.98275093387689C-182.79150098392438,127.68578050079304,-191.73470523333265,138.3888100677092,-196.20630735803675,143.74032485116726L-200.67790948274092,149.09183963462533"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-103.30304644209455,-227.65869321372827L-89.3227746795102,-197.38495669275926C-75.34250291692588,-167.11122017179017,-47.38195939175721,-106.56374712985208,-40.06877318600164,-99.16652933455408C-32.75558698024608,-91.7693115392561,-46.08975809390362,-137.5223489905982,-54.650313963444425,-164.8095067618938C-63.210869832985225,-192.09666453318937,-66.99781045840928,-200.91794262443844,-70.18035192473029,-209.93027857029765C-73.36289339105129,-218.9426145161568,-75.94103569826926,-228.14600831662605,-77.23010685187823,-232.74770521686068L-78.51917800548722,-237.3494021170953"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-103.30304644209455,-227.65869321372827L-90.27226899494345,-194.07736962585673C-77.24149154779236,-160.49604603798517,-51.17993665349019,-93.33339886224208,-48.24322834053529,-45.72531682425702C-45.30652002758038,1.8827652137280424,-65.49465829597276,29.93628211395507,-86.09276430839493,50.589167255049226C-106.6908703208171,71.2420523961434,-127.69894407726906,84.49430577810469,-145.4948939594543,101.42284692760852C-163.29084384163951,118.35138807711235,-177.87466984955802,138.95621699415872,-185.16658285351727,149.25863145268193L-192.45849585747652,159.5610459112051"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-103.30304644209455,-227.65869321372827L-90.17847267008625,-194.79253056624216C-77.05389889807796,-161.92636791875603,-50.80475135406136,-96.19404262378374,-47.68045039139204,-50.01628246656954C-44.556149428722726,-3.838522309355317,-64.55669504740068,22.784672710100864,-84.96720841010844,42.00723597042418C-105.3777217728162,61.229799230747496,-126.19820287955376,73.05173073193795,-141.08004555762668,84.31421126599126C-155.96188823569958,95.57669180004457,-164.90509248510784,106.27972136696071,-173.8482967345161,116.98275093387689C-182.79150098392438,127.68578050079304,-191.73470523333265,138.3888100677092,-196.20630735803675,143.74032485116726L-200.67790948274092,149.09183963462533"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-103.30304644209455,-227.65869321372827L-89.3227746795102,-197.38495669275926C-75.34250291692588,-167.11122017179017,-47.38195939175721,-106.56374712985208,-40.06877318600164,-99.16652933455408C-32.75558698024608,-91.7693115392561,-46.08975809390362,-137.5223489905982,-54.650313963444425,-164.8095067618938C-63.210869832985225,-192.09666453318937,-66.99781045840928,-200.91794262443844,-70.18035192473029,-209.93027857029765C-73.36289339105129,-218.9426145161568,-75.94103569826926,-228.14600831662605,-77.23010685187823,-232.74770521686068L-78.51917800548722,-237.3494021170953"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-91.04014381320545,-232.83404436308464L-78.69092044847534,-201.8591544716779C-66.34169708374525,-170.88426458027115,-41.64325035428504,-108.93448479745764,-35.95710726038606,-100.82500708119842C-30.27096416648708,-92.71552936493919,-43.59712470814933,-138.44635371523424,-50.69326578299692,-166.1504486810866C-57.789406857844504,-193.854543646939,-58.65552846587743,-203.53190922834872,-60.13092110038891,-213.0343740846987C-61.60631373490039,-222.53683894104861,-63.69097739589042,-231.86440307233877,-64.73330922638543,-236.52818513798388L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-91.04014381320545,-232.83404436308464L-78.79711658971372,-201.82713309595678C-66.55408936622202,-170.82022182882892,-42.0680349192386,-108.80639929457318,-36.5942841078164,-100.63287882687173C-31.1205332963942,-92.45935835917027,-44.659086120533225,-138.1261399580231,-53.4240237005555,-165.3270418768294C-62.18896128057779,-192.5279437956357,-66.18028361648334,-201.26296603439553,-69.56720679328582,-210.18904612776544C-72.95412997008832,-219.11512622113534,-75.73665398778776,-228.23226416911533,-77.1279159966375,-232.7908331431053L-78.51917800548722,-237.3494021170953"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-91.04014381320545,-232.83404436308464L-79.51914726412845,-199.10675842513675C-67.99815071505148,-165.37947248718888,-44.95615761689751,-97.92490061129313,-43.40395741623894,-50.71494069306959C-41.85175721558036,-3.5049807748460537,-61.7893499124172,23.460367185705266,-78.64385261514705,46.796291440044364C-95.49835531787691,70.13221569438348,-109.26976802649978,89.83871624251036,-122.14758672364879,103.78462050997636C-135.0254054207978,117.73052477744238,-147.00963010647297,125.91583276424751,-157.11835626991365,135.92128981037533C-167.22708243335433,145.92674685650314,-175.46031007456054,157.75235296195362,-179.57692389516367,163.66515601467884L-183.69353771576678,169.5779590674041"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-91.04014381320545,-232.83404436308464L-78.69092044847534,-201.8591544716779C-66.34169708374525,-170.88426458027115,-41.64325035428504,-108.93448479745764,-35.95710726038606,-100.82500708119842C-30.27096416648708,-92.71552936493919,-43.59712470814933,-138.44635371523424,-50.69326578299692,-166.1504486810866C-57.789406857844504,-193.854543646939,-58.65552846587743,-203.53190922834872,-60.13092110038891,-213.0343740846987C-61.60631373490039,-222.53683894104861,-63.69097739589042,-231.86440307233877,-64.73330922638543,-236.52818513798388L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-91.04014381320545,-232.83404436308464L-78.79711658971372,-201.82713309595678C-66.55408936622202,-170.82022182882892,-42.0680349192386,-108.80639929457318,-36.5942841078164,-100.63287882687173C-31.1205332963942,-92.45935835917027,-44.659086120533225,-138.1261399580231,-53.4240237005555,-165.3270418768294C-62.18896128057779,-192.5279437956357,-66.18028361648334,-201.26296603439553,-69.56720679328582,-210.18904612776544C-72.95412997008832,-219.11512622113534,-75.73665398778776,-228.23226416911533,-77.1279159966375,-232.7908331431053L-78.51917800548722,-237.3494021170953"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-91.04014381320545,-232.83404436308464L-79.51914726412845,-199.10675842513675C-67.99815071505148,-165.37947248718888,-44.95615761689751,-97.92490061129313,-43.40395741623894,-50.71494069306959C-41.85175721558036,-3.5049807748460537,-61.7893499124172,23.460367185705266,-78.64385261514705,46.796291440044364C-95.49835531787691,70.13221569438348,-109.26976802649978,89.83871624251036,-122.14758672364879,103.78462050997636C-135.0254054207978,117.73052477744238,-147.00963010647297,125.91583276424751,-157.11835626991365,135.92128981037533C-167.22708243335433,145.92674685650314,-175.46031007456054,157.75235296195362,-179.57692389516367,163.66515601467884L-183.69353771576678,169.5779590674041"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-33.181381820930596,-247.78820775100178L-29.0288164051061,-214.69481137964007C-24.8762509892816,-181.60141500827842,-16.571120157632606,-115.41462226555507,-19.563791362574857,-105.06202004110825C-22.556462567517105,-94.70941781666147,-36.8469358090506,-140.19100611049123,-44.90738958376944,-167.64586501987833C-52.96784335848827,-195.10072392926543,-54.79827766639244,-204.52885345420987,-57.23798300077516,-213.78208225409455C-59.67768833515789,-223.0353110539792,-62.726664696019164,-232.11363912880407,-64.25115287644981,-236.6528031662165L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-33.181381820930596,-247.78820775100178L-29.135012546344488,-214.66279000391896C-25.088643271758382,-181.5373722568362,-16.995904722586165,-115.28653676267061,-20.200968210005197,-104.86989178678158C-23.406031697424222,-94.45324681089255,-37.90889722143449,-139.8707923532801,-47.63814750132803,-166.82245821562114C-57.36739778122156,-193.77412407796214,-62.32303281699834,-202.25991026025667,-66.67426869367209,-210.9367542971613C-71.02550457034583,-219.61359833406593,-74.77234128791652,-228.48150022558062,-76.64575964670188,-232.91545117133793L-78.51917800548722,-237.3494021170953"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-33.181381820930596,-247.78820775100178L-29.0288164051061,-214.69481137964007C-24.8762509892816,-181.60141500827842,-16.571120157632606,-115.41462226555507,-19.563791362574857,-105.06202004110825C-22.556462567517105,-94.70941781666147,-36.8469358090506,-140.19100611049123,-44.90738958376944,-167.64586501987833C-52.96784335848827,-195.10072392926543,-54.79827766639244,-204.52885345420987,-57.23798300077516,-213.78208225409455C-59.67768833515789,-223.0353110539792,-62.726664696019164,-232.11363912880407,-64.25115287644981,-236.6528031662165L-65.77564105688045,-241.19196720362896"></path>
+        <path style="mix-blend-mode: multiply;"
+              d="M-33.181381820930596,-247.78820775100178L-29.135012546344488,-214.66279000391896C-25.088643271758382,-181.5373722568362,-16.995904722586165,-115.28653676267061,-20.200968210005197,-104.86989178678158C-23.406031697424222,-94.45324681089255,-37.90889722143449,-139.8707923532801,-47.63814750132803,-166.82245821562114C-57.36739778122156,-193.77412407796214,-62.32303281699834,-202.25991026025667,-66.67426869367209,-210.9367542971613C-71.02550457034583,-219.61359833406593,-74.77234128791652,-228.48150022558062,-76.64575964670188,-232.91545117133793L-78.51917800548722,-237.3494021170953"></path>
+    </g>
+</svg>
