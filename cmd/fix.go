@@ -34,7 +34,7 @@ var fixCmd = &cobra.Command{
 					if err != nil {
 						fmt.Println(err)
 					}
-					fmt.Fprintln(output, "rename: " + jarPath + " -> " + dst)
+					fmt.Fprintln(output, "rename: "+jarPath+" -> "+dst)
 				}
 			}
 		}
