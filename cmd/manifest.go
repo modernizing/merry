@@ -75,13 +75,13 @@ var manifestCmd = &cobra.Command{
 			scanManifest := manifest.ScanByPath(path)
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
 			ioutil.WriteFile("manifest-map.json", res, os.ModePerm)
+			cmd_util.WriteToCocaFile("manifest-map.json", res)
 
 			result := manifest.BuildFullGraph(scanManifest, nil)
 
 			if manifestConfig.IsMergePackage {
 				result = result.MergeHeaderFile(tequila.MergePackageFunc)
 			}
-
 
 			graph := result.ToDot(".", func(s string) bool {
 				return false

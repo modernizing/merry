@@ -19,7 +19,7 @@ func NewOutput(output io.Writer) *tablewriter.Table {
 	return table
 }
 
-var reporterPath = config.CocaConfig.ReporterPath
+var reporterPath = config.CmdConfig.ReporterPath
 
 func WriteToCocaFile(fileName string, payload string) {
 	if _, err := os.Stat(reporterPath); os.IsNotExist(err) {
@@ -32,7 +32,7 @@ func WriteToCocaFile(fileName string, payload string) {
 }
 
 func ConvertToSvg(name string) {
-	reporter_path := config.CocaConfig.ReporterPath
+	reporter_path := config.CmdConfig.ReporterPath
 	cmd := exec.Command("dot", "-Tsvg", reporter_path+"/"+name+".dot", "-o", reporter_path+"/"+name+".svg")
 	_, err := cmd.CombinedOutput()
 	if err != nil {
