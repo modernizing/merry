@@ -45,7 +45,6 @@ var pomCmd = &cobra.Command{
 
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
 			dep := domain.ByFileName(jarName, 2)
-			fmt.Println(dep)
 			manifest := manifest.ProcessManifest(content, "MANIFEST.MF")
 
 			var depmap = make(map[string]domain.MavenDependency)

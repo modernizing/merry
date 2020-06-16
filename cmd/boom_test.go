@@ -19,13 +19,15 @@ func Test_ShouldBuildPomXmlWithBoom(t *testing.T) {
 	RunTestCmd(t, tests)
 
 	content, _ := ioutil.ReadFile(filepath.FromSlash("testdata/boom/pom.xml"))
-	g.Expect(string(content)).To(Equal(`<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+	g.Expect(string(content)).To(Equal(`<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 	<groupId>my-test-group</groupId>        
 	<artifactId>my-test-app</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
     <dependencies>
       <dependency>
@@ -49,13 +51,15 @@ func Test_ShouldBuildPomXmlWithBoomMap(t *testing.T) {
 	RunTestCmd(t, tests)
 
 	content, _ := ioutil.ReadFile(filepath.FromSlash("testdata/boom/pom.xml"))
-	g.Expect(string(content)).To(Equal(`<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+	g.Expect(string(content)).To(Equal(`<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 	<groupId>my-test-group</groupId>        
 	<artifactId>my-test-app</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
     <dependencies>
       <dependency>
