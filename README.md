@@ -1,12 +1,12 @@
-# igso
+# Merry
 
 > a legacy system migration tools for OSGI based architecture Java applications.
 
-![Go](https://github.com/phodal/igso/workflows/Go/badge.svg)
-[![Build Status](https://travis-ci.org/phodal/igso.svg?branch=master)](https://travis-ci.org/phodal/igso)
-[![codecov](https://codecov.io/gh/phodal/igso/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/igso)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/phodal/igso)
-[![Maintainability](https://api.codeclimate.com/v1/badges/77b3f3f4a2444b33dc16/maintainability)](https://codeclimate.com/github/phodal/igso/maintainability)
+![Go](https://github.com/phodal/merry/workflows/Go/badge.svg)
+[![Build Status](https://travis-ci.org/phodal/merry.svg?branch=master)](https://travis-ci.org/phodal/merry)
+[![codecov](https://codecov.io/gh/phodal/merry/branch/master/graph/badge.svg)](https://codecov.io/gh/phodal/merry)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/phodal/merry)
+[![Maintainability](https://api.codeclimate.com/v1/badges/77b3f3f4a2444b33dc16/maintainability)](https://codeclimate.com/github/phodal/merry/maintainability)
 
 Todo:
 
@@ -52,19 +52,19 @@ Available Commands:
 1. install
 
 ```bash
-go get -u github.com/phodal/igso
+go get -u github.com/phodal/merry
 ```
 
 2. generate `pom.xml` from `build.xml`
 
 ```bash
-igso boom
+merry boom
 ```
 
 3. search package lost in nexus
 
 ```bash
-igso dupsearch
+merry dupsearch
 ```
 
 4. map file example
@@ -89,7 +89,7 @@ org.slf4j,org.slf4j,org.slf4j,1.5.1
 
 ```bash
 Usage:
-  igso manifest [flags]
+  merry manifest [flags]
 
 Flags:
   -e, --excludeSource   is with exclude source file
@@ -105,21 +105,21 @@ Flags:
 examples:
 
 ```
-igso manifest -s -x -f org.eclipse.equinox -p ~/sdk/equinox-SDK-4.15/plugins
+merry manifest -s -x -f org.eclipse.equinox -p ~/sdk/equinox-SDK-4.15/plugins
 ```
 
 ### Generate Pom from jars
 
 ```
-go run igso.go pom -p _fixtures/demo -m _fixtures/map/map.csv
+go run merry.go pom -p _fixtures/demo -m _fixtures/map/map.csv
 ```
 
 ### Call Graph by Manifest.MF
 
 ```
-igso manifest -s -p ~/sdk/apache-karaf-4.2.9/lib/boot  -x
-igso map -p ~/sdk/apache-karaf-4.2.9/lib/boot
-igso call -p ~/sdk/apache-karaf-4.2.9/lib/boot -m map.csv
+merry manifest -s -p ~/sdk/apache-karaf-4.2.9/lib/boot  -x
+merry map -p ~/sdk/apache-karaf-4.2.9/lib/boot
+merry call -p ~/sdk/apache-karaf-4.2.9/lib/boot -m map.csv
 ```
 
 results:
@@ -137,9 +137,9 @@ strict digraph G {
 
 #### Call Server
 
-cmd: `igso call -s`
+cmd: `merry call -s`
 
-`igso` will read `manifest-map.json` and start to [http://localhost:3000](http://localhost:3000):
+`merry` will read `manifest-map.json` and start to [http://localhost:3000](http://localhost:3000):
 
 ![Call Circle](docs/screenshots/call-circle.svg)
 
