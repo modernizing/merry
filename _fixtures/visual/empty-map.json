@@ -1,0 +1,46 @@
+[
+  {
+    "ExportPackage": null,
+    "ImportPackage": null,
+    "KeyValues": [
+      {
+        "Key": "Manifest-Version",
+        "Value": "1.0"
+      },
+      {
+        "Key": "Archiver-Version",
+        "Value": "Plexus Archiver"
+      },
+      {
+        "Key": "Created-By",
+        "Value": "Apache Maven"
+      },
+      {
+        "Key": "Built-By",
+        "Value": "ubuntu"
+      },
+      {
+        "Key": "Build-Jdk",
+        "Value": "1.6.0"
+      },
+      {
+        "Key": "Name",
+        "Value": "org.apache.log4j"
+      },
+      {
+        "Key": "Implementation-Title",
+        "Value": "log4j"
+      },
+      {
+        "Key": "Implementation-Vendor",
+        "Value": "\"Apache Software Foundation\""
+      },
+      {
+        "Key": "Implementation-Version",
+        "Value": "1.2.15"
+      }
+    ],
+    "PackageName": "",
+    "Version": "1.2.15"
+  }
+]

@@ -1,16 +1,15 @@
 package cmd
 
 import (
-	"encoding/json"
 	"fmt"
 	"github.com/gobuffalo/packr"
 	"github.com/phodal/merry/cmd/cmd_util"
 	"github.com/phodal/merry/cmd/config"
+	"github.com/phodal/merry/pkg/applicaiton/visual"
 	"github.com/phodal/merry/pkg/application/manifest"
 	"github.com/phodal/merry/pkg/domain"
 	"github.com/phodal/merry/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
-	"io/ioutil"
 	"net/http"
 	"path/filepath"
 )
@@ -40,7 +39,7 @@ var callCmd = &cobra.Command{
 		if callConfig.Server {
 			box := packr.NewBox("../static")
 
-			dContent := ManifestFileToDContent()
+			dContent := visual.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
 
 			cmd_util.WriteToCocaFile("output.json", string(dContent))
 
@@ -78,19 +77,5 @@ var callCmd = &cobra.Command{
 		cmd_util.WriteToCocaFile("call.dot", graph.String())
 		cmd_util.ConvertToSvg("call")
 	},
-}
-
-func ManifestFileToDContent() []byte {
-	abs, _ := filepath.Abs(filepath.FromSlash(config.CmdConfig.ReporterPath + "/manifest-map.json"))
-	originContent, err := ioutil.ReadFile(abs)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	var manifests []domain.IgsoManifest
-	_ = json.Unmarshal(originContent, &manifests)
-	dData := domain.VisualFromManifest(manifests)
-	dContent, err := json.Marshal(dData)
-	return dContent
 }
 
