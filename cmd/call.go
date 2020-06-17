@@ -57,14 +57,6 @@ var callCmd = &cobra.Command{
 				}
 				w.Write(dContent)
 			})
-			http.HandleFunc("/manifest-map.json", func(w http.ResponseWriter, r *http.Request) {
-				w.Header().Set("Content-Type", "application/json")
-				if err != nil {
-					http.Error(w, err.Error(), http.StatusInternalServerError)
-					return
-				}
-				w.Write(originContent)
-			})
 
 			http.Handle("/", http.FileServer(box))
 			fmt.Fprintf(output, "localserver started: http://localhost:3000/\n")
