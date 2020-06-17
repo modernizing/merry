@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/gobuffalo/packr"
 	"github.com/phodal/merry/cmd/cmd_util"
+	"github.com/phodal/merry/cmd/config"
 	"github.com/phodal/merry/pkg/application/manifest"
 	"github.com/phodal/merry/pkg/domain"
 	"github.com/phodal/merry/pkg/infrastructure/csvconv"
@@ -39,29 +40,19 @@ var callCmd = &cobra.Command{
 		if callConfig.Server {
 			box := packr.NewBox("../static")
 
-			abs, _ := filepath.Abs("./manifest-map.json")
-			originContent, err := ioutil.ReadFile(abs)
-
-			var manifests []domain.IgsoManifest
-			_ = json.Unmarshal(originContent, &manifests)
-			dData := domain.VisualFromManifest(manifests)
-			dContent, err := json.Marshal(dData)
+			dContent := ManifestFileToDContent()
 
 			cmd_util.WriteToCocaFile("output.json", string(dContent))
 
 			http.HandleFunc("/output.json", func(w http.ResponseWriter, r *http.Request) {
 				w.Header().Set("Content-Type", "application/json")
-				if err != nil {
-					http.Error(w, err.Error(), http.StatusInternalServerError)
-					return
-				}
 				w.Write(dContent)
 			})
 
 			http.Handle("/", http.FileServer(box))
 			fmt.Fprintf(output, "localserver started: http://localhost:3000/\n")
 
-			err = http.ListenAndServe(":3000", nil)
+			err := http.ListenAndServe(":3000", nil)
 			if err != nil {
 				fmt.Println(err)
 			}
@@ -87,5 +78,19 @@ var callCmd = &cobra.Command{
 		cmd_util.WriteToCocaFile("call.dot", graph.String())
 		cmd_util.ConvertToSvg("call")
 	},
+}
+
+func ManifestFileToDContent() []byte {
+	abs, _ := filepath.Abs(filepath.FromSlash(config.CmdConfig.ReporterPath + "/manifest-map.json"))
+	originContent, err := ioutil.ReadFile(abs)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	var manifests []domain.IgsoManifest
+	_ = json.Unmarshal(originContent, &manifests)
+	dData := domain.VisualFromManifest(manifests)
+	dContent, err := json.Marshal(dData)
+	return dContent
 }
 
