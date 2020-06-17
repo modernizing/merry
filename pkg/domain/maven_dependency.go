@@ -2,6 +2,7 @@ package domain
 
 import (
 	"regexp"
+	"sort"
 	"strings"
 )
 
@@ -55,6 +56,21 @@ func FromPackage(packages []JavaPackage, depmap map[string]MavenDependency) []Ma
 		}
 
 		deps = append(deps, mavenDep)
+	}
+
+
+	m := make(map[string]MavenDependency)
+	keys := make([]string, 0, len(deps))
+	for _, value := range deps {
+		m[value.GroupId] = value
+		keys = append(keys, value.GroupId)
+	}
+
+	sort.Strings(keys)
+
+	var sortDeps []MavenDependency
+	for _, k := range keys {
+		sortDeps = append(sortDeps, m[k])
 	}
 
 	return RemoveDuplicate(deps)
