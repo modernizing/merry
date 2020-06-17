@@ -58,7 +58,10 @@ func FromPackage(packages []JavaPackage, depmap map[string]MavenDependency) []Ma
 		deps = append(deps, mavenDep)
 	}
 
+	return SortDependencies(RemoveDuplicate(deps))
+}
 
+func SortDependencies(deps []MavenDependency) []MavenDependency {
 	m := make(map[string]MavenDependency)
 	keys := make([]string, 0, len(deps))
 	for _, value := range deps {
@@ -73,7 +76,7 @@ func FromPackage(packages []JavaPackage, depmap map[string]MavenDependency) []Ma
 		sortDeps = append(sortDeps, m[k])
 	}
 
-	return RemoveDuplicate(deps)
+	return sortDeps
 }
 
 func BySlashFileName(s string) MavenDependency {
