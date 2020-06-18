@@ -1,6 +1,6 @@
 # Going Merry
 
->  a legacy Java system migration toolbox, design for OSGI-base architecture system, support ant to maven, find lost dep in nexus... 
+> a legacy Java system build migration toolbox, support ant to maven, find lost dep in nexus...
 
 ![Go](https://github.com/phodal/merry/workflows/Go/badge.svg)
 [![Build Status](https://travis-ci.org/phodal/merry.svg?branch=master)](https://travis-ci.org/phodal/merry)
