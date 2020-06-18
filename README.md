@@ -22,7 +22,7 @@ Todo:
     - [x] basic graph
     - [x] go server
     - [x] visual with circle [Hierarchical Edge Bundling](https://observablehq.com/@d3/hierarchical-edge-bundling)
- - [x] remove jar
+ - [x] jar auto rename
    - [x] use POM rename jar
  - [x] custom version
    - [x] configurable
@@ -113,6 +113,15 @@ go run merry.go pom -p _fixtures/demo -m _fixtures/map/map.csv
 ```
 
 ### Call Graph by Manifest.MF
+
+```bash
+Flags:
+  -h, --help          help for call
+  -m, --map string    map file
+  -p, --path string   path (default ".")
+  -s, --server        with server
+```
+
 
 ```
 merry manifest -s -p ~/sdk/apache-karaf-4.2.9/lib/boot  -x
