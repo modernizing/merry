@@ -1,6 +1,6 @@
 # Going Merry
 
-> a legacy system migration tools for OSGI based architecture Java applications.
+>  a legacy Java system migration toolbox, design for OSGI-base architecture system, support ant to maven, find lost dep in nexus... 
 
 ![Go](https://github.com/phodal/merry/workflows/Go/badge.svg)
 [![Build Status](https://travis-ci.org/phodal/merry.svg?branch=master)](https://travis-ci.org/phodal/merry)
@@ -17,7 +17,6 @@ Todo:
     - [x] Checksum File
     - [x] Unzip file
     - [x] Parse Manifest
- - [ ] Microservices
  - [x] Dup Search. search all jars and find not in nexus package
  - [x] POM generate dep graph
     - [x] basic graph
@@ -28,11 +27,6 @@ Todo:
  - [x] custom version
    - [x] configurable
    - [x] from jar to map.csv
- - [ ] Ant to Gradle
- - [ ] Manifest convert
-    - [ ] to BND
- - [ ] repackage
-    - [ ] add maven info to package
 
 Feature lists:
 
