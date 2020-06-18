@@ -28,3 +28,17 @@ func Test_ShouldSuccessBuildGraph(t *testing.T) {
 }
 `))
 }
+
+func Test_ShouldSuccessIdentifyGraph(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	file := filepath.FromSlash("../../../_fixtures/manifest/deps/commons")
+	scanManifest := ScanByPath(file)
+	graph := BuildFullGraph(scanManifest, nil)
+
+	dot := graph.ToDot("", func(s string) bool {
+		return false
+	})
+	g.Expect(len(dot.Nodes.Nodes)).To(Equal(12))
+	g.Expect(len(dot.SubGraphs.SubGraphs)).To(Equal(12))
+}
