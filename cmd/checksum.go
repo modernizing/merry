@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/merry/pkg/infrastructure/bundle"
+	"github.com/phodal/merry/pkg/infrastructure"
 	"github.com/spf13/cobra"
 )
 
@@ -29,7 +29,7 @@ var checksumCmd = &cobra.Command{
 	Short: "checksum file md5",
 	Run: func(cmd *cobra.Command, args []string) {
 		path := cmd.Flag("path").Value.String()
-		result, err := bundle.HashFileMD5(path)
+		result, err := infrastructure.HashFileMD5(path)
 		fmt.Fprintf(output, result)
 		if err != nil {
 			fmt.Println(err)

@@ -1,4 +1,4 @@
-package bundle
+package infrastructure
 
 import (
 	"crypto/md5"
