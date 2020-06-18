@@ -5,8 +5,8 @@ import (
 	"github.com/gobuffalo/packr"
 	"github.com/phodal/merry/cmd/cmd_util"
 	"github.com/phodal/merry/cmd/config"
-	"github.com/phodal/merry/pkg/applicaiton/visual"
 	"github.com/phodal/merry/pkg/application/manifest"
+	visual2 "github.com/phodal/merry/pkg/application/visual"
 	"github.com/phodal/merry/pkg/domain"
 	"github.com/phodal/merry/pkg/infrastructure/csvconv"
 	"github.com/spf13/cobra"
@@ -39,7 +39,7 @@ var callCmd = &cobra.Command{
 		if callConfig.Server {
 			box := packr.NewBox("../static")
 
-			dContent := visual.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
+			dContent := visual2.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
 
 			cmd_util.WriteToCocaFile("output.json", string(dContent))
 
