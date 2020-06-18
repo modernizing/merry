@@ -122,8 +122,9 @@ Flags:
   -s, --server        with server
 ```
 
+full steps:
 
-```
+```bash
 merry manifest -s -p ~/sdk/apache-karaf-4.2.9/lib/boot  -x
 merry map -p ~/sdk/apache-karaf-4.2.9/lib/boot
 merry call -p ~/sdk/apache-karaf-4.2.9/lib/boot -m map.csv
