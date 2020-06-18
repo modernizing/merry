@@ -41,7 +41,6 @@ var pomCmd = &cobra.Command{
 		for _, jarPath := range jarPaths {
 			pathSplit := strings.Split(jarPath, string(os.PathSeparator))
 			jarName := pathSplit[len(pathSplit)-1]
-			//pomName := strings.ReplaceAll(jarName, ".jar", ".pom")
 
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
 			dep := domain.ByFileName(jarName, 2)
