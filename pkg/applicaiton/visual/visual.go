@@ -18,6 +18,6 @@ func ManifestFileToDContent(path string) []byte {
 	var manifests []domain.IgsoManifest
 	_ = json.Unmarshal(originContent, &manifests)
 	dData := domain.VisualFromManifest(manifests)
-	dContent, err := json.Marshal(dData)
+	dContent, err := json.MarshalIndent(dData, "", "\t")
 	return dContent
 }

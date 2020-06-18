@@ -1,0 +1,250 @@
+[
+	{
+		"ExportPackage": null,
+		"ImportPackage": [
+			{
+				"Name": "tutorial.example2.service",
+				"VersionInfo": "1.0,2",
+				"ExportVersion": "",
+				"StartVersion": "1.0",
+				"EndVersion": "2",
+				"Config": [
+					{
+						"Key": "version",
+						"Value": "\"[1.0,2)\""
+					}
+				]
+			},
+			{
+				"Name": "tutorial.example6.service",
+				"VersionInfo": "1.0,2",
+				"ExportVersion": "",
+				"StartVersion": "1.0",
+				"EndVersion": "2",
+				"Config": [
+					{
+						"Key": "version",
+						"Value": "\"[1.0,2)\""
+					}
+				]
+			},
+			{
+				"Name": "org.apache.felix.servicebinder",
+				"VersionInfo": "1.1,2",
+				"ExportVersion": "",
+				"StartVersion": "1.1",
+				"EndVersion": "2",
+				"Config": [
+					{
+						"Key": "version",
+						"Value": "\"[1.1,2)\""
+					}
+				]
+			}
+		],
+		"KeyValues": [
+			{
+				"Key": "Manifest-Version",
+				"Value": "1.0"
+			},
+			{
+				"Key": "Bundle-Description",
+				"Value": "A bundle that implements a simple spell checker service"
+			},
+			{
+				"Key": "Bundle-License",
+				"Value": "http://www.apache.org/licenses/LICENSE-2.0"
+			},
+			{
+				"Key": "Bundle-SymbolicName",
+				"Value": "felix-tut-8"
+			},
+			{
+				"Key": "Built-By",
+				"Value": "fdhuang"
+			},
+			{
+				"Key": "Bnd-LastModified",
+				"Value": "1590738135179"
+			},
+			{
+				"Key": "Bundle-ManifestVersion",
+				"Value": "2"
+			},
+			{
+				"Key": "Bundle-RequiredExecutionEnvironment",
+				"Value": "JavaSE-1.8"
+			},
+			{
+				"Key": "Bundle-Vendor",
+				"Value": "Apache Felix"
+			},
+			{
+				"Key": "Import-Package",
+				"Value": "tutorial.example2.service;version=\"[1.0,2)\",tutorial.example6.service;version=\"[1.0,2)\",org.apache.felix.servicebinder;version=\"[1.1,2)\""
+			},
+			{
+				"Key": "Require-Capability",
+				"Value": "osgi.ee;filter:=\"(\u0026(osgi.ee=JavaSE)(version=1.8))\""
+			},
+			{
+				"Key": "Metadata-Location",
+				"Value": "tutorial/example8/metadata.xml"
+			},
+			{
+				"Key": "Tool",
+				"Value": "Bnd-4.1.0.201810181252"
+			},
+			{
+				"Key": "Bundle-Name",
+				"Value": "Service Binder Spell checker service"
+			},
+			{
+				"Key": "Bundle-Version",
+				"Value": "1.0.0.SNAPSHOT"
+			},
+			{
+				"Key": "Bundle-Activator",
+				"Value": "tutorial.example8.Activator"
+			},
+			{
+				"Key": "Private-Package",
+				"Value": "tutorial.example8"
+			},
+			{
+				"Key": "Created-By",
+				"Value": "1.8.0_202-ea (Oracle Corporation)"
+			},
+			{
+				"Key": "Build-Jdk",
+				"Value": "1.8.0_202-ea"
+			}
+		],
+		"PackageName": "felix-tut-8",
+		"Version": "1.0.0.SNAPSHOT"
+	},
+	{
+		"ExportPackage": null,
+		"ImportPackage": [
+			{
+				"Name": "tutorial.example2.service",
+				"VersionInfo": "1.0,2",
+				"ExportVersion": "",
+				"StartVersion": "1.0",
+				"EndVersion": "2",
+				"Config": [
+					{
+						"Key": "version",
+						"Value": "\"[1.0,2)\""
+					}
+				]
+			},
+			{
+				"Name": "tutorial.example6.service",
+				"VersionInfo": "1.0,2",
+				"ExportVersion": "",
+				"StartVersion": "1.0",
+				"EndVersion": "2",
+				"Config": [
+					{
+						"Key": "version",
+						"Value": "\"[1.0,2)\""
+					}
+				]
+			},
+			{
+				"Name": "org.apache.felix.servicebinder",
+				"VersionInfo": "1.1,2",
+				"ExportVersion": "",
+				"StartVersion": "1.1",
+				"EndVersion": "2",
+				"Config": [
+					{
+						"Key": "version",
+						"Value": "\"[1.1,2)\""
+					}
+				]
+			}
+		],
+		"KeyValues": [
+			{
+				"Key": "Manifest-Version",
+				"Value": "1.0"
+			},
+			{
+				"Key": "Bundle-Description",
+				"Value": "A bundle that implements a simple spell checker service"
+			},
+			{
+				"Key": "Bundle-License",
+				"Value": "http://www.apache.org/licenses/LICENSE-2.0"
+			},
+			{
+				"Key": "Bundle-SymbolicName",
+				"Value": "felix-tut-8"
+			},
+			{
+				"Key": "Built-By",
+				"Value": "fdhuang"
+			},
+			{
+				"Key": "Bnd-LastModified",
+				"Value": "1590738135179"
+			},
+			{
+				"Key": "Bundle-ManifestVersion",
+				"Value": "2"
+			},
+			{
+				"Key": "Bundle-RequiredExecutionEnvironment",
+				"Value": "JavaSE-1.8"
+			},
+			{
+				"Key": "Bundle-Vendor",
+				"Value": "Apache Felix"
+			},
+			{
+				"Key": "Import-Package",
+				"Value": "tutorial.example2.service;version=\"[1.0,2)\",tutorial.example6.service;version=\"[1.0,2)\",org.apache.felix.servicebinder;version=\"[1.1,2)\""
+			},
+			{
+				"Key": "Require-Capability",
+				"Value": "osgi.ee;filter:=\"(\u0026(osgi.ee=JavaSE)(version=1.8))\""
+			},
+			{
+				"Key": "Metadata-Location",
+				"Value": "tutorial/example8/metadata.xml"
+			},
+			{
+				"Key": "Tool",
+				"Value": "Bnd-4.1.0.201810181252"
+			},
+			{
+				"Key": "Bundle-Name",
+				"Value": "Service Binder Spell checker service"
+			},
+			{
+				"Key": "Bundle-Version",
+				"Value": "1.0.0.SNAPSHOT"
+			},
+			{
+				"Key": "Bundle-Activator",
+				"Value": "tutorial.example8.Activator"
+			},
+			{
+				"Key": "Private-Package",
+				"Value": "tutorial.example8"
+			},
+			{
+				"Key": "Created-By",
+				"Value": "1.8.0_202-ea (Oracle Corporation)"
+			},
+			{
+				"Key": "Build-Jdk",
+				"Value": "1.8.0_202-ea"
+			}
+		],
+		"PackageName": "felix-tut-8",
+		"Version": "1.0.0.SNAPSHOT"
+	}
+]
