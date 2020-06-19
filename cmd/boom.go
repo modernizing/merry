@@ -23,11 +23,9 @@ var (
 
 func init() {
 	boomCmd.SetOut(output)
-
 	boomCmd.PersistentFlags().StringVarP(&boomConfig.Path, "path", "p", ".", "path")
 	boomCmd.PersistentFlags().StringVarP(&boomConfig.MapFile, "map", "m", "", "-m map.csv")
 	boomCmd.PersistentFlags().BoolVarP(&boomConfig.WithGit, "extract", "x", false, "extract file")
-
 	rootCmd.AddCommand(boomCmd)
 }
 

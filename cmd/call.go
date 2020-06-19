@@ -37,24 +37,7 @@ var callCmd = &cobra.Command{
 	Short: "show call graph for packages",
 	Run: func(cmd *cobra.Command, args []string) {
 		if callConfig.Server {
-			box := packr.NewBox("../static")
-
-			dContent := visual2.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
-
-			cmd_util.WriteToCocaFile("output.json", string(dContent))
-
-			http.HandleFunc("/output.json", func(w http.ResponseWriter, r *http.Request) {
-				w.Header().Set("Content-Type", "application/json")
-				w.Write(dContent)
-			})
-
-			http.Handle("/", http.FileServer(box))
-			fmt.Fprintf(output, "localserver started: http://localhost:3000/\n")
-
-			err := http.ListenAndServe(":3000", nil)
-			if err != nil {
-				fmt.Println(err)
-			}
+			startServer()
 
 			return
 		}
@@ -77,5 +60,26 @@ var callCmd = &cobra.Command{
 		cmd_util.WriteToCocaFile("call.dot", graph.String())
 		cmd_util.ConvertToSvg("call")
 	},
+}
+
+func startServer() {
+	box := packr.NewBox("../static")
+
+	dContent := visual2.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
+
+	cmd_util.WriteToCocaFile("output.json", string(dContent))
+
+	http.HandleFunc("/output.json", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(dContent)
+	})
+
+	http.Handle("/", http.FileServer(box))
+	fmt.Fprintf(output, "localserver started: http://localhost:3000/\n")
+
+	err := http.ListenAndServe(":3000", nil)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 

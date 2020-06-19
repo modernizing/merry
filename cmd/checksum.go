@@ -15,12 +15,9 @@ var (
 	checksumConfig ChecksumConfig
 )
 
-
 func init() {
 	checksumCmd.SetOut(output)
-
 	checksumCmd.PersistentFlags().StringVarP(&checksumConfig.Path, "path", "p", "", "path")
-
 	rootCmd.AddCommand(checksumCmd)
 }
 
