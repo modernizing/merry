@@ -8,7 +8,7 @@ import (
 
 func TestShouldGetPropertyName(t *testing.T) {
 	g := NewGomegaWithT(t)
-	path := `../../../_fixtures/bundle/sample/felix-tut-8-1.0-SNAPSHOT.jar`
+	path := `../../_fixtures/bundle/sample/felix-tut-8-1.0-SNAPSHOT.jar`
 	absPath := filepath.FromSlash(path)
 
 	result, _ := HashFileMD5(absPath)
