@@ -65,17 +65,17 @@ var callCmd = &cobra.Command{
 func startServer() {
 	box := packr.NewBox("../static")
 
-	dContent := visual2.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
-
+	dContent := getOutputJson()
 	cmd_util.WriteToCocaFile("output.json", string(dContent))
 
 	http.HandleFunc("/output.json", func(w http.ResponseWriter, r *http.Request) {
+		dContent = getOutputJson()
 		w.Header().Set("Content-Type", "application/json")
-		w.Write(dContent)
+		_, _ = w.Write(dContent)
 	})
 
 	http.Handle("/", http.FileServer(box))
-	fmt.Fprintf(output, "localserver started: http://localhost:3000/\n")
+	_, _ = fmt.Fprintf(output, "started server: http://localhost:3000/\n")
 
 	err := http.ListenAndServe(":3000", nil)
 	if err != nil {
@@ -83,3 +83,6 @@ func startServer() {
 	}
 }
 
+func getOutputJson() []byte {
+	return visual2.ManifestFileToDContent(config.CmdConfig.ReporterPath + "/manifest-map.json")
+}
