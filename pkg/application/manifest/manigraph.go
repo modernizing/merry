@@ -2,8 +2,8 @@ package manifest
 
 import (
 	"fmt"
-	"github.com/phodal/merry/pkg/adapter/tequila"
 	"github.com/phodal/merry/pkg/domain"
+	"github.com/phodal/merry/pkg/infrastructure/tequila"
 )
 
 func BuildFullGraph(scanManifest []domain.IgsoManifest, depmap map[string]domain.MavenDependency) *tequila.FullGraph {
