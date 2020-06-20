@@ -86,7 +86,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 
 		buildPackageVersion(ctx, s)
 
-		if s.currentKey == "Import-Package" {
+		if s.currentKey == "Import-Package" || s.currentKey == "Require-Bundle" {
 			s.manifest.ImportPackage = append(s.manifest.ImportPackage, javaPackage)
 		}
 		if s.currentKey == "Export-Package" {
