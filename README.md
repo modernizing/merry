@@ -93,7 +93,7 @@ merry manifest -s -x -f org.eclipse.equinox -p ~/sdk/equinox-SDK-4.15/plugins
 ### Generate Pom from jars
 
 ```
-go run merry.go pom -p _fixtures/demo -m _fixtures/map/map.csv
+merry pom -p _fixtures/demo -m _fixtures/map/map.csv
 ```
 
 ### Call Graph by Manifest.MF
