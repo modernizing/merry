@@ -356,7 +356,6 @@ function renderPacking() {
                         return data
                     }
                     data.name = name.substring(i + 1);
-                    data.originName = name.substring(name.indexOf((delimiter)) + 1);
                     data.value = 1;
                 } else {
                     root = data;
@@ -367,9 +366,7 @@ function renderPacking() {
             return root;
         }
 
-        var jdata = []
         var dMap = {}
-
         for (let node of originData.nodes) {
             dMap[node.id] = {
                 name: "root." + node.id,
@@ -386,10 +383,12 @@ function renderPacking() {
                     name: "root." + link.source,
                     value: 1
                 }
+            } else {
+                dMap[link.source].value++
             }
         }
 
-        jdata = Object.values(dMap)
+        var jdata = Object.values(dMap)
         var data = hierarchy(jdata);
 
         var pack = function (data) {
@@ -400,15 +399,10 @@ function renderPacking() {
                     .sum(d => d.value)
                     .sort((a, b) => b.value - a.value));
         }
-
-        var width = 975;
-        var height = width;
         var format = d3.format(",d")
         var color = d3.scaleSequential([8, 0], d3.interpolateMagma)
 
-        console.log(data);
         const root = pack(data);
-
         const svg = d3.select("#packing").append("svg")
             .attr("viewBox", [0, 0, width, height])
             .style("font", "10px sans-serif")
