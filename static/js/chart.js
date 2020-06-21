@@ -367,6 +367,7 @@ function renderPacking() {
         }
 
         var dMap = {}
+
         for (let node of originData.nodes) {
             dMap[node.id] = {
                 name: "root." + node.id,
@@ -399,6 +400,9 @@ function renderPacking() {
                     .sum(d => d.value)
                     .sort((a, b) => b.value - a.value));
         }
+
+        var width = 1200;
+        var height = width;
         var format = d3.format(",d")
         var color = d3.scaleSequential([8, 0], d3.interpolateMagma)
 
