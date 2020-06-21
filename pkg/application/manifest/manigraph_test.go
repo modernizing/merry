@@ -42,3 +42,17 @@ func Test_ShouldSuccessIdentifyGraph(t *testing.T) {
 	g.Expect(len(dot.Nodes.Nodes)).To(Equal(12))
 	g.Expect(len(dot.SubGraphs.SubGraphs)).To(Equal(12))
 }
+
+func Test_ShouldSuccessFoundImportPackage(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	file := filepath.FromSlash("../../../_fixtures/manifest/graph/importpkg")
+	scanManifest := ScanByPath(file)
+	graph := BuildFullGraph(scanManifest, nil)
+
+	dot := graph.ToDot("", func(s string) bool {
+		return false
+	})
+	g.Expect(len(dot.Nodes.Nodes)).To(Equal(4))
+	g.Expect(len(dot.SubGraphs.SubGraphs)).To(Equal(4))
+}
