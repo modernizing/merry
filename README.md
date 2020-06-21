@@ -12,24 +12,6 @@ Refactor Tool -> [Coca](https://github.com/phodal/coca)
 
 Online Example for Call Analysis: [https://phodal.github.io/merry/demo](https://phodal.github.io/merry/demo)
 
-Todo:
-
- - [x] Ant to Maven
-    - [x] dependencies convert
-    - [x] Checksum File
-    - [x] Unzip file
-    - [x] Parse Manifest
- - [x] Dup Search. search all jars and find not in nexus package
- - [x] POM generate dep graph
-    - [x] basic graph
-    - [x] go server
-    - [x] visual with circle [Hierarchical Edge Bundling](https://observablehq.com/@d3/hierarchical-edge-bundling)
- - [x] jar auto rename
-   - [x] use POM rename jar
- - [x] custom version
-   - [x] configurable
-   - [x] from jar to map.csv
-
 Feature lists:
 
 ```bash
@@ -155,14 +137,25 @@ cmd: `merry call -s`
 
 ![Call Server](docs/screenshots/call-server.svg)
 
-## Issues
+## Todo
 
-Lost Package
+Todo:
 
- - javax.net
- - javax.servlet
- - org.osgi.framework
- - org.slf4j
+ - [x] Ant to Maven
+    - [x] dependencies convert
+    - [x] Checksum File
+    - [x] Unzip file
+    - [x] Parse Manifest
+ - [x] Dup Search. search all jars and find not in nexus package
+ - [x] POM generate dep graph
+    - [x] basic graph
+    - [x] go server
+    - [x] visual with circle [Hierarchical Edge Bundling](https://observablehq.com/@d3/hierarchical-edge-bundling)
+ - [x] jar auto rename
+   - [x] use POM rename jar
+ - [x] custom version
+   - [x] configurable
+   - [x] from jar to map.csv
 
 License
 ---
