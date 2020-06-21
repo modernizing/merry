@@ -324,7 +324,7 @@ ${d.incoming.length} incoming`));
 
 var count = 0;
 var DOM = {
-    uid: function(name) {
+    uid: function (name) {
         return new Id("O-" + (name == null ? "" : name + "-") + ++count);
     }
 }
@@ -334,7 +334,7 @@ function Id(id) {
     this.href = new URL(`#${id}`, location) + "";
 }
 
-Id.prototype.toString = function() {
+Id.prototype.toString = function () {
     return "url(" + this.href + ")";
 };
 
@@ -430,8 +430,12 @@ function renderPacking() {
             .join("circle")
             .attr("fill", d => d.children ? color(d.depth) : "white")
             .attr("pointer-events", d => !d.children ? "none" : null)
-            .on("mouseover", function() { d3.select(this).attr("stroke", "#000"); })
-            .on("mouseout", function() { d3.select(this).attr("stroke", null); })
+            .on("mouseover", function () {
+                d3.select(this).attr("stroke", "#000");
+            })
+            .on("mouseout", function () {
+                d3.select(this).attr("stroke", null);
+            })
             .on("click", d => focus !== d && (zoom(d), d3.event.stopPropagation()));
 
         const label = svg.append("g")
@@ -470,11 +474,17 @@ function renderPacking() {
                 });
 
             label
-                .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+                .filter(function (d) {
+                    return d.parent === focus || this.style.display === "inline";
+                })
                 .transition(transition)
                 .style("fill-opacity", d => d.parent === focus ? 1 : 0)
-                .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-                .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+                .on("start", function (d) {
+                    if (d.parent === focus) this.style.display = "inline";
+                })
+                .on("end", function (d) {
+                    if (d.parent !== focus) this.style.display = "none";
+                });
         }
     }
 }
