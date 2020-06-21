@@ -357,6 +357,7 @@ function renderPacking() {
                     }
                     data.name = name.substring(i + 1);
                     data.originName = name.substring(name.indexOf((delimiter)) + 1);
+                    data.value = 1;
                 } else {
                     root = data;
                 }
