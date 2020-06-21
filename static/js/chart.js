@@ -480,8 +480,17 @@ function renderPacking(originData) {
     }
 }
 
-d3.json("output.json").then(function (data) {
-    renderVertical(data)
-    renderCircle(data)
-    renderPacking(data)
-});
+if (window.location.href.includes("demo")) {
+    d3.json("webdemo/output.json").then(function (data) {
+        renderVertical(data)
+        renderCircle(data)
+        renderPacking(data)
+    });
+} else {
+    d3.json("output.json").then(function (data) {
+        renderVertical(data)
+        renderCircle(data)
+        renderPacking(data)
+    });
+
+}
