@@ -82,4 +82,5 @@ map.csv
 output.json
 *.pom
 MANIFEST.MF
-!_fixtures/webdemo
+!_fixtures/webdemo/output.json
+
