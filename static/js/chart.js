@@ -322,3 +322,141 @@ ${d.incoming.length} incoming`));
     }
 }
 
+var count = 0;
+var DOM = {
+    uid: function(name) {
+        return new Id("O-" + (name == null ? "" : name + "-") + ++count);
+    }
+}
+
+function Id(id) {
+    this.id = id;
+    this.href = new URL(`#${id}`, location) + "";
+}
+
+Id.prototype.toString = function() {
+    return "url(" + this.href + ")";
+};
+
+function renderPacking() {
+    return function (originData) {
+        function hierarchy(data, delimiter = ".") {
+            let root;
+            const map = new Map;
+            data.forEach(function find(data) {
+                const {name} = data;
+                if (map.has(name)) return map.get(name);
+                const i = name.lastIndexOf(delimiter);
+                map.set(name, data);
+                if (i >= 0) {
+                    let found = find({name: name.substring(0, i), children: []});
+                    if (found.children) {
+                        found.children.push(data);
+                    } else {
+                        return data
+                    }
+                    data.name = name.substring(i + 1);
+                    data.originName = name.substring(name.indexOf((delimiter)) + 1);
+                } else {
+                    root = data;
+                }
+                return data;
+            });
+
+            return root;
+        }
+
+        var jdata = []
+        var dMap = {}
+
+        for (let node of originData.nodes) {
+            dMap[node.id] = {
+                name: "root." + node.id,
+                value: 1
+            }
+        }
+
+        for (let link of originData.links) {
+            if (link.source === link.target) {
+                continue
+            }
+            if (!dMap[link.source]) {
+                dMap[link.source] = {
+                    name: "root." + link.source,
+                    value: 1
+                }
+            }
+        }
+
+        jdata = Object.values(dMap)
+        var data = hierarchy(jdata);
+
+        var pack = function (data) {
+            return d3.pack()
+                .size([width - 2, height - 2])
+                .padding(3)
+                (d3.hierarchy(data)
+                    .sum(d => d.value)
+                    .sort((a, b) => b.value - a.value));
+        }
+
+        var width = 975;
+        var height = width;
+        var format = d3.format(",d")
+        var color = d3.scaleSequential([8, 0], d3.interpolateMagma)
+
+        console.log(data);
+        const root = pack(data);
+
+        const svg = d3.select("#packing").append("svg")
+            .attr("viewBox", [0, 0, width, height])
+            .style("font", "10px sans-serif")
+            .attr("text-anchor", "middle");
+
+        const shadow = DOM.uid("shadow");
+
+        svg.append("filter")
+            .attr("id", shadow.id)
+            .append("feDropShadow")
+            .attr("flood-opacity", 0.3)
+            .attr("dx", 0)
+            .attr("dy", 1);
+
+        const node = svg.selectAll("g")
+            .data(d3.nest().key(d => d.height).entries(root.descendants()))
+            .join("g")
+            .attr("filter", shadow)
+            .selectAll("g")
+            .data(d => d.values)
+            .join("g")
+            .attr("transform", d => `translate(${d.x + 1},${d.y + 1})`);
+
+        node.append("circle")
+            .attr("r", d => d.r)
+            .attr("fill", d => color(d.height));
+
+        const leaf = node.filter(d => !d.children);
+
+        leaf.select("circle")
+            .attr("id", d => (d.leafUid = DOM.uid("leaf")).id);
+
+        leaf.append("clipPath")
+            .attr("id", d => (d.clipUid = DOM.uid("clip")).id)
+            .append("use")
+            .attr("xlink:href", d => d.leafUid.href);
+
+        leaf.append("text")
+            .attr("clip-path", d => d.clipUid)
+            .selectAll("tspan")
+            .data(d => d.data.name.split(/(?=[A-Z][a-z])|\s+/g))
+            .join("tspan")
+            .attr("x", 0)
+            .attr("y", (d, i, nodes) => `${i - nodes.length / 2 + 0.8}em`)
+            .text(d => d);
+
+        node.append("title")
+            .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+    }
+}
+
+d3.json("output.json").then(renderPacking());

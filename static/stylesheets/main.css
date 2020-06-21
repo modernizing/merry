@@ -33,7 +33,9 @@ div.tooltip {
     /*pointer-events: none;*/
 }
 
+#packing,
 #circle {
     width: 1200px;
     height: 1200px;
 }
+
