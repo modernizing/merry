@@ -481,7 +481,7 @@ function renderPacking(originData) {
 }
 
 if (window.location.href.includes("demo")) {
-    d3.json("webdemo/output.json").then(function (data) {
+    d3.json("./webdemo/output.json").then(function (data) {
         renderVertical(data)
         renderCircle(data)
         renderPacking(data)
