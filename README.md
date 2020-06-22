@@ -133,9 +133,7 @@ cmd: `merry call -s`
 
 `merry` will read `manifest-map.json` and start to [http://localhost:3000](http://localhost:3000):
 
-![Call Circle](docs/screenshots/call-circle.svg)
-
-![Call Server](docs/screenshots/call-server.svg)
+example: [https://phodal.github.io/merry/demo](https://phodal.github.io/merry/demo)
 
 ## Todo
 
