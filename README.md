@@ -86,13 +86,13 @@ Flags:
 
 examples:
 
-```
+```bash
 merry manifest -s -x -f org.eclipse.equinox -p ~/sdk/equinox-SDK-4.15/plugins
 ```
 
 ### Generate Pom from jars
 
-```
+```bash
 merry pom -p _fixtures/demo -m _fixtures/map/map.csv
 ```
 
@@ -120,7 +120,7 @@ results:
 
 show only one line with `strict`
 
-```
+```graphviz
 strict digraph G {
   a -> b [ label = "foo" ];
   a -> b [ label = "bar" ];
