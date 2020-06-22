@@ -26,7 +26,7 @@ var fixCmd = &cobra.Command{
 		for _, jarPath := range jarPaths {
 			manifest := manifest.ScanByFile(jarPath)
 			if manifest.PackageName != "" && manifest.Version != "" {
-				newPkgName := manifest.PackageName + "_" + manifest.Version + ".jar"
+				newPkgName := manifest.BuildJarFileName()
 				basePath := infrastructure.GetJarPath(jarPath)
 				dst := basePath + newPkgName
 				if jarPath != dst {

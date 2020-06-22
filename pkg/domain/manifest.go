@@ -21,3 +21,9 @@ type IgsoManifest struct {
 	PackageName   string
 	Version       string
 }
+
+
+func (m *IgsoManifest) BuildJarFileName() string {
+	return m.PackageName + "_" + m.Version + ".jar"
+}
+
