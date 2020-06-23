@@ -27,3 +27,7 @@ func (m *IgsoManifest) BuildJarFileName() string {
 	return m.PackageName + "_" + m.Version + ".jar"
 }
 
+func (m *IgsoManifest) HasValidJarInfo() bool {
+	return m.PackageName != "" && m.Version != ""
+}
+
