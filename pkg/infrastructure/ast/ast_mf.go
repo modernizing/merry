@@ -96,7 +96,7 @@ func (s *MfIdentListener) EnterValue(ctx *parser.ValueContext) {
 }
 
 func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *parser.ConfigAssignContext, javaPackage *domain.JavaPackage) {
-	if assignText == "version" {
+	if assignText == "version" || assignText == "bundle-version" {
 		if configAssign.AssignValue() == nil {
 			fmt.Println(configAssign.GetText())
 			return
@@ -112,7 +112,7 @@ func (s *MfIdentListener) buildPackageVersion(assignText string, configAssign *p
 				javaPackage.EndVersion = split[1]
 			}
 		} else {
-			if s.currentKey == "Import-Package" {
+			if s.currentKey == "Import-Package" || s.currentKey == "Require-Bundle" {
 				javaPackage.StartVersion = versionText[1 : len(versionText)-1]
 			}
 			if s.currentKey == "Export-Package" {

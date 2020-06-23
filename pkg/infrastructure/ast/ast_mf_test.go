@@ -203,3 +203,13 @@ Require-Bundle: org.springframework.beans;bundle-version="2.5.6"
 	g.Expect(results.ImportPackage[0].StartVersion).To(Equal("2.5.6.SEC01"))
 }
 
+func Test_ShouldWorkWithRequireBundleVersion(t *testing.T) {
+	g := NewGomegaWithT(t)
+	code := `Require-Bundle: org.springframework.beans;bundle-version="2.5.6"
+
+`
+	results := Analysis(code, "hello.mf")
+	g.Expect(len(results.ImportPackage)).To(Equal(1))
+	g.Expect(results.ImportPackage[0].StartVersion).To(Equal("2.5.6"))
+}
+
