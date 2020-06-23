@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/phodal/merry/cmd/cmd_util"
-	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/application/manifestapp"
 	"github.com/phodal/merry/pkg/infrastructure"
 	"github.com/phodal/merry/pkg/infrastructure/bundle"
 	"github.com/phodal/merry/pkg/infrastructure/tequila"
@@ -55,7 +55,7 @@ var manifestCmd = &cobra.Command{
 				fmt.Fprintf(output, "path: "+path+" lost jar files")
 				return
 			}
-			merryManifest := manifest.ScanByFile(path)
+			merryManifest := manifestapp.ScanByFile(path)
 			table := cmd_util.NewOutput(output)
 
 			table.SetHeader([]string{"Name", "Version Info", "Export Version", "Start Version", "EndVersion", "Config"})
@@ -72,11 +72,11 @@ var manifestCmd = &cobra.Command{
 			table.Render()
 		}
 		if manifestConfig.IsScan {
-			scanManifest := manifest.ScanByPath(path)
+			scanManifest := manifestapp.ScanByPath(path)
 			res, _ := json.MarshalIndent(scanManifest, "", "\t")
 			cmd_util.WriteToCocaFile("manifest-map.json", string(res))
 
-			result := manifest.BuildFullGraph(scanManifest, nil)
+			result := manifestapp.BuildFullGraph(scanManifest, nil)
 
 			if manifestConfig.IsMergePackage {
 				result = result.MergeHeaderFile(tequila.MergePackageFunc)

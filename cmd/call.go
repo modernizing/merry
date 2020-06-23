@@ -5,7 +5,7 @@ import (
 	"github.com/gobuffalo/packr"
 	"github.com/phodal/merry/cmd/cmd_util"
 	"github.com/phodal/merry/cmd/config"
-	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/application/manifestapp"
 	visual2 "github.com/phodal/merry/pkg/application/visual"
 	"github.com/phodal/merry/pkg/domain"
 	"github.com/phodal/merry/pkg/infrastructure/csvconv"
@@ -44,14 +44,14 @@ var callCmd = &cobra.Command{
 
 		path := cmd.Flag("path").Value.String()
 
-		scanManifest := manifest.ScanByPath(path)
+		scanManifest := manifestapp.ScanByPath(path)
 		var depmap = make(map[string]domain.MavenDependency)
 		if callConfig.MapFile != "" {
 			csv := csvconv.ParseCSV(filepath.FromSlash(callConfig.MapFile))
 			_, depmap = domain.MapFromCSV(csv)
 		}
 
-		result := manifest.BuildFullGraph(scanManifest, depmap)
+		result := manifestapp.BuildFullGraph(scanManifest, depmap)
 
 		graph := result.ToDot(".", func(s string) bool {
 			return false

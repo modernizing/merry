@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/application/manifestapp"
 	"github.com/phodal/merry/pkg/application/maven"
 	domain "github.com/phodal/merry/pkg/domain"
 	"github.com/phodal/merry/pkg/infrastructure"
@@ -44,7 +44,7 @@ var pomCmd = &cobra.Command{
 
 			_, content, _ := bundle.GetFileFromJar(jarPath, "MANIFEST.MF")
 			dep := domain.ByFileName(jarName, 2)
-			manifest := manifest.ProcessManifest(content, "MANIFEST.MF")
+			manifest := manifestapp.ProcessManifest(content, "MANIFEST.MF")
 
 			var depmap = make(map[string]domain.MavenDependency)
 			if pomConfig.MapFile != "" {

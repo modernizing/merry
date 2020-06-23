@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/phodal/merry/cmd/cmd_util"
-	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/application/manifestapp"
 	"github.com/phodal/merry/pkg/domain"
 	"github.com/phodal/merry/pkg/infrastructure"
 	"github.com/spf13/cobra"
@@ -31,7 +31,7 @@ var mapCmd = &cobra.Command{
 		jarPaths := infrastructure.GetJarFilesByPath(path, false)
 		var results = "origin,groupid,artifactId,version" + "\n"
 		for _, jarPath := range jarPaths {
-			manifest := manifest.ScanByFile(jarPath)
+			manifest := manifestapp.ScanByFile(jarPath)
 			for _, pkg := range manifest.ExportPackage {
 				dep := domain.ByPackage(manifest.PackageName, 2)
 				var pkgStr = pkg.Name + "," + dep.GroupId + "," + dep.ArtifactId + "," + manifest.Version

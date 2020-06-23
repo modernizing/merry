@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/phodal/merry/pkg/application/manifest"
+	"github.com/phodal/merry/pkg/application/manifestapp"
 	"github.com/phodal/merry/pkg/infrastructure"
 	"github.com/spf13/cobra"
 )
@@ -24,7 +24,7 @@ var fixCmd = &cobra.Command{
 		path := cmd.Flag("path").Value.String()
 		jarPaths := infrastructure.GetJarFilesByPath(path, false)
 		for _, jarPath := range jarPaths {
-			manifest := manifest.ScanByFile(jarPath)
+			manifest := manifestapp.ScanByFile(jarPath)
 			if manifest.HasValidJarInfo() {
 				newPkgName := manifest.BuildJarFileName()
 				basePath := infrastructure.GetJarPath(jarPath)
