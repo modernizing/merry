@@ -38,7 +38,7 @@ func FromPackage(packages []JavaPackage, depmap map[string]MavenDependency) []Ma
 	for _, javaPack := range packages {
 		if val, ok := depmap[javaPack.Name]; ok {
 			deps = append(deps, val)
-			continue;
+			continue
 		}
 
 		checkSplit := strings.Split(javaPack.Name, ".")
@@ -126,4 +126,3 @@ func ByPackage(pkg string, groupIdLength int) MavenDependency {
 
 	return dependency
 }
-
