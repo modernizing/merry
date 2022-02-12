@@ -10,7 +10,7 @@
 
 Refactor Tool -> [Coca](https://github.com/phodal/coca)
 
-Online Example for Call Analysis: [https://phodal.github.io/merry/demo](https://phodal.github.io/merry/demo)
+Online Example for Call Analysis: [https://modernizing.github.io/merry/demo](https://modernizing.github.io/merry/demo)
 
 Online Screenshots:
 
